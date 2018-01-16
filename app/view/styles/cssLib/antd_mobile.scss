@@ -1,0 +1,60 @@
+/*覆盖antd mobild样式*/
+
+
+
+.am-activity-indicator-spinner {
+    width: 0.4rem;
+    height: 0.4rem;
+}
+
+.am-activity-indicator-tip {
+    font-size: 0.2rem;
+}
+
+.am-activity-indicator-content {
+    width: 130px;
+    height: 130px;
+}
+
+.am-activity-indicator-content .am-activity-indicator-spinner {
+    width: 60px;
+    height: 60px;
+}
+
+.am-activity-indicator-content .am-activity-indicator-toast {
+    margin-top: 10px;
+    font-size: 26px;
+}
+
+
+.am-modal-mask {
+    z-index: 1001;
+}
+
+.am-modal-wrap  {
+    z-index: 1002;
+}
+
+/* 
+ * Picker 选择器
+ * https://mobile.ant.design/components/picker-cn/
+*/
+.am-picker-popup-item {
+    /* padding: 0.1rem 0.3rem;
+    height: 0.8rem;
+
+    font-size: 0.26rem; */
+    color: #3e6df8;
+}
+
+/* .am-picker-col-indicator {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.am-picker-col-item {
+    height: 50px;
+    
+    font-size: 40px;
+    line-height: 50px;
+} */

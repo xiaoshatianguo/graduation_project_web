@@ -1,0 +1,106 @@
+.dis-n {
+    display: none;
+}
+
+.dis-i {
+    display: inline;
+}
+
+.dis-b {
+    display: block;
+}
+
+.dis-ib {
+    display: inline-block;
+}
+
+/*
+ *    other block level tag(eg. p, li, h1~h6), using 'inline_any' instead
+ *    这个是引用张鑫旭的[zxx.lib.css](https://github.com/zhangxinxu/zxx.lib.css)
+ *    大概意思应该是只是div标签需要这样的hack
+ */
+div.dis-ib {
+    *display: inline;
+    *zoom: 1;
+}
+
+/* 左右浮动，清除浮动 */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* 清除浮动 */
+.clear-f {
+    *zoom: 1;
+}
+
+.clear-f:after {
+    display: table;
+
+    clear: both;
+
+    content: '';
+}
+
+/* overflow */
+.ovh {
+    overflow: hidden;
+}
+
+.ovys {
+    -webkit-overflow-scrolling : touch;
+    overflow-y: scroll;
+}
+
+/* position，相对定位，绝对定位 */
+.position-r {
+    position: relative;
+}
+
+.position-a {
+    position: absolute;
+}
+
+.position-f {
+    position: fixed;
+}
+
+/* z-index */
+.zx1 {
+    z-index: 1;
+}
+
+.zx2 {
+    z-index: 2;
+}
+
+.zx3 {
+    z-index: 3;
+}
+
+.zx10 {
+    z-index: 10;
+}
+
+.zx100 {
+    z-index: 100;
+}
+
+/* 顶部导航栏的高度 */
+.zx200 {
+    z-index: 200;
+}
+
+/* 全屏黑幕的高度 */
+.zx300 {
+    z-index: 300;
+}
+
+/* 非特殊情况下的最高 */
+.zx310 {
+    z-index: 310;
+}

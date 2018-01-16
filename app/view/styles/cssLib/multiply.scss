@@ -1,0 +1,119 @@
+/* *************************************
+//
+//    多样性的CSS，放各种通用的CSS特效
+//    ->
+//        - 超出省略
+//        - 大小不定元素垂直居中
+//        - 无框文本框文本域
+//        - 按钮禁用
+//
+// *************************************/
+
+/* 多样性的CSS，放各种通用的CSS特效 */
+/*
+//    ->
+//        - 超出省略
+//        - 大小不定元素垂直居中
+//        - 无框文本框文本域
+//        - 按钮禁用
+*/
+
+
+/* 超出省略 */
+/* 单行省略 */
+.single-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 超出一行省略 */
+.simple-ellipsis1 {
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    word-break: break-all;
+}
+
+
+/* 超出两行省略 */
+.simple-ellipsis2 {
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    word-break: break-all;
+}
+
+.simple-ellipsis3 {
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    word-break: break-all;
+}
+
+/* 大小不定元素垂直居中 */
+.dib_vm {
+    display: inline-block;
+
+    width: 0;
+    height: 100%;
+
+    vertical-align: middle;
+}
+
+/* 无框文本框文本域 */
+.bd_none {
+    border: 0;
+    outline: none;
+}
+
+/* 按钮禁用 */
+.disabled {
+    outline: 0 none;
+    opacity: .4;
+    filer: alpha(opacity=40);
+
+    -ms-pointer-events: none;
+    pointer-events: none;
+    
+    cursor: default!important;
+}
+
+/* 背景图片的展示方式 */
+/* 等比放大，不一定看到全图，不会根据容器压缩和变形 */
+.bg-cover-cc {
+    background-size: cover;
+    background-position: center center;
+}
+
+/* 整图覆盖容器，会根据容器压缩和变形 */
+.bg-size-100 {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* 使用symbol，以支持IconFont多色 */
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
