@@ -1,13 +1,15 @@
 # graduation_project_web
 my 2018 graduation_project_web
 
-### Based on the node background project of the [ali egg framework](https://eggjs.org), the front and rear end are not separated, and the node background code and the front-end template engine rendering are all in the project.
+Based on the node background project of the [ali egg framework](https://eggjs.org), the front and rear end are not separated, and the node background code and the front-end template engine rendering are all in the project.
 
-### The theme of the project is the original photography interactive community-based website PC.
+The theme of the project is the original photography interactive community-based website PC.
 
-### Keywords: style responsive website, community site, PC website, nodejs background, graduation project.
+### Keywords: 
+style responsive website, community site, PC website, nodejs background, graduation project.
 
-### Database: mysql, database visualization tool: navicat.
+### Database environment：
+Database: mysql, database visualization tool: navicat.
 
 ## egg QuickStart
 
