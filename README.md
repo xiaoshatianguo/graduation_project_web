@@ -1,14 +1,21 @@
-# mysql
+# graduation_project_web
+my 2018 graduation_project_web
 
-## QuickStart
+## Based on the node background project of the [ali egg framework](https://eggjs.org), the front and rear end are not separated, and the node background code and the front-end template engine rendering are all in the project.
 
-<!-- add docs here for user -->
+### The theme of the project is the original photography interactive community-based website PC.
+
+### Keywords: style responsive website, community site, PC website, nodejs background, graduation project.
+
+### Database: mysql, database visualization tool: navicat.
+
+## egg QuickStart
 
 see [egg docs][egg] for more detail.
 
 ### Development
 
-安装：(可以用 yarn 来安装)
+Installation :(can be installed with yarn)
 
 `SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn add node-sass -D`
 
@@ -32,7 +39,3 @@ $ npm stop
 * Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
 
 [egg]: https://eggjs.org
-
-
-#### graduation_project_web
-my 2018 graduation_project_web
