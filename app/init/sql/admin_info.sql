@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `admin_info` (
-  `uuid` INT(11) NOT NULL,
+  `uuid` VARCHAR(64) NOT NULL,
   `number` VARCHAR(255) DEFAULT '' comment '管理员编号',
   `password` VARCHAR(255) DEFAULT '' comment '管理员密码',
   `nickname` VARCHAR(255) DEFAULT '' comment '管理员昵称',
