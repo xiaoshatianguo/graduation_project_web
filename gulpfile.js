@@ -19,7 +19,7 @@ gulp.task('watch',function() {
 
         logPrefix: "browser-sync in gulp",
 
-        browser: ["chrome","iexplore"],
+        browser: ["chrome"],
 
         proxy: "localhost:7001"
     });
