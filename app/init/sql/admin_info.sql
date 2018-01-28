@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `admin_info` (
   `create_time` DATETIME comment '管理员创建时间',
   `update_time` DATETIME comment '管理员更新时间',
   `Lastest_login_time` DATETIME comment '管理员最后登录时间',
-  `integral` INT(11) DEFAULT 0 comment '管理员权限 - 0 超级管理员 - 1 二级管理员',
+  `integral` INT(2) DEFAULT 0 comment '管理员权限 - 0 超级管理员 - 1 二级管理员',
   `manage_categories` INT(11) DEFAULT 0 comment '管理类别',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
