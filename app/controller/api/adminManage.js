@@ -1,11 +1,14 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+const serviceHandle = 'adminManage';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
+//TODO: 修改规则
 const createRule = {
     accesstoken: 'string',
-    title: 'string',
+    number: 'string',
+    password: 'string',
     tab: { type: 'enum', values: [ 'ask', 'share', 'job' ], required: false },
     content: 'string',
 };
@@ -18,12 +21,12 @@ class AdminController extends Controller {
     async index() {
         const ctx = this.ctx;
 
-        const result = await ctx.service.adminManage.index();
+        const result = await ctx.service.serviceHandle.index();
 
         ctx.body = {
             data: result,
-        }
-        ctx.status = 201;
+        };
+        ctx.status = 200;
     }
 
     /**

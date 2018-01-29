@@ -44,7 +44,7 @@
     "init_sql": "node ./app/init/index.js",
     "start": "egg-scripts start --daemon",
     "stop": "egg-scripts stop",
-    "dev": "egg-bin dev && gulp watch",
+    "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",

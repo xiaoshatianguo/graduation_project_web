@@ -7,7 +7,7 @@ const config = {
   port: 3001,
 
   database: {
-    DATABASE: 'egg_mysql',
+    DATABASE: 'photo_website',
     USERNAME: 'root',
     PASSWORD: 'root',
     PORT: '3306',

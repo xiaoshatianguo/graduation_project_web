@@ -13,5 +13,11 @@ module.exports = appInfo => {
     },
   };
 
+  config.middleware = [ 'errorHandle' ];
+
+  config.errorHandle =  {
+    match: '/api',
+  };
+
   return config;
 };
