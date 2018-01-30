@@ -2,18 +2,22 @@
 
 const Service = require('egg').Service;
 const currentEditTable = 'admin_info'; // 当前操作的表名
+const tools = require('../utils/tool.js');
 
 class AdminService extends Service {
     constructor(ctx) {
         super(ctx);
     }
     
+    /**
+     * 管理员列表
+     */
     async index() {
         const ctx = this.ctx;
 
         const result = await ctx.handlePagination(currentEditTable);
 
-        this.checkSuccess(result);
+        tools.checkSuccess(result);
 
         return result;
     }
@@ -21,19 +25,18 @@ class AdminService extends Service {
     /**
      * 添加管理员
      */
-    async create() {
-        try {
-            const result = await this.app.mysql.insert('admin_info', {
-                create_time: new Date().valueOf(),
-            });
+    async create(params) {
+        const result = await this.app.mysql.insert('admin_info', {
+            method: 'post',
+            data:params,
+            dataType: 'json',
+            contentType: 'json',
+            create_time: new Date().valueOf(),
+        });
 
-            this.checkSuccess(result);
+        tools.checkSuccess(result);
 
-            return result.data.id;
-        } catch(err) {
-            this.ctx.status = 500;
-            this.ctx.body = err;
-        }
+        return result.data.id;
     }
 
     

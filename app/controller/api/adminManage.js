@@ -44,6 +44,22 @@ class AdminController extends Controller {
         };
         ctx.status = 201;
     }
+
+    /**
+     * 修改管理员信息
+     */
+    async create() {
+        const ctx = this.ctx;
+
+        ctx.validate(createRule);
+
+        const id = await ctx.service.adminManage.create(ctx.request.body);
+
+        ctx.body = {
+            admin_id: id,
+        };
+        ctx.status = 201;
+    }
 }
 
 module.exports = AdminController;
