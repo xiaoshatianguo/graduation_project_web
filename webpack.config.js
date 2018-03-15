@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); // 将css代码单独打包出来
 
 const ROOT_PATH = path.resolve(__dirname);
-const APP_PATH = path.resolve(ROOT_PATH, 'app/view');
-const BUILD_PATH = path.resolve(ROOT_PATH, 'app/public');
+const APP_PATH = path.resolve(ROOT_PATH, 'app/view/pc');
+const BUILD_PATH = path.resolve(ROOT_PATH, 'app/public/pc');
 
 /**
  *

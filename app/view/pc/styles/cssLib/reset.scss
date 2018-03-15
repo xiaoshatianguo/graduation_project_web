@@ -88,3 +88,37 @@ body {
     color: #333333;
     background-color: #f5f5f7;
 }
+
+/* 页面主体内容部分所占的宽度和位置居中 */
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/* 页面markdown内容样式控制 */
+.markdown-body {
+    text-align: left;
+
+    h3 {
+        font-size: 24px !important;
+    }
+
+    p {
+        margin-bottom: 0 !important;
+        
+        font-size: 16px;
+        line-height: 32px;
+        text-indent: 32px;
+
+        color: #666;
+    }
+
+    // 防止markdown img标签超宽
+    img {
+        max-width: 100%;
+    }
+}
+
+.img {
+    width: 100%;
+}

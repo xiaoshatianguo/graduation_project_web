@@ -9,11 +9,11 @@ module.exports = () => {
 
             const status = err.status || 500;
 
-            const err = status === 500 && ctx.app.config.env === 'prod'
+            const errInfo = status === 500 && ctx.app.config.env === 'prod'
                 ? 'Internal Server Error'
                 : err.message;
 
-            ctx.body = {error};
+            ctx.body = {errInfo};
             if(status === 422) {
                 ctx.body.detail = err.errors;
             }
