@@ -1,3 +1,204 @@
+$main-color: #fdc5e0;
+$main-padding: 30px 50px;
+
 .header {
-    height: 150px;
+    height: 130px;
+
+    font-size: 20px;
+
+    color: rgb(22, 21, 21);
+
+    .container {
+        position: relative;
+
+        min-width: 1200px;
+
+        .header-nav-left {
+            .nav-li {
+                margin-right: 50px;
+
+                line-height: 80px;
+                font-size: 20px;
+
+                color: rgb(22, 21, 21);
+            }
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+
+            margin-left: -150px;
+            width: 300px;
+
+            .logo-top {
+                margin-bottom: 20px;
+                width: 80px;
+                height: 5px;
+
+                background-color: $main-color;
+            }
+
+            .logo-en {
+                margin-bottom: 20px;
+            }
+
+            .logo-zh {
+                font-size: 25px;
+            }
+        }
+    }
 }
+
+.banner {
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+
+            height: 350px;
+        }
+    }
+}
+
+.title {
+    margin-bottom: 30px;
+
+    font-size: 30px;
+    text-align: center;
+
+    color: $main-color;
+
+    .title-sm {
+        padding-left: 30px;
+
+        font-size: 25px;
+
+        color: rgb(46, 43, 43);
+    }
+
+    .title-bg {
+        padding-right: 30px;
+
+        font-size: 30px;
+
+        color: #dd2222;
+    }
+}
+
+.new-activity {
+    margin-top: 30px;
+
+    .container {
+        .activity-list {
+            margin: $main-padding;
+
+            .item-img {
+                margin-bottom: 30px;
+                width: 330px;
+                height: 500px;
+
+                background-position: center;
+                background-size: cover;
+            }
+
+            .item-img-big {
+                width: 100%;
+                height: 300px;
+
+                background-position: center;
+                background-size: cover;
+            }
+        }
+
+        .activity-bottom {
+            text-align: center;
+
+            .activity-bottom-en {
+                padding: 30px 0 10px;
+
+                color: #5e6468;
+            }
+
+            .activity-bottom-zh {
+                padding-bottom: 30px;
+                
+                color: #303335;
+            }
+        }
+    }
+}
+
+.hot-classify {
+    padding: $main-padding;
+
+    background-color: #ebebeb;
+
+    .classify {
+        width: 100%;
+        height: 500px;
+    }
+}
+
+.active-certified-architect {
+    padding: $main-padding;
+    
+    .certified-architect-list {
+        width: 100%;
+        height: 500px;
+    }
+}
+
+.footer {
+    padding: 150px 0 100px;
+
+    .footer-top {
+        background-position: center;
+        background-size: cover;
+
+        width: 100%;
+        height: 350px;
+
+        .title {
+            padding-top: 50px;
+
+            font-size: 50px;
+
+            color: #fff;
+        }
+    }
+
+    .footer-bottom{
+        padding-top: 50px;
+
+        text-align: center;
+
+        .text {
+            font-size: 20px;
+        }
+    }
+}
+
+
+.body::-webkit-scrollbar {
+    width: 7px;
+} /* 这是针对缺省样式 (必须的) */
+
+.body::-webkit-scrollbar-track {
+    background-color: #5e6468;
+} /* 滚动条的滑轨背景颜色 */
+
+.body::-webkit-scrollbar-thumb {
+    background-color: $main-color; 
+} /* 滑块颜色 */
+
+.body::-webkit-scrollbar-button {
+    display: none;
+} /* 滑轨两头的监听按钮颜色 */
+
+.body::-webkit-scrollbar-corner {
+    display: none;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
