@@ -14,7 +14,7 @@
 {% block top %}
     <div class="author-info flex-box jc-s jc-ce fd-col">
         <div class="container">
-            <p class="author-name">叶筱莎</p>
+            <p class="author-name">叶筱莎<small class="grade">【顶级设计师】</small></p>
             <p class="author-motto">世界以痛吻我，我要回报以歌……</p>
             <div class="author-data-statistics flex-b-sbc">
                 <div class="data-list">

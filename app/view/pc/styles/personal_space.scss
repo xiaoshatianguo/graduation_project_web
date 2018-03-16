@@ -2,7 +2,7 @@
     .banner-img {
         position: relative;
 
-        height: 350px;
+        height: 520px;
 
         background-position: center;
         background-size: cover;
@@ -55,6 +55,10 @@
         margin-bottom: 30px;
 
         text-align: center;
+
+        .grade {
+            color: #e07575;
+        }
     }
 
     .author-motto {
