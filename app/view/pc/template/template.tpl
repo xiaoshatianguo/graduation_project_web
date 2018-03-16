@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script src="/public/jquery-3.2.1.min.js"></script>
-    <script src="/public/tool.js"></script>
     <link rel="stylesheet" href="/public/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/public/pc/app.css">
 

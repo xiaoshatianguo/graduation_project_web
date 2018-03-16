@@ -1,0 +1,79 @@
+.personal-banner {
+    .banner-img {
+        position: relative;
+
+        height: 350px;
+
+        background-position: center;
+        background-size: cover;
+
+        .author-portraits {
+            display: block;
+
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+
+            margin-left: -100px;
+            width: 200px;
+            height: 200px;
+
+            border-radius: 100px;
+            border: 2px solid #ecb3b3;
+
+            overflow: hidden;
+
+            .img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .attention-btn {
+            position: absolute;
+            right: 10px;
+            bottom: -60px;
+
+            width: 100px;
+            height: 30px;
+            
+            line-height: 30px;
+            text-align: center;
+
+            background-color: #d81414;
+            color: #fff;
+        }
+    }
+}
+
+.author-info {
+    margin-top: 130px;
+
+    font-size: 25px;
+
+    .author-name {
+        margin-bottom: 30px;
+
+        text-align: center;
+    }
+
+    .author-motto {
+        margin-bottom: 30px;
+        
+        text-align: center;
+    }
+
+    .author-data-statistics {
+        color: #999393;
+
+        .data-list{
+            padding: 0 80px;
+
+            .item-name {
+                margin-bottom: 10px;
+
+                text-align: center;
+            }
+        }
+    }
+}
