@@ -23,4 +23,9 @@ module.exports = app => {
   router.get('/apply_certified_architect', controller.pcRouter.applyCertifiedArchitect);
   router.get('/sort', controller.pcRouter.sort);
   router.get('/production_detail', controller.pcRouter.productionDetail);
+
+  /**
+   * 管理后台api路由
+   */
+  router.resources('admin', '/api/admin', controller.api.adminManage);
 };

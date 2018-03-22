@@ -36,7 +36,7 @@ class AdminController extends Controller {
 
         ctx.validate(createRule);
 
-        const id = await ctx.service.adminManage.create(ctx.request.body);
+        const id = await ctx.service.serviceHandle.create(ctx.request.body);
 
         ctx.body = {
             admin_id: id,
@@ -47,17 +47,32 @@ class AdminController extends Controller {
     /**
      * 修改管理员信息
      */
-    async create() {
+    async update() {
         const ctx = this.ctx;
+        const row = await this.ctx.handleArticleParams(ctx.params.id);
 
-        ctx.validate(createRule);
+        ctx.validate(row);
 
-        const id = await ctx.service.adminManage.create(ctx.request.body);
+        const result = await ctx.service.serviceHandle.update(row);
 
         ctx.body = {
-            admin_id: id,
+            result,
         };
-        ctx.status = 201;
+        ctx.status = 204;
+    }
+
+    /**
+     * 删除管理员
+     */
+    async destroy() {
+        const ctx = this.ctx;
+
+        const result = await ctx.service.serviceHandle.delete(ctx.params.id);
+
+        ctx.body = {
+            result,
+        };
+        ctx.status = 204;
     }
 }
 

@@ -26,7 +26,7 @@ class AdminService extends Service {
      * 添加管理员
      */
     async create(params) {
-        const result = await this.app.mysql.insert('admin_info', {
+        const result = await this.app.mysql.insert(currentEditTable, {
             method: 'post',
             data:params,
             dataType: 'json',
@@ -37,6 +37,28 @@ class AdminService extends Service {
         tools.checkSuccess(result);
 
         return result.data.id;
+    }
+
+    /**
+     * 修改管理员信息
+     */
+    async update(params) {
+        const result = await this.app.mysql.update(currentEditTable, params);
+
+        tools.checkSuccess(result);
+
+        return result;
+    }
+
+    /**
+     * 删除管理员
+     */
+    async delete(params) {
+        const result = await this.app.mysql.delete(currentEditTable, params);
+
+        tools.checkSuccess(result);
+
+        return result;
     }
 }
 

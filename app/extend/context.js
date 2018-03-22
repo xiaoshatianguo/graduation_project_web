@@ -2,6 +2,20 @@ const Controller = require('egg').Controller;
 
 module.exports = {
     /**
+     * 更新和添加接口，对 body 参数进行处理
+     * @param  {int} id     添加或更新时的 ID 值
+     * @return {object}     返回经过处理的对象，用于插入数据库
+     */
+    async handleArticleParams(id) {
+        const row = this.request.body;
+
+        row.update_time = new Date().valueOf(); // 修改时间戳
+        if (id) row.id = id;
+
+        return row;
+    },
+
+    /**
      * 根据前端请求分页返回数据
      * @param  {string} tableName     需要进行分页处理的表名
      * @return {object}     返回请求指定页数的响应体
