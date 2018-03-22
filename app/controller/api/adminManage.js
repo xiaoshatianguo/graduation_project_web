@@ -4,13 +4,12 @@ const Controller = require('egg').Controller;
 const serviceHandle = 'adminManage';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
-//TODO: 修改规则
 const createRule = {
-    accesstoken: 'string',
     number: 'string',
     password: 'string',
-    tab: { type: 'enum', values: [ 'ask', 'share', 'job' ], required: false },
-    content: 'string',
+    nickname: 'string',
+    integral: { type: 'enum', values: [ '0', '1' ], required: true },
+    manage_categories: 'int',
 };
 
 class AdminController extends Controller {
