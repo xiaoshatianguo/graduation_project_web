@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `comments_info` (
   `content` VARCHAR(255) DEFAULT '' comment '评论或留言内容',
   `create_time` DATETIME comment '评论或留言发布时间',
   `update_time` DATETIME comment '评论修改时间',
-  `status` INT(2) DEFAULT 0 comment '是否被禁 - 0 禁 - 1 无禁',
+  `status` INT(2) DEFAULT 0 comment '是否被禁 - 0 无禁 - 1 禁',
   `auditor` VARCHAR(255) DEFAULT '' comment '处理管理员编号',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
