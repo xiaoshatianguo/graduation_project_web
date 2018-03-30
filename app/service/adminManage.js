@@ -2,7 +2,6 @@
 
 const Service = require('egg').Service;
 const currentEditTable = 'admin_info'; // 当前操作的表名
-const tools = require('../utils/tool.js');
 
 class AdminService extends Service {
     constructor(ctx) {
@@ -15,9 +14,9 @@ class AdminService extends Service {
     async index() {
         const ctx = this.ctx;
 
-        const result = await tools.handlePagination(currentEditTable);
+        const result = await this.app.handlePagination(currentEditTable);
 
-        tools.checkSuccess(result);
+        this.app.checkSuccess(result);
 
         return result;
     }
@@ -34,7 +33,7 @@ class AdminService extends Service {
             create_time: new Date().valueOf(),
         });
 
-        tools.checkSuccess(result);
+        this.app.checkSuccess(result);
 
         return result.data.id;
     }
@@ -45,7 +44,7 @@ class AdminService extends Service {
     async update(params) {
         const result = await this.app.mysql.update(currentEditTable, params);
 
-        tools.checkSuccess(result);
+        this.app.checkSuccess(result);
 
         return result;
     }
@@ -56,7 +55,7 @@ class AdminService extends Service {
     async delete(params) {
         const result = await this.app.mysql.delete(currentEditTable, params);
 
-        tools.checkSuccess(result);
+        this.app.checkSuccess(result);
 
         return result;
     }

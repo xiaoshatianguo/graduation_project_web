@@ -20,7 +20,7 @@ class AdminController extends Controller {
     async index() {
         const ctx = this.ctx;
 
-        const result = await ctx.service.serviceHandle.index();
+        const result = await ctx.service[`${serviceHandle}`].index();
 
         ctx.body = {
             data: result,
@@ -36,7 +36,7 @@ class AdminController extends Controller {
 
         ctx.validate(createRule);
 
-        const id = await ctx.service.serviceHandle.create(ctx.request.body);
+        const id = await ctx.service[`${serviceHandle}`].create(ctx.request.body);
 
         ctx.body = {
             admin_id: id,
@@ -49,11 +49,11 @@ class AdminController extends Controller {
      */
     async update() {
         const ctx = this.ctx;
-        const row = await this.ctx.handleArticleParams(ctx.params.id);
+        const row = await ctx.handleArticleParams(ctx.params.id);
 
         ctx.validate(row);
 
-        const result = await ctx.service.serviceHandle.update(row);
+        const result = await ctx.service[`${serviceHandle}`].update(row);
 
         ctx.body = {
             result,
@@ -67,7 +67,7 @@ class AdminController extends Controller {
     async destroy() {
         const ctx = this.ctx;
 
-        const result = await ctx.service.serviceHandle.delete(ctx.params.id);
+        const result = await ctx.service[`${serviceHandle}`].delete(ctx.params.id);
 
         ctx.body = {
             result,
