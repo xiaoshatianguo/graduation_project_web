@@ -1,7 +1,7 @@
 'use strict';
 
 const Controller = require('egg').Controller;
-const serviceHandle = 'adminManage';  // 处理该controller的service
+const serviceHandle = 'admin';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
 const createRule = {

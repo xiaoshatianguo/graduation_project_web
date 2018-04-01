@@ -27,5 +27,11 @@ module.exports = app => {
   /**
    * 管理后台api路由
    */
-  router.resources('admin', '/api/admin', controller.api.adminManage);
+  router.resources('admin', '/api/admin', controller.api.admin);
+  router.resources('activity', '/api/activity', controller.api.activity);
+  router.resources('production', '/api/production', controller.api.production);
+  router.resources('user', '/api/user', controller.api.user);
+  router.resources('production_type', '/api/production_type', controller.api.productionType);
+  router.resources('comments', '/api/comments', controller.api.comments);
+  router.resources('attention', '/api/attention', controller.api.attention);
 };
