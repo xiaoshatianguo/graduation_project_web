@@ -13,6 +13,23 @@ module.exports = appInfo => {
     },
   };
 
+  config.security = {
+    csrf: {
+      enable: false,
+      domainWhiteList: [
+        'http://localhost:8000',
+        'http://localhost:7100',
+        'http://localhost:7200',
+      ],
+    },
+  };
+
+  /** 允许跨域 */
+  config.cors = {
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    origin: '*',
+  };
+
   config.middleware = [ 'errorHandle' ];
 
   config.errorHandle =  {

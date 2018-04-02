@@ -5,12 +5,17 @@
   "private": true,
   "dependencies": {
     "egg": "^2.0.0",
+    "egg-cors": "^2.0.0",
     "egg-mysql": "^3.0.0",
     "egg-scripts": "^2.1.0",
     "egg-validate": "^1.0.0",
+    "egg-security": "^2.0.0",
     "egg-view-nunjucks": "^2.1.4",
     "egg-webpack": "^3.2.2",
-    "eslint-config-egg": "^5.1.1"
+    "eslint-config-egg": "^5.1.1",
+    "marked": "^0.3.9",
+    "qiniu": "^7.1.1",
+    "qrcode": "^1.2.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
