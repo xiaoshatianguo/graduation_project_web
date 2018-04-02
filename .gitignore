@@ -16,4 +16,3 @@ run/
 npm-debug.log.*
 npm-debug.*
 
-/app/public/
