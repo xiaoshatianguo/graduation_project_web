@@ -27,6 +27,11 @@ module.exports = app => {
   /**
    * 管理后台api路由
    */
+  // 后台管理员登录
+  router.post('/api/login/account', controller.api.login.login);
+  router.get('/api/currentUser', controller.api.login.currentUser);
+
+  // 后台表格api
   router.resources('admin', '/api/admin', controller.api.admin);
   router.resources('activity', '/api/activity', controller.api.activity);
   router.resources('production', '/api/production', controller.api.production);

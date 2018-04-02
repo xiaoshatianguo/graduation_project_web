@@ -25,6 +25,7 @@ class AdminController extends Controller {
         ctx.body = {
             data: result,
         };
+        console.log(result);
         ctx.status = 200;
     }
 
