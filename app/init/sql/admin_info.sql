@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `admin_info` (
-  `uuid` VARCHAR(64) NOT NULL,
+  `id` VARCHAR(64) NOT NULL,
   `number` VARCHAR(255) DEFAULT '' comment '管理员编号',
   `password` VARCHAR(255) DEFAULT '' comment '管理员密码',
   `nick_name` VARCHAR(255) DEFAULT '' comment '管理员昵称',
@@ -11,5 +11,5 @@ CREATE TABLE IF NOT EXISTS `admin_info` (
   `integral` INT(2) DEFAULT 0 comment '管理员权限 - 0 超级管理员 - 1 二级管理员',
   `manage_categories` INT(11) DEFAULT 0 comment '管理类别',
   `status` INT(2) DEFAULT 0 comment '管理员状态 - 0 可用 - 1 禁用',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

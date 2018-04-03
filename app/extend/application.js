@@ -6,11 +6,26 @@ module.exports = {
      * @param  {int} id     添加或更新时的 ID 值
      * @return {object}     返回经过处理的对象，用于插入数据库
      */
-    async handleArticleParams(id) {
-        const row = this.request.body;
+    async handleParams(id, reqBody) {
+        const row = reqBody; // 表更新字段对象
 
         row.update_time = new Date().valueOf(); // 修改时间戳
+
         if (id) row.id = id;
+
+        // 是否更新项目案例富文本
+        // if (reqBody.mainbody) {
+        // row.mainbody_mark = marked(reqBody.mainbody).replace(/\n|\r/g, '<br/>');
+        // }
+
+        // if (reqBody.case_link) {
+        // // 拼接项目案例详情 URL, 生成二维码
+        // const base64 = await QRCode.toDataURL(reqBody.case_link, {
+        //     margin: 2,
+        //     width: 200,
+        // });
+        // row.qrcode = base64;
+        // }
 
         return row;
     },

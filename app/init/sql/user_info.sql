@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `user_info` (
-  `uuid` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL,
   `number` VARCHAR(255) DEFAULT '' comment '会员/认证师编号',
   `email` VARCHAR(255) DEFAULT '' comment '会员/认证师email',
   `phone` INT(20) DEFAULT 0 comment '会员/认证师电话',
@@ -18,5 +18,5 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `integral` INT(11) DEFAULT 0 comment '会员/认证师积分',
   `status` INT(2) DEFAULT 0 comment '会员/认证师账号状态 - 0 未激活 - 1 正常 - 2 禁用',
   `sort` INT(2) DEFAULT 0  comment '区分会员/认证师 - 0 会员 - 2 认证师',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

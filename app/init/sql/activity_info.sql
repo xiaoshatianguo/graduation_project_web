@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `activity_info` (
-  `uuid` varchar(64) NOT NULL,
+  `id` varchar(64) NOT NULL,
   `number` VARCHAR(255) DEFAULT '' comment '活动编号',
   `name` VARCHAR(255) DEFAULT '' comment '活动名称',
   `initiator` VARCHAR(255) DEFAULT '' comment '活动发起者',
@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS `activity_info` (
   `end_time` DATETIME comment '活动结束时间',
   `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `auditor` VARCHAR(255) DEFAULT '' comment '审核通过管理员编号',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

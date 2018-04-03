@@ -22,10 +22,7 @@ class AdminController extends Controller {
 
         const result = await ctx.service[`${serviceHandle}`].index();
 
-        ctx.body = {
-            data: result,
-        };
-        console.log(result);
+        ctx.body = result;
         ctx.status = 200;
     }
 
@@ -35,7 +32,7 @@ class AdminController extends Controller {
     async create() {
         const ctx = this.ctx;
 
-        ctx.validate(createRule);
+        // ctx.validate(createRule);
 
         const id = await ctx.service[`${serviceHandle}`].create(ctx.request.body);
 
@@ -50,15 +47,14 @@ class AdminController extends Controller {
      */
     async update() {
         const ctx = this.ctx;
-        const row = await ctx.handleArticleParams(ctx.params.id);
 
-        ctx.validate(row);
+        const reqBody = ctx.request.body;
+
+        const row = await this.app.handleParams(reqBody.id, reqBody);
 
         const result = await ctx.service[`${serviceHandle}`].update(row);
 
-        ctx.body = {
-            result,
-        };
+        ctx.body = result;
         ctx.status = 204;
     }
 

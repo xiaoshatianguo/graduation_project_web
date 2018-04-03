@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `production_info` (
-  `uuid` varchar(64) NOT NULL,
+  `id` varchar(64) NOT NULL,
   `number` VARCHAR(255) DEFAULT '' comment '作品编号',
   `name` VARCHAR(255) DEFAULT '' comment '作品标题',
   `author` VARCHAR(255) DEFAULT '' comment '作品作者',
@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `update_time` DATETIME comment '作品信息编辑时间',
   `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `auditor` VARCHAR(255) DEFAULT '' comment '审核通过管理员编号',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
