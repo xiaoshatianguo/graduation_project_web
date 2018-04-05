@@ -1,7 +1,7 @@
 'use strict';
 
 const Controller = require('egg').Controller;
-const serviceHandle = 'user';  // 处理该controller的service
+const serviceHandle = 'certifiedArchitect';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
 const createRule = {
@@ -13,7 +13,7 @@ const createRule = {
     // sort: 'string',
 };
 
-class UserController extends Controller {
+class CertifiedArchitectController extends Controller {
   
     /**
      * 获取用户列表
@@ -72,4 +72,4 @@ class UserController extends Controller {
     }
 }
 
-module.exports = UserController;
+module.exports = CertifiedArchitectController;

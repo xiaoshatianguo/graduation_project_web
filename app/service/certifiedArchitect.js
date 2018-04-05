@@ -3,7 +3,7 @@
 const Service = require('egg').Service;
 const currentEditTable = 'user_info'; // 当前操作的表名
 
-class UserService extends Service {
+class CertifiedArchitectService extends Service {
     constructor(ctx) {
         super(ctx);
     }
@@ -32,7 +32,7 @@ class UserService extends Service {
             integral: params.integral,
             create_time: new Date(),
             status: params.status,
-            sort: "0",
+            sort: "1",
         });
 
         const newRecord = await this.app.mysql.get(
@@ -82,7 +82,7 @@ class UserService extends Service {
         const query = this.ctx.request.query;
 
         const total = await this.app.mysql.query(
-            `SELECT COUNT(*) total FROM ${tableName} where sort=0;`
+            `SELECT COUNT(*) total FROM ${tableName} where sort=2;`
         );
 
         const totalRecord = JSON.parse(JSON.stringify(total))[0].total;
@@ -116,7 +116,7 @@ class UserService extends Service {
         const orders = [['create_time', 'desc'], ['id', 'desc']];
 
         const result = await this.app.mysql.query(
-            `SELECT * from ${tableName} where sort=0 ORDER BY id desc;`
+            `SELECT * from ${tableName} where sort=2 ORDER BY id desc;`
         );
 
         result.forEach(record => {
@@ -132,4 +132,4 @@ class UserService extends Service {
     }
 }
 
-module.exports = UserService;
+module.exports = CertifiedArchitectService;
