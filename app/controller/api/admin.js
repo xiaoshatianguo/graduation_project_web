@@ -7,9 +7,9 @@ const serviceHandle = 'admin';  // 处理该controller的service
 const createRule = {
     number: 'string',
     password: 'string',
-    nickname: 'string',
+    nick_name: 'string',
     integral: { type: 'enum', values: [ '0', '1' ], required: true },
-    manage_categories: 'int',
+    manage_categories: 'string',
 };
 
 class AdminController extends Controller {
@@ -32,14 +32,14 @@ class AdminController extends Controller {
     async create() {
         const ctx = this.ctx;
 
-        // ctx.validate(createRule);
+        const reqBody = ctx.request.body;
+        
+        ctx.validate(createRule);
 
-        const id = await ctx.service[`${serviceHandle}`].create(ctx.request.body);
+        const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
-        ctx.body = {
-            admin_id: id,
-        };
-        ctx.status = 201;
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
@@ -55,7 +55,7 @@ class AdminController extends Controller {
         const result = await ctx.service[`${serviceHandle}`].update(row);
 
         ctx.body = result;
-        ctx.status = 204;
+        ctx.status = 200;
     }
 
     /**
@@ -66,9 +66,7 @@ class AdminController extends Controller {
 
         const result = await ctx.service[`${serviceHandle}`].delete(ctx.params.id);
 
-        ctx.body = {
-            result,
-        };
+        ctx.body = result;
         ctx.status = 204;
     }
 }

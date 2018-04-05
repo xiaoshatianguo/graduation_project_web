@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `user_info` (
-  `id` INT(11) NOT NULL,
+  `id` int(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '会员/认证师编号',
   `email` VARCHAR(255) DEFAULT '' comment '会员/认证师email',
   `phone` INT(20) DEFAULT 0 comment '会员/认证师电话',

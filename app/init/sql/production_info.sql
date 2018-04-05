@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `production_info` (
-  `id` varchar(64) NOT NULL,
+  `id` int(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '作品编号',
   `name` VARCHAR(255) DEFAULT '' comment '作品标题',
   `author` VARCHAR(255) DEFAULT '' comment '作品作者',

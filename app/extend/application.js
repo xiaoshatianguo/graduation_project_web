@@ -9,7 +9,7 @@ module.exports = {
     async handleParams(id, reqBody) {
         const row = reqBody; // 表更新字段对象
 
-        row.update_time = new Date().valueOf(); // 修改时间戳
+        row.update_time = new Date();// 修改时间戳
 
         if (id) row.id = id;
 
@@ -71,10 +71,10 @@ module.exports = {
 
         const limit = curPageSize * 1;
         const offset = currentPage > 1 ? (currentPage - 1) * query.curPageSize : 0;
-        const orders = [['create_time', 'desc'], ['uuid', 'desc']];
+        const orders = [['create_time', 'desc'], ['id', 'desc']];
 
         const result = await this.mysql.query(
-            `SELECT * from ${tableName} ORDER BY uuid desc;`
+            `SELECT * from ${tableName} ORDER BY id desc;`
         );
 
         result.forEach(record => {

@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `comments_info` (
-  `id` varchar(64) NOT NULL,
+  `id` int(64) NOT NULL AUTO_INCREMENT,
   `reviewers` VARCHAR(255) DEFAULT '' comment '评论或留言者',
   `receiver` VARCHAR(255) DEFAULT '' comment '接收评论或留言者',
   `sort` INT(2) DEFAULT 0 comment '评论或留言分类 - 0 评论作品 - 1 评论活动 - 2 个人空间留言',

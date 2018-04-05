@@ -30,7 +30,7 @@ class UserService extends Service {
             data:params,
             dataType: 'json',
             contentType: 'json',
-            create_time: new Date().valueOf(),
+            create_time: new Date(),
         });
 
         this.app.checkSuccess(result);

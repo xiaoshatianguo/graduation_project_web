@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `admin_info` (
-  `id` VARCHAR(64) NOT NULL,
+  `id` int(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '管理员编号',
   `password` VARCHAR(255) DEFAULT '' comment '管理员密码',
   `nick_name` VARCHAR(255) DEFAULT '' comment '管理员昵称',

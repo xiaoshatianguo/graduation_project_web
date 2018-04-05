@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `activity_info` (
-  `id` varchar(64) NOT NULL,
+  `id` int(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '活动编号',
   `name` VARCHAR(255) DEFAULT '' comment '活动名称',
   `initiator` VARCHAR(255) DEFAULT '' comment '活动发起者',
