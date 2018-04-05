@@ -9,7 +9,7 @@ class CommentsService extends Service {
     }
     
     /**
-     * 评论列表
+     * 评论留言列表
      */
     async index() {
         const ctx = this.ctx;
@@ -18,42 +18,56 @@ class CommentsService extends Service {
 
         this.app.checkSuccess(result);
 
-        return result;
+        return JSON.parse(JSON.stringify(result));
     }
 
     /**
-     * 添加评论
+     * 添加评论留言
      */
     async create(params) {
         const result = await this.app.mysql.insert(currentEditTable, {
-            method: 'post',
-            data:params,
-            dataType: 'json',
-            contentType: 'json',
+            number: params.number,
+            name: params.name,
+            initiator: params.initiator,
+            sort: params.sort,
+            topic: params.topic,
+            content: params.content,
             create_time: new Date(),
+            start_time: new Date(),
+            end_time: new Date(),
         });
 
-        this.app.checkSuccess(result);
+        const newRecord = await this.app.mysql.get(
+            currentEditTable,
+            {id: result.insertId}
+        );
 
-        return result.data.id;
+        this.app.checkSuccess(newRecord);
+
+        return JSON.parse(JSON.stringify(newRecord));
     }
 
     /**
-     * 修改评论
+     * 修改评论留言信息
      */
     async update(params) {
-        const result = await this.app.mysql.update(currentEditTable, params);
-
-        this.app.checkSuccess(result);
-
-        return result;
+        await this.app.mysql.update(currentEditTable, params);
+        
+        const result = await this.app.mysql.get(currentEditTable, {
+            id: params.id,
+        });
+            
+        return JSON.parse(JSON.stringify(result));
     }
 
     /**
-     * 删除评论
+     * 删除评论留言
      */
     async delete(params) {
-        const result = await this.app.mysql.delete(currentEditTable, params);
+        const result = await this.app.mysql.delete(
+            currentEditTable, 
+            {id: params},
+        );
 
         this.app.checkSuccess(result);
 

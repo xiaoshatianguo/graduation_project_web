@@ -5,77 +5,69 @@ const serviceHandle = 'comments';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
 const createRule = {
-    number: 'string',
-    name: 'string',
-    initiator: 'string',
-    sort: 'string',
-    topic: 'string',
-    content: 'string',
-    start_time: 'string',
-    end_time: 'string',
-    status: { type: 'enum', values: [ '0', '1' ], required: true },
+    // reviewers: 'string',
+    // receiver: 'string',
+    // sort: 'string',
+    // sort: 'string',
+    // describe: 'string',
+    // content: 'string',
 };
 
 class CommentsController extends Controller {
   
     /**
-     * 获取评论列表
+     * 获取评论留言列表
      */
     async index() {
         const ctx = this.ctx;
 
         const result = await ctx.service[`${serviceHandle}`].index();
 
-        ctx.body = {
-            data: result,
-        };
+        ctx.body = result;
         ctx.status = 200;
     }
 
     /**
-     * 添加评论
+     * 添加评论留言
      */
     async create() {
         const ctx = this.ctx;
 
+        const reqBody = ctx.request.body;
+
         ctx.validate(createRule);
 
-        const id = await ctx.service[`${serviceHandle}`].create(ctx.request.body);
+        const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
-        ctx.body = {
-            admin_id: id,
-        };
-        ctx.status = 201;
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
-     * 修改评论信息
+     * 修改评论留言信息
      */
     async update() {
         const ctx = this.ctx;
-        const row = await ctx.handleArticleParams(ctx.params.id);
 
-        ctx.validate(row);
+        const reqBody = ctx.request.body;
+
+        const row = await this.app.handleParams(reqBody.id, reqBody);
 
         const result = await ctx.service[`${serviceHandle}`].update(row);
 
-        ctx.body = {
-            result,
-        };
-        ctx.status = 204;
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
-     * 删除评论
+     * 删除评论留言
      */
     async destroy() {
         const ctx = this.ctx;
 
         const result = await ctx.service[`${serviceHandle}`].delete(ctx.params.id);
 
-        ctx.body = {
-            result,
-        };
+        ctx.body = result;
         ctx.status = 204;
     }
 }
