@@ -11,9 +11,6 @@ const createRule = {
     sort: 'string',
     topic: 'string',
     content: 'string',
-    start_time: 'string',
-    end_time: 'string',
-    status: { type: 'enum', values: [ '0', '1' ], required: true },
 };
 
 class ActivityController extends Controller {
@@ -26,9 +23,7 @@ class ActivityController extends Controller {
 
         const result = await ctx.service[`${serviceHandle}`].index();
 
-        ctx.body = {
-            data: result,
-        };
+        ctx.body = result;
         ctx.status = 200;
     }
 
@@ -38,14 +33,14 @@ class ActivityController extends Controller {
     async create() {
         const ctx = this.ctx;
 
+        const reqBody = ctx.request.body;
+
         ctx.validate(createRule);
 
-        const id = await ctx.service[`${serviceHandle}`].create(ctx.request.body);
+        const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
-        ctx.body = {
-            admin_id: id,
-        };
-        ctx.status = 201;
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
@@ -53,16 +48,15 @@ class ActivityController extends Controller {
      */
     async update() {
         const ctx = this.ctx;
-        const row = await ctx.handleArticleParams(ctx.params.id);
 
-        ctx.validate(row);
+        const reqBody = ctx.request.body;
+
+        const row = await this.app.handleParams(reqBody.id, reqBody);
 
         const result = await ctx.service[`${serviceHandle}`].update(row);
 
-        ctx.body = {
-            result,
-        };
-        ctx.status = 204;
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
@@ -73,9 +67,7 @@ class ActivityController extends Controller {
 
         const result = await ctx.service[`${serviceHandle}`].delete(ctx.params.id);
 
-        ctx.body = {
-            result,
-        };
+        ctx.body = result;
         ctx.status = 204;
     }
 }

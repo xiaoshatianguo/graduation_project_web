@@ -18,7 +18,7 @@ class AdminService extends Service {
 
         this.app.checkSuccess(result);
 
-        return result;
+        return JSON.parse(JSON.stringify(result));
     }
 
     /**
