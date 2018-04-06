@@ -3,6 +3,12 @@
 const Service = require('egg').Service;
 const currentEditTable = 'admin_info'; // 当前操作的表名
 
+// 查询过滤字段
+const filter = [
+    'integral',
+    'manage_categories',
+]
+
 class AdminService extends Service {
     constructor(ctx) {
         super(ctx);
@@ -11,10 +17,10 @@ class AdminService extends Service {
     /**
      * 管理员列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await this.app.handlePagination(currentEditTable);
+        const result = await this.app.handlePagination(currentEditTable, query, filter);
 
         this.app.checkSuccess(result);
 

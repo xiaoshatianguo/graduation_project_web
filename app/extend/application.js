@@ -33,14 +33,29 @@ module.exports = {
     /**
      * 根据前端请求分页返回数据
      * @param  {string} tableName     需要进行分页处理的表名
+     * @param  {string} query     api请求携带的url参数
+     * @param  {string} filter     需要过滤的查询字段
      * @return {object}     返回请求指定页数的响应体
      */
-    async handlePagination(tableName) {
+    async handlePagination(tableName, query, filter) {
         const content = [];
-        const query = this.request.query;
+        // 生成查询字段sql
+        let filterSQL = '';
+        for(let i=0; i<filter.length; i++) {
+            let filterElement = filter[i];
+            let queryValue = query[`${filterElement}`];
+            if(!!queryValue) {
+                filterSQL += `${filterElement} = ${queryValue} and `;
+            }
+        }
+        let finalSQL = '';
+        if(!!filterSQL) {
+            finalSQL = `where ${filterSQL}`;
+        }
+        finalSQL = finalSQL.substring(0, finalSQL.length-4);
 
         const total = await this.mysql.query(
-            `SELECT COUNT(*) total FROM ${tableName};`
+            `SELECT COUNT(*) total FROM ${tableName} ${finalSQL};`
         );
 
         const totalRecord = JSON.parse(JSON.stringify(total))[0].total;
@@ -74,7 +89,7 @@ module.exports = {
         const orders = [['create_time', 'desc'], ['id', 'desc']];
 
         const result = await this.mysql.query(
-            `SELECT * from ${tableName} ORDER BY id desc;`
+            `SELECT * from ${tableName} ${finalSQL} ORDER BY id desc limit ${offset},${limit};`
         );
 
         result.forEach(record => {
