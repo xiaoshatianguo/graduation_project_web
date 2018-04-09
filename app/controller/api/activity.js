@@ -21,7 +21,7 @@ class ActivityController extends Controller {
     async index() {
         const ctx = this.ctx;
 
-        const result = await ctx.service[`${serviceHandle}`].index();
+        const result = await ctx.service[`${serviceHandle}`].index(this.ctx.request.query);
 
         ctx.body = result;
         ctx.status = 200;

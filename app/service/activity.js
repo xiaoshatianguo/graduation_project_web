@@ -1,7 +1,14 @@
 'use strict';
 
 const Service = require('egg').Service;
+const moment = require('moment');
 const currentEditTable = 'activity_info'; // 当前操作的表名
+
+// 查询过滤字段
+const filter = [
+    'integral',
+    'manage_categories',
+]
 
 class ActivityService extends Service {
     constructor(ctx) {
@@ -11,11 +18,11 @@ class ActivityService extends Service {
     /**
      * 活动列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await this.app.handlePagination(currentEditTable);
-
+        const result = await this.app.handlePagination(currentEditTable, query, filter);
+// console.log(result);
         this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));

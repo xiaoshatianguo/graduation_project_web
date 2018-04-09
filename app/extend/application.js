@@ -41,16 +41,18 @@ module.exports = {
         const content = [];
         // 生成查询字段sql
         let filterSQL = '';
-        for(let i=0; i<filter.length; i++) {
-            let filterElement = filter[i];
-            let queryValue = query[`${filterElement}`];
-            if(!!queryValue) {
-                filterSQL += `${filterElement} = ${queryValue} and `;
-            }
-        }
         let finalSQL = '';
-        if(!!filterSQL) {
-            finalSQL = `where ${filterSQL}`;
+        if(!!filter) {
+            for(let i=0; i<filter.length; i++) {
+                let filterElement = filter[i];
+                let queryValue = query[`${filterElement}`];
+                if(!!queryValue) {
+                    filterSQL += `${filterElement} = ${queryValue} and `;
+                }
+            }
+            if(!!filterSQL) {
+                finalSQL = `where ${filterSQL}`;
+            }
         }
         finalSQL = finalSQL.substring(0, finalSQL.length-4);
 
