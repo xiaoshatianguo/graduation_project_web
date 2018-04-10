@@ -35,7 +35,7 @@ class LoginController extends Controller {
     this.ctx.status = 200;
     this.ctx.body = {
       name: 'admin',
-      avatar: 'http://www.talkmoney.cn/public/images/luwei_logo.png',
+      avatar: '/public/images/favicon.png',
       userid: '00000001',
       notifyCount: 0,
     };

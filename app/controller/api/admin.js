@@ -67,7 +67,7 @@ class AdminController extends Controller {
         const result = await ctx.service[`${serviceHandle}`].delete(ctx.params.id);
 
         ctx.body = result;
-        ctx.status = 204;
+        ctx.status = 200;
     }
 }
 

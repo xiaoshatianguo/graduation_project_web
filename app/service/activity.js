@@ -6,8 +6,8 @@ const currentEditTable = 'activity_info'; // 当前操作的表名
 
 // 查询过滤字段
 const filter = [
-    'integral',
-    'manage_categories',
+    'name',
+    'sort',
 ]
 
 class ActivityService extends Service {
@@ -22,8 +22,8 @@ class ActivityService extends Service {
         const ctx = this.ctx;
 
         const result = await this.app.handlePagination(currentEditTable, query, filter);
-// console.log(result);
-        this.app.checkSuccess(result);
+        
+        // this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));
     }
@@ -39,9 +39,9 @@ class ActivityService extends Service {
             sort: params.sort,
             topic: params.topic,
             content: params.content,
-            create_time: new Date(),
-            start_time: new Date(),
-            end_time: new Date(),
+            create_time: new Date().valueOf(),
+            start_time: new Date().valueOf(),
+            end_time: new Date().valueOf(),
         });
 
         const newRecord = await this.app.mysql.get(

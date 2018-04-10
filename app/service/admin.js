@@ -22,7 +22,7 @@ class AdminService extends Service {
 
         const result = await this.app.handlePagination(currentEditTable, query, filter);
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));
     }
@@ -36,7 +36,7 @@ class AdminService extends Service {
             password: params.password,
             nick_name: params.nick_name,
             sex: params.sex,
-            create_time: new Date(),
+            create_time: new Date().valueOf(),
             integral: params.integral,
             manage_categories: params.manage_categories,
         });

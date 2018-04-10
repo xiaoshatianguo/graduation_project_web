@@ -30,7 +30,7 @@ class ProductionTypeService extends Service {
             data:params,
             dataType: 'json',
             contentType: 'json',
-            create_time: new Date(),
+            create_time: new Date().valueOf(),
         });
 
         this.app.checkSuccess(result);

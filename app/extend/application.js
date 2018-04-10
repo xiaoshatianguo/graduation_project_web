@@ -9,7 +9,7 @@ module.exports = {
     async handleParams(id, reqBody) {
         const row = reqBody; // 表更新字段对象
 
-        row.update_time = new Date();// 修改时间戳
+        row.update_time = new Date().valueOf();// 修改时间戳
 
         if (id) row.id = id;
 
@@ -47,7 +47,7 @@ module.exports = {
                 let filterElement = filter[i];
                 let queryValue = query[`${filterElement}`];
                 if(!!queryValue) {
-                    filterSQL += `${filterElement} = ${queryValue} and `;
+                    filterSQL += `${filterElement} = '${queryValue}' and `;
                 }
             }
             if(!!filterSQL) {

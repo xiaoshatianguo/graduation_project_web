@@ -32,9 +32,9 @@ class ProductionService extends Service {
             sort: params.sort,
             topic: params.topic,
             content: params.content,
-            create_time: new Date(),
-            start_time: new Date(),
-            end_time: new Date(),
+            create_time: new Date().valueOf(),
+            start_time: new Date().valueOf(),
+            end_time: new Date().valueOf(),
         });
 
         const newRecord = await this.app.mysql.get(

@@ -30,7 +30,7 @@ class UserService extends Service {
             password: params.password,
             phone: params.phone,
             integral: params.integral,
-            create_time: new Date(),
+            create_time: new Date().valueOf(),
             status: params.status,
             sort: "0",
         });
