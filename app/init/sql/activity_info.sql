@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `activity_info` (
   `update_time` bigint comment '活动信息编辑时间',
   `start_time` bigint comment '活动开始时间',
   `end_time` bigint comment '活动结束时间',
+  `disabled` INT(2) DEFAULT 0 comment '是否禁用该活动 - 0 不禁用 - 1 禁用',
   `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `auditor` VARCHAR(255) DEFAULT '' comment '审核通过管理员编号',
   PRIMARY KEY (`id`)
