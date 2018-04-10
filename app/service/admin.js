@@ -46,7 +46,7 @@ class AdminService extends Service {
             {id: result.insertId}
         );
 
-        this.app.checkSuccess(newRecord);
+        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }
@@ -73,7 +73,7 @@ class AdminService extends Service {
             {id: params},
         );
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return result;
     }

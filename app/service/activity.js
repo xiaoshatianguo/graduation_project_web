@@ -8,6 +8,7 @@ const currentEditTable = 'activity_info'; // 当前操作的表名
 const filter = [
     'name',
     'sort',
+    'status',
 ]
 
 class ActivityService extends Service {
@@ -49,7 +50,7 @@ class ActivityService extends Service {
             {id: result.insertId}
         );
 
-        this.app.checkSuccess(newRecord);
+        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }
@@ -76,7 +77,7 @@ class ActivityService extends Service {
             {id: params},
         );
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return result;
     }
