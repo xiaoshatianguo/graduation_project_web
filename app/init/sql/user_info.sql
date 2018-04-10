@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '会员/认证师编号',
   `email` VARCHAR(255) DEFAULT '' comment '会员/认证师email',
-  `phone` INT(20) DEFAULT 0 comment '会员/认证师电话',
+  `phone` VARCHAR(255) DEFAULT '' comment '会员/认证师电话',
   `password` VARCHAR(255) DEFAULT '' comment '会员/认证师密码',
   `nickname` VARCHAR(255) DEFAULT '' comment '会员/认证师昵称',
   `name` VARCHAR(255) DEFAULT '' comment '会员/认证师真实名字',
