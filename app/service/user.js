@@ -6,7 +6,7 @@ const currentEditTable = 'user_info'; // 当前操作的表名
 // 查询过滤字段
 const filter = [
     'sort',
-    // 'status',
+    'status',
 ]
 
 class UserService extends Service {
@@ -33,11 +33,19 @@ class UserService extends Service {
     async create(params) {
         const result = await this.app.mysql.insert(currentEditTable, {
             number: params.number,
-            password: params.password,
+            email: params.email,
             phone: params.phone,
+            password: params.password,
+            nickname: params.nickname,
+            name: params.name,
+            sex: params.sex,
+            age: params.age,
+            address: params.address,
+            portrait: params.portrait,
+            personal_statement: params.personal_statement,
             integral: params.integral,
             create_time: new Date().valueOf(),
-            status: params.status,
+            status: "0",
             sort: "0",
         });
 

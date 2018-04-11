@@ -3,6 +3,12 @@
 const Service = require('egg').Service;
 const currentEditTable = 'user_info'; // 当前操作的表名
 
+// 查询过滤字段
+const filter = [
+    'status',
+    'sort',
+]
+
 class CertifiedArchitectService extends Service {
     constructor(ctx) {
         super(ctx);
@@ -27,12 +33,20 @@ class CertifiedArchitectService extends Service {
     async create(params) {
         const result = await this.app.mysql.insert(currentEditTable, {
             number: params.number,
-            password: params.password,
+            email: params.email,
             phone: params.phone,
+            password: params.password,
+            nickname: params.nickname,
+            name: params.name,
+            sex: params.sex,
+            age: params.age,
+            address: params.address,
+            portrait: params.portrait,
+            personal_statement: params.personal_statement,
             integral: params.integral,
             create_time: new Date().valueOf(),
-            status: params.status,
-            sort: "1",
+            status: 0,
+            sort: 2,
         });
 
         const newRecord = await this.app.mysql.get(

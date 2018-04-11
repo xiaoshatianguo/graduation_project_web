@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `update_time` bigint comment '会员/认证师信息更新时间',
   `lastest_login_time` bigint comment '会员/认证师最后登录时间',
   `integral` INT(11) DEFAULT 0 comment '会员/认证师积分',
-  `status` INT(2) DEFAULT 0 comment '会员/认证师账号状态 - 0 正常 - 1 禁用',
+  `disabled` INT(2) DEFAULT 0 comment '会员/认证师账号状态 - 0 正常 - 1 禁用',
+  `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `sort` INT(2) DEFAULT 0  comment '区分会员/认证师 - 0 会员 - 2 认证师',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

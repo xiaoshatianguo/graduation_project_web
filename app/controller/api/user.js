@@ -5,8 +5,8 @@ const serviceHandle = 'user';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
 const createRule = {
-    number: 'string',
-    phone: 'string',
+    // number: 'string',
+    // phone: 'string',
     // password: 'string',
     // integral: 'string',
     // status: 'string',
