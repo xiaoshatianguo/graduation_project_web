@@ -9,20 +9,20 @@ class CertifiedArchitectService extends Service {
     }
     
     /**
-     * 用户列表
+     * 认证师列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await this.handlePagination(currentEditTable);
+        const result = await this.handlePagination(currentEditTable, query, filter);
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));
     }
 
     /**
-     * 添加用户
+     * 添加认证师
      */
     async create(params) {
         const result = await this.app.mysql.insert(currentEditTable, {
@@ -40,13 +40,13 @@ class CertifiedArchitectService extends Service {
             {id: result.insertId}
         );
 
-        this.app.checkSuccess(newRecord);
+        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }
 
     /**
-     * 修改用户信息
+     * 修改认证师信息
      */
     async update(params) {
         await this.app.mysql.update(currentEditTable, params);
@@ -59,7 +59,7 @@ class CertifiedArchitectService extends Service {
     }
 
     /**
-     * 删除用户
+     * 删除认证师
      */
     async delete(params) {
         const result = await this.app.mysql.delete(
@@ -67,7 +67,7 @@ class CertifiedArchitectService extends Service {
             {id: params},
         );
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return result;
     }

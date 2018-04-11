@@ -18,10 +18,10 @@ class CommentsController extends Controller {
     /**
      * 获取评论留言列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await ctx.service[`${serviceHandle}`].index();
+        const result = await ctx.service[`${serviceHandle}`].index(ctx.request.query);
 
         ctx.body = result;
         ctx.status = 200;
@@ -35,7 +35,7 @@ class CommentsController extends Controller {
 
         const reqBody = ctx.request.body;
 
-        ctx.validate(createRule);
+        // ctx.validate(createRule);
 
         const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 

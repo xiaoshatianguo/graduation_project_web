@@ -3,6 +3,11 @@
 const Service = require('egg').Service;
 const currentEditTable = 'production_info'; // 当前操作的表名
 
+// 查询过滤字段
+const filter = [
+    
+]
+
 class ProductionService extends Service {
     constructor(ctx) {
         super(ctx);
@@ -11,12 +16,12 @@ class ProductionService extends Service {
     /**
      * 作品列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await this.app.handlePagination(currentEditTable);
+        const result = await this.app.handlePagination(currentEditTable, query, filter);
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));
     }
@@ -42,7 +47,7 @@ class ProductionService extends Service {
             {id: result.insertId}
         );
 
-        this.app.checkSuccess(newRecord);
+        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }
@@ -69,7 +74,7 @@ class ProductionService extends Service {
             {id: params},
         );
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return result;
     }

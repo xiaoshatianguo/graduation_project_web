@@ -11,12 +11,12 @@ class CommentsService extends Service {
     /**
      * 评论留言列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await this.app.handlePagination(currentEditTable);
+        const result = await this.app.handlePagination(currentEditTable, query, filter);
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));
     }
@@ -42,7 +42,7 @@ class CommentsService extends Service {
             {id: result.insertId}
         );
 
-        this.app.checkSuccess(newRecord);
+        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }
@@ -69,7 +69,7 @@ class CommentsService extends Service {
             {id: params},
         );
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return result;
     }

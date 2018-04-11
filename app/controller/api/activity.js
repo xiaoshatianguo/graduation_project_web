@@ -21,7 +21,7 @@ class ActivityController extends Controller {
     async index() {
         const ctx = this.ctx;
 
-        const result = await ctx.service[`${serviceHandle}`].index(this.ctx.request.query);
+        const result = await ctx.service[`${serviceHandle}`].index(ctx.request.query);
 
         ctx.body = result;
         ctx.status = 200;
@@ -35,7 +35,7 @@ class ActivityController extends Controller {
 
         const reqBody = ctx.request.body;
 
-        ctx.validate(createRule);
+        // ctx.validate(createRule);
 
         const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 

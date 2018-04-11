@@ -3,6 +3,12 @@
 const Service = require('egg').Service;
 const currentEditTable = 'user_info'; // 当前操作的表名
 
+// 查询过滤字段
+const filter = [
+    'sort',
+    // 'status',
+]
+
 class UserService extends Service {
     constructor(ctx) {
         super(ctx);
@@ -11,12 +17,12 @@ class UserService extends Service {
     /**
      * 用户列表
      */
-    async index() {
+    async index(query) {
         const ctx = this.ctx;
 
-        const result = await this.handlePagination(currentEditTable);
+        const result = await this.handlePagination(currentEditTable, query, filter);
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return JSON.parse(JSON.stringify(result));
     }
@@ -40,7 +46,7 @@ class UserService extends Service {
             {id: result.insertId}
         );
 
-        this.app.checkSuccess(newRecord);
+        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }
@@ -67,7 +73,7 @@ class UserService extends Service {
             {id: params},
         );
 
-        this.app.checkSuccess(result);
+        // this.app.checkSuccess(result);
 
         return result;
     }

@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `personal_statement` VARCHAR(255) DEFAULT '挥一挥衣袖，不留一句宣言' comment '个人宣言',
   `create_time` bigint comment '会员/认证师注册时间',
   `update_time` bigint comment '会员/认证师信息更新时间',
-  `Lastest_login_time` bigint comment '会员/认证师最后登录时间',
+  `lastest_login_time` bigint comment '会员/认证师最后登录时间',
   `integral` INT(11) DEFAULT 0 comment '会员/认证师积分',
-  `status` INT(2) DEFAULT 0 comment '会员/认证师账号状态 - 0 未激活 - 1 正常 - 2 禁用',
+  `status` INT(2) DEFAULT 0 comment '会员/认证师账号状态 - 0 正常 - 1 禁用',
   `sort` INT(2) DEFAULT 0  comment '区分会员/认证师 - 0 会员 - 2 认证师',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

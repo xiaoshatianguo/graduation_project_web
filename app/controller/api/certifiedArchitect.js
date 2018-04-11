@@ -16,26 +16,26 @@ const createRule = {
 class CertifiedArchitectController extends Controller {
   
     /**
-     * 获取用户列表
+     * 获取认证师列表
      */
     async index() {
         const ctx = this.ctx;
 
-        const result = await ctx.service[`${serviceHandle}`].index();
+        const result = await ctx.service[`${serviceHandle}`].index(ctx.request.query);
 
         ctx.body = result;
         ctx.status = 200;
     }
 
     /**
-     * 添加用户
+     * 添加认证师
      */
     async create() {
         const ctx = this.ctx;
 
         const reqBody = ctx.request.body;
         
-        ctx.validate(createRule);
+        // ctx.validate(createRule);
 
         const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
@@ -44,7 +44,7 @@ class CertifiedArchitectController extends Controller {
     }
 
     /**
-     * 修改用户信息
+     * 修改认证师信息
      */
     async update() {
         const ctx = this.ctx;
@@ -60,7 +60,7 @@ class CertifiedArchitectController extends Controller {
     }
 
     /**
-     * 删除用户
+     * 删除认证师
      */
     async destroy() {
         const ctx = this.ctx;
