@@ -5,7 +5,7 @@ const currentEditTable = 'production_info'; // 当前操作的表名
 
 // 查询过滤字段
 const filter = [
-    
+    'status',
 ]
 
 class ProductionService extends Service {
@@ -33,13 +33,14 @@ class ProductionService extends Service {
         const result = await this.app.mysql.insert(currentEditTable, {
             number: params.number,
             name: params.name,
-            initiator: params.initiator,
+            author: params.author,
             sort: params.sort,
-            topic: params.topic,
+            cover: params.cover,
+            describe: params.describe,
+            photography_props: params.photography_props,
+            photography_site: params.photography_site,
             content: params.content,
             create_time: new Date().valueOf(),
-            start_time: new Date().valueOf(),
-            end_time: new Date().valueOf(),
         });
 
         const newRecord = await this.app.mysql.get(

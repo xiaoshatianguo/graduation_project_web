@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `content_markdown` VARCHAR(255) DEFAULT '' comment '作品描述详情markdown格式',
   `create_time` bigint comment '作品发布时间',
   `update_time` bigint comment '作品信息编辑时间',
+  `disabled` INT(2) DEFAULT 0 comment '是否屏蔽作品 - 0 正常 - 1 屏蔽',
   `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `auditor` VARCHAR(255) DEFAULT '' comment '审核通过管理员编号',
   PRIMARY KEY (`id`)
