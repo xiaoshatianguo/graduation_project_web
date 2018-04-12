@@ -5,11 +5,7 @@ const serviceHandle = 'productionType';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
 const createRule = {
-    number: 'string',
-    password: 'string',
-    nickname: 'string',
-    integral: { type: 'enum', values: [ '0', '1' ], required: true },
-    manage_categories: 'int',
+ 
 };
 
 class ProductionTypeController extends Controller {
@@ -20,11 +16,9 @@ class ProductionTypeController extends Controller {
     async index() {
         const ctx = this.ctx;
 
-        const result = await ctx.service[`${serviceHandle}`].index();
+        const result = await ctx.service[`${serviceHandle}`].index(ctx.request.query);
 
-        ctx.body = {
-            data: result,
-        };
+        ctx.body = result;
         ctx.status = 200;
     }
 
@@ -34,14 +28,14 @@ class ProductionTypeController extends Controller {
     async create() {
         const ctx = this.ctx;
 
-        ctx.validate(createRule);
+        const reqBody = ctx.request.body;
 
-        const id = await ctx.service[`${serviceHandle}`].create(ctx.request.body);
+        // ctx.validate(createRule);
 
-        ctx.body = {
-            admin_id: id,
-        };
-        ctx.status = 201;
+        const result = await ctx.service[`${serviceHandle}`].create(reqBody);
+
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
@@ -49,16 +43,15 @@ class ProductionTypeController extends Controller {
      */
     async update() {
         const ctx = this.ctx;
-        const row = await ctx.handleArticleParams(ctx.params.id);
+        
+        const reqBody = ctx.request.body;
 
-        ctx.validate(row);
+        const row = await this.app.handleParams(reqBody.id, reqBody);
 
         const result = await ctx.service[`${serviceHandle}`].update(row);
 
-        ctx.body = {
-            result,
-        };
-        ctx.status = 204;
+        ctx.body = result;
+        ctx.status = 200;
     }
 
     /**
@@ -66,12 +59,10 @@ class ProductionTypeController extends Controller {
      */
     async destroy() {
         const ctx = this.ctx;
-
+        
         const result = await ctx.service[`${serviceHandle}`].delete(ctx.params.id);
 
-        ctx.body = {
-            result,
-        };
+        ctx.body = result;
         ctx.status = 204;
     }
 }
