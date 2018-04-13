@@ -5,6 +5,8 @@ const currentEditTable = 'admin_info'; // 当前操作的表名
 
 // 查询过滤字段
 const filter = [
+    'number',
+    'nick_name',
     'integral',
     'manage_categories',
 ]

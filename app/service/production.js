@@ -5,6 +5,10 @@ const currentEditTable = 'production_info'; // 当前操作的表名
 
 // 查询过滤字段
 const filter = [
+    'number',
+    'name',
+    'author',
+    'sort',
     'status',
 ]
 

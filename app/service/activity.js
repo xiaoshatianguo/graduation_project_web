@@ -6,6 +6,7 @@ const currentEditTable = 'activity_info'; // 当前操作的表名
 
 // 查询过滤字段
 const filter = [
+    'initiator',
     'name',
     'sort',
     'status',

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `admin_info` (
   `update_time` bigint comment '管理员更新时间',
   `lastest_login_time` bigint comment '管理员最后登录时间',
   `integral` INT(2) DEFAULT 0 comment '管理员权限 - 0 超级管理员 - 1 二级管理员',
-  `manage_categories` INT(11) DEFAULT 0 comment '管理类别',
+  `manage_categories` VARCHAR(255) DEFAULT '' comment '管理类别',
   `status` INT(2) DEFAULT 0 comment '管理员状态 - 0 可用 - 1 禁用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
