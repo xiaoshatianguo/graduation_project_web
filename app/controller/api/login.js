@@ -1,33 +1,16 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+const serviceHandle = 'login';  // 处理该controller的service
 
 class LoginController extends Controller {
   async login() {
-    const reqBody = this.ctx.request.body;
-    const type = reqBody.type;
-    const data = {
-      userName: reqBody.userName,
-      password: reqBody.password,
-    };
+    const ctx = this.ctx;
 
-    try {
-      const result = await this.app.mysql.get('user_info', data);
+    const result = await ctx.service[`${serviceHandle}`].login(this.ctx.request.body);
 
-      this.ctx.status = 200;
-      this.ctx.body = {
-        status: 'ok',
-        type,
-        currentAuthority: result.level,
-      };
-    } catch (err) {
-      this.ctx.status = 200;
-      this.ctx.body = {
-        status: 'error',
-        type,
-        currentAuthority: 'guest',
-      };
-    }
+    ctx.body = result;
+    ctx.status = 200;
   }
 
   async currentUser() {
