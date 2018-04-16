@@ -37,7 +37,9 @@ input[type="reset"],
 input[type="button"],
 input[type="search"],
 button {
-  appearance: none; }
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
 
 /* input [type=search] 搜索框去掉默认边框和旁边的小图标 */
 input::-webkit-search-cancel-button {
@@ -72,18 +74,18 @@ body {
 /* 页面主体内容部分所占的宽度和位置居中 */
 .container {
   margin: 0 auto;
-  width: 1200px; }
+  width: 62.5vw; }
 
 /* 页面markdown内容样式控制 */
 .markdown-body {
   text-align: left; }
   .markdown-body h3 {
-    font-size: 24px !important; }
+    font-size: 1.25vw !important; }
   .markdown-body p {
     margin-bottom: 0 !important;
-    font-size: 16px;
-    line-height: 32px;
-    text-indent: 32px;
+    font-size: 0.83333vw;
+    line-height: 1.66667vw;
+    text-indent: 1.66667vw;
     color: #666; }
   .markdown-body img {
     max-width: 100%; }
@@ -92,54 +94,36 @@ body {
   width: 100%; }
 
 .flex-box, .flex-b-sc, .flex-b-ec, .flex-b-cc, .flex-b-sbc, .flex-b-sac {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: -moz-box;
   display: box;
-  display: -webkit-flex;
   display: flex; }
 
 .jc-s, .flex-b-sc {
-  -webkit-box-pack: center;
   -ms-flex-pack: justify;
-  -webkit-justify-content: flex-start;
   justify-content: flex-start; }
 
 .jc-e, .flex-b-ec {
-  -webkit-box-pack: center;
   -ms-flex-pack: justify;
-  -webkit-justify-content: flex-end;
   justify-content: flex-end; }
 
 .jc-ce, .flex-b-cc {
-  -webkit-box-pack: center;
   -ms-flex-pack: justify;
-  -webkit-justify-content: center;
   justify-content: center; }
 
 .jc-sb, .flex-b-sbc {
-  -webkit-box-pack: space-between;
   -ms-flex-pack: justify;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
   justify-content: space-between; }
 
 .jc-sa, .flex-b-sac {
-  -webkit-box-pack: space-around;
   -ms-flex-pack: justify;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-around;
   justify-content: space-around; }
 
 .ai-s {
-  -webkit-box-align: flex-start;
-  -webkit-align-items: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start; }
 
 .ai-ce, .flex-b-sc, .flex-b-ec, .flex-b-cc, .flex-b-sbc, .flex-b-sac {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
 
@@ -152,34 +136,24 @@ body {
   align-self: flex-end; }
 
 .fd-col {
-  -webkit-box-orient: vertical;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   -o-flex-direction: column;
   flex-direction: column; }
 
 .fw-wr {
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   -o-flex-wrap: wrap;
   flex-wrap: wrap; }
 
 .flex-1 {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex: 1 1 0%;
   /* width: 0;  写上这个是为了防止子元素撑开父元素，但是，如果写在这里会比较不方便 */ }
 
 .flex-2 {
-  -webkit-box-flex: 2;
-  -moz-box-flex: 2;
-  -webkit-flex: 2;
   -ms-flex: 2;
-  flex: 2; }
+  flex: 2 1 0%; }
 
 .dis-n {
   display: none; }
@@ -296,7 +270,6 @@ div.dis-ib {
   display: box;
   -webkit-line-clamp: 1;
   line-clamp: 1;
-  -webkit-box-orient: vertical;
   box-orient: vertical;
   word-break: break-all; }
 
@@ -307,7 +280,6 @@ div.dis-ib {
   display: box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
-  -webkit-box-orient: vertical;
   box-orient: vertical;
   word-break: break-all; }
 
@@ -317,7 +289,6 @@ div.dis-ib {
   display: box;
   -webkit-line-clamp: 3;
   line-clamp: 3;
-  -webkit-box-orient: vertical;
   box-orient: vertical;
   word-break: break-all; }
 
@@ -370,16 +341,16 @@ div.dis-ib {
   font-size: 0.2rem; }
 
 .am-activity-indicator-content {
-  width: 130px;
-  height: 130px; }
+  width: 6.77083vw;
+  height: 6.77083vw; }
 
 .am-activity-indicator-content .am-activity-indicator-spinner {
-  width: 60px;
-  height: 60px; }
+  width: 3.125vw;
+  height: 3.125vw; }
 
 .am-activity-indicator-content .am-activity-indicator-toast {
-  margin-top: 10px;
-  font-size: 26px; }
+  margin-top: 0.52083vw;
+  font-size: 1.35417vw; }
 
 .am-modal-mask {
   z-index: 1001; }
@@ -411,31 +382,31 @@ div.dis-ib {
 } */
 @charset "UTF-8";
 .header {
-  height: 130px;
-  font-size: 20px;
+  height: 6.77083vw;
+  font-size: 1.04167vw;
   color: #161515; }
   .header .container {
     position: relative;
-    min-width: 1200px; }
+    min-width: 62.5vw; }
     .header .container .header-nav-left .nav-li {
-      margin-right: 50px;
-      line-height: 80px;
-      font-size: 20px;
+      margin-right: 2.60417vw;
+      line-height: 4.16667vw;
+      font-size: 1.04167vw;
       color: #161515; }
     .header .container .logo {
       position: absolute;
       left: 50%;
-      margin-left: -150px;
-      width: 300px; }
+      margin-left: -7.8125vw;
+      width: 15.625vw; }
       .header .container .logo .logo-top {
-        margin-bottom: 20px;
-        width: 80px;
-        height: 5px;
+        margin-bottom: 1.04167vw;
+        width: 4.16667vw;
+        height: 0.26042vw;
         background-color: #fdc5e0; }
       .header .container .logo .logo-en {
-        margin-bottom: 20px; }
+        margin-bottom: 1.04167vw; }
       .header .container .logo .logo-zh {
-        font-size: 25px; }
+        font-size: 1.30208vw; }
 
 .banner .swiper-container {
   width: 100%;
@@ -443,78 +414,78 @@ div.dis-ib {
   .banner .swiper-container .swiper-slide {
     background-position: center;
     background-size: cover;
-    height: 350px; }
+    height: 18.22917vw; }
 
 .title {
-  padding: 30px 0 30px;
-  font-size: 30px;
+  padding: 1.5625vw 0 1.5625vw;
+  font-size: 1.5625vw;
   text-align: center;
   color: #fdc5e0; }
   .title .title-sm {
-    padding-left: 30px;
-    font-size: 25px;
+    padding-left: 1.5625vw;
+    font-size: 1.30208vw;
     color: #2e2b2b; }
   .title .title-bg {
-    padding-right: 30px;
-    font-size: 30px;
+    padding-right: 1.5625vw;
+    font-size: 1.5625vw;
     color: #dd2222; }
 
 .new-activity {
-  margin-top: 30px; }
+  margin-top: 1.5625vw; }
   .new-activity .container .activity-list {
-    margin: 0 50px 30px; }
+    margin: 0 2.60417vw 1.5625vw; }
     .new-activity .container .activity-list .item-img {
-      margin-bottom: 30px;
-      width: 330px;
-      height: 500px;
+      margin-bottom: 1.5625vw;
+      width: 17.1875vw;
+      height: 26.04167vw;
       background-position: center;
       background-size: cover; }
     .new-activity .container .activity-list .item-img-big {
       width: 100%;
-      height: 300px;
+      height: 15.625vw;
       background-position: center;
       background-size: cover; }
   .new-activity .container .activity-bottom {
     text-align: center; }
     .new-activity .container .activity-bottom .activity-bottom-en {
-      padding: 30px 0 10px;
+      padding: 1.5625vw 0 0.52083vw;
       color: #5e6468; }
     .new-activity .container .activity-bottom .activity-bottom-zh {
-      padding-bottom: 30px;
+      padding-bottom: 1.5625vw;
       color: #303335; }
 
 .hot-classify {
-  padding: 0 50px 30px;
+  padding: 0 2.60417vw 1.5625vw;
   background-color: #ebebeb; }
   .hot-classify .classify {
     width: 100%;
-    height: 500px; }
+    height: 26.04167vw; }
 
 .active-certified-architect {
-  padding: 0 50px 30px; }
+  padding: 0 2.60417vw 1.5625vw; }
   .active-certified-architect .certified-architect-list {
     width: 100%;
-    height: 500px; }
+    height: 26.04167vw; }
 
 .footer {
-  padding: 30px 0 100px; }
+  padding: 1.5625vw 0 5.20833vw; }
   .footer .footer-top {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 350px; }
+    height: 18.22917vw; }
     .footer .footer-top .title {
-      padding-top: 50px;
-      font-size: 50px;
+      padding-top: 2.60417vw;
+      font-size: 2.60417vw;
       color: #fff; }
   .footer .footer-bottom {
-    padding-top: 50px;
+    padding-top: 2.60417vw;
     text-align: center; }
     .footer .footer-bottom .text {
-      font-size: 20px; }
+      font-size: 1.04167vw; }
 
 .body::-webkit-scrollbar {
-  width: 7px; }
+  width: 0.36458vw; }
 
 /* 这是针对缺省样式 (必须的) */
 .body::-webkit-scrollbar-track {
@@ -534,118 +505,118 @@ div.dis-ib {
 
 /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
 .activity-ing {
-  margin-top: 30px; }
+  margin-top: 1.5625vw; }
   .activity-ing .activity-list {
-    margin: 0 50px 30px; }
+    margin: 0 2.60417vw 1.5625vw; }
     .activity-ing .activity-list .item-img {
-      margin-bottom: 30px;
+      margin-bottom: 1.5625vw;
       background-position: center;
       background-size: cover;
-      width: 500px;
-      height: 300px; }
+      width: 26.04167vw;
+      height: 15.625vw; }
 
 .activity-ed {
-  margin-top: 30px;
+  margin-top: 1.5625vw;
   background-color: #ebebeb; }
   .activity-ed .activity-list {
-    margin: 0 50px 30px; }
+    margin: 0 2.60417vw 1.5625vw; }
     .activity-ed .activity-list .item-img {
-      margin-bottom: 30px;
+      margin-bottom: 1.5625vw;
       background-position: center;
       background-size: cover;
-      width: 500px;
-      height: 300px; }
+      width: 26.04167vw;
+      height: 15.625vw; }
 
 .publish-activity-btn {
   display: block;
-  margin: 30px auto 30px;
-  width: 200px;
-  height: 64px;
+  margin: 1.5625vw auto 1.5625vw;
+  width: 10.41667vw;
+  height: 3.33333vw;
   text-align: center;
-  line-height: 64px;
-  font-size: 25px;
+  line-height: 3.33333vw;
+  font-size: 1.30208vw;
   background-color: #e45858;
   color: #fff; }
 .best-certified-architect {
-  margin-top: 30px; }
+  margin-top: 1.5625vw; }
   .best-certified-architect .activity-list {
-    margin: 0 50px 30px; }
+    margin: 0 2.60417vw 1.5625vw; }
     .best-certified-architect .activity-list .item-img {
-      margin-bottom: 30px;
+      margin-bottom: 1.5625vw;
       background-position: center;
       background-size: cover;
-      width: 500px;
-      height: 300px; }
+      width: 26.04167vw;
+      height: 15.625vw; }
 
 .all-certified-architect {
-  margin-top: 30px;
+  margin-top: 1.5625vw;
   background-color: #e5e2e2; }
   .all-certified-architect .activity-list {
-    margin: 0 50px 30px; }
+    margin: 0 2.60417vw 1.5625vw; }
     .all-certified-architect .activity-list .item-img {
-      margin-bottom: 30px;
+      margin-bottom: 1.5625vw;
       background-position: center;
       background-size: cover;
-      width: 500px;
-      height: 300px; }
+      width: 26.04167vw;
+      height: 15.625vw; }
 
 .become-certified-architect {
   display: block;
-  margin: 30px auto 30px;
-  width: 200px;
-  height: 64px;
+  margin: 1.5625vw auto 1.5625vw;
+  width: 10.41667vw;
+  height: 3.33333vw;
   text-align: center;
-  line-height: 64px;
-  font-size: 25px;
+  line-height: 3.33333vw;
+  font-size: 1.30208vw;
   background-color: #e45858;
   color: #fff; }
 .personal-banner .banner-img {
   position: relative;
-  height: 520px;
+  height: 27.08333vw;
   background-position: center;
   background-size: cover; }
   .personal-banner .banner-img .author-portraits {
     display: block;
     position: absolute;
-    bottom: -100px;
+    bottom: -5.20833vw;
     left: 50%;
-    margin-left: -100px;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    border: 2px solid #ecb3b3;
+    margin-left: -5.20833vw;
+    width: 10.41667vw;
+    height: 10.41667vw;
+    border-radius: 5.20833vw;
+    border: 0.10417vw solid #ecb3b3;
     overflow: hidden; }
     .personal-banner .banner-img .author-portraits .img {
       width: 100%;
       height: 100%; }
   .personal-banner .banner-img .attention-btn {
     position: absolute;
-    right: 10px;
-    bottom: -60px;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
+    right: 0.52083vw;
+    bottom: -3.125vw;
+    width: 5.20833vw;
+    height: 1.5625vw;
+    line-height: 1.5625vw;
     text-align: center;
     background-color: #d81414;
     color: #fff; }
 
 .author-info {
-  margin-top: 130px;
-  font-size: 25px; }
+  margin-top: 6.77083vw;
+  font-size: 1.30208vw; }
   .author-info .author-name {
-    margin-bottom: 30px;
+    margin-bottom: 1.5625vw;
     text-align: center; }
     .author-info .author-name .grade {
       color: #e07575; }
   .author-info .author-motto {
-    margin-bottom: 30px;
+    margin-bottom: 1.5625vw;
     text-align: center; }
   .author-info .author-data-statistics {
     color: #999393; }
     .author-info .author-data-statistics .data-list {
-      padding: 0 80px; }
+      padding: 0 4.16667vw; }
       .author-info .author-data-statistics .data-list .item-name {
-        margin-bottom: 10px;
+        margin-bottom: 0.52083vw;
         text-align: center; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

@@ -15,7 +15,13 @@
     "eslint-config-egg": "^5.1.1",
     "marked": "^0.3.9",
     "qiniu": "^7.1.1",
-    "qrcode": "^1.2.0"
+    "qrcode": "^1.2.0",
+    "postcss-aspect-ratio-mini": "^0.0.2",
+    "postcss-flexbugs-fixes": "^3.3.0",
+    "postcss-loader": "^2.0.10",
+    "postcss-px-to-viewport": "^0.0.3",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-write-svg": "^3.0.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",

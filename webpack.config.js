@@ -6,6 +6,11 @@ const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'app/view/pc');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'app/public/pc');
 
+const px2viewport = require('postcss-px-to-viewport');
+const aspectRatio = require('postcss-aspect-ratio-mini');
+const writeSvg = require('postcss-write-svg');
+const autoprefixer = require('autoprefixer');
+
 /**
  *
  * @param {Object} env webpack参数中设置的环境变量
@@ -88,7 +93,39 @@ const getRules = () => {
     use: [ 'css-hot-loader' ].concat(
       ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: [ 'css-loader', 'sass-loader' ],
+        use: [ 
+          'css-loader',
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+                autoprefixer({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
+                  ],
+                  flexbox: 'no-2009',
+                }),
+                px2viewport({
+                  viewportWidth: 1920,
+                  viewportHeight: 955,
+                  unitPrecision: 5,
+                  viewportUnit: 'vw',
+                  selectorBlackList: [],
+                  minPixelValue: 1,
+                  mediaQuery: false,
+                }),
+                writeSvg(),
+                aspectRatio(),
+              ],
+            },
+          },
+          'sass-loader',
+        ],
       })
     ),
     include: APP_PATH,

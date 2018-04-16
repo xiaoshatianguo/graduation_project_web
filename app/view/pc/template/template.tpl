@@ -114,7 +114,7 @@
                 <p class="title">YY摄影</p>
             </div>
             <div class="footer-bottom">
-                <p class="text">2018 KUN&YI Photo Web</p>
+                <p class="text">2018 YI&YI Photo Web</p>
                 <p class="text">YY摄影网，大型摄影交流网站</p>
             </div>
         </footer>
