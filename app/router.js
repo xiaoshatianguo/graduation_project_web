@@ -39,4 +39,7 @@ module.exports = app => {
   router.resources('certified_architect', '/api/certified_architect', controller.api.certifiedArchitect);
   router.resources('production_type', '/api/production_type', controller.api.productionType);
   router.resources('comments', '/api/comments', controller.api.comments);
+
+  // 七牛云
+  router.get('/api/qiuniuyun', controller.api.qiuniuUpload.qiuniuUpload);
 };
