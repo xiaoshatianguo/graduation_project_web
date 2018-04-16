@@ -4,7 +4,7 @@
     <div class="best-certified-architect">
         <div class="container clear-f">
             <div class="title">
-                /<span class="title-sm">坤艺摄影</span>
+                /<span class="title-sm">YY摄影</span>
                 <span class="title-bg">优秀认证师</span>/
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
@@ -25,7 +25,7 @@
     <div class="all-certified-architect">
         <div class="container clear-f">
             <div class="title">
-                /<span class="title-sm">坤艺摄影</span>
+                /<span class="title-sm">YY摄影</span>
                 <span class="title-bg">所有认证师</span>/
             </div>
             <div class="activity-list flex-b-sbc fw-wr">

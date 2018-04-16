@@ -8,7 +8,7 @@
     <div class="activity-ing">
         <div class="container clear-f">
             <div class="title">
-                /<span class="title-sm">坤艺摄影</span>
+                /<span class="title-sm">YY摄影</span>
                 <span class="title-bg">最新活动</span>/
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
@@ -29,7 +29,7 @@
     <div class="activity-ed">
         <div class="container clear-f">
             <div class="title">
-                /<span class="title-sm">坤艺摄影</span>
+                /<span class="title-sm">YY摄影</span>
                 <span class="title-bg">最新活动</span>/
             </div>
             <div class="activity-list flex-b-sbc fw-wr">

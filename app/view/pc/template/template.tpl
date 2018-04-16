@@ -34,9 +34,9 @@
         <div class="banner">
             <div class="container swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image: url('/public/images/banner.jpg');">
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc.jpg');">
                     </div>
-                    <div class="swiper-slide" style="background-image: url('/public/images/banner2.jpg');">
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc (1).jpg');">
                     </div>
                 </div>
                 <div class ="swiper-pagination"></div>
@@ -48,18 +48,18 @@
         <div class="new-activity clear-f">
             <div class="container">
                 <div class="title">
-                    /<span class="title-sm">坤艺摄影</span>
+                    /<span class="title-sm">YY摄影</span>
                     <span class="title-bg">最新活动</span>/
                 </div>
                 <div class="activity-list flex-b-sbc fw-wr">
                     {# TODO: 此处需要更换activityId #}
-                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/1.jpg')">
+                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/0.jpg')">
                     </a>
-                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/2.jpg')">
+                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/1.jpg')">
                     </a>
-                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/2.jpg')">
+                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/2.jpg')">
                     </a>
-                    <a class="item-img-big" href="activity_detail?activityId=1" style="background-image:url('/public/images/1.jpg')">
+                    <a class="item-img-big" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/3.jpg')">
                     </a>
                 </div> 
                 <div class="activity-bottom flex-box jc-s ai-ce fd-col">
@@ -68,12 +68,12 @@
                 </div>
 
                 <div class="title">
-                    /<span class="title-sm">坤艺摄影</span>
+                    /<span class="title-sm">YY摄影</span>
                     <span class="title-bg">人气套系</span>/
                 </div>
                 <div class="activity-list flex-b-sbc fw-wr">
                     {# TODO: 此处需要更换activityId #}
-                    <a class="item-img-big" href="activity_detail?activityId=1" style="background-image:url('/public/images/1.jpg')">
+                    <a class="item-img-big" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/1.jpg')">
                     </a>
                 </div>
             </div>
@@ -84,7 +84,7 @@
         <div class="hot-classify">
             <div class="container">
                 <div class="title">
-                    /<span class="title-sm">坤艺摄影</span>
+                    /<span class="title-sm">YY摄影</span>
                     <span class="title-bg">热门分类</span>/
                 </div>
                 <div class="classify">
@@ -98,7 +98,7 @@
         <div class="active-certified-architect">
             <div class="container">
                 <div class="title">
-                    /<span class="title-sm">坤艺摄影</span>
+                    /<span class="title-sm">YY摄影</span>
                     <span class="title-bg">活跃认证师</span>/
                 </div>
                 <div class="certified-architect-list">
@@ -110,12 +110,12 @@
 
     {% block footer %}
         <footer class="footer">
-            <div class="footer-top" style="background-image:url('/public/images/banner.jpg')">
-                <p class="title">坤艺摄影</p>
+            <div class="footer-top" style="background-image:url('/public/images/cover/1.jpg')">
+                <p class="title">YY摄影</p>
             </div>
             <div class="footer-bottom">
                 <p class="text">2018 KUN&YI Photo Web</p>
-                <p class="text">坤艺摄影网，大型摄影交流网站</p>
+                <p class="text">YY摄影网，大型摄影交流网站</p>
             </div>
         </footer>
     {% endblock %}
