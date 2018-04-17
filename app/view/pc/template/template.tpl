@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="//at.alicdn.com/t/font_631371_99y5s1hfahq9qkt9.js"></script>
     <script src="/public/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="/public/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/public/pc/app.css">
@@ -24,7 +25,7 @@
                 <div class="logo flex-box jc-s ai-ce fd-col">
                     <span class="logo-top"></span>
                     <span class="logo-en">a big photo web</span>
-                    <span class="logo-zh">叶艺的大型摄影社区</span>
+                    <span class="logo-zh">YY的大型摄影社区</span>
                 </div>
             </div>
         </header>
@@ -34,9 +35,9 @@
         <div class="banner">
             <div class="container swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc.jpg');">
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc (7).jpg');">
                     </div>
-                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc (1).jpg');">
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc (3).jpg');">
                     </div>
                 </div>
                 <div class ="swiper-pagination"></div>
@@ -45,6 +46,7 @@
     {% endblock %}
 
     {% block top %}
+        
         <div class="new-activity clear-f">
             <div class="container">
                 <div class="title">
@@ -53,28 +55,106 @@
                 </div>
                 <div class="activity-list flex-b-sbc fw-wr">
                     {# TODO: 此处需要更换activityId #}
-                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/0.jpg')">
-                    </a>
-                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/1.jpg')">
-                    </a>
-                    <a class="item-img" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/2.jpg')">
-                    </a>
-                    <a class="item-img-big" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/3.jpg')">
-                    </a>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/1.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/2.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/3.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/4.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/5.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
                 </div> 
                 <div class="activity-bottom flex-box jc-s ai-ce fd-col">
                     <p class="activity-bottom-en">Popular Package</p>
                     <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
-                </div>
-
-                <div class="title">
-                    /<span class="title-sm">YY摄影</span>
-                    <span class="title-bg">人气套系</span>/
-                </div>
-                <div class="activity-list flex-b-sbc fw-wr">
-                    {# TODO: 此处需要更换activityId #}
-                    <a class="item-img-big" href="activity_detail?activityId=1" style="background-image:url('/public/images/cover/1.jpg')">
-                    </a>
                 </div>
             </div>
         </div>
@@ -87,8 +167,108 @@
                     /<span class="title-sm">YY摄影</span>
                     <span class="title-bg">热门分类</span>/
                 </div>
-                <div class="classify">
-
+                <div class="classify-list flex-b-sbc fw-wr">
+                    {# TODO: 此处需要更换activityId #}
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/1.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/2.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/3.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/4.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/5.jpg')"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity-bottom flex-box jc-s ai-ce fd-col">
+                    <p class="activity-bottom-en">Popular Package</p>
+                    <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
                 </div>
             </div>
         </div>
@@ -101,8 +281,103 @@
                     /<span class="title-sm">YY摄影</span>
                     <span class="title-bg">活跃认证师</span>/
                 </div>
-                <div class="certified-architect-list">
-                    
+                <div class="certified-architect-list flex-b-sbc fw-wr">
+                    {# TODO: 此处需要更换activityId #}
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">来参加活动啦！</h3>
+                            <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
+                            <div class="t-type">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                                官方活动
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity-bottom flex-box jc-s ai-ce fd-col">
+                    <p class="activity-bottom-en">Popular Package</p>
+                    <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="member-good-production">
+            <div class="container">
+                <div class="title">
+                    /<span class="title-sm">YY摄影</span>
+                    <span class="title-bg">会员优秀作品</span>/
+                </div>
+                <div class="production-list flex-b-sbc fw-wr">
+                    {# TODO: 此处需要更换activityId #}
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                    </div>
+                    <div class="list-item" href="activity_detail?activityId=1">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity-bottom flex-box jc-s ai-ce fd-col">
+                    <p class="activity-bottom-en">Popular Package</p>
+                    <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
                 </div>
             </div>
         </div>
@@ -110,7 +385,7 @@
 
     {% block footer %}
         <footer class="footer">
-            <div class="footer-top" style="background-image:url('/public/images/cover/1.jpg')">
+            <div class="footer-top" style="background-image:url('/public/images/banner/timg (1).jpg')">
                 <p class="title">YY摄影</p>
             </div>
             <div class="footer-bottom">

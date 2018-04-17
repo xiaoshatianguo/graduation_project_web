@@ -111,8 +111,8 @@ const getRules = () => {
                   flexbox: 'no-2009',
                 }),
                 px2viewport({
-                  viewportWidth: 1920,
-                  viewportHeight: 955,
+                  viewportWidth: 1365,
+                  viewportHeight: 767,
                   unitPrecision: 5,
                   viewportUnit: 'vw',
                   selectorBlackList: [],
