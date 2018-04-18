@@ -704,28 +704,127 @@ div.dis-ib {
   display: none; }
 
 /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
-.activity-ing {
+.activity-ing-hot {
   margin-top: 2.1978vw; }
-  .activity-ing .activity-list {
+  .activity-ing-hot .activity-list {
     margin: 0 3.663vw 2.1978vw; }
-    .activity-ing .activity-list .item-img {
+    .activity-ing-hot .activity-list .list-item {
       margin-bottom: 2.1978vw;
+      width: 100%;
+      height: 21.97802vw;
       background-position: center;
-      background-size: cover;
-      width: 36.63004vw;
-      height: 21.97802vw; }
+      background-size: cover; }
 
-.activity-ed {
+.activity-ing {
   margin-top: 2.1978vw;
   background-color: #ebebeb; }
+  .activity-ing .activity-list {
+    margin: 0 3.663vw 2.1978vw; }
+    .activity-ing .activity-list .list-item {
+      position: relative;
+      display: block;
+      margin-bottom: 3.663vw;
+      height: 32.96703vw;
+      width: 38.09524vw;
+      border-radius: 0.3663vw; }
+      .activity-ing .activity-list .list-item .list-img-div {
+        position: relative;
+        width: 38.09524vw;
+        height: 20.51282vw;
+        overflow: hidden;
+        cursor: pointer; }
+        .activity-ing .activity-list .list-item .list-img-div .item-img {
+          width: 38.09524vw;
+          height: 20.51282vw;
+          border-radius: 0.3663vw 0.3663vw 0 0;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover; }
+        .activity-ing .activity-list .list-item .list-img-div .item-cover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 0.3663vw;
+          background-color: rgba(102, 102, 102, 0.44);
+          opacity: 0; }
+      .activity-ing .activity-list .list-item .list-img-div:hover .item-img {
+        -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+        transition: All 8s ease; }
+      .activity-ing .activity-list .list-item .list-img-div:hover .item-cover {
+        opacity: 1;
+        transition: All 1s ease; }
+      .activity-ing .activity-list .list-item .item-text {
+        margin-top: 0.7326vw;
+        padding: 0.7326vw; }
+        .activity-ing .activity-list .list-item .item-text .t-title {
+          color: #101213; }
+        .activity-ing .activity-list .list-item .item-text .t-title:hover {
+          color: #ee534e; }
+        .activity-ing .activity-list .list-item .item-text .t-describe {
+          margin-top: 1.0989vw;
+          color: #5e6468; }
+        .activity-ing .activity-list .list-item .item-text .t-type {
+          position: absolute;
+          bottom: 0.7326vw;
+          color: #101213; }
+          .activity-ing .activity-list .list-item .item-text .t-type .icon {
+            font-size: 2.1978vw; }
+    .activity-ing .activity-list .list-item:hover {
+      box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+      -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+              transform: translate3d(0px, -0.14652vw, 0px);
+      transition: all 0.3s ease; }
+
+.activity-ed {
+  margin-top: 2.1978vw; }
   .activity-ed .activity-list {
     margin: 0 3.663vw 2.1978vw; }
-    .activity-ed .activity-list .item-img {
-      margin-bottom: 2.1978vw;
-      background-position: center;
-      background-size: cover;
-      width: 36.63004vw;
-      height: 21.97802vw; }
+    .activity-ed .activity-list .list-item {
+      position: relative;
+      display: block;
+      margin-bottom: 3.663vw;
+      height: 24.17582vw;
+      width: 24.17582vw;
+      border-radius: 0.3663vw; }
+      .activity-ed .activity-list .list-item .list-img-div {
+        position: relative;
+        width: 24.17582vw;
+        height: 23.44322vw;
+        overflow: hidden;
+        cursor: pointer; }
+        .activity-ed .activity-list .list-item .list-img-div .item-img {
+          margin: 0.7326vw;
+          width: 22.71062vw;
+          height: 25.64103vw;
+          border-radius: 0.3663vw 0.3663vw 0 0;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover; }
+      .activity-ed .activity-list .list-item .item-text {
+        margin-top: 0.7326vw;
+        padding: 0.7326vw; }
+        .activity-ed .activity-list .list-item .item-text .t-title {
+          color: #101213; }
+        .activity-ed .activity-list .list-item .item-text .t-title:hover {
+          color: #ee534e; }
+        .activity-ed .activity-list .list-item .item-text .t-describe {
+          margin-top: 1.0989vw;
+          color: #5e6468; }
+        .activity-ed .activity-list .list-item .item-text .t-type {
+          position: absolute;
+          bottom: 0.7326vw;
+          color: #101213; }
+          .activity-ed .activity-list .list-item .item-text .t-type .icon {
+            font-size: 2.1978vw; }
+    .activity-ed .activity-list .list-item:hover {
+      box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+      -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+              transform: translate3d(0px, -0.14652vw, 0px);
+      transition: all 0.3s ease; }
 
 .publish-activity-btn {
   display: block;
