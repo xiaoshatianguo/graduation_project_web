@@ -840,24 +840,129 @@ div.dis-ib {
   margin-top: 2.1978vw; }
   .best-certified-architect .activity-list {
     margin: 0 3.663vw 2.1978vw; }
-    .best-certified-architect .activity-list .item-img {
-      margin-bottom: 2.1978vw;
-      background-position: center;
-      background-size: cover;
-      width: 36.63004vw;
-      height: 21.97802vw; }
+    .best-certified-architect .activity-list .list-item {
+      position: relative;
+      display: block;
+      margin-bottom: 3.663vw;
+      height: 38.09524vw;
+      width: 24.17582vw;
+      border-radius: 0.3663vw; }
+      .best-certified-architect .activity-list .list-item .list-img-div {
+        position: relative;
+        width: 24.17582vw;
+        height: 24.17582vw;
+        overflow: hidden;
+        cursor: pointer; }
+        .best-certified-architect .activity-list .list-item .list-img-div .item-img {
+          width: 24.17582vw;
+          height: 24.17582vw;
+          border-radius: 0.3663vw 0.3663vw 0 0;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover; }
+        .best-certified-architect .activity-list .list-item .list-img-div .item-cover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 0.3663vw;
+          background-color: rgba(102, 102, 102, 0.44);
+          opacity: 0; }
+      .best-certified-architect .activity-list .list-item .list-img-div:hover .item-img {
+        -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+        transition: All 8s ease; }
+      .best-certified-architect .activity-list .list-item .list-img-div:hover .item-cover {
+        opacity: 1;
+        transition: All 1s ease; }
+      .best-certified-architect .activity-list .list-item .item-text {
+        margin-top: 0.7326vw;
+        padding: 0.7326vw; }
+        .best-certified-architect .activity-list .list-item .item-text .t-title {
+          color: #101213; }
+        .best-certified-architect .activity-list .list-item .item-text .t-title:hover {
+          color: #ee534e; }
+        .best-certified-architect .activity-list .list-item .item-text .t-describe {
+          margin-top: 1.0989vw;
+          color: #5e6468; }
+        .best-certified-architect .activity-list .list-item .item-text .t-type {
+          position: absolute;
+          bottom: 0.7326vw;
+          color: #101213; }
+          .best-certified-architect .activity-list .list-item .item-text .t-type .icon {
+            font-size: 2.1978vw; }
+    .best-certified-architect .activity-list .list-item:hover {
+      box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+      -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+              transform: translate3d(0px, -0.14652vw, 0px);
+      transition: all 0.3s ease; }
 
 .all-certified-architect {
-  margin-top: 2.1978vw;
-  background-color: #e5e2e2; }
+  margin-top: 2.1978vw; }
   .all-certified-architect .activity-list {
     margin: 0 3.663vw 2.1978vw; }
-    .all-certified-architect .activity-list .item-img {
-      margin-bottom: 2.1978vw;
-      background-position: center;
-      background-size: cover;
-      width: 36.63004vw;
-      height: 21.97802vw; }
+    .all-certified-architect .activity-list .list-item {
+      margin-bottom: 0.7326vw;
+      width: 100%;
+      height: 13.91941vw;
+      border-bottom: 1px solid #b8bdc0; }
+      .all-certified-architect .activity-list .list-item .content {
+        width: 100%;
+        height: 13.18681vw; }
+        .all-certified-architect .activity-list .list-item .content .describe {
+          margin: 0.7326vw 0 0 0.7326vw; }
+          .all-certified-architect .activity-list .list-item .content .describe .portrait {
+            margin-right: 2.1978vw;
+            width: 7.32601vw;
+            height: 7.32601vw;
+            border-radius: 3.663vw;
+            background-position: center center;
+            background-size: cover; }
+          .all-certified-architect .activity-list .list-item .content .describe .detail .nick-name {
+            font-size: 1.8315vw;
+            line-height: 2.5641vw;
+            color: #101213; }
+          .all-certified-architect .activity-list .list-item .content .describe .detail .post {
+            font-size: 1.31868vw;
+            line-height: 2.1978vw;
+            color: #5e6468; }
+          .all-certified-architect .activity-list .list-item .content .describe .detail .grade {
+            margin-top: 0.7326vw;
+            font-size: 1.31868vw;
+            line-height: 2.1978vw;
+            color: #5e6468; }
+            .all-certified-architect .activity-list .list-item .content .describe .detail .grade .number {
+              font-size: 1.4652vw;
+              color: #101213; }
+          .all-certified-architect .activity-list .list-item .content .describe .detail .btn-div {
+            margin-top: 0.7326vw; }
+            .all-certified-architect .activity-list .list-item .content .describe .detail .btn-div .attent-btn {
+              width: 7.32601vw;
+              height: 2.78388vw;
+              background-color: #e03636;
+              color: #fff; }
+            .all-certified-architect .activity-list .list-item .content .describe .detail .btn-div .home-btn {
+              width: 7.32601vw;
+              height: 2.78388vw;
+              background-color: #f5efef;
+              color: #2b2525; }
+        .all-certified-architect .activity-list .list-item .content .product {
+          margin: 0 0.7326vw 0 2.1978vw;
+          width: 51.28205vw;
+          height: 14.65201vw; }
+          .all-certified-architect .activity-list .list-item .content .product .img-list .img {
+            margin: 0.7326vw 0 0 0.3663vw;
+            width: 14.65201vw;
+            height: 11.72161vw;
+            background-position: center center;
+            background-size: cover; }
+      .all-certified-architect .activity-list .list-item .content:hover {
+        box-shadow: 0px 0.29304vw 0.7326vw 0.3663vw rgba(0, 0, 0, 0.2);
+        -webkit-transform: translate3d(0px, -0.29304vw, 0px);
+                transform: translate3d(0px, -0.29304vw, 0px);
+        transition: all 0.3s ease; }
 
 .become-certified-architect {
   display: block;
