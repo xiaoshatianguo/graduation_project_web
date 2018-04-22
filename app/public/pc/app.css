@@ -974,6 +974,7 @@ div.dis-ib {
   font-size: 1.8315vw;
   background-color: #e45858;
   color: #fff; }
+@charset "UTF-8";
 .personal-banner .banner-img {
   position: relative;
   height: 38.09524vw;
@@ -1100,5 +1101,312 @@ div.dis-ib {
           -webkit-transform: translate3d(0px, -0.14652vw, 0px);
                   transform: translate3d(0px, -0.14652vw, 0px);
           transition: all 0.3s ease; }
+      .author-info .tag-div .layui-tab-content .personal-collection .product-show {
+        margin: 0 auto;
+        width: 76.48352vw; }
+        .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item {
+          position: relative;
+          display: block;
+          margin: 0 0.7326vw 2.1978vw 0;
+          width: 18.31502vw;
+          border-radius: 0.3663vw;
+          overflow: hidden; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div {
+            position: relative;
+            width: 18.31502vw;
+            height: 15.38462vw;
+            overflow: hidden;
+            cursor: pointer; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-img {
+              width: 18.31502vw;
+              height: 15.38462vw;
+              border-radius: 0.3663vw 0.3663vw 0 0;
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-cover {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 0.3663vw;
+              background-color: rgba(102, 102, 102, 0.44);
+              opacity: 0; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-img {
+            -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                    transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            transition: All 8s ease; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-cover {
+            opacity: 1;
+            transition: All 1s ease; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text {
+            padding: 0.7326vw;
+            background-color: #fff;
+            font-size: 0.95238vw; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title {
+              color: #101213;
+              line-height: 2.1978vw; }
+              .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title .icon {
+                font-size: 1.4652vw; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title:hover {
+              color: #ee534e; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-describe {
+              color: #5e6468; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production {
+              margin-top: 0.7326vw;
+              width: 14.65201vw;
+              color: #5e6468;
+              font-size: 0.95238vw; }
+              .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production .icon {
+                font-size: 1.31868vw; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .product-create-time {
+              margin-right: 0.7326vw;
+              line-height: 2.1978vw;
+              color: #5e6468; }
+        .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item:hover {
+          box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+          -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+                  transform: translate3d(0px, -0.14652vw, 0px);
+          transition: all 0.3s ease; }
+      .author-info .tag-div .layui-tab-content .personal-message {
+        /*初始化样式*/
+        /*清除浮动*/
+        /*浮动*/
+        /*----------------------------------------------------------------------------------------------------------*/
+        /*----------评论区域 begin----------*/
+        /*----------评论区域 end----------*/ }
+        .author-info .tag-div .layui-tab-content .personal-message body, .author-info .tag-div .layui-tab-content .personal-message h1, .author-info .tag-div .layui-tab-content .personal-message h2, .author-info .tag-div .layui-tab-content .personal-message h3, .author-info .tag-div .layui-tab-content .personal-message h4, .author-info .tag-div .layui-tab-content .personal-message h5, .author-info .tag-div .layui-tab-content .personal-message ul, .author-info .tag-div .layui-tab-content .personal-message li, .author-info .tag-div .layui-tab-content .personal-message a, .author-info .tag-div .layui-tab-content .personal-message div, .author-info .tag-div .layui-tab-content .personal-message p, .author-info .tag-div .layui-tab-content .personal-message span, .author-info .tag-div .layui-tab-content .personal-message table, .author-info .tag-div .layui-tab-content .personal-message tr, .author-info .tag-div .layui-tab-content .personal-message td, .author-info .tag-div .layui-tab-content .personal-message img {
+          margin: 0;
+          padding: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message ul {
+          padding: 0;
+          margin: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message li {
+          list-style: none; }
+        .author-info .tag-div .layui-tab-content .personal-message a {
+          text-decoration: none; }
+        .author-info .tag-div .layui-tab-content .personal-message img {
+          outline: none;
+          border: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message body {
+          font-family: "Microsoft Yahei"; }
+        .author-info .tag-div .layui-tab-content .personal-message .clearfix:before,
+        .author-info .tag-div .layui-tab-content .personal-message .clearfix:after {
+          content: " ";
+          display: table; }
+        .author-info .tag-div .layui-tab-content .personal-message .clearfix:after {
+          clear: both; }
+        .author-info .tag-div .layui-tab-content .personal-message .clearfix {
+          zoom: 1; }
+        .author-info .tag-div .layui-tab-content .personal-message .pull-right {
+          float: right !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .pull-left {
+          float: left !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .content {
+          float: left; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap, .author-info .tag-div .layui-tab-content .personal-message pre {
+          margin: 0 !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .commentAll {
+          width: 36.63004vw;
+          padding: 1.4652vw;
+          border: 1px solid #ededed;
+          margin: 1.4652vw auto; }
+        .author-info .tag-div .layui-tab-content .personal-message .plBtn {
+          width: 5.49451vw;
+          height: 2.63736vw;
+          line-height: 2.63736vw;
+          background-color: #339b53;
+          text-align: center;
+          display: block;
+          float: right;
+          color: #FFFFFF;
+          font-size: 0.87912vw;
+          border-radius: 0.43956vw;
+          margin-right: 0.14652vw;
+          margin-top: 1.4652vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .plBtn:hover {
+          background-color: #2f904d; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show {
+          margin-top: 1.4652vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con {
+          width: 100%;
+          border-top: 1px solid #EDEDED;
+          padding: 0.7326vw 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-img {
+          width: 3.51648vw;
+          height: 3.51648vw;
+          overflow: hidden;
+          margin-top: 0.3663vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
+          width: 85%;
+          margin-left: 3%; }
+        .author-info .tag-div .layui-tab-content .personal-message .pl-text {
+          width: 100%;
+          margin-top: 0.51282vw;
+          word-wrap: break-word;
+          overflow: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz {
+          width: 100%;
+          float: left; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con {
+          float: left;
+          width: 100%;
+          background-color: #eaeaec;
+          margin-top: 0.51282vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-size-name {
+          font-size: 0.87912vw;
+          color: #339b53; }
+        .author-info .tag-div .layui-tab-content .personal-message .my-pl-con {
+          font-size: 0.87912vw;
+          color: #8b8b8b;
+          width: 100%; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-left {
+          font-size: 0.87912vw;
+          color: #8b8b8b;
+          display: block;
+          padding-top: 1.31868vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-time, .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+          padding-top: 0.51282vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+          margin-top: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-right {
+          display: block;
+          padding-top: 0.43956vw;
+          padding-right: 1.31868vw;
+          position: relative;
+          overflow: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .removeBlock {
+          float: left;
+          font-size: 0.87912vw;
+          color: #8b8b8b;
+          margin-right: 1.75824vw;
+          display: block;
+          opacity: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-con-block {
+          display: block; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-pl, .author-info .tag-div .layui-tab-content .personal-message .date-dz-line, .author-info .tag-div .layui-tab-content .personal-message .date-dz-z {
+          font-size: 0.87912vw;
+          color: #8b8b8b; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-line {
+          display: block;
+          padding: 0 1.4652vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click-red {
+          width: 1.24542vw;
+          height: 1.24542vw;
+          display: block;
+          float: left;
+          background-image: url("/public/images/cover/1.jpg");
+          background-repeat: no-repeat;
+          background-position: -0.43956vw -14.50549vw;
+          margin-right: 0.3663vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .z-num {
+          font-style: normal; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
+          color: #b83b44; }
+        .author-info .tag-div .layui-tab-content .personal-message .red {
+          background-position: -0.43956vw -8.71795vw !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-pl {
+          width: 5.12821vw;
+          height: 2.1978vw;
+          line-height: 2.1978vw;
+          background-color: #339b53;
+          text-align: center;
+          display: block;
+          float: right;
+          color: #FFFFFF;
+          font-size: 0.87912vw;
+          border-radius: 0.43956vw;
+          margin-right: 0.14652vw;
+          margin-top: 1.4652vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-con {
+          width: 100%;
+          margin-top: 1.75824vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-input {
+          font-size: 0.87912vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .all-pl-con {
+          width: 96%;
+          padding: 2% 0;
+          float: left;
+          margin: 0 2%; }
+        .author-info .tag-div .layui-tab-content .personal-message .atName {
+          font-size: 0.87912vw;
+          color: #339b53; }
+        .author-info .tag-div .layui-tab-content .personal-message .hfpl-text {
+          margin-top: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz:hover .removeBlock {
+          opacity: 1; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con {
+          border-top: 1px solid #d9d9d9;
+          padding-bottom: 0.87912vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con:first-child {
+          border-top: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message pre {
+          white-space: pre;
+          white-space: pre-wrap;
+          word-wrap: break-word; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
+          width: 100%;
+          position: relative;
+          *zoom: 1; }
+        .author-info .tag-div .layui-tab-content .personal-message textarea,
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
+          outline: 0;
+          margin: 0;
+          border: none;
+          padding: 0;
+          *padding-bottom: 0 !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea,
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          *white-space: pre;
+          *word-wrap: break-word;
+          white-space: pre-wrap;
+          width: 100%;
+          -ms-box-sizing: border-box;
+          box-sizing: border-box; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea {
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          resize: none;
+          /* IE7 box-sizing fudge factor */
+          *height: 94%;
+          *width: 94%; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          display: block;
+          visibility: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
+        .author-info .tag-div .layui-tab-content .personal-message textarea {
+          margin-bottom: 1.8315vw; }
+        .author-info .tag-div .layui-tab-content .personal-message textarea,
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          line-height: 1.7;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 100%;
+          padding: 0.7326vw 1.0989vw;
+          border: 1px solid #c6c8ce;
+          width: 100%;
+          -webkit-appearance: none;
+          background: #fff;
+          border-radius: 0.21978vw;
+          background-clip: padding-box;
+          box-shadow: 0 0 0.58608vw rgba(182, 195, 214, 0.6) inset, 0 1px 1px #fff;
+          transition-duration: 300ms;
+          -webkit-transition-easing: ease-in-out;
+          -moz-transition-easing: ease-in-out;
+          -o-transition-easing: ease-in-out;
+          -ms-transition-easing: ease-in-out;
+          transition-easing: ease-in-out;
+          transition-property: border-color, box-shadow; }
+        .author-info .tag-div .layui-tab-content .personal-message .fork-link {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 10.25641vw; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

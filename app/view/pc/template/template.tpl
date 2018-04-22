@@ -7,6 +7,7 @@
 
     <script src="//at.alicdn.com/t/font_631371_ld3wb508rgt4kj4i.js"></script>
     <script src="/public/jquery-3.2.1.min.js"></script>
+    <script src="/public/scripts/jquery.flexText.js"></script>
     <link rel="stylesheet" href="/public/layui.css">
     <link rel="stylesheet" href="/public/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/public/pc/app.css">
@@ -404,9 +405,7 @@
     <script src="/public/swiper-3.4.2.min.js"></script>
     <script src="/public/layui.js"></script>
     <script src="/public/modernizr.js"></script>
-    <script>
-
-    </script>
+    <script src="/public/scripts/comment.js"></script>
 
     {% block script %}
         <script>
