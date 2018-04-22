@@ -1,9 +1,8 @@
 CREATE TABLE IF NOT EXISTS `attention_info` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
-  `trigger` VARCHAR(255) DEFAULT '' comment '发起者编号',
-  `receiver` VARCHAR(255) DEFAULT '' comment '接收者编号',
-  `sort` VARCHAR(255) DEFAULT '' comment '类别 - 0 关注作品 - 1 关注活动 - 2 点赞作品 - 3 点赞活动 - 4 举报作品 - 5 举报活动 - 6 举报会员 - 7 举报认证师',
-  `trigger_number` VARCHAR(255) DEFAULT '' comment '触发的id',
+  `userId` int(64) NOT NULL comment '发起者编号',
+  `trggerId` int(64) NOT NULL comment '接收者编号',
   `create_time` bigint comment '发起时间',
+  `status` int comment '点赞状态 - 0 已取消赞 - 1 有效赞',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

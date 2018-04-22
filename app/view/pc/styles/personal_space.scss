@@ -1,3 +1,9 @@
+$main-color: #f068a9;
+$main-padding: 0 50px 30px;
+$black-color: #101213;
+$gray-color: #5e6468;
+$t-hover-color: #ee534e;
+
 .personal-banner {
     .banner-img {
         position: relative;
@@ -77,6 +83,165 @@
                 margin-bottom: 10px;
 
                 text-align: center;
+            }
+        }
+    }
+
+    .tag-div {
+        margin-top: 50px;
+        width: 100%;
+
+        .layui-tab-title {
+            margin: 0 auto;
+            width: 340px;
+        }
+
+        .layui-tab-content {
+            padding: 30px 100px;
+
+            background-color: rgb(214, 210, 210);
+            
+            .personal-product {
+                .product-show {
+                    margin: 0 auto;
+                    width: 1044px;
+                    
+                    .list-item {
+                        position: relative;
+        
+                        display: block;
+        
+                        margin: 0 10px 30px 0;
+                        width: 250px;
+        
+                        border-radius: 5px;
+
+                        overflow: hidden;
+        
+                        .list-img-div {
+                            position: relative;
+        
+                            width: 250px;
+                            height: 210px;
+        
+                            overflow: hidden;
+        
+                            cursor: pointer;
+        
+                            .item-img {
+                                width: 250px;
+                                height: 210px;
+            
+                                border-radius: 5px 5px 0 0;
+            
+                                background-position: center center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                            }
+        
+                            .item-cover {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+        
+                                border-radius: 5px;
+        
+                                background-color: rgba(102, 102, 102, 0.44);;
+                            
+                                opacity: 0;
+                            }
+                        }
+        
+                        .list-img-div:hover {
+                            .item-img {
+                                transform: rotate(0deg) scale(1.2) translate(0%,0%);
+        
+                                transition: All 8s ease;
+                            }
+        
+                            .item-cover {
+                                opacity: 1;
+        
+                                transition: All 1s ease;
+                            }
+                        }
+        
+                        .item-text {
+                            padding: 10px;
+
+                            background-color: #fff;
+
+                            font-size: 13px;
+                            
+                            .t-title {
+                                color: $black-color;
+
+                                line-height: 30px;
+
+                                .icon {
+                                    font-size: 20px;
+                                }
+                            }
+        
+                            .t-title:hover {
+                                color: $t-hover-color;
+                            }
+        
+                            .t-describe {
+                                color: $gray-color;
+
+                            }
+
+                            .about-production {
+                                margin-top: 10px;
+                                width: 200px;
+
+                                color: $gray-color;
+
+                                font-size: 13px;
+
+                                .icon {
+                                    font-size: 18px;
+                                }
+                            }
+
+                            .product-create-time {
+                                margin-right: 10px;
+                                
+                                line-height: 30px;
+
+                                color: $gray-color;
+                            }
+                        }
+                    }
+        
+                    .list-item:hover {
+                        box-shadow:  0px 17px 50px 0px rgba(0,0,0,0.188235);
+                        
+                        transform: translate3d(0px,-2px,0px);
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+
+            .personal-data {
+                
+            }
+
+            .personal-collection {
+
+            }
+
+            .personal-message {
+
+            }
+
+            .personal-product-line {
+                .line-contetn {
+
+                }
             }
         }
     }

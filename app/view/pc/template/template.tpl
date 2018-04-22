@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="//at.alicdn.com/t/font_631371_99y5s1hfahq9qkt9.js"></script>
+    <script src="//at.alicdn.com/t/font_631371_ld3wb508rgt4kj4i.js"></script>
     <script src="/public/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="/public/layui.css">
     <link rel="stylesheet" href="/public/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/public/pc/app.css">
+    <link rel="stylesheet" href="/public/timeline.css">
 
     <title>大型摄影社区</title>
 </head>
@@ -400,6 +402,8 @@
     {% endblock %}
     
     <script src="/public/swiper-3.4.2.min.js"></script>
+    <script src="/public/layui.js"></script>
+    <script src="/public/modernizr.js"></script>
     <script>
 
     </script>

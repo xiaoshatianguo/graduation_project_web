@@ -15,5 +15,7 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `disabled` INT(2) DEFAULT 0 comment '是否屏蔽作品 - 0 正常 - 1 屏蔽',
   `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `auditor` VARCHAR(255) DEFAULT '' comment '审核通过管理员编号',
+  `commentIds` VARCHAR(255) DEFAULT '' comment '评论的所有楼层id集合',
+  `attentionIds` VARCHAR(255) DEFAULT '' comment '所有关注id集合',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

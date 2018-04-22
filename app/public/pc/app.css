@@ -1022,5 +1022,83 @@ div.dis-ib {
       .author-info .author-data-statistics .data-list .item-name {
         margin-bottom: 0.7326vw;
         text-align: center; }
+  .author-info .tag-div {
+    margin-top: 3.663vw;
+    width: 100%; }
+    .author-info .tag-div .layui-tab-title {
+      margin: 0 auto;
+      width: 24.90842vw; }
+    .author-info .tag-div .layui-tab-content {
+      padding: 2.1978vw 7.32601vw;
+      background-color: #d6d2d2; }
+      .author-info .tag-div .layui-tab-content .personal-product .product-show {
+        margin: 0 auto;
+        width: 76.48352vw; }
+        .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item {
+          position: relative;
+          display: block;
+          margin: 0 0.7326vw 2.1978vw 0;
+          width: 18.31502vw;
+          border-radius: 0.3663vw;
+          overflow: hidden; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div {
+            position: relative;
+            width: 18.31502vw;
+            height: 15.38462vw;
+            overflow: hidden;
+            cursor: pointer; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-img {
+              width: 18.31502vw;
+              height: 15.38462vw;
+              border-radius: 0.3663vw 0.3663vw 0 0;
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-cover {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 0.3663vw;
+              background-color: rgba(102, 102, 102, 0.44);
+              opacity: 0; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-img {
+            -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                    transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            transition: All 8s ease; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-cover {
+            opacity: 1;
+            transition: All 1s ease; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text {
+            padding: 0.7326vw;
+            background-color: #fff;
+            font-size: 0.95238vw; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title {
+              color: #101213;
+              line-height: 2.1978vw; }
+              .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title .icon {
+                font-size: 1.4652vw; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title:hover {
+              color: #ee534e; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-describe {
+              color: #5e6468; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production {
+              margin-top: 0.7326vw;
+              width: 14.65201vw;
+              color: #5e6468;
+              font-size: 0.95238vw; }
+              .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production .icon {
+                font-size: 1.31868vw; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .product-create-time {
+              margin-right: 0.7326vw;
+              line-height: 2.1978vw;
+              color: #5e6468; }
+        .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item:hover {
+          box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+          -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+                  transform: translate3d(0px, -0.14652vw, 0px);
+          transition: all 0.3s ease; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
