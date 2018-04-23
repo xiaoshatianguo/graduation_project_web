@@ -1760,5 +1760,67 @@ div.dis-ib {
       top: 0;
       right: 0;
       width: 10.25641vw; }
+.sort-list-div {
+  margin-top: 2.1978vw; }
+  .sort-list-div .sort-list {
+    margin: 0 3.663vw 2.1978vw; }
+    .sort-list-div .sort-list .list-item {
+      position: relative;
+      display: block;
+      margin-bottom: 3.663vw;
+      height: 38.09524vw;
+      width: 24.17582vw;
+      border-radius: 0.3663vw; }
+      .sort-list-div .sort-list .list-item .list-img-div {
+        position: relative;
+        width: 24.17582vw;
+        height: 24.17582vw;
+        overflow: hidden;
+        cursor: pointer; }
+        .sort-list-div .sort-list .list-item .list-img-div .item-img {
+          width: 24.17582vw;
+          height: 24.17582vw;
+          border-radius: 0.3663vw 0.3663vw 0 0;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover; }
+        .sort-list-div .sort-list .list-item .list-img-div .item-cover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 0.3663vw;
+          background-color: rgba(102, 102, 102, 0.44);
+          opacity: 0; }
+      .sort-list-div .sort-list .list-item .list-img-div:hover .item-img {
+        -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+        transition: All 8s ease; }
+      .sort-list-div .sort-list .list-item .list-img-div:hover .item-cover {
+        opacity: 1;
+        transition: All 1s ease; }
+      .sort-list-div .sort-list .list-item .item-text {
+        margin-top: 0.7326vw;
+        padding: 0.7326vw; }
+        .sort-list-div .sort-list .list-item .item-text .t-title {
+          color: #101213; }
+        .sort-list-div .sort-list .list-item .item-text .t-title:hover {
+          color: #ee534e; }
+        .sort-list-div .sort-list .list-item .item-text .t-describe {
+          margin-top: 1.0989vw;
+          color: #5e6468; }
+        .sort-list-div .sort-list .list-item .item-text .t-type {
+          position: absolute;
+          bottom: 0.7326vw;
+          color: #101213; }
+          .sort-list-div .sort-list .list-item .item-text .t-type .icon {
+            font-size: 2.1978vw; }
+    .sort-list-div .sort-list .list-item:hover {
+      box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+      -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+              transform: translate3d(0px, -0.14652vw, 0px);
+      transition: all 0.3s ease; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
