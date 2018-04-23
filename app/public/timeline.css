@@ -36,7 +36,7 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
-@media only screen and (min-width: 1170px) {
+/* @media only screen and (min-width: 1170px) {
   header {
     height: 300px;
     line-height: 300px;
@@ -45,7 +45,7 @@ Main components
     font-size: 24px;
     font-size: 1.5rem;
   }
-}
+} */
 
 #cd-timeline {
   position: relative;

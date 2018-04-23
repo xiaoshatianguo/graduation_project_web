@@ -1,53 +1,81 @@
-$main-color: #f068a9;
+$main-color: #f39549;
 $main-padding: 0 50px 30px;
 $black-color: #101213;
 $gray-color: #5e6468;
 $t-hover-color: #ee534e;
 
 .header {
-    height: 130px;
+    height: 60px;
 
     font-size: 20px;
 
     color: rgb(22, 21, 21);
 
+    background-color: $main-color;
+
     .container {
         position: relative;
 
-        .header-nav-left {
+        .logo-img {
+            margin-left: 50px;
+            width: 150px;
+            line-height: 50px;
+
+            .img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .header-nav-right {
+            margin-left: 130px;
+
             .nav-li {
                 margin-right: 50px;
 
-                line-height: 80px;
-                font-size: 20px;
+                line-height: 60px;
+                font-size: 15px;
 
                 color: rgb(22, 21, 21);
             }
         }
 
-        .logo {
-            position: absolute;
-            left: 50%;
+        .header-login {
+            margin-right: 50px;
 
-            margin-left: -150px;
-            width: 300px;
+            .nav-li {
+                margin-right: 50px;
 
-            .logo-top {
-                margin-bottom: 20px;
-                width: 100px;
-                height: 5px;
+                line-height: 60px;
+                font-size: 15px;
 
-                background-color: $main-color;
-            }
-
-            .logo-en {
-                margin-bottom: 20px;
-            }
-
-            .logo-zh {
-                font-size: 25px;
+                color: rgb(22, 21, 21);
             }
         }
+
+        // .logo {
+        //     position: absolute;
+        //     left: 50%;
+
+        //     margin-left: -150px;
+        //     width: 300px;
+
+        //     .logo-top {
+        //         margin-bottom: 20px;
+        //         width: 100px;
+        //         height: 5px;
+
+        //         background-color: $main-color;
+        //     }
+
+        //     .logo-en {
+        //         margin-bottom: 20px;
+        //     }
+
+        //     .logo-zh {
+        //         font-size: 25px;
+        //     }
+        // }
     }
 }
 

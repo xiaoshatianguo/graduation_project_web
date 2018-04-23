@@ -19,17 +19,25 @@
     {% block header %}
         <header class="header">
             <div class="container clear-f">
-                <ul class="header-nav-left flex-b-sc fl">
+                <div class="logo-img fl">
+                    <img class="img" src="/public/images/favicon.png" alt="">
+                    YY摄影
+                </div>
+                <ul class="header-nav-right flex-b-sc fl">
                     <a href="/" class="nav-li">首页</a>
                     <a href="/activity" class="nav-li">活动</a>
                     <a href="/certified_architect" class="nav-li">认证师</a>
                     <a href="/personal_space" class="nav-li">个人中心</a>
                 </ul>
-                <div class="logo flex-box jc-s ai-ce fd-col">
+                <ul class="header-login flex-b-sc fr">
+                    <a href="/" class="nav-li">登录</a>
+                    <a href="/activity" class="nav-li">注册</a>
+                </ul>
+                <!-- <div class="logo flex-box jc-s ai-ce fd-col">
                     <span class="logo-top"></span>
                     <span class="logo-en">a big photo web</span>
                     <span class="logo-zh">YY的大型摄影社区</span>
-                </div>
+                </div> -->
             </div>
         </header>
     {% endblock %}
