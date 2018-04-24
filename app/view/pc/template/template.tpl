@@ -30,8 +30,8 @@
                     <a href="/personal_space" class="nav-li">个人中心</a>
                 </ul>
                 <ul class="header-login flex-b-sc fr">
-                    <a href="/" class="nav-li">登录</a>
-                    <a href="/activity" class="nav-li">注册</a>
+                    <a href="javascript:;" class="nav-li">登录</a>
+                    <a href="javascript:;" class="nav-li">注册</a>
                 </ul>
                 <!-- <div class="logo flex-box jc-s ai-ce fd-col">
                     <span class="logo-top"></span>

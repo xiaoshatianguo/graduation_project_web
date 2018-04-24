@@ -7,14 +7,14 @@
 {% block top %}
     <div class="activity-detail-describe">
         <div class="container clear-f">
-            <div class="fl describe-img" style="background-image:url('/public/images/banner/pc (3).jpg')">
+            <div class="fl describe-img" style="background-image:url({{ activityDetailData.cover }})">
             </div>
             <div class="fl describe-text">
-                <p class="t-title">一起来画画Z日常</p>
-                <p class="t-text">活动时间：2018-4-23</p>
-                <p class="t-text">活动类型：头脑风暴</p>
-                <p class="t-text">活动发起者：小宋宋</p>
-                <p class="t-describe">活动描述活动描述活动描述活动描述活动描述活动描述</p>
+                <p class="t-title">{{ activityDetailData.name }}</p>
+                <p class="t-text">活动时间：{{ activityDetailData.start_time }} 至 {{ activityDetailData.end_time }}</p>
+                <p class="t-text">活动类型：{{ activityDetailData.sort }}</p>
+                <p class="t-text">活动发起者：{{ activityDetailData.initiator }}</p>
+                <p class="t-describe">{{ activityDetailData.describe }}</p>
                 <div class="btn-list flex-b-sc">
                     <button class="t-btn upload-btn">上传活动作品</button>
                     <button class="t-btn detail-btn">查看活动详情</button>
@@ -29,240 +29,53 @@
         <div class="container">
             <p class="title">活动作品</p>
             <div class="product-show flex-b-sc fw-wr">
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">
-                            我的作品
-                            <svg class="icon fr" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                        </h3>
-                        <p class="t-describe">插画-商业插画</p>
-                        <div class="about-production flex-b-sbc">
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-yanjing"></use>
-                                </svg>
-                                <span class="about-num">4.6万</span>
+                {% if activityDetailData.productionDataArr.length > 0 %}
+                    {% for item in activityDetailData.productionDataArr %}
+                        <div class="list-item" href="production_detail?productionId={{ item.id }}">
+                            <div class="list-img-div">
+                                <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                                <div class="item-cover"></div>
                             </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-comment1"></use>
-                                </svg>
-                                <span class="about-num">196</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-chakandianzan"></use>
-                                </svg>
-                                <span class="about-num">4299</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="clear-f">
-                            <span class="fr product-create-time">16天前</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">
-                            我的作品
-                            <svg class="icon fr" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                        </h3>
-                        <p class="t-describe">插画-商业插画</p>
-                        <div class="about-production flex-b-sbc">
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-yanjing"></use>
-                                </svg>
-                                <span class="about-num">4.6万</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-comment1"></use>
-                                </svg>
-                                <span class="about-num">196</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-chakandianzan"></use>
-                                </svg>
-                                <span class="about-num">4299</span>
+                            <div class="item-text">
+                                <h3 class="t-title">
+                                    {{ item.name }}
+                                    <svg class="icon fr" aria-hidden="true">
+                                        <use xlink:href="#icon-zuixinlianzai"></use>
+                                    </svg>
+                                </h3>
+                                <p class="t-describe">{{ item.describe }}</p>
+                                <div class="about-production flex-b-sbc">
+                                    <div class="about-item">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-yanjing"></use>
+                                        </svg>
+                                        <span class="about-num">4.6万</span>
+                                    </div>
+                                    <div class="about-item">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-comment1"></use>
+                                        </svg>
+                                        <span class="about-num">196</span>
+                                    </div>
+                                    <div class="about-item">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-chakandianzan"></use>
+                                        </svg>
+                                        <span class="about-num">4299</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="clear-f">
+                                    <span class="fr product-create-time">{{ item.create_time }}</span>
+                                </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="clear-f">
-                            <span class="fr product-create-time">16天前</span>
-                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-production">
+                        <p class="text">该活动暂无作品提交!</p>
                     </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">
-                            我的作品
-                            <svg class="icon fr" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                        </h3>
-                        <p class="t-describe">插画-商业插画</p>
-                        <div class="about-production flex-b-sbc">
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-yanjing"></use>
-                                </svg>
-                                <span class="about-num">4.6万</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-comment1"></use>
-                                </svg>
-                                <span class="about-num">196</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-chakandianzan"></use>
-                                </svg>
-                                <span class="about-num">4299</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="clear-f">
-                            <span class="fr product-create-time">16天前</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">
-                            我的作品
-                            <svg class="icon fr" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                        </h3>
-                        <p class="t-describe">插画-商业插画</p>
-                        <div class="about-production flex-b-sbc">
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-yanjing"></use>
-                                </svg>
-                                <span class="about-num">4.6万</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-comment1"></use>
-                                </svg>
-                                <span class="about-num">196</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-chakandianzan"></use>
-                                </svg>
-                                <span class="about-num">4299</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="clear-f">
-                            <span class="fr product-create-time">16天前</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">
-                            我的作品
-                            <svg class="icon fr" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                        </h3>
-                        <p class="t-describe">插画-商业插画</p>
-                        <div class="about-production flex-b-sbc">
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-yanjing"></use>
-                                </svg>
-                                <span class="about-num">4.6万</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-comment1"></use>
-                                </svg>
-                                <span class="about-num">196</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-chakandianzan"></use>
-                                </svg>
-                                <span class="about-num">4299</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="clear-f">
-                            <span class="fr product-create-time">16天前</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">
-                            我的作品
-                            <svg class="icon fr" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                        </h3>
-                        <p class="t-describe">插画-商业插画</p>
-                        <div class="about-production flex-b-sbc">
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-yanjing"></use>
-                                </svg>
-                                <span class="about-num">4.6万</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-comment1"></use>
-                                </svg>
-                                <span class="about-num">196</span>
-                            </div>
-                            <div class="about-item">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-chakandianzan"></use>
-                                </svg>
-                                <span class="about-num">4299</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="clear-f">
-                            <span class="fr product-create-time">16天前</span>
-                        </div>
-                    </div>
-                </div>
+                {% endif %}
             </div>
             <div class="comment-div">
                 <div class="commentAll">

@@ -2,6 +2,8 @@
 
 const Controller = require('egg').Controller;
 
+const tools = require('../utils/tool.js');
+
 class RouterController extends Controller {
     async index() {
         const activity = await this.app.mysql.query(
@@ -41,7 +43,36 @@ class RouterController extends Controller {
     }
 
     async activityDetail () {
-        await this.ctx.render('pc/activity_detail.tpl');
+        // 活动详情
+        const id = this.ctx.query.activityId;
+        const result = await this.app.mysql.get('activity_info', { id });
+        tools.formatTime([result]);
+        let data = JSON.parse(JSON.stringify(result));
+
+        // 活动所属种类
+        const sort = await this.app.mysql.get('production_type_info', { number: data.sort });
+        let sortData = JSON.parse(JSON.stringify(sort));
+
+        // 参加该活动的作品信息
+        let productionIds = [];
+        let productionDataArr = [];
+
+        if(!!data.productionIds) {
+            productionIds = data.productionIds.split(',');
+    
+            for (let i = 0; i < productionIds.length; i++) {
+                let productionData = await this.app.mysql.get('production_info', { id: productionIds[i] });
+                tools.formatTime([productionData]);
+                productionDataArr.push(JSON.parse(JSON.stringify(productionData)));
+            }
+        }
+
+        data.sort = sortData.name;
+        data.productionDataArr = productionDataArr;
+
+        await this.ctx.render('pc/activity_detail.tpl', {
+            activityDetailData: data,
+        });
     }
 
     async joinActivity () {

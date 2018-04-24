@@ -194,6 +194,19 @@ $t-hover-color: #ee534e;
             transform: translate3d(0px,-2px,0px);
             transition: all 0.3s ease;
         }
+
+        .no-production {
+            height: 200px;
+            width: 100%;
+
+            text-align: center;
+
+            .text {
+                padding-top: 50px;
+
+                font-size: 20px;
+            }
+        }
     }
 
     .comment-div {

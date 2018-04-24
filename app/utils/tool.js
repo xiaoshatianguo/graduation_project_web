@@ -35,6 +35,12 @@ exports.formatTime = function(arr = []) {
         if (item.update_time) {
         item.update_time = moment(item.update_time).format('YYYY-MM-DD');
         }
+        if (item.start_time) {
+        item.start_time = moment(item.start_time).format('YYYY-MM-DD');
+        }
+        if (item.end_time) {
+        item.end_time = moment(item.end_time).format('YYYY-MM-DD');
+        }
     })
 }
 

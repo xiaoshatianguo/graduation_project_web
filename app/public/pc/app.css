@@ -1514,6 +1514,13 @@ div.dis-ib {
     -webkit-transform: translate3d(0px, -0.14652vw, 0px);
             transform: translate3d(0px, -0.14652vw, 0px);
     transition: all 0.3s ease; }
+  .activity-production-list .product-show .no-production {
+    height: 14.65201vw;
+    width: 100%;
+    text-align: center; }
+    .activity-production-list .product-show .no-production .text {
+      padding-top: 3.663vw;
+      font-size: 1.4652vw; }
   .activity-production-list .comment-div {
     background-color: #fff;
     min-height: 21.97802vw;
