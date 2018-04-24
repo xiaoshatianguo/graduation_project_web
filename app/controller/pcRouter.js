@@ -12,12 +12,19 @@ class RouterController extends Controller {
             'SELECT * FROM production_type_info ORDER BY create_time desc limit 0,3;'
         );
 
-        let activityData = JSON.parse(JSON.stringify(activity));
-        let sortData = JSON.parse(JSON.stringify(sort));
+        const certifiedArchitect = await this.app.mysql.query(
+            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc limit 0,3;'
+        );
+
+        const production = await this.app.mysql.query(
+            'SELECT * FROM production_info ORDER BY create_time desc limit 0,3;'
+        );
 
         await this.ctx.render('pc/index.tpl', {
-            activityData,
-            sortData,
+            activityData: JSON.parse(JSON.stringify(activity)),
+            sortData: JSON.parse(JSON.stringify(sort)),
+            certifiedArchitectData: JSON.parse(JSON.stringify(certifiedArchitect)),
+            productionData: JSON.parse(JSON.stringify(production)),
         });
     }
 

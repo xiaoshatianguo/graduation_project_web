@@ -44,7 +44,7 @@
             </div>
             <div class="classify-list flex-b-sbc fw-wr">
                 {% for item in sortData %}
-                    <div class="list-item" href="sort?sortId={{ item.id }}">
+                    <a class="list-item" href="sort?sortId={{ item.id }}">
                         <div class="item-text zx310">
                             <h3 class="t-title">{{ item.name }}</h3>
                         </div>
@@ -52,7 +52,7 @@
                             <div class="item-img" style="background-image:url({{ item.cover }})"></div>
                             <div class="item-cover"></div>
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
             <div class="activity-bottom flex-box jc-s ai-ce fd-col">
@@ -71,52 +71,17 @@
                 <span class="title-bg">活跃认证师</span>/
             </div>
             <div class="certified-architect-list flex-b-sbc fw-wr">
-                {# TODO: 此处需要更换activityId #}
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
+                {% for item in certifiedArchitectData %}
+                    <a class="list-item" href="personal_space?userId={{ item.id }}">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url({{ item.portrait }})"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
+                        <div class="item-text">
+                            <h3 class="t-title">{{ item.nickname }}</h3>
+                            <p class="t-describe">{{ item.personal_statement }}</p>
                         </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                {% endfor %}
             </div>
             <div class="activity-bottom flex-box jc-s ai-ce fd-col">
                 <p class="activity-bottom-en">Popular Package</p>
@@ -132,37 +97,13 @@
                 <span class="title-bg">会员优秀作品</span>/
             </div>
             <div class="production-list flex-b-sbc fw-wr">
-                {# TODO: 此处需要更换activityId #}
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                    </div>
-                </div>
+                {% for item in productionData %}
+                    <a class="list-item" href="production_detail?productionId={{ item.id }}">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
             <div class="activity-bottom flex-box jc-s ai-ce fd-col">
                 <p class="activity-bottom-en">Popular Package</p>
