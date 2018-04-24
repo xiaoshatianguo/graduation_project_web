@@ -54,6 +54,12 @@
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label">活动简介</label>
+                                        <div class="layui-input-block describe-detail">
+                                            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">活动内容</label>
                                         <div class="layui-input-block describe-detail">
                                             <textarea name="desc" placeholder="请输入内容" class="layui-textarea" id="activityContent"></textarea>

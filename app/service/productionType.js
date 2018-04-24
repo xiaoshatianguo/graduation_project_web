@@ -33,6 +33,7 @@ class ProductionTypeService extends Service {
         const result = await this.app.mysql.insert(currentEditTable, {
             number: params.number,
             name: params.name,
+            cover: params.cover,
             create_time: new Date().valueOf(),
         });
 

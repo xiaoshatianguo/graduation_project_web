@@ -505,18 +505,29 @@ div.dis-ib {
       position: relative;
       display: block;
       margin-bottom: 3.663vw;
-      height: 38.09524vw;
-      width: 24.17582vw;
       border-radius: 0.3663vw; }
+      .hot-classify .classify-list .list-item .item-text {
+        position: absolute;
+        bottom: 1.0989vw;
+        height: 3.663vw;
+        width: 100%;
+        border-top: 1px solid #dddfe0;
+        border-bottom: 1px solid #dddfe0;
+        background-color: rgba(241, 227, 227, 0.5); }
+        .hot-classify .classify-list .list-item .item-text .t-title {
+          padding-left: 2.1978vw;
+          line-height: 3.663vw;
+          font-size: 1.4652vw;
+          color: #5e6468; }
       .hot-classify .classify-list .list-item .list-img-div {
         position: relative;
         width: 24.17582vw;
-        height: 24.17582vw;
+        height: 14.65201vw;
         overflow: hidden;
         cursor: pointer; }
         .hot-classify .classify-list .list-item .list-img-div .item-img {
           width: 24.17582vw;
-          height: 24.17582vw;
+          height: 14.65201vw;
           border-radius: 0.3663vw 0.3663vw 0 0;
           background-position: center center;
           background-repeat: no-repeat;
@@ -538,22 +549,6 @@ div.dis-ib {
       .hot-classify .classify-list .list-item .list-img-div:hover .item-cover {
         opacity: 1;
         transition: All 1s ease; }
-      .hot-classify .classify-list .list-item .item-text {
-        margin-top: 0.7326vw;
-        padding: 0.7326vw; }
-        .hot-classify .classify-list .list-item .item-text .t-title {
-          color: #101213; }
-        .hot-classify .classify-list .list-item .item-text .t-title:hover {
-          color: #ee534e; }
-        .hot-classify .classify-list .list-item .item-text .t-describe {
-          margin-top: 1.0989vw;
-          color: #5e6468; }
-        .hot-classify .classify-list .list-item .item-text .t-type {
-          position: absolute;
-          bottom: 0.7326vw;
-          color: #101213; }
-          .hot-classify .classify-list .list-item .item-text .t-type .icon {
-            font-size: 2.1978vw; }
     .hot-classify .classify-list .list-item:hover {
       box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
       -webkit-transform: translate3d(0px, -0.14652vw, 0px);

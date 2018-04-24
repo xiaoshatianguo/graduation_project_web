@@ -4,7 +4,21 @@ const Controller = require('egg').Controller;
 
 class RouterController extends Controller {
     async index() {
-        await this.ctx.render('pc/index.tpl');
+        const activity = await this.app.mysql.query(
+            'SELECT * FROM activity_info ORDER BY create_time desc limit 0,3;'
+        );
+
+        const sort = await this.app.mysql.query(
+            'SELECT * FROM production_type_info ORDER BY create_time desc limit 0,3;'
+        );
+
+        let activityData = JSON.parse(JSON.stringify(activity));
+        let sortData = JSON.parse(JSON.stringify(sort));
+
+        await this.ctx.render('pc/index.tpl', {
+            activityData,
+            sortData,
+        });
     }
 
     async activity() {

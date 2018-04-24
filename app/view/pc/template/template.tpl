@@ -57,7 +57,7 @@
     {% endblock %}
 
     {% block top %}
-        <div class="new-activity clear-f">
+        <!-- <div class="new-activity clear-f">
             <div class="container">
                 <div class="title">
                     /<span class="title-sm">YY摄影</span>
@@ -167,11 +167,11 @@
                     <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     {% endblock %}
 
     {% block middle %}
-        <div class="hot-classify">
+        <!-- <div class="hot-classify">
             <div class="container">
                 <div class="title">
                     /<span class="title-sm">YY摄影</span>
@@ -281,11 +281,11 @@
                     <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     {% endblock %}
 
     {% block bottom %}
-        <div class="active-certified-architect">
+        <!-- <div class="active-certified-architect">
             <div class="container">
                 <div class="title">
                     /<span class="title-sm">YY摄影</span>
@@ -390,7 +390,7 @@
                     <p class="activity-bottom-zh">——珍藏最动人的时刻，留存最迷人的瞬间——</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     {% endblock %}
 
     {% block footer %}
