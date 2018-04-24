@@ -1760,6 +1760,70 @@ div.dis-ib {
       top: 0;
       right: 0;
       width: 10.25641vw; }
+.join-activity-div {
+  padding-top: 1.4652vw;
+  background-color: #ebe6e6; }
+  .join-activity-div .container {
+    min-height: 36.63004vw; }
+    .join-activity-div .container .layui-tab {
+      margin: 0; }
+      .join-activity-div .container .layui-tab .layui-tab-title {
+        width: 18.31502vw;
+        height: auto;
+        border-bottom: none;
+        border-radius: 0.3663vw;
+        background-color: #fff;
+        overflow: hidden; }
+        .join-activity-div .container .layui-tab .layui-tab-title .tab-item {
+          text-align: left; }
+        .join-activity-div .container .layui-tab .layui-tab-title .layui-this {
+          border-radius: 0.3663vw;
+          background-color: #f39549; }
+        .join-activity-div .container .layui-tab .layui-tab-title .layui-this:after {
+          border-top-color: #fff;
+          border-right-color: #fff; }
+      .join-activity-div .container .layui-tab .layui-tab-content {
+        margin-left: 0.7326vw;
+        padding: 0;
+        width: 65.93407vw; }
+        .join-activity-div .container .layui-tab .layui-tab-content .layui-tab-item .tab-title {
+          padding-left: 2.9304vw;
+          width: 100%;
+          height: 5.12821vw;
+          font-size: 1.4652vw;
+          line-height: 5.12821vw;
+          border-radius: 0.14652vw;
+          background-color: #fff; }
+        .join-activity-div .container .layui-tab .layui-tab-content .upload-production .upload-info {
+          margin-top: 0.3663vw;
+          padding-bottom: 0.7326vw;
+          background-color: #fff; }
+          .join-activity-div .container .layui-tab .layui-tab-content .upload-production .upload-info .info-title {
+            padding-left: 2.9304vw;
+            width: 100%;
+            height: 3.663vw;
+            font-size: 1.0989vw;
+            line-height: 3.663vw;
+            border-bottom: 1px solid #c9cdcf; }
+          .join-activity-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-upload-drag {
+            top: 50%;
+            margin: 3.663vw 0 0 3.663vw;
+            height: 14.65201vw; }
+          .join-activity-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-form {
+            margin-top: 1.4652vw;
+            padding-left: 1.4652vw;
+            width: 58.60806vw; }
+            .join-activity-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-form .layui-form-item .layui-form-label {
+              width: 7.32601vw; }
+        .join-activity-div .container .layui-tab .layui-tab-content .upload-production .publich-btn {
+          margin: 1.4652vw 0 0 1.4652vw;
+          background-color: #f39549; }
+
+.layui-input-block {
+  width: 36.63004vw; }
+
+.describe-detail {
+  width: 51.28205vw !important; }
 .sort-list-div {
   margin-top: 2.1978vw; }
   .sort-list-div .sort-list {
