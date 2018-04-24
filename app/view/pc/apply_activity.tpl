@@ -13,10 +13,10 @@
                     <li class="tab-item">申请活动资料</li>
                 </ul>
                 <div class="layui-tab-content fl">
-                    <div class="layui-tab-item apply-activity-rule">
+                    <div class="layui-tab-item layui-show apply-activity-rule">
                             <div class="tab-title">申请活动规则</div>
                     </div>
-                    <div class="layui-tab-item layui-show apply-activity-detail">
+                    <div class="layui-tab-item apply-activity-detail">
                         <div class="tab-title">申请活动资料</div>
                         <div class="upload-info">
                             <div class="info-title">活动概要</div>
