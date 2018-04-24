@@ -92,7 +92,17 @@ class RouterController extends Controller {
     }
 
     async sort () {
-        await this.ctx.render('pc/sort.tpl');
+        const id = this.ctx.query.sortId;
+        const productionData = await this.app.mysql.query(
+            `SELECT * FROM production_info WHERE sort = ${id} ORDER BY create_time desc;`
+        );
+        for (let i = 0; i < productionData.length; i++) {
+            tools.formatTime([productionData[i]]);
+        }
+
+        await this.ctx.render('pc/sort.tpl', {
+            productionData: JSON.parse(JSON.stringify(productionData)),
+        });
     }
 
     async productionDetail () {

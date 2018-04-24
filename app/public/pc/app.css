@@ -1964,19 +1964,19 @@ div.dis-ib {
     .sort-list-div .sort-list .list-item {
       position: relative;
       display: block;
-      margin-bottom: 3.663vw;
-      height: 38.09524vw;
-      width: 24.17582vw;
-      border-radius: 0.3663vw; }
+      margin: 0 0.7326vw 2.1978vw 0;
+      width: 18.31502vw;
+      border-radius: 0.3663vw;
+      overflow: hidden; }
       .sort-list-div .sort-list .list-item .list-img-div {
         position: relative;
-        width: 24.17582vw;
-        height: 24.17582vw;
+        width: 18.31502vw;
+        height: 15.38462vw;
         overflow: hidden;
         cursor: pointer; }
         .sort-list-div .sort-list .list-item .list-img-div .item-img {
-          width: 24.17582vw;
-          height: 24.17582vw;
+          width: 18.31502vw;
+          height: 15.38462vw;
           border-radius: 0.3663vw 0.3663vw 0 0;
           background-position: center center;
           background-repeat: no-repeat;
@@ -1999,21 +1999,29 @@ div.dis-ib {
         opacity: 1;
         transition: All 1s ease; }
       .sort-list-div .sort-list .list-item .item-text {
-        margin-top: 0.7326vw;
-        padding: 0.7326vw; }
+        padding: 0.7326vw;
+        background-color: #fff;
+        font-size: 0.95238vw; }
         .sort-list-div .sort-list .list-item .item-text .t-title {
-          color: #101213; }
+          color: #101213;
+          line-height: 2.1978vw; }
+          .sort-list-div .sort-list .list-item .item-text .t-title .icon {
+            font-size: 1.4652vw; }
         .sort-list-div .sort-list .list-item .item-text .t-title:hover {
           color: #ee534e; }
         .sort-list-div .sort-list .list-item .item-text .t-describe {
-          margin-top: 1.0989vw;
           color: #5e6468; }
-        .sort-list-div .sort-list .list-item .item-text .t-type {
-          position: absolute;
-          bottom: 0.7326vw;
-          color: #101213; }
-          .sort-list-div .sort-list .list-item .item-text .t-type .icon {
-            font-size: 2.1978vw; }
+        .sort-list-div .sort-list .list-item .item-text .about-production {
+          margin-top: 0.7326vw;
+          width: 14.65201vw;
+          color: #5e6468;
+          font-size: 0.95238vw; }
+          .sort-list-div .sort-list .list-item .item-text .about-production .icon {
+            font-size: 1.31868vw; }
+        .sort-list-div .sort-list .list-item .item-text .product-create-time {
+          margin-right: 0.7326vw;
+          line-height: 2.1978vw;
+          color: #5e6468; }
     .sort-list-div .sort-list .list-item:hover {
       box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
       -webkit-transform: translate3d(0px, -0.14652vw, 0px);

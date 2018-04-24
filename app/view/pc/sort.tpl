@@ -3,107 +3,48 @@
 {% block top %}
     <div class="sort-list-div">
         <div class="container clear-f">
-            <div class="title">
-                /<span class="title-sm">YY摄影</span>
-                <span class="title-bg">优秀认证师</span>/
-            </div>
             <div class="sort-list flex-b-sbc fw-wr">
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
+                {% for item in productionData %}
+                    <div class="list-item" href="production_detail?productionId={{ item.id }}">
+                        <div class="list-img-div">
+                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                            <div class="item-cover"></div>
+                        </div>
+                        <div class="item-text">
+                            <h3 class="t-title">
+                                {{ item.name }}
+                                <svg class="icon fr" aria-hidden="true">
+                                    <use xlink:href="#icon-zuixinlianzai"></use>
+                                </svg>
+                            </h3>
+                            <p class="t-describe">插画-商业插画</p>
+                            <div class="about-production flex-b-sbc">
+                                <div class="about-item">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-yanjing"></use>
+                                    </svg>
+                                    <span class="about-num">4.6万</span>
+                                </div>
+                                <div class="about-item">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-comment1"></use>
+                                    </svg>
+                                    <span class="about-num">196</span>
+                                </div>
+                                <div class="about-item">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-chakandianzan"></use>
+                                    </svg>
+                                    <span class="about-num">4299</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="clear-f">
+                                <span class="fr product-create-time">{{ item.create_time }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item" href="activity_detail?activityId=1">
-                    <div class="list-img-div">
-                        <div class="item-img" style="background-image:url('/public/images/cover/0.jpg')"></div>
-                        <div class="item-cover"></div>
-                    </div>
-                    <div class="item-text">
-                        <h3 class="t-title">来参加活动啦！</h3>
-                        <p class="t-describe">这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。这场活动将会带你走向美丽的世界。</p>
-                        <div class="t-type">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-zuixinlianzai"></use>
-                            </svg>
-                            官方活动
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
