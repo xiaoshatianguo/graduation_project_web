@@ -14,13 +14,13 @@
                     <li class="tab-item">上传作品</li>
                 </ul>
                 <div class="layui-tab-content fl">
-                    <div class="layui-tab-item activity-rule">
+                    <div class="layui-tab-item layui-show activity-rule">
                             <div class="tab-title">活动规则</div>
                     </div>
                     <div class="layui-tab-item original-statement">
                         <div class="tab-title">原创声明</div>
                     </div>
-                    <div class="layui-tab-item layui-show upload-production">
+                    <div class="layui-tab-item upload-production">
                         <div class="tab-title">上传作品</div>
                         <div class="upload-info">
                             <div class="info-title">作品信息</div>
