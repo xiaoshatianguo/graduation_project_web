@@ -39,7 +39,39 @@ class RouterController extends Controller {
     }
 
     async personalSpace () {
-        await this.ctx.render('pc/personal_space.tpl');
+        const id = this.ctx.query.userId;
+        const personal = await this.app.mysql.get('user_info', { id });
+        let personalData = JSON.parse(JSON.stringify(personal));
+
+        // 我的收藏
+        let myCollection = personalData.collectionIds;
+        let collectionIds = [];
+        let collectionDataArr = [];
+
+        if(!!personalData.collectionIds) {
+            collectionIds = personalData.collectionIds.split(',');
+    
+            for (let i = 0; i < collectionIds.length; i++) {
+                let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
+                tools.formatTime([productionData]);
+                collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
+            }
+        }
+
+        // 我的作品
+        const productionData = await this.app.mysql.query(
+            `SELECT * FROM production_info WHERE authorId = ${id} ORDER BY create_time desc;`
+        );
+
+        for (let i = 0; i < productionData.length; i++) {
+            tools.formatTime([productionData[i]]);
+        }
+
+        await this.ctx.render('pc/personal_space.tpl', {
+            personalData,
+            productionData: JSON.parse(JSON.stringify(productionData)),
+            collectionData: collectionDataArr,
+        });
     }
 
     async activityDetail () {
@@ -96,6 +128,7 @@ class RouterController extends Controller {
         const productionData = await this.app.mysql.query(
             `SELECT * FROM production_info WHERE sort = ${id} ORDER BY create_time desc;`
         );
+
         for (let i = 0; i < productionData.length; i++) {
             tools.formatTime([productionData[i]]);
         }

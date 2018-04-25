@@ -45,6 +45,7 @@ class UserService extends Service {
             address: params.address,
             portrait: params.portrait,
             personal_statement: params.personal_statement,
+            bgcover: params.bgcover,
             integral: params.integral,
             create_time: new Date().valueOf(),
             status: "0",

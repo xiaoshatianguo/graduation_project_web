@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '作品编号',
   `name` VARCHAR(255) DEFAULT '' comment '作品标题',
+  `authorId` VARCHAR(255) DEFAULT '' comment '冗余作者id',
   `author` VARCHAR(255) DEFAULT '' comment '作品作者',
   `sort` VARCHAR(255) DEFAULT '' comment '作品所属类别',
   `cover` VARCHAR(255) DEFAULT '' comment '作品上传',

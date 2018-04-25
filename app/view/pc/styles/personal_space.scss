@@ -227,7 +227,25 @@ $t-hover-color: #ee534e;
             }
 
             .personal-data {
-                
+                .data-show {
+                    .layui-form {
+                        width: 100%;
+
+                        font-size: 15px;
+
+                        .layui-form-label {
+                            margin-right: 15px;
+
+                            width: 150px;
+                        }
+                        
+                        .layui-input-block {
+                            color: $gray-color;
+
+                            line-height: 40px;
+                        }
+                    }
+                }
             }
 
             .personal-collection {
@@ -610,7 +628,20 @@ $t-hover-color: #ee534e;
 
             .personal-product-line {
                 .line-contetn {
+                    .cd-timeline-block {
+                        .cd-timeline-img {
+                            overflow: hidden;
 
+                            background-size: cover;
+                            background-position: center center;
+                        }
+
+                        .cd-timeline-content {
+                            .timeline-img {
+                                width: 100%;
+                            }
+                        }
+                    }
                 }
             }
         }

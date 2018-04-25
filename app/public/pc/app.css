@@ -1098,6 +1098,15 @@ div.dis-ib {
           -webkit-transform: translate3d(0px, -0.14652vw, 0px);
                   transform: translate3d(0px, -0.14652vw, 0px);
           transition: all 0.3s ease; }
+      .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form {
+        width: 100%;
+        font-size: 1.0989vw; }
+        .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-form-label {
+          margin-right: 1.0989vw;
+          width: 10.98901vw; }
+        .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block {
+          color: #5e6468;
+          line-height: 2.9304vw; }
       .author-info .tag-div .layui-tab-content .personal-collection .product-show {
         margin: 0 auto;
         width: 76.48352vw; }
@@ -1405,6 +1414,12 @@ div.dis-ib {
           top: 0;
           right: 0;
           width: 10.25641vw; }
+      .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-img {
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center; }
+      .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-content .timeline-img {
+        width: 100%; }
 @charset "UTF-8";
 .activity-detail-describe {
   margin-top: 1.4652vw; }
