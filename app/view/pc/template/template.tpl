@@ -16,6 +16,10 @@
     <title>大型摄影社区</title>
 </head>
 <body class="body">
+    {% block tip %}
+    
+    {% endblock %}
+
     {% block header %}
         <header class="header">
             <div class="container clear-f">

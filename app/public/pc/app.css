@@ -1177,80 +1177,49 @@ div.dis-ib {
                   transform: translate3d(0px, -0.14652vw, 0px);
           transition: all 0.3s ease; }
       .author-info .tag-div .layui-tab-content .personal-message {
-        /*初始化样式*/
-        /*清除浮动*/
-        /*浮动*/
-        /*----------------------------------------------------------------------------------------------------------*/
+        background-color: #fff;
         /*----------评论区域 begin----------*/
         /*----------评论区域 end----------*/ }
-        .author-info .tag-div .layui-tab-content .personal-message body, .author-info .tag-div .layui-tab-content .personal-message h1, .author-info .tag-div .layui-tab-content .personal-message h2, .author-info .tag-div .layui-tab-content .personal-message h3, .author-info .tag-div .layui-tab-content .personal-message h4, .author-info .tag-div .layui-tab-content .personal-message h5, .author-info .tag-div .layui-tab-content .personal-message ul, .author-info .tag-div .layui-tab-content .personal-message li, .author-info .tag-div .layui-tab-content .personal-message a, .author-info .tag-div .layui-tab-content .personal-message div, .author-info .tag-div .layui-tab-content .personal-message p, .author-info .tag-div .layui-tab-content .personal-message span, .author-info .tag-div .layui-tab-content .personal-message table, .author-info .tag-div .layui-tab-content .personal-message tr, .author-info .tag-div .layui-tab-content .personal-message td, .author-info .tag-div .layui-tab-content .personal-message img {
-          margin: 0;
-          padding: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message ul {
-          padding: 0;
-          margin: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message li {
-          list-style: none; }
-        .author-info .tag-div .layui-tab-content .personal-message a {
-          text-decoration: none; }
-        .author-info .tag-div .layui-tab-content .personal-message img {
-          outline: none;
-          border: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message body {
-          font-family: "Microsoft Yahei"; }
-        .author-info .tag-div .layui-tab-content .personal-message .clearfix:before,
-        .author-info .tag-div .layui-tab-content .personal-message .clearfix:after {
-          content: " ";
-          display: table; }
-        .author-info .tag-div .layui-tab-content .personal-message .clearfix:after {
-          clear: both; }
-        .author-info .tag-div .layui-tab-content .personal-message .clearfix {
-          zoom: 1; }
-        .author-info .tag-div .layui-tab-content .personal-message .pull-right {
-          float: right !important; }
-        .author-info .tag-div .layui-tab-content .personal-message .pull-left {
-          float: left !important; }
         .author-info .tag-div .layui-tab-content .personal-message .content {
           float: left; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap, .author-info .tag-div .layui-tab-content .personal-message pre {
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
+        .author-info .tag-div .layui-tab-content .personal-message pre {
           margin: 0 !important; }
         .author-info .tag-div .layui-tab-content .personal-message .commentAll {
-          width: 36.63004vw;
-          padding: 1.4652vw;
-          border: 1px solid #ededed;
+          padding: 2.1978vw 2.9304vw;
           margin: 1.4652vw auto; }
         .author-info .tag-div .layui-tab-content .personal-message .plBtn {
-          width: 5.49451vw;
-          height: 2.63736vw;
-          line-height: 2.63736vw;
-          background-color: #339b53;
-          text-align: center;
           display: block;
           float: right;
-          color: #FFFFFF;
-          font-size: 0.87912vw;
-          border-radius: 0.43956vw;
           margin-right: 0.14652vw;
-          margin-top: 1.4652vw; }
+          margin-top: 1.4652vw;
+          width: 5.49451vw;
+          height: 2.63736vw;
+          font-size: 0.87912vw;
+          line-height: 2.63736vw;
+          text-align: center;
+          border-radius: 0.43956vw;
+          background-color: #f068a9;
+          color: #FFFFFF; }
         .author-info .tag-div .layui-tab-content .personal-message .plBtn:hover {
           background-color: #2f904d; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-show {
           margin-top: 1.4652vw; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-show-con {
+          padding: 0.7326vw 0;
           width: 100%;
-          border-top: 1px solid #EDEDED;
-          padding: 0.7326vw 0; }
+          border-top: 1px solid #EDEDED; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-img {
+          margin-top: 0.3663vw;
           width: 3.51648vw;
           height: 3.51648vw;
-          overflow: hidden;
-          margin-top: 0.3663vw; }
+          overflow: hidden; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
-          width: 85%;
-          margin-left: 3%; }
+          margin-left: 3%;
+          width: 85%; }
         .author-info .tag-div .layui-tab-content .personal-message .pl-text {
-          width: 100%;
           margin-top: 0.51282vw;
+          width: 100%;
           word-wrap: break-word;
           overflow: hidden; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz {
@@ -1258,55 +1227,58 @@ div.dis-ib {
           float: left; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-list-con {
           float: left;
+          margin-top: 0.51282vw;
           width: 100%;
-          background-color: #eaeaec;
-          margin-top: 0.51282vw; }
+          background-color: #eaeaec; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-size-name {
           font-size: 0.87912vw;
           color: #339b53; }
         .author-info .tag-div .layui-tab-content .personal-message .my-pl-con {
+          width: 100%;
           font-size: 0.87912vw;
-          color: #8b8b8b;
-          width: 100%; }
+          color: #8b8b8b; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-left {
-          font-size: 0.87912vw;
-          color: #8b8b8b;
           display: block;
-          padding-top: 1.31868vw; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-time, .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+          padding-top: 1.31868vw;
+          font-size: 0.87912vw;
+          color: #8b8b8b; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-time,
+        .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
           padding-top: 0.51282vw; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
           margin-top: 0; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-right {
+          position: relative;
           display: block;
           padding-top: 0.43956vw;
           padding-right: 1.31868vw;
-          position: relative;
           overflow: hidden; }
         .author-info .tag-div .layui-tab-content .personal-message .removeBlock {
+          display: block;
           float: left;
+          margin-right: 1.75824vw;
           font-size: 0.87912vw;
           color: #8b8b8b;
-          margin-right: 1.75824vw;
-          display: block;
           opacity: 0; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-con-block {
           display: block; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-pl, .author-info .tag-div .layui-tab-content .personal-message .date-dz-line, .author-info .tag-div .layui-tab-content .personal-message .date-dz-z {
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-pl,
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-line,
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z {
           font-size: 0.87912vw;
           color: #8b8b8b; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-line {
           display: block;
           padding: 0 1.4652vw; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click-red {
+          margin-right: 0.3663vw;
           width: 1.24542vw;
           height: 1.24542vw;
           display: block;
           float: left;
           background-image: url("/public/images/cover/1.jpg");
           background-repeat: no-repeat;
-          background-position: -0.43956vw -14.50549vw;
-          margin-right: 0.3663vw; }
+          background-position: -0.43956vw -14.50549vw; }
         .author-info .tag-div .layui-tab-content .personal-message .z-num {
           font-style: normal; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
@@ -1314,28 +1286,28 @@ div.dis-ib {
         .author-info .tag-div .layui-tab-content .personal-message .red {
           background-position: -0.43956vw -8.71795vw !important; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-pl {
+          display: block;
+          float: right;
+          margin-right: 0.14652vw;
+          margin-top: 1.4652vw;
           width: 5.12821vw;
           height: 2.1978vw;
           line-height: 2.1978vw;
-          background-color: #339b53;
           text-align: center;
-          display: block;
-          float: right;
-          color: #FFFFFF;
           font-size: 0.87912vw;
           border-radius: 0.43956vw;
-          margin-right: 0.14652vw;
-          margin-top: 1.4652vw; }
+          background-color: #339b53;
+          color: #FFFFFF; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-con {
-          width: 100%;
-          margin-top: 1.75824vw; }
+          margin-top: 1.75824vw;
+          width: 100%; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-input {
           font-size: 0.87912vw; }
         .author-info .tag-div .layui-tab-content .personal-message .all-pl-con {
-          width: 96%;
+          margin: 0 2%;
           padding: 2% 0;
-          float: left;
-          margin: 0 2%; }
+          width: 96%;
+          float: left; }
         .author-info .tag-div .layui-tab-content .personal-message .atName {
           font-size: 0.87912vw;
           color: #339b53; }
@@ -1353,23 +1325,22 @@ div.dis-ib {
           white-space: pre-wrap;
           word-wrap: break-word; }
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
-          width: 100%;
           position: relative;
+          width: 100%;
           *zoom: 1; }
         .author-info .tag-div .layui-tab-content .personal-message textarea,
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
-          outline: 0;
           margin: 0;
-          border: none;
           padding: 0;
-          *padding-bottom: 0 !important; }
+          border: none;
+          *padding-bottom: 0 !important;
+          outline: 0; }
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea,
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          width: 100%;
           *white-space: pre;
           *word-wrap: break-word;
           white-space: pre-wrap;
-          width: 100%;
-          -ms-box-sizing: border-box;
           box-sizing: border-box; }
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea {
           overflow: hidden;
@@ -1378,10 +1349,7 @@ div.dis-ib {
           left: 0;
           height: 100%;
           width: 100%;
-          resize: none;
-          /* IE7 box-sizing fudge factor */
-          *height: 94%;
-          *width: 94%; }
+          resize: none; }
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
           display: block;
           visibility: hidden; }
@@ -1390,24 +1358,18 @@ div.dis-ib {
           margin-bottom: 1.8315vw; }
         .author-info .tag-div .layui-tab-content .personal-message textarea,
         .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
-          line-height: 1.7;
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 100%;
           padding: 0.7326vw 1.0989vw;
-          border: 1px solid #c6c8ce;
           width: 100%;
+          line-height: 1;
+          font-size: 1.0989vw;
+          border: 1px solid #beb9b9;
           -webkit-appearance: none;
-          background: #fff;
           border-radius: 0.21978vw;
-          background-clip: padding-box;
           box-shadow: 0 0 0.58608vw rgba(182, 195, 214, 0.6) inset, 0 1px 1px #fff;
           transition-duration: 300ms;
-          -webkit-transition-easing: ease-in-out;
-          -moz-transition-easing: ease-in-out;
-          -o-transition-easing: ease-in-out;
-          -ms-transition-easing: ease-in-out;
-          transition-easing: ease-in-out;
-          transition-property: border-color, box-shadow; }
+          transition-property: border-color, box-shadow;
+          background-clip: padding-box;
+          background: #eceaea; }
         .author-info .tag-div .layui-tab-content .personal-message .fork-link {
           display: block;
           position: absolute;

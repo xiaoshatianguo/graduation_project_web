@@ -37,7 +37,7 @@ $('.commentAll').on('click','.plBtn',function(){
     var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
     console.log(oSize);
     //动态创建评论模块
-    oHtml = '<div class="comment-show-con clearfix"><div class="comment-show-con-img pull-left"><img src="/public/images/cover/1.jpg" alt=""></div> <div class="comment-show-con-list pull-left clearfix"><div class="pl-text clearfix"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
+    oHtml = '<div class="comment-show-con clear-f"><div class="comment-show-con-img fl"><img src="/public/images/cover/1.jpg" alt=""></div> <div class="comment-show-con-list fl clear-f"><div class="pl-text clear-f"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left fl comment-time">'+now+'</span> <div class="date-dz-right fr comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复</a> <span class="fl date-dz-line">|</span> <a href="javascript:;" class="date-dz-z fl"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
     if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
         $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
         $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');
@@ -53,7 +53,7 @@ $('.comment-show').on('click','.pl-hf',function(){
     //回复@
     var fhN = '回复@'+fhName;
     //var oInput = $(this).parents('.date-dz-right').parents('.date-dz').siblings('.hf-con');
-    var fhHtml = '<div class="hf-con pull-left"> <textarea class="content comment-input hf-input" placeholder="" onkeyup="keyUP(this)"></textarea> <a href="javascript:;" class="hf-pl">评论</a></div>';
+    var fhHtml = '<div class="hf-con fl"> <textarea class="content comment-input hf-input" placeholder="" onkeyup="keyUP(this)"></textarea> <a href="javascript:;" class="hf-pl">评论</a></div>';
     //显示回复
     if($(this).is('.hf-con-block')){
         $(this).parents('.date-dz-right').parents('.date-dz').append(fhHtml);
@@ -121,7 +121,7 @@ $('.comment-show').on('click','.hf-pl',function(){
                 oHf = data.hfName;
             });
 
-            var oHtml = '<div class="all-pl-con"><div class="pl-text hfpl-text clearfix"><a href="#" class="comment-size-name">我的名字 : </a><span class="my-pl-con">'+oAt+'</span></div><div class="date-dz"> <span class="date-dz-left pull-left comment-time">'+now+'</span> <div class="date-dz-right pull-right comment-pl-block"> <a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left">回复</a> <span class="pull-left date-dz-line">|</span> <a href="javascript:;" class="date-dz-z pull-left"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div></div>';
+            var oHtml = '<div class="all-pl-con"><div class="pl-text hfpl-text clear-f"><a href="#" class="comment-size-name">我的名字 : </a><span class="my-pl-con">'+oAt+'</span></div><div class="date-dz"> <span class="date-dz-left fl comment-time">'+now+'</span> <div class="date-dz-right fr comment-pl-block"> <a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复</a> <span class="fl date-dz-line">|</span> <a href="javascript:;" class="date-dz-z fl"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div></div>';
             oThis.parents('.hf-con').parents('.comment-show-con-list').find('.hf-list-con').css('display','block').prepend(oHtml) && oThis.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf').addClass('hf-con-block') && oThis.parents('.hf-con').remove();
         });
     }

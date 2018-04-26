@@ -1,0 +1,232 @@
+
+// 提示遮罩层统一样式
+.cover {
+    position: fixed;
+
+    // cover显示时值需为flex
+    display: none;
+    
+    margin-left: 140px;
+    width: 92.7%;
+    height: 100%;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+
+        font-size: 30px;
+        text-align: center;
+        
+        background-color: #313133;
+        color: #fff;
+        
+        opacity: .9;
+
+        .tip-input-div {
+            position: relative;
+            
+            width: 500px;
+
+            border-radius: 10px;
+
+            background-color: #fff;
+
+            .title {
+                height: 60px;
+                
+                font-size: 20px;
+                line-height: 60px;
+
+                background-color: #ebebeb;
+                color: #666;
+
+                border-radius: 2px;
+            }
+
+            .info-box {
+                margin: 30px;
+
+                .tip-content {
+                    margin-bottom: 30px;
+
+                    .tip-input {
+                        display: block;
+
+                        width: 100%;
+                        height: 41px;
+
+                        font-size: 25px;
+                        text-indent: 10px;
+
+                        border: 1px solid #666;
+                    }
+                }
+
+                .tip-input-cancel,.tip-input-submit {
+                    display: block;
+
+                    margin: 0 30px 30px;
+                    width: 100px;
+                    height: 41px;
+
+                    line-height: 41px;
+                    font-size: 20px;
+                    text-align: center;
+
+                    background-color: #121212;
+                    color: #fff;
+
+                    cursor: pointer;
+                }
+            }
+
+            .tip-error-show{
+                position: absolute;
+                bottom: -50px;
+                left: 0;
+
+                display: none;
+
+                width: 100%;
+
+                color: rgb(238, 231, 231);
+
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+
+        .shopping-cart-noLogin {
+            .login-text {
+                margin-bottom: 120px;
+            }
+
+            .select-text {
+                margin-bottom: 50px;
+
+                font-size: 20px;
+            }
+
+            .login-link,
+            .register-link {
+                display: block;
+
+                margin-bottom: 50px;
+
+                font-size: 16px;
+
+                color: #fff;
+
+                .link-zh {
+                    display: block;
+
+                    font-size: 30px;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .tip-content {
+            margin-left: 30px;
+            
+            font-size: 30px;
+            
+            color: #fff;
+        }
+
+        .alert-div {
+            width: 300px;
+
+            .tip-content {
+                margin-bottom: 30px;
+            }
+
+            .tip-cancel,
+            .tip-submit {
+                display: block;
+                
+                width: 100px;
+                height: 41px;
+
+                line-height: 41px;
+                font-size: 20px;
+                text-align: center;
+
+                background-color: #121212;
+                color: #fff;
+
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+// lodaing统一样式
+.loading{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    animation: load 2s linear infinite;
+}
+.loading div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.loading span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #99CC66;
+    position: absolute;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    animation: changeBgColor 3s ease infinite;
+}
+
+@keyframes load{
+    0%{
+        -webkit-transform: rotate(0deg);
+    }
+    33.3%{
+        -webkit-transform: rotate(120deg);
+    }
+    66.6%{
+        -webkit-transform: rotate(240deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes changeBgColor{
+    0%,100%{
+        background: #99CC66;
+    }
+    33.3%{
+        background: #FFFF66;
+    }
+    66.6%{
+        background: #FF6666;
+    }
+}
+
+.loading div:nth-child(2){
+    -webkit-transform: rotate(120deg);
+}
+.loading div:nth-child(3){
+    -webkit-transform: rotate(240deg);
+}
+.loading div:nth-child(2) span{
+    -webkit-animation-delay: 1s;
+}
+.loading div:nth-child(3) span{
+    -webkit-animation-delay: 2s;
+}
