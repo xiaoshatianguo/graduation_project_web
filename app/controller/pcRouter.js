@@ -141,6 +141,14 @@ class RouterController extends Controller {
     async productionDetail () {
         await this.ctx.render('pc/production_detail.tpl');
     }
+
+    async login () {
+        await this.ctx.render('/pc/login.tpl');
+    }
+
+    async register () {
+        await this.ctx.render('/pc/register.tpl');
+    }
 }
 
 module.exports = RouterController;

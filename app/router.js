@@ -14,6 +14,8 @@ module.exports = app => {
   router.get('/activity', controller.pcRouter.activity);
   router.get('/certified_architect', controller.pcRouter.certifiedArchitect);
   router.get('/personal_space', controller.pcRouter.personalSpace);
+  router.get('/login', controller.pcRouter.login);
+  router.get('/register', controller.pcRouter.register);
 
   /** 其他路由跳转 */
   router.get('/activity_detail', controller.pcRouter.activityDetail);
@@ -42,4 +44,7 @@ module.exports = app => {
 
   // 七牛云
   router.get('/api/qiuniuyun', controller.api.qiuniuUpload.qiuniuUpload);
+
+  // 发送验证码
+  router.post('send_code', '/api/send_email', controller.api.sendEmail.sendEmail);
 };

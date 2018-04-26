@@ -2319,5 +2319,125 @@ div.dis-ib {
       top: 0;
       right: 0;
       width: 10.25641vw; }
+.register-page {
+  width: 100%;
+  height: 85vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .register-page .register-div {
+    height: 21.97802vw;
+    background-color: rgba(17, 13, 13, 0.3);
+    color: #fff; }
+    .register-page .register-div .leader-left {
+      padding: 1.4652vw;
+      width: 25.64103vw;
+      height: 100%; }
+      .register-page .register-div .leader-left .icon {
+        font-size: 2.9304vw; }
+      .register-page .register-div .leader-left .l-title {
+        line-height: 3.663vw;
+        font-size: 1.4652vw; }
+      .register-page .register-div .leader-left .leader-detail {
+        text-align: center; }
+        .register-page .register-div .leader-left .leader-detail .text1 {
+          padding-top: 1.4652vw; }
+        .register-page .register-div .leader-left .leader-detail .text2 {
+          padding: 0.7326vw;
+          font-size: 1.4652vw; }
+        .register-page .register-div .leader-left .leader-detail .text3 {
+          padding-bottom: 1.4652vw; }
+    .register-page .register-div .register-right {
+      padding: 1.4652vw;
+      width: 21.97802vw;
+      height: 100%;
+      background: rgba(90, 88, 88, 0.2); }
+      .register-page .register-div .register-right .register-form {
+        margin-top: 1.4652vw;
+        width: 100%; }
+        .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block {
+          margin: 0 0 1.4652vw 0;
+          width: 100%; }
+          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .layui-input {
+            border-radius: 1.4652vw; }
+        .register-page .register-div .register-right .register-form .layui-form-item .forget-psd {
+          padding-top: 0.7326vw; }
+          .register-page .register-div .register-right .register-form .layui-form-item .forget-psd .forget-psd-link {
+            color: #fff; }
+        .register-page .register-div .register-right .register-form .layui-form-item .layui-btn {
+          width: 10.98901vw;
+          border-radius: 1.4652vw;
+          background-color: #f068a9; }
+        .register-page .register-div .register-right .register-form .layui-form-item .login-link {
+          padding-left: 0.7326vw;
+          color: #fff; }
+
+.layui-form-checkbox[lay-skin=primary] span {
+  color: #fff; }
+.register-page {
+  width: 100%;
+  height: 85vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .register-page .register-div {
+    height: 21.97802vw;
+    background-color: rgba(17, 13, 13, 0.3);
+    color: #fff; }
+    .register-page .register-div .leader-left {
+      padding: 1.4652vw;
+      width: 25.64103vw;
+      height: 100%; }
+      .register-page .register-div .leader-left .icon {
+        font-size: 2.9304vw; }
+      .register-page .register-div .leader-left .l-title {
+        line-height: 3.663vw;
+        font-size: 1.4652vw; }
+      .register-page .register-div .leader-left .leader-detail {
+        text-align: center; }
+        .register-page .register-div .leader-left .leader-detail .text1 {
+          padding-top: 1.4652vw; }
+        .register-page .register-div .leader-left .leader-detail .text2 {
+          padding: 0.7326vw;
+          font-size: 1.4652vw; }
+        .register-page .register-div .leader-left .leader-detail .text3 {
+          padding-bottom: 1.4652vw; }
+    .register-page .register-div .register-right {
+      padding: 1.4652vw;
+      width: 21.97802vw;
+      height: 100%;
+      background: rgba(90, 88, 88, 0.2); }
+      .register-page .register-div .register-right .register-form {
+        margin-top: 2.1978vw;
+        width: 100%; }
+        .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block {
+          position: relative;
+          margin: 0 0 1.4652vw 0;
+          width: 100%; }
+          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .send-code-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 7.32601vw; }
+          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .layui-input {
+            border-radius: 1.4652vw; }
+        .register-page .register-div .register-right .register-form .layui-form-item .forget-psd {
+          padding-top: 0.7326vw; }
+          .register-page .register-div .register-right .register-form .layui-form-item .forget-psd .forget-psd-link {
+            color: #fff; }
+        .register-page .register-div .register-right .register-form .layui-form-item .layui-btn {
+          display: block;
+          margin: 0 auto;
+          width: 10.98901vw;
+          border-radius: 1.4652vw;
+          background-color: #f068a9; }
+        .register-page .register-div .register-right .register-form .layui-form-item .login-link {
+          display: block;
+          padding-left: 0.7326vw;
+          text-align: center;
+          color: #fff; }
+
+.layui-form-checkbox[lay-skin=primary] span {
+  color: #fff; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

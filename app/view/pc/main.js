@@ -10,4 +10,6 @@ import activity_manage from './styles/activity_manage.scss';
 import apply_certified_architect from './styles/apply_certified_architect.scss';
 import sort from './styles/sort.scss';
 import production_detail from './styles/production_detail.scss';
+import login from './styles/login.scss';
+import register from './styles/register.scss';
 
