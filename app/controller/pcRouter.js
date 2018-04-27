@@ -138,7 +138,14 @@ class RouterController extends Controller {
     }
 
     async productionDetail () {
-        await this.ctx.render('pc/production_detail.tpl');
+        const id = this.ctx.query.productionId;
+        const result = await this.app.mysql.get('production_info', { id });
+        tools.formatTime([result]);
+        let data = JSON.parse(JSON.stringify(result));
+
+        await this.ctx.render('pc/production_detail.tpl' {
+            productionData: data,
+        });
     }
 
     async login () {
@@ -162,8 +169,30 @@ class RouterController extends Controller {
 
         if(result) {
             let record = JSON.parse(JSON.stringify(result));
+
+            // 生成token并存储到session
+            let info = userData.email + psd + new Date().valueOf();
+            let token = tools.getMD5Password(info);
+            ctx.cookies.set(userData.email, token, {
+                maxAge: 24 * 3600 * 1000,
+            });
+            // console.log(ctx.cookies.get(userData.email));
             if(record.password == d) {
-                ctx.body = record;
+                // 登录成功
+                let newRecord = {
+                    email: result.email,
+                    // phone: result.phone,
+                    // nickname: result.nickname,
+                    // name: result.name,
+                    // sex: result.sex,
+                    // age: result.age,
+                    // address: result.address,
+                    // portrait: result.portrait,
+                    // personal_statement: result.personal_statement,
+                    // bgcover: result.bgcover,
+                    token,
+                };
+                ctx.body = newRecord;
                 ctx.status = 200;
             } else {
                 ctx.body = {
@@ -176,6 +205,22 @@ class RouterController extends Controller {
                 msg: '用户不存在'
             };
             ctx.status = 404;
+        }
+    }
+
+    async logout () {
+        const ctx = this.ctx;
+        const userData = ctx.request.body;
+
+        let email = userData.eamil;
+        let token = userData.token;
+
+        let curToken = ctx.cookies.get(userData.email);
+
+        if(token == curToken) {
+            ctx.cookies.set(userData.email, null);
+
+            ctx.status = 201;
         }
     }
 

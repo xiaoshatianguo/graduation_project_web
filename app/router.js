@@ -50,7 +50,8 @@ module.exports = app => {
   // 验证验证码
   router.post('vertify_code', '/api/vertify_code', controller.api.vertifyCode.vertifyCode);
 
-  // 前端登录注册api
+  // 前端登录注册登出api
   router.post('login', '/api/register', controller.pcRouter.registerUser);
   router.post('register', '/api/login', controller.pcRouter.loginVerify);
+  router.post('logout', '/api/logout', controller.pcRouter.logout);
 };

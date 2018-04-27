@@ -85,6 +85,7 @@
                         },
                         success: function(result){
                             alert('登录成功');
+                            cacheSet('userLoginInfo', result);
                             location.href = '/';
                         },
                         error: function(err) {
