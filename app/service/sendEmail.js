@@ -2,44 +2,40 @@
 
 const Service = require('egg').Service;
 const nodemailer = require('nodemailer');
-// const currentEditTable = 'comments_info'; // 当前操作的表名
 
-class CommentsService extends Service {
+class sendEmailService extends Service {
     constructor(ctx) {
         super(ctx);
     }
 
-    async sendEmail(userData) {
-        var email = userData.email;
-        // console.log(email);
-        try {
-            if(this.check()) {
-                let code = await this.createCode();
-                this.sendEmail(code, email);
-            }
+    async index(email) {
+        let code;
 
-            this.ctx.status = 200;
-        } catch (err) {
-            this.ctx.status = 400;
-            this.ctx.body = '表单提交错误';
+        if(this.check(email)) {
+            code = await this.createCode();
+            // 存储到cookies
+            this.ctx.cookies.set(email, code, {
+                maxAge: 5 * 60 * 1000,
+            });
+            this.sendEmail(code, email);
         }
 
-        return JSON.parse(JSON.stringify(result));
+        return code;
     }
 
     // 邮箱校验
-    check() {
+    check(obj) {
         let reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
-        if (obj.value === "") {
+        if (obj === "") {
             //输入不能为空
-            console.log("输入不能为空!");
+            console.log("邮箱输入不能为空!");
             return false;
-        } else if (!reg.test(obj.value)) {
+        } else if (!reg.test(obj)) {
             //正则验证不通过，格式不对
-            console.log("验证不通过!");
+            console.log("邮箱验证不通过!");
             return false;
         } else {
-            console.log("通过！");
+            console.log("邮箱校验通过！");
             return true;
         }
     }
@@ -65,7 +61,6 @@ class CommentsService extends Service {
         }
         /*console.log(arr);*/
         var code=arr.join("");
-        console.log(code);
         return code;
     }
 
@@ -85,7 +80,7 @@ class CommentsService extends Service {
                 secure: true, // true for 465, false for other ports
                 auth: {
                     user: '869074486@qq.com', // generated ethereal user
-                    pass: 'yy12340.', // generated ethereal password
+                    pass: 'onwdajjarjqabeha', // generated ethereal password
                 },
             });
 
@@ -95,7 +90,7 @@ class CommentsService extends Service {
                 to: `${email}`, // list of receivers
                 subject: 'Hello,Here is yy website.', // Subject line
                 text: `【YY摄影】验证码`, // plain text body
-                html: `<p>您好，您的yy摄影网站验证码为：${code}，请在五分钟内进行校验！</p>
+                html: `<p>您好，您的yy摄影网站验证码为：<b>${code}</b>，请在五分钟内进行校验！</p>
                `, // html body
             };
 
@@ -115,4 +110,4 @@ class CommentsService extends Service {
     }
 }
 
-module.exports = CommentsService;
+module.exports = sendEmailService;

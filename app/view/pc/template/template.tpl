@@ -416,6 +416,7 @@
     <script src="/public/layui/layui.js"></script>
     <script src="/public/modernizr.js"></script>
     <script src="/public/scripts/comment.js"></script>
+    <script src="/public/scripts/login.js"></script>
 
     {% block script %}
         <script>

@@ -1,7 +1,6 @@
 'use strict';
 
 const Controller = require('egg').Controller;
-
 const tools = require('../utils/tool.js');
 
 class RouterController extends Controller {
@@ -148,6 +147,58 @@ class RouterController extends Controller {
 
     async register () {
         await this.ctx.render('/pc/register.tpl');
+    }
+
+    async loginVerify () {
+        const ctx = this.ctx;
+        const userData = ctx.request.body;
+
+        let psd = userData.password;
+        let d = tools.getMD5Password(psd);
+
+        const result = await this.app.mysql.get('user_info', {
+            email: userData.email,
+        });
+
+        if(result) {
+            let record = JSON.parse(JSON.stringify(result));
+            if(record.password == d) {
+                ctx.body = record;
+                ctx.status = 200;
+            } else {
+                ctx.body = {
+                    msg: '密码错误！'
+                };
+                ctx.status = 403;
+            }
+        } else {
+            ctx.body = {
+                msg: '用户不存在'
+            };
+            ctx.status = 404;
+        }
+    }
+
+    async registerUser () {
+        const ctx = this.ctx;
+        const userData = ctx.request.body;
+
+        let psd = userData.password;
+        let d = tools.getMD5Password(psd);
+
+        const result = await this.app.mysql.insert('user_info', {
+            email: userData.eamil,
+            password: d,
+            create_time: new Date().valueOf(),
+        });
+
+        const newRecord = await this.app.mysql.get(
+            'user_info',
+            {id: result.insertId}
+        );
+
+        ctx.body = JSON.parse(JSON.stringify(newRecord));
+        ctx.status = 200;
     }
 }
 

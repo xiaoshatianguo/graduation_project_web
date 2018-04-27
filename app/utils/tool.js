@@ -1,5 +1,6 @@
 'use strict';
 
+const crypto=require('crypto');    // md5加密算法
 const moment = require('moment');
 
 /**
@@ -42,5 +43,15 @@ exports.formatTime = function(arr = []) {
         item.end_time = moment(item.end_time).format('YYYY-MM-DD');
         }
     })
-}
+};
 
+/**
+ * 用户登录注册工具方法
+ */
+// md5加密方法
+exports.getMD5Password = function(content) {
+  var md5 = crypto.createHash('md5');//定义加密方式:md5不可逆,此处的md5可以换成任意hash加密的方法名称；
+  md5.update(content);
+  var d = md5.digest('hex');  //加密后的值d
+  return d;
+};

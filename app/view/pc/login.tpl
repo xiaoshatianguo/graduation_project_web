@@ -23,13 +23,13 @@
             <div class="fl register-right">
                 用户登录
                 <div class="register-form">
-                    <form class="layui-form" action="">
+                    <div class="layui-form">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入手机号" class="layui-input">
+                                <input type="text" placeholder="请输入邮箱" class="layui-input email-input">
                             </div>
                             <div class="layui-input-block">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入密码" class="layui-input">
+                                <input type="text" placeholder="请输入密码" class="layui-input psd-input">
                             </div>
                             <div class="layui-inline">
                                 <input type="checkbox" name="" lay-skin="primary" title="记住密码(7天)">
@@ -39,10 +39,10 @@
                             </div>
                         </div>
                         <div class="layui-form-item">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo2">注册</button>
-                            <a href="" class="login-link">免费注册</a>
+                            <button class="layui-btn login-btn">登&nbsp;&nbsp;&nbsp;录</button>
+                            <a href="/register" class="login-link">免费注册</a>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,5 +66,39 @@
         layui.use(['form'], function(){
 
         });
+
+        var email = $('.email-input');
+        var psd = $('.psd-input');
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+
+        $('.login-btn').on('click', function() {
+            if(!!email.val()&&!!psd.val()) {
+                if(!reg.test(email.val())) {
+                    alert('请输入合法的邮箱！');
+                } else {
+                    $.ajax({
+                        type: 'post',
+                        url: '/api/login',
+                        data: {
+                            email: email.val(),
+                            password: psd.val(),
+                        },
+                        success: function(result){
+                            alert('登录成功');
+                            location.href = '/';
+                        },
+                        error: function(err) {
+                            if(err.status == 403){
+                                alert('密码错误');
+                            } else if(err.status == 404) {
+                                alert('该用户不存在');
+                            }
+                        }
+                    })
+                }
+            } else {
+                alert('请输入账号或密码！');
+            }
+        })
     </script>
 {% endblock %}

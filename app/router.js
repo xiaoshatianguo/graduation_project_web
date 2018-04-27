@@ -47,4 +47,10 @@ module.exports = app => {
 
   // 发送验证码
   router.post('send_code', '/api/send_email', controller.api.sendEmail.sendEmail);
+  // 验证验证码
+  router.post('vertify_code', '/api/vertify_code', controller.api.vertifyCode.vertifyCode);
+
+  // 前端登录注册api
+  router.post('login', '/api/register', controller.pcRouter.registerUser);
+  router.post('register', '/api/login', controller.pcRouter.loginVerify);
 };

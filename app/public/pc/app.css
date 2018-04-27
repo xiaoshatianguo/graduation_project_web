@@ -2436,6 +2436,8 @@ div.dis-ib {
           padding-left: 0.7326vw;
           text-align: center;
           color: #fff; }
+    .register-page .register-div .register-step2 {
+      display: none; }
 
 .layui-form-checkbox[lay-skin=primary] span {
   color: #fff; }
