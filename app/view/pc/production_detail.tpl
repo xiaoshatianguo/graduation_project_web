@@ -56,7 +56,7 @@
                 </p>
            </div>
            <div class="img-list">
-               <img class="img" src="{{ productionData.cover }}" alt="">
+               <img class="img" src="{{ productionData.cover }}-createLogo" alt="">
            </div>
        </div>
    </div>

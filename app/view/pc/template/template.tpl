@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="//at.alicdn.com/t/font_631371_ld3wb508rgt4kj4i.js"></script>
+    <script src="//at.alicdn.com/t/font_631371_1w07ufoy071fw29.js"></script>
     <script src="/public/jquery-3.2.1.min.js"></script>
     <script src="/public/scripts/jquery.flexText.js"></script>
     <link rel="stylesheet" href="/public/layui/css/layui.css">
@@ -22,11 +22,10 @@
     {% endblock %}
 
     {% block header %}
-        <header class="header">
+        <header class="header zx310">
             <div class="container clear-f">
                 <a href="/" class="logo-img fl">
-                    <img class="img" src="/public/images/favicon.png" alt="">
-                    YY摄影
+                    <img class="img" src="/public/images/photo1.png" alt="">
                 </a>
                 <ul class="header-nav-right flex-b-sc fl">
                     <!-- <a href="/" class="nav-li">首页</a> -->
@@ -96,5 +95,21 @@
             })
         </script>
     {% endblock %}
+
+    <script>
+        document.oncontextmenu = function (event) {
+            if (window.event) {
+                event = window.event;
+            } try {
+                var the = event.srcElement;
+                if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                    return false;
+                }
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

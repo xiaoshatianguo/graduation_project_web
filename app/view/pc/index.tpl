@@ -11,7 +11,7 @@
                 {% for item in activityData %}
                     <a class="list-item" href="activity_detail?activityId={{ item.id }}">
                         <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                            <div class="item-img" style="background-image:url({{ item.cover }}-createLogo)"></div>
                             <div class="item-cover"></div>
                         </div>
                         <div class="item-text">
@@ -49,7 +49,7 @@
                             <h3 class="t-title">{{ item.name }}</h3>
                         </div>
                         <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                            <div class="item-img" style="background-image:url({{ item.cover }}-createLogo)"></div>
                             <div class="item-cover"></div>
                         </div>
                     </a>
@@ -74,7 +74,7 @@
                 {% for item in certifiedArchitectData %}
                     <a class="list-item" href="personal_space?userId={{ item.id }}">
                         <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.portrait }})"></div>
+                            <div class="item-img" style="background-image:url({{ item.portrait }}-createLogo)"></div>
                         </div>
                         <div class="item-text">
                             <h3 class="t-title">{{ item.nickname }}</h3>
@@ -100,7 +100,7 @@
                 {% for item in productionData %}
                     <a class="list-item" href="production_detail?productionId={{ item.id }}">
                         <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                            <div class="item-img" style="background-image:url({{ item.cover }}-createLogo)"></div>
                         </div>
                     </a>
                 {% endfor %}

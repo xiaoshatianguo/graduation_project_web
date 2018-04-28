@@ -370,6 +370,7 @@ div.dis-ib {
 } */
 @charset "UTF-8";
 .header {
+  width: 100%;
   height: 4.3956vw;
   font-size: 1.4652vw;
   color: #161515;
@@ -378,12 +379,12 @@ div.dis-ib {
     position: relative; }
     .header .container .logo-img {
       display: block;
-      margin-left: 3.663vw;
-      width: 10.98901vw;
-      line-height: 3.663vw; }
+      margin-left: 7.32601vw;
+      width: 11.72161vw;
+      line-height: 4.0293vw; }
       .header .container .logo-img .img {
-        width: 4.3956vw;
-        height: 4.3956vw; }
+        width: 11.35531vw;
+        height: 3.663vw; }
     .header .container .header-nav-right {
       margin-left: 9.52381vw; }
       .header .container .header-nav-right .nav-li {

@@ -207,6 +207,7 @@ class RouterController extends Controller {
             if(record.password == d) {
                 // 登录成功
                 let newRecord = {
+                    id: result.id,
                     email: result.email,
                     // phone: result.phone,
                     // nickname: result.nickname,

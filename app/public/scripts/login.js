@@ -66,11 +66,12 @@ function loginStatus() {
  * @param {*} userLoginInfo 用户登录的userLoginInfo
  */
 function logoutStatus(userLoginInfo) {
+    var id = userLoginInfo.id;
     var email = userLoginInfo.email;
     
     $('.header-login').html(
         `
-        <a href="/login" class="nav-li">${email}</a>
+        <a href="/personal_space?userId=${id}" class="nav-li">${email}</a>
         <a href="javascript:;" class="nav-li logout">登出</a>
         `
     );

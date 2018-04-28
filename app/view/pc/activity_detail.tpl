@@ -7,7 +7,7 @@
 {% block top %}
     <div class="activity-detail-describe">
         <div class="container clear-f">
-            <div class="fl describe-img" style="background-image:url({{ activityDetailData.cover }})">
+            <div class="fl describe-img" style="background-image:url({{ activityDetailData.cover }}-createLogo)">
             </div>
             <div class="fl describe-text">
                 <p class="t-title">{{ activityDetailData.name }}</p>
@@ -33,7 +33,7 @@
                     {% for item in activityDetailData.productionDataArr %}
                         <div class="list-item" href="production_detail?productionId={{ item.id }}">
                             <div class="list-img-div">
-                                <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                                <div class="item-img" style="background-image:url({{ item.cover }}-createLogo)"></div>
                                 <div class="item-cover"></div>
                             </div>
                             <div class="item-text">
