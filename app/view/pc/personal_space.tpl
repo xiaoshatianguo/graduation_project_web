@@ -2,7 +2,7 @@
 
 {% block banner %}
     <div class="personal-banner">
-        <div class="banner-img" style="background-image: url({{ personalData.bgcover }});">
+        <div class="banner-img" style="background-image: url({{ personalData.bgcover }})">
             <div class="author-portraits">
                 <img class="img" src="{{ personalData.portrait }}" alt="">
             </div>

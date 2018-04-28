@@ -30,6 +30,7 @@ class RouterController extends Controller {
     }
 
     async activity() {
+        
         await this.ctx.render('pc/activity.tpl');
     }
 
@@ -143,7 +144,7 @@ class RouterController extends Controller {
         tools.formatTime([result]);
         let data = JSON.parse(JSON.stringify(result));
 
-        await this.ctx.render('pc/production_detail.tpl' {
+        await this.ctx.render('pc/production_detail.tpl', {
             productionData: data,
         });
     }

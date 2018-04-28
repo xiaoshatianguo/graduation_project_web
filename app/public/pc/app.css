@@ -377,6 +377,7 @@ div.dis-ib {
   .header .container {
     position: relative; }
     .header .container .logo-img {
+      display: block;
       margin-left: 3.663vw;
       width: 10.98901vw;
       line-height: 3.663vw; }

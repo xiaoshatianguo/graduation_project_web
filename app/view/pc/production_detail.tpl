@@ -8,8 +8,8 @@
    <div class="production-detail-div">
        <div class="container clear-f">
            <div class="production-left fl">
-                <p class="production-title">作品标题</p>
-                <p class="production-text">2018-4-23发布</p>
+                <p class="production-title">{{ productionData.name }}</p>
+                <p class="production-text">{{ productionData.create_time }}发布</p>
                 <p class="production-text">原创作品/插画/其他插画</p>
                 <div class="about-production flex-b-sbc">
                     <div class="about-item">
@@ -35,7 +35,7 @@
            <div class="about-author fl">
                <div class="portrait-img fl" style="background-image:url('/public/images/banner/pc (3).jpg')"></div>
                <div class="author-right fl">
-                   <p class="author-name">小宋宋</p>
+                   <p class="author-name">{{ productionData.author }}</p>
                    <span class="author-sort">上海/插画师</span>
                    <div class="btn-list flex-b-sbc">
                         <button class="attention-btn">关注</button>
@@ -51,14 +51,12 @@
    <div class="production-img-list">
        <div class="container">
            <div class="list-describe">
-               <p class="describe">抽空以自己日常穿着画动态练习
-                    所用软件：SAI+Photoshop（听说最近不能说ps）
-                    春天万物生长，头发也让它重新长，要不要来约一波光头，不过我现在已经变寸头了hh
+               <p class="describe">{{ productionData.describe }}
+                    <!-- {{ productionData.content }} -->
                 </p>
            </div>
            <div class="img-list">
-               <img class="img" src="/public/images/cover/4.jpg" alt="">
-               <img class="img" src="/public/images/cover/5.jpg" alt="">
+               <img class="img" src="{{ productionData.cover }}" alt="">
            </div>
        </div>
    </div>
