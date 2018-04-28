@@ -1,4 +1,5 @@
 {% extends "./template/template.tpl" %}
+{% import "pc/macro/tip_cover.tpl" as tipCover %}
 
 {% block banner %}
     
@@ -56,7 +57,7 @@
                 </p>
            </div>
            <div class="img-list">
-               <img class="img" src="{{ productionData.cover }}-createLogo" alt="">
+               <img class="img" src="{{ productionData.cover }}" alt="">
            </div>
        </div>
    </div>

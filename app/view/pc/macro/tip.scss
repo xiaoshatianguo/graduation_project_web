@@ -1,4 +1,10 @@
 
+$main-color: #f068a9;
+$main-padding: 0 50px 30px;
+$black-color: #101213;
+$gray-color: #5e6468;
+$t-hover-color: #ee534e;
+
 // 提示遮罩层统一样式
 .cover {
     position: fixed;
@@ -6,11 +12,10 @@
     // cover显示时值需为flex
     display: none;
     
-    margin-left: 140px;
-    width: 92.7%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
-    .content {
+    .tip-cover-content {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -21,11 +26,15 @@
         font-size: 30px;
         text-align: center;
         
-        background-color: #313133;
+        background-color: transparent;
         color: #fff;
-        
-        opacity: .9;
 
+        .main-body {
+            padding: 50px;
+
+            background-color: $main-color;
+        }
+        
         .tip-input-div {
             position: relative;
             

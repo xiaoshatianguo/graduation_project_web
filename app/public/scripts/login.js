@@ -14,7 +14,7 @@ if(userLoginInfo) {
 
 // 登出操作
 $(document).on('click', ".logout",function(){
-    logout();
+    $('.login-out-tip .cover').fadeIn();
 });
 
 /**

@@ -1,4 +1,12 @@
 {% extends "./template/template.tpl" %}
+{% import "pc/macro/tip_cover.tpl" as tipCover %}
+
+
+{% block tip %}
+<div class="login-out-tip">
+    {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
+</div>
+{% endblock %}
 
 {% block banner %}
     
@@ -7,7 +15,7 @@
 {% block top %}
     <div class="activity-detail-describe">
         <div class="container clear-f">
-            <div class="fl describe-img" style="background-image:url({{ activityDetailData.cover }}-createLogo)">
+            <div class="fl describe-img" style="background-image:url({{ activityDetailData.cover }})">
             </div>
             <div class="fl describe-text">
                 <p class="t-title">{{ activityDetailData.name }}</p>
@@ -31,9 +39,9 @@
             <div class="product-show flex-b-sc fw-wr">
                 {% if activityDetailData.productionDataArr.length > 0 %}
                     {% for item in activityDetailData.productionDataArr %}
-                        <div class="list-item" href="production_detail?productionId={{ item.id }}">
+                        <a class="list-item" href="production_detail?productionId={{ item.id }}">
                             <div class="list-img-div">
-                                <div class="item-img" style="background-image:url({{ item.cover }}-createLogo)"></div>
+                                <div class="item-img" style="background-image:url({{ item.cover }})"></div>
                                 <div class="item-cover"></div>
                             </div>
                             <div class="item-text">
@@ -69,7 +77,7 @@
                                     <span class="fr product-create-time">{{ item.create_time }}</span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     {% endfor %}
                 {% else %}
                     <div class="no-production">
