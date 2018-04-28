@@ -59,22 +59,50 @@ $t-hover-color: #ee534e;
             background: rgba(90, 88, 88, .2);
 
             .register-form {
-                margin-top: 30px;
+                margin-top: 20px;
                 width: 100%;
 
                 .layui-form-item {
+                    #verify {
+                        margin-bottom: 10px;
+
+                        .verify-msg {
+                            color: $gray-color;
+                        }
+
+                        .verify-bar-area {
+                            width: 100% !important;
+
+                            border-radius: 20px;
+                            overflow: hidden;
+
+                            .verify-left-bar{
+                                border: none;
+                            }
+
+                            .verify-move-block {
+                                border-radius: 20px;
+                            }
+                        }
+                    }
+
                     .layui-input-block {
                         position: relative;
 
-                        margin: 0 0 20px 0;
+                        margin: 0 0 10px 0;
                         width: 100%;
 
-                        .send-code-btn {
+                        .send-code-btn,
+                        .count-down-btn {
                             position: absolute;
                             right: 0;
                             top: 0;
 
                             width: 100px;
+                        }
+
+                        .count-down-btn {
+                            display: none;
                         }
     
                         .layui-input {

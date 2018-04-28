@@ -16,8 +16,8 @@
                 <p class="t-text">活动发起者：{{ activityDetailData.initiator }}</p>
                 <p class="t-describe">{{ activityDetailData.describe }}</p>
                 <div class="btn-list flex-b-sc">
-                    <button class="t-btn upload-btn">上传活动作品</button>
-                    <button class="t-btn detail-btn">查看活动详情</button>
+                    <a href="join_activity?activityId={{ activityDetailData.id }}" class="t-btn upload-btn">上传活动作品</a>
+                    <a class="t-btn detail-btn">查看活动详情</a>
                 </div>
             </div>
         </div>

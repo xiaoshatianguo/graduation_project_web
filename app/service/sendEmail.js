@@ -17,7 +17,7 @@ class sendEmailService extends Service {
             this.ctx.cookies.set(email, code, {
                 maxAge: 5 * 60 * 1000,
             });
-            this.sendEmail(code, email);
+            // this.sendEmail(code, email);
         }
 
         return code;

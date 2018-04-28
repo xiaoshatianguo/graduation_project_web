@@ -28,9 +28,11 @@
                             <div class="layui-input-block">
                                 <input type="text" placeholder="请输入邮箱" class="layui-input email-input">
                             </div>
+                            <div id="verify"></div>
                             <div class="layui-input-block">
                                 <input type="text" placeholder="请输入验证码" class="layui-input code-input">
                                 <button class="layui-btn send-code-btn">发送验证码</button>
+                                <button class="layui-btn count-down-btn"><i class="sec">59</i>&nbsp;&nbsp;&nbsp;秒</button>
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -93,12 +95,38 @@
         var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
         var currentCode;
         var emailValue;
+        var changeTimeInterval;
+
+        // 前端验证
+        var verify = false;
+        $('#verify').slideVerify({
+            type: 1,
+            vOffset: 5,
+            barSize: {
+                width: '80%',
+                height: '40px',
+            },
+            ready: function () {
+            },
+            success: function () {
+                alert('验证通过');
+                verify = true;
+            },
+            error: function () {
+                alert('请先右滑验证！');
+            }
+        });
 
         // 发送验证码
         $('.send-code-btn').on('click', function() {
             emailValue = email.val();
 
             if(!!emailValue) {
+                if(!verify) {
+                    alert('请先右滑验证！');
+                    return ;
+                }
+
                 if(!reg.test(emailValue)) {
                     alert('请输入合法的邮箱！');
                 } else {
@@ -110,6 +138,9 @@
                          },
                          success: function(result){
                             currentCode = result;
+                            $('.send-code-btn').hide();
+                            $('.count-down-btn').show();
+                            changeTimeInterval = setInterval(changeTime, 1000);
                          },
                          error: function(err) {
                              if(err.status == 403) {
@@ -163,5 +194,17 @@
                 alert('请输入密码！');
             }
         })
+    
+        // 倒计时
+        function changeTime() {
+            if($('.sec').html()>1) {
+                var time = $('.sec').html();
+                $('.sec').html(time-1);
+            } else {
+                $('.send-code-btn').show();
+                $('.count-down-btn').hide();
+                clearTimeout(changeTimeInterval);
+            }
+        }
     </script>
 {% endblock %}

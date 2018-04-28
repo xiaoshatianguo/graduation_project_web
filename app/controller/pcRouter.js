@@ -30,12 +30,38 @@ class RouterController extends Controller {
     }
 
     async activity() {
-        
-        await this.ctx.render('pc/activity.tpl');
+        const activity = await this.app.mysql.query(
+            'SELECT * FROM activity_info ORDER BY create_time desc limit 0,3;'
+        );
+
+        const activityAll = await this.app.mysql.query(
+            'SELECT * FROM activity_info ORDER BY create_time desc;'
+        );
+
+        const activityEnd = await this.app.mysql.query(
+            'SELECT * FROM activity_info ORDER BY create_time desc;'
+        );
+
+        await this.ctx.render('pc/activity.tpl', {
+            activityData: JSON.parse(JSON.stringify(activity)),
+            activityAllData: JSON.parse(JSON.stringify(activityAll)),
+            activityEndData: JSON.parse(JSON.stringify(activityEnd)),
+        });
     }
 
     async certifiedArchitect() {
-        await this.ctx.render('pc/certified_architect.tpl');
+        const user = await this.app.mysql.query(
+            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc limit 0,3;'
+        );
+
+        const userAll = await this.app.mysql.query(
+            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc'
+        );
+
+        await this.ctx.render('pc/certified_architect.tpl', {
+            userData: JSON.parse(JSON.stringify(user)),
+            userAllData: JSON.parse(JSON.stringify(userAll)),
+        });
     }
 
     async personalSpace () {

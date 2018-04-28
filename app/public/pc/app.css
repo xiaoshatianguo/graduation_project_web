@@ -1415,11 +1415,15 @@ div.dis-ib {
       .activity-detail-describe .container .describe-text .btn-list .upload-btn {
         width: 10.98901vw;
         height: 3.663vw;
+        line-height: 3.663vw;
+        text-align: center;
         background-color: #f068a9; }
       .activity-detail-describe .container .describe-text .btn-list .detail-btn {
         margin-left: 2.1978vw;
         width: 10.98901vw;
         height: 3.663vw;
+        line-height: 3.663vw;
+        text-align: center;
         background-color: #888b8d; }
 
 .activity-production-list {
@@ -2370,6 +2374,7 @@ div.dis-ib {
           border-radius: 1.4652vw;
           background-color: #f068a9; }
         .register-page .register-div .register-right .register-form .layui-form-item .login-link {
+          margin-top: 0.7326vw;
           padding-left: 0.7326vw;
           color: #fff; }
 
@@ -2409,17 +2414,32 @@ div.dis-ib {
       height: 100%;
       background: rgba(90, 88, 88, 0.2); }
       .register-page .register-div .register-right .register-form {
-        margin-top: 2.1978vw;
+        margin-top: 1.4652vw;
         width: 100%; }
+        .register-page .register-div .register-right .register-form .layui-form-item #verify {
+          margin-bottom: 0.7326vw; }
+          .register-page .register-div .register-right .register-form .layui-form-item #verify .verify-msg {
+            color: #5e6468; }
+          .register-page .register-div .register-right .register-form .layui-form-item #verify .verify-bar-area {
+            width: 100% !important;
+            border-radius: 1.4652vw;
+            overflow: hidden; }
+            .register-page .register-div .register-right .register-form .layui-form-item #verify .verify-bar-area .verify-left-bar {
+              border: none; }
+            .register-page .register-div .register-right .register-form .layui-form-item #verify .verify-bar-area .verify-move-block {
+              border-radius: 1.4652vw; }
         .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block {
           position: relative;
-          margin: 0 0 1.4652vw 0;
+          margin: 0 0 0.7326vw 0;
           width: 100%; }
-          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .send-code-btn {
+          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .send-code-btn,
+          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .count-down-btn {
             position: absolute;
             right: 0;
             top: 0;
             width: 7.32601vw; }
+          .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .count-down-btn {
+            display: none; }
           .register-page .register-div .register-right .register-form .layui-form-item .layui-input-block .layui-input {
             border-radius: 1.4652vw; }
         .register-page .register-div .register-right .register-form .layui-form-item .forget-psd {

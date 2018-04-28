@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/public/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/public/pc/app.css">
     <link rel="stylesheet" href="/public/timeline.css">
+    <link rel="stylesheet" href="/public/verify.css">
 
     <title>大型摄影社区</title>
 </head>
@@ -85,6 +86,7 @@
     <script src="/public/modernizr.js"></script>
     <script src="/public/scripts/comment.js"></script>
     <script src="/public/scripts/login.js"></script>
+    <script src="/public/verify.js"></script>
 
     {% block script %}
         <script>
