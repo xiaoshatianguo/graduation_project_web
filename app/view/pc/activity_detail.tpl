@@ -6,6 +6,9 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="no-login">
+    {{ tipCover.tip(type="noLogin", msg = '', time="", style="", opration="") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -24,7 +27,9 @@
                 <p class="t-text">活动发起者：{{ activityDetailData.initiator }}</p>
                 <p class="t-describe">{{ activityDetailData.describe }}</p>
                 <div class="btn-list flex-b-sc">
-                    <a href="join_activity?activityId={{ activityDetailData.id }}" class="t-btn upload-btn">上传活动作品</a>
+                    <a href="javascript:;" class="t-btn upload-btn">
+                        上传活动作品
+                    </a>
                     <a class="t-btn detail-btn">查看活动详情</a>
                 </div>
             </div>
@@ -124,4 +129,18 @@
 
 {% block bottom %}
     
+{% endblock %}
+
+{% block script %}
+    <script>
+        var activityId = getQueryString('activityId') || '';
+
+        $('.upload-btn').on('click', function() {
+            if(cacheGet('userLoginInfo')) {
+                location.href = 'join_activity?activityId=' + activityId;
+            } else {
+                $('.no-login .cover').fadeIn();
+            }
+        })
+    </script>
 {% endblock %}

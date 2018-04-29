@@ -35,7 +35,7 @@
                     <a class="login-link" href="/login">
                         <span class="link-zh">快速登录</span>QUICK LOGIN
                     </a>
-                    <a class="register-link" href="/register_type">
+                    <a class="register-link" href="/register">
                         <span class="link-zh">马上注册</span>QUICK RESGISTRATION
                     </a>
                 </div>

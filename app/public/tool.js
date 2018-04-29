@@ -52,6 +52,23 @@ function cacheGet(key) {
 }
 
 /**
+ * 获取地址栏参数值
+ * @param {*} name 需要获取的属性
+ */
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+  var search = window.location.search;
+
+  var r = search.substr(1).match(reg);
+
+  if (r !== null) {
+      return unescape(r[2]);
+  } else {
+      return null;
+  }
+};
+
+/**
  * 控制遮罩层元素的显示隐藏的方法
  * { element } 需要进行控制显示的tip层，传入
  * { time } 显示tip的时间，默认为1秒

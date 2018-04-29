@@ -44,6 +44,7 @@ module.exports = app => {
 
   // 七牛云
   router.get('/api/qiuniuyun', controller.api.qiuniuUpload.qiuniuUpload);
+  router.post('/qiniu', controller.qiuniu.qiuniuUpload);
 
   // 发送验证码
   router.post('send_code', '/api/send_email', controller.api.sendEmail.sendEmail);

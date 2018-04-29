@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="//at.alicdn.com/t/font_631371_1w07ufoy071fw29.js"></script>
+    <script src="//at.alicdn.com/t/font_631371_6wb1y9ax9614te29.js"></script>
     <script src="/public/jquery-3.2.1.min.js"></script>
     <script src="/public/scripts/jquery.flexText.js"></script>
     <link rel="stylesheet" href="/public/layui/css/layui.css">

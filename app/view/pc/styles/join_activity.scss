@@ -62,7 +62,41 @@ $t-hover-color: #ee534e;
                     }
                 }
 
+                .activity-rule {
+                    .rule-info{
+                        margin-top: 5px;
+                        padding: 20px;
+
+                        background-color: #fff;
+                    }
+                }
+
+                .original-statement {
+                    .statement-info{
+                        margin-top: 5px;
+                        padding: 20px;
+
+                        background-color: #fff;
+                    }
+                }
+
                 .upload-production {
+                    .layui-form {
+                        .upload-form {
+                            padding: 20px 0 0 10px;
+                        }
+
+                        .layui-form-item {
+                            .layui-form-label {
+                                width: 100px;
+                            }
+                        }
+
+                        .production-sort {
+                            display: none;
+                        }
+                    }
+
                     .upload-info{
                         margin-top: 5px;
                         padding-bottom: 10px;
@@ -82,21 +116,25 @@ $t-hover-color: #ee534e;
 
                         .layui-upload-drag {
                             top: 50%;
-                            margin: 50px 0 0 50px;
+                            margin: 50px 0 30px 50px;
 
                             height: 200px;
+
+                            .icon {
+                                font-size: 100px;
+                            }
                         }
 
-                        .layui-form {
-                            margin-top: 20px;
-                            padding-left: 20px;
-    
-                            width: 800px;
-    
-                            .layui-form-item {
-                                .layui-form-label {
-                                    width: 100px;
-                                }
+                        .layui-upload-list {
+                            display: none;
+                            margin: 50px 0 30px 50px;
+
+                            .layui-upload-img {
+                                margin-left: 10px;
+                                height: 200px;
+                                width: auto;
+
+                                border: 1px dotted #ee534e;
                             }
                         }
                     }

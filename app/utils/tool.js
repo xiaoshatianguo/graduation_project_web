@@ -2,6 +2,7 @@
 
 const crypto=require('crypto');    // md5加密算法
 const moment = require('moment');
+const uuid = require('uuid');
 
 /**
  * 删除字符串左边或者右边的指定字符
@@ -54,4 +55,20 @@ exports.getMD5Password = function(content) {
   md5.update(content);
   var d = md5.digest('hex');  //加密后的值d
   return d;
+};
+
+// 生成唯一文件名方法
+exports.getUuidFileName = () => {
+    const nowDate = new Date();
+    const year = nowDate.getFullYear();
+    let month = nowDate.getMonth() + 1;
+    let date = nowDate.getDate();
+    let curr = '';
+    const suffix = uuid.v4();
+
+    month = month < 10 ? `0${month}` : month;
+    date = date < 10 ? `0${date}` : date;
+    curr = `${year}${month}${date}`;
+
+    return encodeURI(`${curr}/${suffix}`);
 };
