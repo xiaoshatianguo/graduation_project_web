@@ -7,7 +7,6 @@ class OperationController extends Controller {
     async uploadProduction() {
         const ctx = this.ctx;
         const productionData = ctx.request.body;
-        console.log(productionData);
 
         const result = await this.app.mysql.insert('production_info', {
             name: productionData.name,
@@ -26,6 +25,17 @@ class OperationController extends Controller {
         this.ctx.body = {
             msg: '提交作品成功',
         }
+    }
+
+    async sort() {
+        const ctx = this.ctx;
+        const result = await this.app.mysql.select('production_type_info');
+
+        let resultData = JSON.parse(JSON.stringify(result));
+        tools.formatTime(resultData);
+            
+        ctx.status = 200;
+        ctx.body = resultData;
     }
 }
 

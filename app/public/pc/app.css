@@ -683,6 +683,77 @@ div.dis-ib {
     .footer .footer-bottom .text {
       font-size: 1.4652vw; }
 
+.slider-sort-div {
+  display: none;
+  position: fixed;
+  bottom: 4.3956vw;
+  right: 8.05861vw;
+  padding: 0.7326vw 1.4652vw;
+  width: 73.26007vw;
+  height: 36.63004vw;
+  background-image: url("/public/images/sort_bg.png");
+  background-position: 100% 100%;
+  background-size: cover; }
+  .slider-sort-div .sort-show-list {
+    width: 68.13187vw;
+    height: 34.06593vw;
+    overflow-y: auto; }
+    .slider-sort-div .sort-show-list .list-item {
+      position: relative;
+      display: block;
+      margin: 0 2.1978vw 1.4652vw 0;
+      width: 14.65201vw;
+      height: 14.65201vw;
+      border-radius: 0.3663vw; }
+      .slider-sort-div .sort-show-list .list-item .item-text {
+        position: absolute;
+        bottom: 1.0989vw;
+        height: 3.663vw;
+        width: 100%;
+        border-top: 1px solid #dddfe0;
+        border-bottom: 1px solid #dddfe0;
+        background-color: rgba(241, 227, 227, 0.5); }
+        .slider-sort-div .sort-show-list .list-item .item-text .t-title {
+          padding-left: 2.1978vw;
+          line-height: 3.663vw;
+          font-size: 1.4652vw;
+          color: #5e6468; }
+      .slider-sort-div .sort-show-list .list-item .list-img-div {
+        position: relative;
+        width: 14.65201vw;
+        height: 14.65201vw;
+        overflow: hidden;
+        cursor: pointer; }
+        .slider-sort-div .sort-show-list .list-item .list-img-div .item-img {
+          width: 14.65201vw;
+          height: 14.65201vw;
+          border-radius: 0.3663vw 0.3663vw 0 0;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover; }
+        .slider-sort-div .sort-show-list .list-item .list-img-div .item-cover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 0.3663vw;
+          background-color: rgba(102, 102, 102, 0.44);
+          opacity: 0; }
+      .slider-sort-div .sort-show-list .list-item .list-img-div:hover .item-img {
+        -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+        transition: All 8s ease; }
+      .slider-sort-div .sort-show-list .list-item .list-img-div:hover .item-cover {
+        opacity: 1;
+        transition: All 1s ease; }
+    .slider-sort-div .sort-show-list .list-item:hover {
+      box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+      -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+              transform: translate3d(0px, -0.14652vw, 0px);
+      transition: all 0.3s ease; }
+
 .body::-webkit-scrollbar {
   width: 0.51282vw; }
 
@@ -703,6 +774,43 @@ div.dis-ib {
   display: none; }
 
 /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+.sort-show-list::-webkit-scrollbar {
+  width: 0.51282vw; }
+
+/* 这是针对缺省样式 (必须的) */
+.sort-show-list::-webkit-scrollbar-track {
+  background-color: #5e6468; }
+
+/* 滚动条的滑轨背景颜色 */
+.sort-show-list::-webkit-scrollbar-thumb {
+  background-color: #f39549; }
+
+/* 滑块颜色 */
+.sort-show-list::-webkit-scrollbar-button {
+  display: none; }
+
+/* 滑轨两头的监听按钮颜色 */
+.sort-show-list::-webkit-scrollbar-corner {
+  display: none; }
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+.layui-fixbar li:first-child {
+  width: 7.32601vw;
+  height: 9.45055vw;
+  background-image: url("/public/images/sort_icon.png");
+  background-color: transparent !important;
+  background-position: center center;
+  background-size: cover; }
+
+.layui-fixbar .layui-fixbar-top {
+  margin: 1.4652vw 0 0 1.4652vw;
+  width: 4.3956vw;
+  height: 4.3956vw;
+  line-height: 4.3956vw;
+  border-radius: 2.1978vw;
+  background-color: #f39549 !important;
+  background-position: center center;
+  background-size: cover; }
 .activity-ing-hot {
   margin-top: 2.1978vw; }
   .activity-ing-hot .activity-list {

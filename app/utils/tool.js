@@ -32,16 +32,16 @@ exports.trim = function(char, type) {
 exports.formatTime = function(arr = []) {
     arr.forEach(item => {
         if (item.create_time) {
-        item.create_time = moment(item.create_time).format('YYYY-MM-DD');
+        item.create_time = moment(item.create_time).format('YYYY-MM-DD hh:mm:ss');
         }
         if (item.update_time) {
-        item.update_time = moment(item.update_time).format('YYYY-MM-DD');
+        item.update_time = moment(item.update_time).format('YYYY-MM-DD hh:mm:ss');
         }
         if (item.start_time) {
-        item.start_time = moment(item.start_time).format('YYYY-MM-DD');
+        item.start_time = moment(item.start_time).format('YYYY-MM-DD hh:mm:ss');
         }
         if (item.end_time) {
-        item.end_time = moment(item.end_time).format('YYYY-MM-DD');
+        item.end_time = moment(item.end_time).format('YYYY-MM-DD hh:mm:ss');
         }
     })
 };

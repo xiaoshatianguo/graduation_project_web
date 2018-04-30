@@ -58,5 +58,7 @@ module.exports = app => {
 
   // 上传作品
   router.post('uploadProduction', '/operation/upload_production', controller.operation.uploadProduction);
+  // 获取所有分类
+  router.get('sort', '/operation/sort', controller.operation.sort);
   
 };

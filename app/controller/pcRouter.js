@@ -5,18 +5,22 @@ const tools = require('../utils/tool.js');
 
 class RouterController extends Controller {
     async index() {
+        // 最新活动
         const activity = await this.app.mysql.query(
             'SELECT * FROM activity_info ORDER BY create_time desc limit 0,3;'
         );
 
+        // 热门分类
         const sort = await this.app.mysql.query(
             'SELECT * FROM production_type_info ORDER BY create_time desc limit 0,3;'
         );
 
+        // 优秀认证师
         const certifiedArchitect = await this.app.mysql.query(
             'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc limit 0,3;'
         );
 
+        // 会员优秀作品
         const production = await this.app.mysql.query(
             'SELECT * FROM production_info ORDER BY create_time desc limit 0,3;'
         );

@@ -571,6 +571,121 @@ $t-hover-color: #ee534e;
     }
 }
 
+// 侧边栏分类样式
+.slider-sort-div {
+    display: none;
+    
+    position: fixed;
+    bottom: 60px;
+    right: 110px;
+
+    padding: 10px 20px;
+    width: 1000px;
+    height: 500px;
+
+    background-image: url('/public/images/sort_bg.png');
+    background-position: 100% 100%;
+    background-size: cover;
+
+    .sort-show-list {
+        width: 930px;
+        height: 465px;
+
+        overflow-y: auto;
+
+        .list-item {
+            position: relative;
+
+            display: block;
+
+            margin: 0 30px 20px 0;
+            width: 200px;
+            height: 200px;
+
+            border-radius: 5px;
+
+            .item-text {
+                position: absolute;
+                bottom: 15px;
+
+                height: 50px;
+                width: 100%;
+                
+                border-top: 1px solid #dddfe0;
+                border-bottom: 1px solid #dddfe0;
+
+                background-color: rgba(241, 227, 227, .5);
+
+                .t-title {
+                    padding-left: 30px;
+
+                    line-height: 50px;
+                    font-size: 20px;
+
+                    color: $gray-color;
+                }
+            }
+
+            .list-img-div {
+                position: relative;
+
+                width: 200px;
+                height: 200px;
+
+                overflow: hidden;
+
+                cursor: pointer;
+
+                .item-img {
+                    width: 200px;
+                    height: 200px;
+
+                    border-radius: 5px 5px 0 0;
+
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                .item-cover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    border-radius: 5px;
+
+                    background-color: rgba(102, 102, 102, 0.44);;
+                
+                    opacity: 0;
+                }
+            }
+
+            .list-img-div:hover {
+                .item-img {
+                    transform: rotate(0deg) scale(1.2) translate(0%,0%);
+
+                    transition: All 8s ease;
+                }
+
+                .item-cover {
+                    opacity: 1;
+
+                    transition: All 1s ease;
+                }
+            }
+        }
+
+        .list-item:hover {
+            box-shadow:  0px 17px 50px 0px rgba(0,0,0,0.188235);
+            
+            transform: translate3d(0px,-2px,0px);
+            transition: all 0.3s ease;
+        }
+    }
+}
+
 .body::-webkit-scrollbar {
     width: 7px;
 } /* 这是针对缺省样式 (必须的) */
@@ -590,3 +705,51 @@ $t-hover-color: #ee534e;
 .body::-webkit-scrollbar-corner {
     display: none;
 } /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+
+// 分类滚动条
+.sort-show-list::-webkit-scrollbar {
+    width: 7px;
+} /* 这是针对缺省样式 (必须的) */
+
+.sort-show-list::-webkit-scrollbar-track {
+    background-color: #5e6468;
+} /* 滚动条的滑轨背景颜色 */
+
+.sort-show-list::-webkit-scrollbar-thumb {
+    background-color: $main-color; 
+} /* 滑块颜色 */
+
+.sort-show-list::-webkit-scrollbar-button {
+    display: none;
+} /* 滑轨两头的监听按钮颜色 */
+
+.sort-show-list::-webkit-scrollbar-corner {
+    display: none;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+
+// 固定块样式
+.layui-fixbar {
+    li:first-child {
+        width: 100px;
+        height: 129px;
+
+        background-image: url('/public/images/sort_icon.png');
+        background-color: transparent !important;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .layui-fixbar-top {
+        margin: 20px 0 0 20px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 30px;
+
+        background-color: $main-color !important;
+        background-position: center center;
+        background-size: cover;
+    }
+}

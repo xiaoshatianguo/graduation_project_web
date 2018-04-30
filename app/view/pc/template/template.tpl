@@ -79,7 +79,10 @@
     {% endblock %}
 
     {% block slide %}
-        
+        <div class="slider-sort-div zx310">
+            <div class="sort-show-list flex-b-sc fw-wr">
+            </div>
+        </div>
     {% endblock %}
     <script src="/public/swiper-3.4.2.min.js"></script>
     <script src="/public/layui/layui.js"></script>
@@ -98,6 +101,38 @@
     {% endblock %}
 
     <script>
+        // 缓存所有分类及显示
+        var sortData = cacheGet('sortData');
+        if(!!sortData) {
+            var sortHtml = '';
+            for (let i = 0; i < sortData.length; i++) {
+                sortHtml +=
+                `
+                <a class="list-item" href="sort?sortId=${sortData[i].id}">
+                    <div class="item-text zx310">
+                        <h3 class="t-title">${sortData[i].name}</h3>
+                    </div>
+                    <div class="list-img-div">
+                        <div class="item-img" style="background-image:url(${sortData[i].cover})"></div>
+                        <div class="item-cover"></div>
+                    </div>
+                </a>
+                `;
+                $('.sort-show-list').html(sortHtml);
+            }
+        } else {
+            $.get({
+                url: '/operation/sort',
+                success: function(result){
+                    cacheSet('sortData', result);
+                },
+                error: function(err) {
+                    alert('网络中断，请稍候再刷新！');
+                }
+            })
+        }
+
+        // 禁用右键
         document.oncontextmenu = function (event) {
             if (window.event) {
                 event = window.event;
@@ -110,7 +145,29 @@
             } catch (e) {
                 return false;
             }
-        }
+        };
+
+        // 固定块
+        layui.use(['util', 'layer'], function(){
+            var util = layui.util,
+                layer = layui.layer;
+
+            //固定块
+            util.fixbar({
+                bar2: ' ',
+                css: {right: 10, bottom: 30},
+                bgcolor: '#393D49',
+                click: function(type){
+                    if(type === 'bar2'){
+                        if($('.slider-sort-div').css('display') == 'block'){
+                            $('.slider-sort-div').fadeOut();
+                        } else {
+                            $('.slider-sort-div').fadeIn();
+                        }
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
