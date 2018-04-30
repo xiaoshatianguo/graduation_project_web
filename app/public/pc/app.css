@@ -686,17 +686,26 @@ div.dis-ib {
 .slider-sort-div {
   display: none;
   position: fixed;
-  bottom: 4.3956vw;
-  right: 8.05861vw;
-  padding: 0.7326vw 1.4652vw;
+  bottom: 2.9304vw;
+  right: 9.52381vw;
+  padding: 2.1978vw;
   width: 73.26007vw;
-  height: 36.63004vw;
-  background-image: url("/public/images/sort_bg.png");
-  background-position: 100% 100%;
-  background-size: cover; }
+  height: 40.29304vw;
+  background-color: #fff;
+  border: 0.21978vw solid #f39549;
+  border-radius: 0.7326vw; }
+  .slider-sort-div .trangle {
+    position: absolute;
+    bottom: 7.32601vw;
+    right: -1.4652vw;
+    width: 0;
+    height: 0;
+    border-left: 1.4652vw solid #f39549;
+    border-top: 1.4652vw solid transparent;
+    border-bottom: 1.4652vw solid transparent; }
   .slider-sort-div .sort-show-list {
-    width: 68.13187vw;
-    height: 34.06593vw;
+    width: 100%;
+    height: 100%;
     overflow-y: auto; }
     .slider-sort-div .sort-show-list .list-item {
       position: relative;

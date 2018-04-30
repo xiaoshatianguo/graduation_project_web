@@ -80,6 +80,7 @@
 
     {% block slide %}
         <div class="slider-sort-div zx310">
+            <div class="trangle"></div>
             <div class="sort-show-list flex-b-sc fw-wr">
             </div>
         </div>

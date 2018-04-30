@@ -576,20 +576,34 @@ $t-hover-color: #ee534e;
     display: none;
     
     position: fixed;
-    bottom: 60px;
-    right: 110px;
+    bottom: 40px;
+    right: 130px;
 
-    padding: 10px 20px;
+    padding: 30px;
     width: 1000px;
-    height: 500px;
+    height: 550px;
 
-    background-image: url('/public/images/sort_bg.png');
-    background-position: 100% 100%;
-    background-size: cover;
+    background-color: #fff;
+
+    border: 3px solid $main-color;
+    border-radius: 10px;
+
+    .trangle {
+        position: absolute;
+        bottom: 100px;
+        right: -20px;
+
+        width: 0;
+        height: 0;
+
+        border-left: 20px solid $main-color;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+    }
 
     .sort-show-list {
-        width: 930px;
-        height: 465px;
+        width: 100%;
+        height: 100%;
 
         overflow-y: auto;
 
