@@ -55,4 +55,8 @@ module.exports = app => {
   router.post('login', '/api/register', controller.pcRouter.registerUser);
   router.post('register', '/api/login', controller.pcRouter.loginVerify);
   router.post('logout', '/api/logout', controller.pcRouter.logout);
+
+  // 上传作品
+  router.post('uploadProduction', '/operation/upload_production', controller.operation.uploadProduction);
+  
 };

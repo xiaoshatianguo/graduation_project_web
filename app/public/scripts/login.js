@@ -98,6 +98,21 @@ $('.tip-input-submit').click(function() {
     // $('.tip-input').val('');
 });
 
+// 登录后跳转处理
+function pageJumpsHandle() {
+    var prevLink = document.referrer;
+    if($.trim(prevLink)==''){
+        location.href = '/';
+    }else{
+        if(prevLink.indexOf('127.0.0.1')==-1){    //来自其它站点
+            location.href = '/';
+        }
+        if(prevLink.indexOf('register')!=-1){      //来自注册页面
+            location.href = '/login';
+        }
+        location.href = prevLink;
+    }
+}
 
 /**
  * qq登录处理

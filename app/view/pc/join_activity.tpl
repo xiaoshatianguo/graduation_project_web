@@ -35,14 +35,14 @@
                     </div>
                     <div class="layui-tab-item upload-production">
                         <div class="tab-title">上传作品</div>
-                        <form class="layui-form" action="" enctype="multipart/form-data">
+                        <div class="layui-form" action="" enctype="multipart/form-data">
                             <div class="upload-info">
                                 <div class="info-title">作品信息</div>
                                 <div class="upload-form">
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">作品标题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入作品标题" class="layui-input aa">
+                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入作品标题" class="layui-input">
                                         </div>
                                     </div>
                                     <!-- <div class="layui-form-item production-sort">
@@ -86,6 +86,7 @@
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传作品</div>
+                                <input type="text" name="productionSrc" required lay-verify="productionSrc" placeholder="上传作品" hidden id="productionSrc" value="">
                                 <div class="layui-upload-drag fl" id="uploadProduction">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -98,6 +99,7 @@
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传封面</div>
+                                <input type="text" name="coverSrc" required lay-verify="coverSrc" placeholder="上传作品" hidden id="coverSrc" value="">
                                 <div class="layui-upload-drag fl" id="uploadCover">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -111,6 +113,7 @@
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传banner</div>
+                                <input type="text" name="bannerSrc" required lay-verify="bannerSrc" placeholder="上传作品" hidden id="bannerSrc" value="">
                                 <div class="layui-upload-drag fl" id="uploadBanner">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -130,7 +133,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,52 +158,93 @@
                 layedit = layui.layedit,
                 laydate = layui.laydate,
                 element = layui.element;
+
+            var productionSrc = [];
             
             //自定义验证规则
             form.verify({
                 name: function(value){
                     if(!!value) {
-
                     } else {
                         return '标题不能为空';
                     }
                 },
                 photography_props: function(value){
                     if(!!value) {
-
                     } else {
-                        return 'photography_props不能为空';
+                        return '摄影道具不能为空';
                     }
                 },
                 photography_site: function(value){
                     if(!!value) {
-
                     } else {
-                        return 'photography_site不能为空';
+                        return '摄影地点不能为空';
                     }
                 },
                 describe: function(value) {
                     if(!!value) {
-
                     } else {
-                        return 'describe不能为空';
+                        return '作品简介不能为空';
                     }
                 },
                 content: function(value) {
                     if(!!value) {
-
                     } else {
-                        return 'content不能为空';
+                        return '作品描述详情不能为空';
                     }
-                }
+                },
+                productionSrc: function(value) {
+                    if(!!value) {
+                    } else {
+                        return '请上传作品';
+                    }
+                },
+                coverSrc: function(value) {
+                    if(!!value) {
+                    } else {
+                        return '请上传作品封面';
+                    }
+                },
+                bannerSrc: function(value) {
+                    if(!!value) {
+                    } else {
+                        return '请上传作品横幅';
+                    }
+                },
             });
             
             //监听提交
             form.on('submit(formSubmit)', function(data){
-                layer.alert(JSON.stringify(data.field), {
-                    title: '最终的提交信息'
+                var uploadData = JSON.parse(JSON.stringify(data.field));
+                console.log(uploadData);
+                $.ajax({
+                    type: 'post',
+                    url: '/operation/upload_production',
+                    data: {
+                        name: uploadData.name,
+                        author: cacheGet('userLoginInfo').id,
+                        // sort: uploadData.sort,
+                        production: uploadData.productionSrc,
+                        cover: uploadData.coverSrc,
+                        banner: uploadData.bannerSrc,
+                        describe: uploadData.describe,
+                        photography_props: uploadData.photography_props,
+                        photography_site: uploadData.photography_site,
+                        content: uploadData.content,
+                    },
+                    success: function(result){
+                        alert('作品信息提交成功');
+                        var activityId = getQueryString('activityId');
+                        pageJumpsHandle();
+                    },
+                    error: function(err) {
+                        alert('作品信息提交失败，请稍候重试');
+                    }
                 })
-                return false;
+                // layer.alert(JSON.stringify(data.field), {
+                //     title: '最终的提交信息'
+                // })
+                // return false;
             });
 
             /*
@@ -225,6 +269,8 @@
                     });
                 },
                 done: function(res){
+                    productionSrc.push(res.src);
+                    $('#productionSrc').val(productionSrc);
                     return layer.msg('上传成功');
                 },
                 error: function(){
@@ -241,6 +287,9 @@
             var uploadCover = upload.render({
                 elem: '#uploadCover',
                 url: '/qiniu',
+                accept: 'images',
+                acceptMime: 'image/*',
+                exts: 'png|jpg|bmp|jpeg|gif',
                 size: 1024,
                 before: function(obj){
                     //预读本地文件示例，不支持ie8
@@ -250,6 +299,7 @@
                     });
                 },
                 done: function(res){
+                    $('#coverSrc').val(res.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){
@@ -266,6 +316,9 @@
             var uploadBanner = upload.render({
                 elem: '#uploadBanner',
                 url: '/qiniu',
+                accept: 'images',
+                acceptMime: 'image/*',
+                exts: 'png|jpg|bmp|jpeg|gif',
                 size: 1024,
                 before: function(obj){
                     //预读本地文件示例，不支持ie8
@@ -275,6 +328,7 @@
                     });
                 },
                 done: function(res){
+                    $('#bannerSrc').val(res.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){

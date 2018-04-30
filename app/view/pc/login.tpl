@@ -93,7 +93,7 @@
                         success: function(result){
                             alert('登录成功');
                             cacheSet('userLoginInfo', result);
-                            location.href = '/';
+                            pageJumpsHandle();
                         },
                         error: function(err) {
                             if(err.status == 403){
