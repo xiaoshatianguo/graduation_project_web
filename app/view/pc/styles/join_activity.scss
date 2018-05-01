@@ -136,10 +136,23 @@ $t-hover-color: #ee534e;
 
                                 border: 1px dotted #ee534e;
                             }
+                        }
 
-                            .production-error {
-                                margin: 5px 0 0 30px;
-                                width: 150px;
+                        .production-error {
+                            margin: 5px 0 0 30px;
+                            width: 150px;
+                        }
+
+                        .layui-form {
+                            margin-top: 20px;
+                            padding-left: 20px;
+    
+                            width: 800px;
+    
+                            .layui-form-item {
+                                .layui-form-label {
+                                    width: 100px;
+                                }
                             }
                         }
                     }

@@ -4,7 +4,7 @@ $black-color: #101213;
 $gray-color: #5e6468;
 $t-hover-color: #ee534e;
 
-.join-activity-div {
+.apply-activity-div {
     padding-top: 20px;
 
     background-color: rgb(235, 230, 230);
@@ -62,7 +62,28 @@ $t-hover-color: #ee534e;
                     }
                 }
 
+                .apply-activity-rule {
+                    .rule-info{
+                        margin-top: 5px;
+                        padding: 20px;
+
+                        background-color: #fff;
+                    }
+                }
+
                 .apply-activity-detail {
+                    .layui-form {
+                        .upload-form {
+                            padding: 20px 0 0 10px;
+                        }
+
+                        .layui-form-item {
+                            .layui-form-label {
+                                width: 100px;
+                            }
+                        }
+                    }
+
                     .upload-info{
                         margin-top: 5px;
                         padding-bottom: 10px;
@@ -82,9 +103,26 @@ $t-hover-color: #ee534e;
 
                         .layui-upload-drag {
                             top: 50%;
-                            margin: 50px 0 0 50px;
+                            margin: 50px 0 30px 50px;
 
                             height: 200px;
+
+                            .icon {
+                                font-size: 100px;
+                            }
+                        }
+
+                        .layui-upload-list {
+                            display: none;
+                            margin: 50px 0 30px 50px;
+
+                            .layui-upload-img {
+                                margin-left: 10px;
+                                height: 200px;
+                                width: auto;
+
+                                border: 1px dotted #ee534e;
+                            }
                         }
 
                         .layui-form {

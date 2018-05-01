@@ -205,7 +205,7 @@
                 bannerSrc: function(value) {
                     if(!!value) {
                     } else {
-                        return '请上传作品横幅';
+                        return '请上传作品banner';
                     }
                 },
             });
