@@ -1934,6 +1934,9 @@ div.dis-ib {
               height: 14.65201vw;
               width: auto;
               border: 1px dotted #ee534e; }
+            .join-activity-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-upload-list .production-error {
+              margin: 0.3663vw 0 0 2.1978vw;
+              width: 10.98901vw; }
         .join-activity-div .container .layui-tab .layui-tab-content .upload-production .publich-btn {
           margin: 1.4652vw 0 0 1.4652vw;
           background-color: #f39549; }

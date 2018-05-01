@@ -94,7 +94,6 @@
                                     <p>点击上传，或将文件拖拽到此处</p>
                                 </div>
                                 <div class="layui-upload-list fl production-show" id="productionShow">
-                                    <!-- <p id="demoText"></p> -->
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
@@ -108,7 +107,6 @@
                                 </div>
                                 <div class="layui-upload-list fl cover-show">
                                     <img class="layui-upload-img" id="coverShow">
-                                    <!-- <p id="demoText"></p> -->
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
@@ -122,7 +120,6 @@
                                 </div>
                                 <div class="layui-upload-list fl banner-show">
                                     <img class="layui-upload-img" id="bannerShow">
-                                    <!-- <p id="demoText"></p> -->
                                 </div>
                             </div>
                             <div class="upload-form">
@@ -216,7 +213,6 @@
             //监听提交
             form.on('submit(formSubmit)', function(data){
                 var uploadData = JSON.parse(JSON.stringify(data.field));
-                console.log(uploadData);
                 $.ajax({
                     type: 'post',
                     url: '/operation/upload_production',
@@ -241,10 +237,6 @@
                         alert('作品信息提交失败，请稍候重试');
                     }
                 })
-                // layer.alert(JSON.stringify(data.field), {
-                //     title: '最终的提交信息'
-                // })
-                // return false;
             });
 
             /*
@@ -264,7 +256,7 @@
                 before: function(obj){
                     //预读本地文件示例，不支持ie8
                     obj.preview(function(index, file, result){
-                        $('#productionShow').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+                        $('#productionShow').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><div class="production-error"></div>')
                         $('.production-show').show();
                     });
                 },
@@ -275,11 +267,11 @@
                 },
                 error: function(){
                     //演示失败状态，并实现重传
-                    // var demoText = $('#demoText');
-                    // demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                    // demoText.find('.demo-reload').on('click', function(){
-                    //     uploadProduction.upload();
-                    // });
+                    var productionError = $('.production-error');
+                    productionError.html('<span style="color: #f39549;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    productionError.find('.demo-reload').on('click', function(){
+                        uploadProduction.upload();
+                    });
                 }
             });
 
@@ -303,12 +295,12 @@
                     return layer.msg('上传成功');
                 },
                 error: function(){
-                    //演示失败状态，并实现重传
-                    // var demoText = $('#demoText');
-                    // demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                    // demoText.find('.demo-reload').on('click', function(){
-                    //     uploadCover.upload();
-                    // });
+                    // 演示失败状态，并实现重传
+                    var coverShow = $('#coverShow');
+                    coverShow.after('<span style="color: #f39549;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    coverShow.next('.demo-reload').on('click', function(){
+                        uploadCover.upload();
+                    });
                 }
             });
 
@@ -333,11 +325,11 @@
                 },
                 error: function(){
                     //演示失败状态，并实现重传
-                    // var demoText = $('#demoText');
-                    // demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                    // demoText.find('.demo-reload').on('click', function(){
-                    //     uploadCover.upload();
-                    // });
+                    var bannerShow = $('#bannerShow');
+                    bannerShow.after('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    bannerShow.next('.demo-reload').on('click', function(){
+                        uploadBanner.upload();
+                    });
                 }
             });
         });

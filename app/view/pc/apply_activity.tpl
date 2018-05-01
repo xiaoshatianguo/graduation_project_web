@@ -32,10 +32,10 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动标题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="title" required lay-verify="required" placeholder="请输入活动标题" autocomplete="off" class="layui-input aa">
+                                            <input type="text" name="name" required lay-verify="required" placeholder="请输入活动标题" class="layui-input">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
+                                    <!-- <div class="layui-form-item">
                                         <label class="layui-form-label">活动类别</label>
                                         <div class="layui-input-block">
                                             <select name="interest" lay-filter="aihao">
@@ -47,7 +47,7 @@
                                             <option value="4">旅行</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动时间</label>
                                         <div class="layui-input-block">

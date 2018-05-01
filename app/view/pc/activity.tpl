@@ -5,6 +5,9 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="no-login">
+    {{ tipCover.tip(type="noLogin", msg = '', time="", style="", opration="") }}
+</div>
 {% endblock %}
 
 {% block top %}
@@ -75,4 +78,16 @@
         </div>
     </div>
     <a class="publish-activity-btn" href="javascript:;">发布活动</a>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('.publish-activity-btn').on('click', function() {
+            if(cacheGet('userLoginInfo')) {
+                location.href = '/apply_activity';
+            } else {
+                $('.no-login .cover').fadeIn();
+            }
+        })
+    </script>
 {% endblock %}
