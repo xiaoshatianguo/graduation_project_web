@@ -4,7 +4,7 @@ $black-color: #101213;
 $gray-color: #5e6468;
 $t-hover-color: #ee534e;
 
-.join-activity-div {
+.apply-certified-architect {
     padding-top: 20px;
 
     background-color: rgb(235, 230, 230);
@@ -62,7 +62,28 @@ $t-hover-color: #ee534e;
                     }
                 }
 
-                .apply-activity-detail {
+                .apply-rule {
+                    .rule-info{
+                        margin-top: 5px;
+                        padding: 20px;
+
+                        background-color: #fff;
+                    }
+                }
+
+                .apply-detail {
+                    .layui-form {
+                        .upload-form {
+                            padding: 20px 0 0 10px;
+                        }
+
+                        .layui-form-item {
+                            .layui-form-label {
+                                width: 100px;
+                            }
+                        }
+                    }
+
                     .upload-info{
                         margin-top: 5px;
                         padding-bottom: 10px;
@@ -80,19 +101,46 @@ $t-hover-color: #ee534e;
                             border-bottom: 1px solid #c9cdcf;
                         }
 
-                        .layui-upload {
-                            margin: 10px;
+                        // .layui-upload {
+                        //     margin: 10px;
 
-                            .layui-btn {
-                                margin-left: 10px;
-                            }
-                        }
+                        //     .layui-btn {
+                        //         margin-left: 10px;
+                        //     }
+                        // }
 
                         .layui-upload-drag {
                             top: 50%;
-                            margin: 50px 0 0 50px;
+                            margin: 50px 0 30px 50px;
 
                             height: 200px;
+
+                            .icon {
+                                font-size: 100px;
+                            }
+                        }
+
+                        .layui-upload-list {
+                            display: none;
+                            margin: 50px 0 30px 50px;
+
+                            .layui-upload-img {
+                                margin-left: 10px;
+                                height: 200px;
+                                width: auto;
+
+                                border: 1px dotted #ee534e;
+                            }
+                        }
+
+                        .prize-error {
+                            margin: 5px 0 0 30px;
+                            width: 150px;
+                        }
+
+                        .certificate-error {
+                            margin: 5px 0 0 30px;
+                            width: 150px;
                         }
 
                         .layui-form {

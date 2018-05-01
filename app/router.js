@@ -60,6 +60,8 @@ module.exports = app => {
   router.post('uploadProduction', '/operation/upload_production', controller.operation.uploadProduction);
   // 申请活动
   router.post('applyActivity', '/operation/apply_activity', controller.operation.applyActivity);
+  // 申请成为认证师
+  router.post('applyCertifiedArchitect', '/operation/apply_certified_architect', controller.operation.applyCertifiedArchitect);
   // 获取所有分类
   router.get('sort', '/operation/sort', controller.operation.sort);
   

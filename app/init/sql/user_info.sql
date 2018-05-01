@@ -5,12 +5,21 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `phone` VARCHAR(255) DEFAULT '' comment '会员/认证师电话',
   `password` VARCHAR(255) DEFAULT '' comment '会员/认证师密码',
   `nickname` VARCHAR(255) DEFAULT '' comment '会员/认证师昵称',
-  `name` VARCHAR(255) DEFAULT '' comment '会员/认证师真实名字',
   `sex` INT(2) DEFAULT 0 comment '会员/认证师性别 - 0 男 - 1 女',
   `age` INT(3) DEFAULT 0 comment '会员/认证师年龄',
   `address` VARCHAR(255) DEFAULT '' comment '会员/认证师地址',
-  -- TODO: 这里需要更换默认值为默认头像
   `portrait` VARCHAR(255) DEFAULT '' comment '会员/认证师头像',
+
+  -- 申请认证师字段 Start
+  `name` VARCHAR(255) DEFAULT '' comment '会员/认证师真实名字',
+  `qq` VARCHAR(255) DEFAULT '' comment '认证师QQ',
+  `wechat` VARCHAR(255) DEFAULT '' comment '认证师微信',
+  `prize` VARCHAR(255) DEFAULT '' comment '申请认证师获奖作品',
+  `certificate` VARCHAR(255) DEFAULT '' comment '申请认证师凭证',
+  `personal_describe` VARCHAR(255) DEFAULT '' comment '认证师个人简介',
+  `is_apply_certificate` INT(255) DEFAULT '' comment '是否正在申请成为认证师  -1 是 - 0 否',
+  -- 申请认证师字段 End
+
   `personal_statement` VARCHAR(255) DEFAULT '挥一挥衣袖，不留一句宣言' comment '个人宣言',
   `bgcover` VARCHAR(255) DEFAULT '' comment '个人主页背景图',
   `create_time` bigint comment '会员/认证师注册时间',

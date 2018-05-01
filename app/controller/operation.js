@@ -31,8 +31,6 @@ class OperationController extends Controller {
         const ctx = this.ctx;
         const productionData = ctx.request.body;
 
-        console.log(productionData);
-
         const result = await this.app.mysql.insert('activity_info', {
             name: productionData.name,
             initiator: productionData.initiator,
@@ -50,6 +48,27 @@ class OperationController extends Controller {
 
         this.ctx.body = {
             msg: '申请活动信息提交成功',
+        }
+    }
+
+    async applyCertifiedArchitect() {
+        const ctx = this.ctx;
+        const productionData = ctx.request.body;
+
+        const result = await this.app.mysql.update('user_info', {
+            id: productionData.id,
+            name: productionData.name,
+            qq: productionData.qq,
+            wechat: productionData.wechat,
+            personal_describe: productionData.personal_describe,
+            prize: productionData.prizeSrc,
+            certificate: productionData.certificateSrc,
+            update_time: new Date().valueOf(),
+            is_apply_certificate: 1,
+        });
+
+        this.ctx.body = {
+            msg: '申请认证师提交成功',
         }
     }
 

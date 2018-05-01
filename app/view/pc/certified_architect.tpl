@@ -5,6 +5,9 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="no-login">
+    {{ tipCover.tip(type="noLogin", msg = '', time="", style="", opration="") }}
+</div>
 {% endblock %}
 
 {% block top %}
@@ -75,4 +78,16 @@
 
 {% block bottom %}
     <a class="become-certified-architect" href="javascript:;">成为认证师</a>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('.become-certified-architect').on('click', function() {
+            if(cacheGet('userLoginInfo')) {
+                location.href = '/apply_certified_architect';
+            } else {
+                $('.no-login .cover').fadeIn();
+            }
+        })
+    </script>
 {% endblock %}
