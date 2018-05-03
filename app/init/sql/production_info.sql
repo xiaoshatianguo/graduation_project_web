@@ -1,10 +1,11 @@
 CREATE TABLE IF NOT EXISTS `production_info` (
-  `id` int(64) NOT NULL AUTO_INCREMENT,
+  `id` INT(64) NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(255) DEFAULT '' comment '作品编号',
   `name` VARCHAR(255) DEFAULT '' comment '作品标题',
-  `authorId` VARCHAR(255) DEFAULT '' comment '冗余作者id',
-  `author` VARCHAR(255) DEFAULT '' comment '作品作者',
+  `author_id` INT(64) DEFAULT '' comment '冗余作者id',
+  `author_name` VARCHAR(255) DEFAULT '' comment '作品作者名字',
   `sort` VARCHAR(255) DEFAULT '' comment '作品所属类别',
+  `activity_id` INT(64) DEFAULT '' comment '该作品参加的活动id',
   `production` VARCHAR(255) DEFAULT '' comment '作品上传',
   `cover` VARCHAR(255) DEFAULT '' comment '封面上传',
   `banner` VARCHAR(255) DEFAULT '' comment 'banner上传',
@@ -18,7 +19,5 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `disabled` INT(2) DEFAULT 0 comment '是否屏蔽作品 - 0 正常 - 1 屏蔽',
   `status` INT(2) DEFAULT 0 comment '是否审核通过 - 0 通过 - 1 不通过',
   `auditor` VARCHAR(255) DEFAULT '' comment '审核通过管理员编号',
-  `commentIds` VARCHAR(255) DEFAULT '' comment '评论的所有楼层id集合',
-  `attentionIds` VARCHAR(255) DEFAULT '' comment '所有关注id集合',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

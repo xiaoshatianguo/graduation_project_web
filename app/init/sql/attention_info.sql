@@ -1,8 +1,11 @@
+-- 关注表
 CREATE TABLE IF NOT EXISTS `attention_info` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
-  `userId` int(64) NOT NULL comment '发起者编号',
-  `trggerId` int(64) NOT NULL comment '接收者编号',
-  `create_time` bigint comment '发起时间',
-  `status` int comment '点赞状态 - 0 已取消赞 - 1 有效赞',
+  `user_id` int(64) NOT NULL comment '关注发起者',
+  `object_id` int(64) NOT NULL comment '被关注对象',
+  `sort` int(2) NOT NULL comment '关注分类 - 0 关注用户 - 1 关注活动',
+  `attention_id` int(64) NOT NULL comment '关注id',
+  `create_time` bigint comment '创建时间',
+  `status` bigint comment '状态 - 0 有效关注 - 1 取消关注',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
