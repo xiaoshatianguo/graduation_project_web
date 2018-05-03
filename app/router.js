@@ -64,5 +64,7 @@ module.exports = app => {
   router.post('applyCertifiedArchitect', '/operation/apply_certified_architect', controller.operation.applyCertifiedArchitect);
   // 获取所有分类
   router.get('sort', '/operation/sort', controller.operation.sort);
+  // 评论处理
+  router.post('comment', '/operation/comment', controller.operation.comment);
   
 };

@@ -82,6 +82,51 @@ class OperationController extends Controller {
         ctx.status = 200;
         ctx.body = resultData;
     }
+
+    //评论处理
+    async comment() {
+        const ctx = this.ctx;
+        const commentData = ctx.request.body;
+
+        // 评论表
+        const result = await this.app.mysql.insert('comments_info', {
+            reviewers: commentData.reviewers,
+            receiver: commentData.receiver,
+            sort: commentData.sort,
+            content: commentData.content,
+            create_time: new Date().valueOf(),
+        });
+
+        // 作品评论入库
+        if(commentData.sort == 0) {
+            
+        }
+
+        // 活动评论入库
+        if(commentData.sort == 1) {
+
+        }
+
+        // 个人中心评论入库
+        if(commentData.sort == 2) {
+            
+        }
+
+        console.log(commentData.triggerId);
+
+        console.log(result);
+
+        const newRecord = await this.app.mysql.get(
+            'comments_info',
+            {id: result.insertId}
+        );
+
+        let resultData = JSON.parse(JSON.stringify(result));
+        tools.formatTime(resultData);
+            
+        ctx.status = 200;
+        ctx.body = resultData;
+    }
 }
 
 module.exports = OperationController;

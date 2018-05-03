@@ -214,12 +214,12 @@ class RouterController extends Controller {
                     id: result.id,
                     email: result.email,
                     // phone: result.phone,
-                    // nickname: result.nickname,
+                    nickname: result.nickname,
                     // name: result.name,
                     // sex: result.sex,
                     // age: result.age,
                     // address: result.address,
-                    // portrait: result.portrait,
+                    portrait: result.portrait,
                     // personal_statement: result.personal_statement,
                     // bgcover: result.bgcover,
                     token,
@@ -265,6 +265,8 @@ class RouterController extends Controller {
 
         const result = await this.app.mysql.insert('user_info', {
             email: userData.eamil,
+            nickname: '普通会员' + newDate().valueOf(),
+            number: newDate().valueOf(),
             password: d,
             create_time: new Date().valueOf(),
         });

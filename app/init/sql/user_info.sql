@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `sex` INT(2) DEFAULT 0 comment '会员/认证师性别 - 0 男 - 1 女',
   `age` INT(3) DEFAULT 0 comment '会员/认证师年龄',
   `address` VARCHAR(255) DEFAULT '' comment '会员/认证师地址',
-  `portrait` VARCHAR(255) DEFAULT '' comment '会员/认证师头像',
+  `portrait` VARCHAR(255) DEFAULT 'http://p1s12lchv.bkt.clouddn.com/20180416/9e918aea-0770-48b2-808d-e9093366c2e9.png' comment '会员/认证师头像',
 
   -- 申请认证师字段 Start
   `name` VARCHAR(255) DEFAULT '' comment '会员/认证师真实名字',

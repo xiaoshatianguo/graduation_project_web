@@ -7,7 +7,7 @@ $(function () {
 
 /**
  * textarea限制字数
- * @param {textarea限制字数} t 
+ * @param {textarea限制字数} t
  */
 function keyUP(t){
     var len = $(t).val().length;
@@ -20,29 +20,109 @@ function keyUP(t){
  * 点击评论创建评论条
  */
 $('.commentAll').on('click','.plBtn',function(){
-    var myDate = new Date();
-    //获取当前年
-    var year=myDate.getFullYear();
-    //获取当前月
-    var month=myDate.getMonth()+1;
-    //获取当前日
-    var date=myDate.getDate();
-    var h=myDate.getHours();       //获取当前小时数(0-23)
-    var m=myDate.getMinutes();     //获取当前分钟数(0-59)
-    if(m<10) m = '0' + m;
-    var s=myDate.getSeconds();
-    if(s<10) s = '0' + s;
-    var now=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
+    var userLoginInfo;
+    // 判断是否登录
+    if(!cacheGet('userLoginInfo')) {
+        alert('请登录后再评论！');
+        $(this).siblings('.flex-text-wrap').find('.comment-input').val('');
+        return false;
+    } else {
+        userLoginInfo = cacheGet('userLoginInfo');
+    }
+
+    // 获取当前时间
+    var now = getTime();
     //获取输入内容
     var oSize = $(this).siblings('.flex-text-wrap').find('.comment-input').val();
-    console.log(oSize);
-    //动态创建评论模块
-    oHtml = '<div class="comment-show-con clear-f"><div class="comment-show-con-img fl"><img src="/public/images/cover/1.jpg" alt=""></div> <div class="comment-show-con-list fl clear-f"><div class="pl-text clear-f"> <a href="#" class="comment-size-name">David Beckham : </a> <span class="my-pl-con">&nbsp;'+ oSize +'</span> </div> <div class="date-dz"> <span class="date-dz-left fl comment-time">'+now+'</span> <div class="date-dz-right fr comment-pl-block"><a href="javascript:;" class="removeBlock">删除</a> <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复</a> <span class="fl date-dz-line">|</span> <a href="javascript:;" class="date-dz-z fl"><i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)</a> </div> </div><div class="hf-list-con"></div></div> </div>';
+
+    // 评论内容不为空，动态创建评论模块
     if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
+
+        save(oSize, userLoginInfo.id);
+
+        oHtml = `
+        <div class="comment-show-con clear-f">
+            <div class="comment-show-con-img fl" style="background-image:url(${userLoginInfo.portrait})"></div>
+            <div class="comment-show-con-list fl clear-f">
+                <div class="pl-text clear-f">
+                    <a href="#" class="comment-size-name">${userLoginInfo.nickname}：</a>
+                    <span class="my-pl-con">&nbsp;${oSize}</span>
+                </div>
+                <div class="date-dz">
+                    <span class="date-dz-left fl comment-time">${now}</span>
+                    <div class="date-dz-right fr comment-pl-block">
+                        <a href="javascript:;" class="removeBlock">删除</a>
+                        <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复</a>
+                        <span class="fl date-dz-line">|</span>
+                        <a href="javascript:;" class="date-dz-z fl">
+                            <i class="date-dz-z-click-red"></i>赞(<i class="z-num">666</i>)
+                        </a>
+                    </div>
+                </div>
+                <div class="hf-list-con"></div>
+            </div>
+        </div>
+        `;
+
         $(this).parents('.reviewArea ').siblings('.comment-show').prepend(oHtml);
+        // 清空评论输入框
         $(this).siblings('.flex-text-wrap').find('.comment-input').prop('value','').siblings('pre').find('span').text('');
     }
 });
+
+/**
+ * 评论留言及回复存入数据库
+ * @param content 评论内容
+ * @param reviewersId 评论者
+ * @param receiverId 被评论者
+ */
+function save(content, reviewersId, receiverId) {
+    var activityId = getQueryString('activityId');
+    var userId = getQueryString('userId');
+    var productionId = getQueryString('productionId');
+
+    var curPage = 0;
+    var triggerId = -1;
+
+    // 活动页评论
+    if(!!activityId) {
+        curPage = 1;
+        triggerId = activityId;
+    }
+
+    // 个人中心评论
+    if(!!userId) {
+        curPage = 2;
+        triggerId = userId;
+    }
+
+    // 作品评论
+    if(!!productionId) {
+        curPage = 0;
+        triggerId = productionId;
+    }
+
+    console.log(content);
+    console.log(reviewersId);
+    console.log(receiverId);
+    $.ajax({
+        url: '/operation/comment',
+        type: 'post',
+        data: {
+            reviewers: reviewersId,
+            receiver: receiverId || 0,
+            sort: curPage,
+            content,
+            triggerId,
+        },
+        success: function(result) {
+            console.log(result);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    })
+}
 
 /**
  * 点击回复动态创建回复块
@@ -73,29 +153,25 @@ $('.comment-show').on('click','.pl-hf',function(){
  * 评论回复块创建
  */
 $('.comment-show').on('click','.hf-pl',function(){
+    // 判断是否登录
+    if(!cacheGet('userLoginInfo')) {
+        alert('请登录后再评论！');
+        $(this).siblings('.flex-text-wrap').find('.comment-input').val('');
+        return false;
+    }
+    
     var oThis = $(this);
-    var myDate = new Date();
-    //获取当前年
-    var year=myDate.getFullYear();
-    //获取当前月
-    var month=myDate.getMonth()+1;
-    //获取当前日
-    var date=myDate.getDate();
-    var h=myDate.getHours();       //获取当前小时数(0-23)
-    var m=myDate.getMinutes();     //获取当前分钟数(0-59)
-    if(m<10) m = '0' + m;
-    var s=myDate.getSeconds();
-    if(s<10) s = '0' + s;
-    var now=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
+    // 获取当前时间
+    var now = getTime();
     //获取输入内容
     var oHfVal = $(this).siblings('.flex-text-wrap').find('.hf-input').val();
     console.log(oHfVal)
     var oHfName = $(this).parents('.hf-con').parents('.date-dz').siblings('.pl-text').find('.comment-size-name').html();
-    var oAllVal = '回复@'+oHfName;
+    var oAllVal = '回复@@'+oHfName;
     if(oHfVal.replace(/^ +| +$/g,'') == '' || oHfVal == oAllVal){
 
     }else {
-        $.getJSON("json/pl.json",function(data){
+        $.getJSON("/public/json/pl.json",function(data){
             var oAt = '';
             var oHf = '';
             $.each(data,function(n,v){

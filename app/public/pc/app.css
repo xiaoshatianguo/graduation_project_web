@@ -1623,81 +1623,50 @@ div.dis-ib {
       font-size: 1.4652vw; }
   .activity-production-list .comment-div {
     background-color: #fff;
-    min-height: 21.97802vw;
-    /*初始化样式*/
-    /*清除浮动*/
-    /*浮动*/
-    /*----------------------------------------------------------------------------------------------------------*/
     /*----------评论区域 begin----------*/
     /*----------评论区域 end----------*/ }
-    .activity-production-list .comment-div body, .activity-production-list .comment-div h1, .activity-production-list .comment-div h2, .activity-production-list .comment-div h3, .activity-production-list .comment-div h4, .activity-production-list .comment-div h5, .activity-production-list .comment-div ul, .activity-production-list .comment-div li, .activity-production-list .comment-div a, .activity-production-list .comment-div div, .activity-production-list .comment-div p, .activity-production-list .comment-div span, .activity-production-list .comment-div table, .activity-production-list .comment-div tr, .activity-production-list .comment-div td, .activity-production-list .comment-div img {
-      margin: 0;
-      padding: 0; }
-    .activity-production-list .comment-div ul {
-      padding: 0;
-      margin: 0; }
-    .activity-production-list .comment-div li {
-      list-style: none; }
-    .activity-production-list .comment-div a {
-      text-decoration: none; }
-    .activity-production-list .comment-div img {
-      outline: none;
-      border: 0; }
-    .activity-production-list .comment-div body {
-      font-family: "Microsoft Yahei"; }
-    .activity-production-list .comment-div .clearfix:before,
-    .activity-production-list .comment-div .clearfix:after {
-      content: " ";
-      display: table; }
-    .activity-production-list .comment-div .clearfix:after {
-      clear: both; }
-    .activity-production-list .comment-div .clearfix {
-      zoom: 1; }
-    .activity-production-list .comment-div .pull-right {
-      float: right !important; }
-    .activity-production-list .comment-div .pull-left {
-      float: left !important; }
     .activity-production-list .comment-div .content {
       float: left; }
-    .activity-production-list .comment-div .flex-text-wrap, .activity-production-list .comment-div pre {
+    .activity-production-list .comment-div .flex-text-wrap,
+    .activity-production-list .comment-div pre {
       margin: 0 !important; }
     .activity-production-list .comment-div .commentAll {
-      width: 36.63004vw;
-      padding: 1.4652vw;
-      border: 1px solid #ededed;
+      padding: 2.1978vw 2.9304vw;
       margin: 1.4652vw auto; }
     .activity-production-list .comment-div .plBtn {
-      width: 5.49451vw;
-      height: 2.63736vw;
-      line-height: 2.63736vw;
-      background-color: #339b53;
-      text-align: center;
       display: block;
       float: right;
-      color: #FFFFFF;
-      font-size: 0.87912vw;
-      border-radius: 0.43956vw;
       margin-right: 0.14652vw;
-      margin-top: 1.4652vw; }
+      margin-top: 1.4652vw;
+      width: 5.49451vw;
+      height: 2.63736vw;
+      font-size: 0.87912vw;
+      line-height: 2.63736vw;
+      text-align: center;
+      border-radius: 0.43956vw;
+      background-color: #f068a9;
+      color: #FFFFFF; }
     .activity-production-list .comment-div .plBtn:hover {
       background-color: #2f904d; }
     .activity-production-list .comment-div .comment-show {
       margin-top: 1.4652vw; }
     .activity-production-list .comment-div .comment-show-con {
+      padding: 0.7326vw 0;
       width: 100%;
-      border-top: 1px solid #EDEDED;
-      padding: 0.7326vw 0; }
+      border-top: 1px solid #EDEDED; }
     .activity-production-list .comment-div .comment-show-con-img {
+      margin-top: 0.3663vw;
       width: 3.51648vw;
       height: 3.51648vw;
       overflow: hidden;
-      margin-top: 0.3663vw; }
+      background-position: 100% 100%;
+      background-size: cover; }
     .activity-production-list .comment-div .comment-show-con-list {
-      width: 85%;
-      margin-left: 3%; }
+      margin-left: 3%;
+      width: 85%; }
     .activity-production-list .comment-div .pl-text {
-      width: 100%;
       margin-top: 0.51282vw;
+      width: 100%;
       word-wrap: break-word;
       overflow: hidden; }
     .activity-production-list .comment-div .date-dz {
@@ -1705,55 +1674,58 @@ div.dis-ib {
       float: left; }
     .activity-production-list .comment-div .hf-list-con {
       float: left;
+      margin-top: 0.51282vw;
       width: 100%;
-      background-color: #eaeaec;
-      margin-top: 0.51282vw; }
+      background-color: #eaeaec; }
     .activity-production-list .comment-div .comment-size-name {
       font-size: 0.87912vw;
       color: #339b53; }
     .activity-production-list .comment-div .my-pl-con {
+      width: 100%;
       font-size: 0.87912vw;
-      color: #8b8b8b;
-      width: 100%; }
+      color: #8b8b8b; }
     .activity-production-list .comment-div .date-dz-left {
-      font-size: 0.87912vw;
-      color: #8b8b8b;
       display: block;
-      padding-top: 1.31868vw; }
-    .activity-production-list .comment-div .comment-time, .activity-production-list .comment-div .comment-pl-block {
+      padding-top: 1.31868vw;
+      font-size: 0.87912vw;
+      color: #8b8b8b; }
+    .activity-production-list .comment-div .comment-time,
+    .activity-production-list .comment-div .comment-pl-block {
       padding-top: 0.51282vw; }
     .activity-production-list .comment-div .comment-pl-block {
       margin-top: 0; }
     .activity-production-list .comment-div .date-dz-right {
+      position: relative;
       display: block;
       padding-top: 0.43956vw;
       padding-right: 1.31868vw;
-      position: relative;
       overflow: hidden; }
     .activity-production-list .comment-div .removeBlock {
+      display: block;
       float: left;
+      margin-right: 1.75824vw;
       font-size: 0.87912vw;
       color: #8b8b8b;
-      margin-right: 1.75824vw;
-      display: block;
       opacity: 0; }
     .activity-production-list .comment-div .hf-con-block {
       display: block; }
-    .activity-production-list .comment-div .date-dz-pl, .activity-production-list .comment-div .date-dz-line, .activity-production-list .comment-div .date-dz-z {
+    .activity-production-list .comment-div .date-dz-pl,
+    .activity-production-list .comment-div .date-dz-line,
+    .activity-production-list .comment-div .date-dz-z {
       font-size: 0.87912vw;
       color: #8b8b8b; }
     .activity-production-list .comment-div .date-dz-line {
       display: block;
       padding: 0 1.4652vw; }
     .activity-production-list .comment-div .date-dz-z-click-red {
+      margin-right: 0.3663vw;
       width: 1.24542vw;
       height: 1.24542vw;
       display: block;
       float: left;
       background-image: url("/public/images/cover/1.jpg");
       background-repeat: no-repeat;
-      background-position: -0.43956vw -14.50549vw;
-      margin-right: 0.3663vw; }
+      background-position: -0.43956vw -14.50549vw; }
     .activity-production-list .comment-div .z-num {
       font-style: normal; }
     .activity-production-list .comment-div .date-dz-z-click {
@@ -1761,28 +1733,28 @@ div.dis-ib {
     .activity-production-list .comment-div .red {
       background-position: -0.43956vw -8.71795vw !important; }
     .activity-production-list .comment-div .hf-pl {
+      display: block;
+      float: right;
+      margin-right: 0.14652vw;
+      margin-top: 1.4652vw;
       width: 5.12821vw;
       height: 2.1978vw;
       line-height: 2.1978vw;
-      background-color: #339b53;
       text-align: center;
-      display: block;
-      float: right;
-      color: #FFFFFF;
       font-size: 0.87912vw;
       border-radius: 0.43956vw;
-      margin-right: 0.14652vw;
-      margin-top: 1.4652vw; }
+      background-color: #339b53;
+      color: #FFFFFF; }
     .activity-production-list .comment-div .hf-con {
-      width: 100%;
-      margin-top: 1.75824vw; }
+      margin-top: 1.75824vw;
+      width: 100%; }
     .activity-production-list .comment-div .hf-input {
       font-size: 0.87912vw; }
     .activity-production-list .comment-div .all-pl-con {
-      width: 96%;
+      margin: 0 2%;
       padding: 2% 0;
-      float: left;
-      margin: 0 2%; }
+      width: 96%;
+      float: left; }
     .activity-production-list .comment-div .atName {
       font-size: 0.87912vw;
       color: #339b53; }
@@ -1800,23 +1772,22 @@ div.dis-ib {
       white-space: pre-wrap;
       word-wrap: break-word; }
     .activity-production-list .comment-div .flex-text-wrap {
-      width: 100%;
       position: relative;
+      width: 100%;
       *zoom: 1; }
     .activity-production-list .comment-div textarea,
     .activity-production-list .comment-div .flex-text-wrap {
-      outline: 0;
       margin: 0;
-      border: none;
       padding: 0;
-      *padding-bottom: 0 !important; }
+      border: none;
+      *padding-bottom: 0 !important;
+      outline: 0; }
     .activity-production-list .comment-div .flex-text-wrap textarea,
     .activity-production-list .comment-div .flex-text-wrap pre {
+      width: 100%;
       *white-space: pre;
       *word-wrap: break-word;
       white-space: pre-wrap;
-      width: 100%;
-      -ms-box-sizing: border-box;
       box-sizing: border-box; }
     .activity-production-list .comment-div .flex-text-wrap textarea {
       overflow: hidden;
@@ -1825,10 +1796,7 @@ div.dis-ib {
       left: 0;
       height: 100%;
       width: 100%;
-      resize: none;
-      /* IE7 box-sizing fudge factor */
-      *height: 94%;
-      *width: 94%; }
+      resize: none; }
     .activity-production-list .comment-div .flex-text-wrap pre {
       display: block;
       visibility: hidden; }
@@ -1837,24 +1805,18 @@ div.dis-ib {
       margin-bottom: 1.8315vw; }
     .activity-production-list .comment-div textarea,
     .activity-production-list .comment-div .flex-text-wrap pre {
-      line-height: 1.7;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 100%;
       padding: 0.7326vw 1.0989vw;
-      border: 1px solid #c6c8ce;
       width: 100%;
+      line-height: 1;
+      font-size: 1.0989vw;
+      border: 1px solid #beb9b9;
       -webkit-appearance: none;
-      background: #fff;
       border-radius: 0.21978vw;
-      background-clip: padding-box;
       box-shadow: 0 0 0.58608vw rgba(182, 195, 214, 0.6) inset, 0 1px 1px #fff;
       transition-duration: 300ms;
-      -webkit-transition-easing: ease-in-out;
-      -moz-transition-easing: ease-in-out;
-      -o-transition-easing: ease-in-out;
-      -ms-transition-easing: ease-in-out;
-      transition-easing: ease-in-out;
-      transition-property: border-color, box-shadow; }
+      transition-property: border-color, box-shadow;
+      background-clip: padding-box;
+      background: #eceaea; }
     .activity-production-list .comment-div .fork-link {
       display: block;
       position: absolute;
