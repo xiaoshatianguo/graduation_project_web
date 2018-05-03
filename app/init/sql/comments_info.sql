@@ -2,12 +2,11 @@
 CREATE TABLE IF NOT EXISTS `comments_info` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(255) DEFAULT '' comment '评论或留言者',
-  `object_id` VARCHAR(255) DEFAULT '' comment '接收评论或留言者',
+  `reply_id` VARCHAR(255) DEFAULT '' comment '评论父id',
   `production_id` VARCHAR(255) DEFAULT '' comment '评论的作品id',
   `activity_id` VARCHAR(255) DEFAULT '' comment '评论的活动id',
   `personal_id` VARCHAR(255) DEFAULT '' comment '留言的用户id',
   `content` VARCHAR(255) DEFAULT '' comment '评论或留言内容',
-  `reply_id` VARCHAR(255) DEFAULT '' comment '评论父id',
   `star` VARCHAR(255) DEFAULT '' comment '评论被赞数量',
   `create_time` bigint comment '评论或留言发布时间',
   `status` INT(2) DEFAULT 0 comment '是否被禁 - 0 否 - 1 禁',

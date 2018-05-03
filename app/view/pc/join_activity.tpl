@@ -157,6 +157,7 @@
                 element = layui.element;
 
             var productionSrc = [];
+            var activityId = getQueryString('activityId');
             
             //自定义验证规则
             form.verify({
@@ -213,13 +214,14 @@
             //监听提交
             form.on('submit(formSubmit)', function(data){
                 var uploadData = JSON.parse(JSON.stringify(data.field));
+
                 $.ajax({
                     type: 'post',
                     url: '/operation/upload_production',
                     data: {
                         name: uploadData.name,
-                        author: cacheGet('userLoginInfo').id,
-                        // sort: uploadData.sort,
+                        author_id: cacheGet('userLoginInfo').id,
+                        activity_id: activityId,
                         production: uploadData.productionSrc,
                         cover: uploadData.coverSrc,
                         banner: uploadData.bannerSrc,
@@ -230,7 +232,6 @@
                     },
                     success: function(result){
                         alert('作品信息提交成功');
-                        var activityId = getQueryString('activityId');
                         pageJumpsHandle();
                     },
                     error: function(err) {

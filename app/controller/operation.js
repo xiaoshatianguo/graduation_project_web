@@ -4,14 +4,15 @@ const Controller = require('egg').Controller;
 const tools = require('../utils/tool.js');
 
 class OperationController extends Controller {
+    // 上传作品处理
     async uploadProduction() {
         const ctx = this.ctx;
         const productionData = ctx.request.body;
 
         const result = await this.app.mysql.insert('production_info', {
             name: productionData.name,
-            author: productionData.author,
-            // sort: productionData.sort,
+            author_id: productionData.author_id,
+            activity_id: productionData.activity_id,
             production: productionData.production,
             cover: productionData.cover,
             banner: productionData.banner,
@@ -27,6 +28,7 @@ class OperationController extends Controller {
         }
     }
 
+    // 申请活动处理
     async applyActivity() {
         const ctx = this.ctx;
         const productionData = ctx.request.body;
@@ -51,6 +53,7 @@ class OperationController extends Controller {
         }
     }
 
+    // 申请认证师处理
     async applyCertifiedArchitect() {
         const ctx = this.ctx;
         const productionData = ctx.request.body;
@@ -72,6 +75,7 @@ class OperationController extends Controller {
         }
     }
 
+    // 分类信息返回
     async sort() {
         const ctx = this.ctx;
         const result = await this.app.mysql.select('production_type_info');
@@ -88,44 +92,29 @@ class OperationController extends Controller {
         const ctx = this.ctx;
         const commentData = ctx.request.body;
 
-        // 评论表
+        // 插入评论表
         const result = await this.app.mysql.insert('comments_info', {
-            reviewers: commentData.reviewers,
-            receiver: commentData.receiver,
-            sort: commentData.sort,
+            user_id: commentData.user_id,
+            reply_id: commentData.reply_id || 0,
+            production_id: commentData.production_id || 0,
+            activity_id: commentData.activity_id || 0,
+            personal_id: commentData.personal_id || 0,
             content: commentData.content,
             create_time: new Date().valueOf(),
         });
 
-        // 作品评论入库
-        if(commentData.sort == 0) {
-            
+        if(result.insertId) {
+            ctx.status = 200;
+            ctx.body = {
+                msg: '评论成功',
+            };
+        } else {
+            ctx.status = 403;
+            ctx.body = {
+                err: result.message,
+                msg: '评论失败',
+            };
         }
-
-        // 活动评论入库
-        if(commentData.sort == 1) {
-
-        }
-
-        // 个人中心评论入库
-        if(commentData.sort == 2) {
-            
-        }
-
-        console.log(commentData.triggerId);
-
-        console.log(result);
-
-        const newRecord = await this.app.mysql.get(
-            'comments_info',
-            {id: result.insertId}
-        );
-
-        let resultData = JSON.parse(JSON.stringify(result));
-        tools.formatTime(resultData);
-            
-        ctx.status = 200;
-        ctx.body = resultData;
     }
 }
 

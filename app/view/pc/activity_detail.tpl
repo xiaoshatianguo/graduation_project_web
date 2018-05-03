@@ -42,8 +42,8 @@
         <div class="container">
             <p class="title">活动作品</p>
             <div class="product-show flex-b-sc fw-wr">
-                {% if activityDetailData.productionDataArr.length > 0 %}
-                    {% for item in activityDetailData.productionDataArr %}
+                {% if activityDetailData.productionData.length > 0 %}
+                    {% for item in activityDetailData.productionData %}
                         <a class="list-item" href="production_detail?productionId={{ item.id }}">
                             <div class="list-img-div">
                                 <div class="item-img" style="background-image:url({{ item.cover }})"></div>
@@ -56,7 +56,7 @@
                                         <use xlink:href="#icon-zuixinlianzai"></use>
                                     </svg>
                                 </h3>
-                                <p class="t-describe">{{ item.describe }}</p>
+                                <p class="t-describe">{{ item.nickname }}</p>
                                 <div class="about-production flex-b-sbc">
                                     <div class="about-item">
                                         <svg class="icon" aria-hidden="true">

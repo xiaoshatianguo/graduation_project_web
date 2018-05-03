@@ -76,44 +76,25 @@ $('.commentAll').on('click','.plBtn',function(){
  * @param reviewersId 评论者
  * @param receiverId 被评论者
  */
-function save(content, reviewersId, receiverId) {
+function save(content, user_id, reply_id) {
     var activityId = getQueryString('activityId');
     var userId = getQueryString('userId');
     var productionId = getQueryString('productionId');
 
-    var curPage = 0;
-    var triggerId = -1;
-
-    // 活动页评论
-    if(!!activityId) {
-        curPage = 1;
-        triggerId = activityId;
-    }
-
-    // 个人中心评论
-    if(!!userId) {
-        curPage = 2;
-        triggerId = userId;
-    }
-
-    // 作品评论
-    if(!!productionId) {
-        curPage = 0;
-        triggerId = productionId;
-    }
-
+    console.log(user_id);
+    console.log(reply_id);
     console.log(content);
-    console.log(reviewersId);
-    console.log(receiverId);
+    
     $.ajax({
         url: '/operation/comment',
         type: 'post',
         data: {
-            reviewers: reviewersId,
-            receiver: receiverId || 0,
-            sort: curPage,
+            user_id: user_id,
+            reply_id: reply_id || 0,
+            production_id: productionId || 0,
+            activity_id: activityId || 0,
+            personal_id: userId || 0,
             content,
-            triggerId,
         },
         success: function(result) {
             console.log(result);
