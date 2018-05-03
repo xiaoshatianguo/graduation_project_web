@@ -107,6 +107,7 @@ class OperationController extends Controller {
             ctx.status = 200;
             ctx.body = {
                 msg: '评论成功',
+                comment_id: result.insertId,
             };
         } else {
             ctx.status = 403;

@@ -37,7 +37,6 @@ $('.commentAll').on('click','.plBtn',function(){
 
     // 评论内容不为空，动态创建评论模块
     if(oSize.replace(/(^\s*)|(\s*$)/g, "") != ''){
-
         save(oSize, userLoginInfo.id);
 
         oHtml = `
@@ -45,7 +44,7 @@ $('.commentAll').on('click','.plBtn',function(){
             <div class="comment-show-con-img fl" style="background-image:url(${userLoginInfo.portrait})"></div>
             <div class="comment-show-con-list fl clear-f">
                 <div class="pl-text clear-f">
-                    <a href="#" class="comment-size-name">${userLoginInfo.nickname}：</a>
+                    <a href="#" class="comment-size-name" userId=${userLoginInfo.id}>${userLoginInfo.nickname}：</a>
                     <span class="my-pl-con">&nbsp;${oSize}</span>
                 </div>
                 <div class="date-dz">
@@ -73,8 +72,8 @@ $('.commentAll').on('click','.plBtn',function(){
 /**
  * 评论留言及回复存入数据库
  * @param content 评论内容
- * @param reviewersId 评论者
- * @param receiverId 被评论者
+ * @param user_id 评论者
+ * @param reply_id 被评论者
  */
 function save(content, user_id, reply_id) {
     var activityId = getQueryString('activityId');
@@ -84,7 +83,7 @@ function save(content, user_id, reply_id) {
     console.log(user_id);
     console.log(reply_id);
     console.log(content);
-    
+
     $.ajax({
         url: '/operation/comment',
         type: 'post',
@@ -98,6 +97,7 @@ function save(content, user_id, reply_id) {
         },
         success: function(result) {
             console.log(result);
+            return comment_id;
         },
         error: function(err){
             console.log(err);

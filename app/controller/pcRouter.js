@@ -119,12 +119,20 @@ class RouterController extends Controller {
         const production = await this.app.mysql.query(
             `SELECT p.*,u.nickname FROM production_info p inner join user_info u on p.author_id = u.id where activity_id=${id};`
         );
-        
         var productionData = JSON.parse(JSON.stringify(production));
         tools.formatTime(productionData);
 
+        // 活动评论处理
+        const comments = await this.app.mysql.query(
+            `SELECT c.*,u.nickname,u.portrait FROM comments_info c inner join user_info u on c.user_id = u.id where c.activity_id=${id} and c.reply_id = 0;`
+        );
+        comments.reverse();
+        var commentsData = JSON.parse(JSON.stringify(comments));
+        tools.formatTime(commentsData);
+
         data.sort = sortData.name;
         data.productionData = productionData;
+        data.commentsData = commentsData;
 
         await this.ctx.render('pc/activity_detail.tpl', {
             activityDetailData: data,

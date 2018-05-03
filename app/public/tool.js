@@ -90,15 +90,24 @@ function getTime() {
     var myDate = new Date();
     //获取当前年
     var year=myDate.getFullYear();
+
     //获取当前月
     var month=myDate.getMonth()+1;
+    if(month<10) month = '0' + month;
+
     //获取当前日
     var date=myDate.getDate();
+    if(date<10) date = '0' + date;
+
     var h=myDate.getHours();       //获取当前小时数(0-23)
+    if(h<10) h = '0' + h;
+
     var m=myDate.getMinutes();     //获取当前分钟数(0-59)
     if(m<10) m = '0' + m;
+
     var s=myDate.getSeconds();
     if(s<10) s = '0' + s;
+
     var now=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
     return now;
 }

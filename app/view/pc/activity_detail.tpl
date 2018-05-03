@@ -100,6 +100,33 @@
                     <!--评论区域 end-->
                     <!--回复区域 begin-->
                     <div class="comment-show">
+                        {% if activityDetailData.commentsData.length > 0 %}
+                            {% for item in activityDetailData.commentsData %}
+                                <div class="comment-show-con clear-f" commentId={{ item.id }}>
+                                    <div class="comment-show-con-img fl" style="background-image:url({{ item.portrait }})"></div>
+                                    <div class="comment-show-con-list fl clear-f">
+                                        <div class="pl-text clear-f">
+                                            <a href="#" class="comment-size-name" userId="{{ item.user_id }}">{{ item.nickname }}：</a>
+                                            <span class="my-pl-con">&nbsp;{{ item.content }}</span>
+                                        </div>
+                                        <div class="date-dz">
+                                            <span class="date-dz-left fl comment-time">{{ item.create_time }}</span>
+                                            <div class="date-dz-right fr comment-pl-block">
+                                                <a href="javascript:;" class="removeBlock">删除</a>
+                                                <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复(<i class="z-num">{{ item.star }}</i>)</a>
+                                                <span class="fl date-dz-line">|</span>
+                                                <a href="javascript:;" class="date-dz-z fl">
+                                                    <i class="date-dz-z-click-red"></i>赞(<i class="z-num">{{ item.star }}</i>)
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="hf-list-con"></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            
+                        {% endif %}
                     </div>
                     <!--回复区域 end-->
                 </div>
