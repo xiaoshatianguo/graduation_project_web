@@ -1721,17 +1721,15 @@ div.dis-ib {
       margin-right: 0.3663vw;
       width: 1.24542vw;
       height: 1.24542vw;
-      display: block;
+      display: none;
       float: left;
-      background-image: url("/public/images/cover/1.jpg");
       background-repeat: no-repeat;
-      background-position: -0.43956vw -14.50549vw; }
+      background-position: 100% 100%;
+      background-size: cover; }
     .activity-production-list .comment-div .z-num {
       font-style: normal; }
     .activity-production-list .comment-div .date-dz-z-click {
       color: #b83b44; }
-    .activity-production-list .comment-div .red {
-      background-position: -0.43956vw -8.71795vw !important; }
     .activity-production-list .comment-div .hf-pl {
       display: block;
       float: right;

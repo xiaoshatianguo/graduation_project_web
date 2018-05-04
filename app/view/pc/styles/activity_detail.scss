@@ -381,12 +381,12 @@ $t-hover-color: #ee534e;
             width: 17px;
             height: 17px;
 
-            display: block;
+            display: none;
             float: left;
 
-            background-image: url('/public/images/cover/1.jpg');
             background-repeat: no-repeat;
-            background-position: -6px -198px;
+            background-position: 100% 100%;
+            background-size: cover;
         }
 
         .z-num {
@@ -395,10 +395,6 @@ $t-hover-color: #ee534e;
 
         .date-dz-z-click {
             color: #b83b44;
-        }
-
-        .red {
-            background-position: -6px -119px !important;
         }
 
         .hf-pl {

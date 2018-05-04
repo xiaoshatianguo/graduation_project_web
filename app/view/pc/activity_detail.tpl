@@ -120,7 +120,7 @@
                                                 {% endif %}
                                                 <span class="fl date-dz-line">|</span>
                                                 <a href="javascript:;" class="date-dz-z fl">
-                                                    <i class="date-dz-z-click-red"></i>赞(<i class="z-num">{{ item.star }}</i>)
+                                                    <i class="date-dz-z-click-red" style="background-image: url({{ item.starImg }})"></i>赞(<i class="z-num">{{ item.star }}</i>)
                                                 </a>
                                             </div>
                                         </div>
@@ -129,7 +129,7 @@
                                 </div>
                             {% endfor %}
                         {% else %}
-                            
+                        
                         {% endif %}
                     </div>
                     <!--回复区域 end-->

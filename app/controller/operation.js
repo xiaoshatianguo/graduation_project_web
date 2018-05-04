@@ -93,9 +93,17 @@ class OperationController extends Controller {
         const commentData = ctx.request.body;
 
         if(commentData.reply_id != 0) {
-            const changeNumber = await this.app.mysql.query(
+            const changeReplyNumber = await this.app.mysql.query(
                 `update comments_info set number = number+1 WHERE id = ${commentData.reply_id};`
             );
+        }
+
+        if(commentData.to_id != 0) {
+            if(commentData.child_reply_id != 0) {
+                const changeReplyChildNumber = await this.app.mysql.query(
+                    `update comments_info set number = number+1 WHERE id = ${commentData.child_reply_id};`
+                );
+            }
         }
 
         // 插入评论表
