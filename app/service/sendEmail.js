@@ -17,7 +17,7 @@ class sendEmailService extends Service {
             this.ctx.cookies.set(email, code, {
                 maxAge: 5 * 60 * 1000,
             });
-            // this.sendEmail(code, email);
+            this.sendEmail(code, email);
         }
 
         return code;
@@ -79,8 +79,8 @@ class sendEmailService extends Service {
                 port: 465,
                 secure: true, // true for 465, false for other ports
                 auth: {
-                    user: '869074486@qq.com', // generated ethereal user
-                    pass: 'onwdajjarjqabeha', // generated ethereal password
+                    user: '869074486', // generated ethereal user
+                    pass: 'edscubbyvdmabcbj', // generated ethereal password
                 },
             });
 

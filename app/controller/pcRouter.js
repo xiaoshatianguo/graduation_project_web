@@ -124,7 +124,7 @@ class RouterController extends Controller {
 
         // 活动评论处理
         const comments = await this.app.mysql.query(
-            `SELECT c.*,u.nickname,u.portrait FROM comments_info c inner join user_info u on c.user_id = u.id where c.activity_id=${id} and c.reply_id = 0;`
+            `SELECT c.*,u.nickname,u.portrait FROM comments_info c inner join user_info u on c.user_id = u.id where c.activity_id=${id} and c.father_id = 0;`
         );
         comments.reverse();
         var commentsData = JSON.parse(JSON.stringify(comments));

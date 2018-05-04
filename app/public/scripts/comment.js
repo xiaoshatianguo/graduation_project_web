@@ -48,10 +48,10 @@ $('.commentAll').on('click','.plBtn',function(){
  * @param _this 传$(this)
  * @param content 评论内容
  * @param user_id 评论者
- * @param reply_id 被评论的评论id
+ * @param father_id 被评论的评论id
  * @param to_id 被评论者的id
  */
-function saveComment(sort, _this, content, user_id, reply_id, to_id, child_reply_id) {
+function saveComment(sort, _this, content, user_id, father_id, to_id, child_father_id) {
     var activityId = getQueryString('activityId');
     var userId = getQueryString('userId');
     var productionId = getQueryString('productionId');
@@ -61,9 +61,9 @@ function saveComment(sort, _this, content, user_id, reply_id, to_id, child_reply
         type: 'post',
         data: {
             user_id: user_id,
-            reply_id: reply_id || 0,
+            father_id: father_id || 0,
             to_id: to_id || 0,
-            child_reply_id: child_reply_id || 0,
+            child_father_id: child_father_id || 0,
             production_id: productionId || 0,
             activity_id: activityId || 0,
             personal_id: userId || 0,
@@ -132,13 +132,13 @@ function addComments(_this, oSize, commentId) {
  */
 $('.comment-show').on('click','.pl-hf',function(){
     // 被评论的评论id
-    var reply_id = $(this).parents('.comment-show-con').attr('commentId');
+    var father_id = $(this).parents('.comment-show-con').attr('commentId');
 
     var oThis = $(this);
 
     // 查询数据库，展示子评论
     $.ajax({
-        url: '/operation/child_comment?reply_id='+reply_id,
+        url: '/operation/child_comment?father_id='+father_id,
         type: 'get',
         success: function(result) {
             // 如果有子评论则渲染
@@ -193,11 +193,17 @@ function showChildComments(oThis, result) {
     var oHtml = '';
 
     for (let i = 0; i < result.length; i++) {
+        var content;
+        if(!!result[i].u2_nickname) {
+            content = result[i].content + ' //@' + result[i].c2_content;
+        } else {
+            content = result[i].content;
+        }
         oHtml += `
             <div class="all-pl-con" commentsId=${result[i].id}>
                 <div class="pl-text hfpl-text clear-f">
-                    <a href="#" class="comment-size-name" userId=${result[i].user_id}>${result[i].nickname}：</a>
-                    <span class="my-pl-con">${result[i].content}</span>
+                    <a href="#" class="comment-size-name" userId=${result[i].user_id}>${result[i].u1_nickname}：</a>
+                    <span class="my-pl-con">${content}</span>
                 </div>
                 <div class="date-dz">
                     <span class="date-dz-left fl comment-time">${result[i].create_time}</span>
@@ -233,15 +239,16 @@ $('.comment-show').on('click','.hf-pl',function(){
         var oHfVal = $(this).siblings('.flex-text-wrap').find('.hf-input').val();
 
         // 被评论的评论id
-        var reply_id = $(this).parents('.comment-show-con').attr('commentId');
+        var father_id = $(this).parents('.comment-show-con').attr('commentId');
 
         var to_id;
-        var child_reply_id;
+        var child_father_id;
         if($(this).parents('.hf-list-con').length > 0) {
             // 子评论中被评论的id
-            child_reply_id = $(this).parents('.all-pl-con').attr('commentsId');
+            child_father_id = $(this).parents('.all-pl-con').attr('commentsId');
             // 评论中被评论者的id
-            to_id = $(this).parents('.date-dz').siblings('.pl-text').find('.comment-size-name').attr('userId');
+            // to_id = $(this).parents('.date-dz').siblings('.pl-text').find('.comment-size-name').attr('userId');
+            to_id = $(this).parents('.all-pl-con').attr('commentsId');
         }
         
         //获取回复人的名字
@@ -250,7 +257,7 @@ $('.comment-show').on('click','.hf-pl',function(){
         if(oHfVal.replace(/(^\s*)|(\s*$)/g, "") != ''){
             // 后台数据入库
             var sort = 1;
-            saveComment(sort, $(this), oHfVal, userLoginInfo.id, reply_id, to_id, child_reply_id);
+            saveComment(sort, $(this), oHfVal, userLoginInfo.id, father_id, to_id, child_father_id);
         } else {
             alert('评论不能为空！');
         }

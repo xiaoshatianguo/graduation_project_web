@@ -92,16 +92,16 @@ class OperationController extends Controller {
         const ctx = this.ctx;
         const commentData = ctx.request.body;
 
-        if(commentData.reply_id != 0) {
+        if(commentData.father_id != 0) {
             const changeReplyNumber = await this.app.mysql.query(
-                `update comments_info set number = number+1 WHERE id = ${commentData.reply_id};`
+                `update comments_info set number = number+1 WHERE id = ${commentData.father_id};`
             );
         }
 
         if(commentData.to_id != 0) {
-            if(commentData.child_reply_id != 0) {
+            if(commentData.child_father_id != 0) {
                 const changeReplyChildNumber = await this.app.mysql.query(
-                    `update comments_info set number = number+1 WHERE id = ${commentData.child_reply_id};`
+                    `update comments_info set number = number+1 WHERE id = ${commentData.child_father_id};`
                 );
             }
         }
@@ -109,7 +109,7 @@ class OperationController extends Controller {
         // 插入评论表
         const result = await this.app.mysql.insert('comments_info', {
             user_id: commentData.user_id,
-            reply_id: commentData.reply_id || 0,
+            father_id: commentData.father_id || 0,
             to_id: commentData.to_id || 0,
             production_id: commentData.production_id || 0,
             activity_id: commentData.activity_id || 0,
@@ -135,10 +135,15 @@ class OperationController extends Controller {
 
     async childComment() {
         const ctx = this.ctx;
-        const replyId = ctx.query.reply_id;
+        const fatherId = ctx.query.father_id;
 
         const comment = await this.app.mysql.query(
-            `SELECT c.*,u.nickname FROM comments_info c inner join user_info u on c.user_id = u.id where reply_id=${replyId};`
+            `SELECT c1.*,u1.nickname as u1_nickname,null as u2_nickname,null as c2_id,null as c2_content from comments_info c1,user_info u1
+            where c1.user_id=u1.id and c1.to_id=0 and c1.father_id=${fatherId}
+            UNION ALL
+            select c1.*,u1.nickname as u1_nickname,u2.nickname u2_nickname,c2.id as c2_id,c2.content as c2_content from comments_info c1,user_info u1,comments_info c2,user_info u2
+            where c1.user_id=u1.id and c1.to_id=c2.id and c2.user_id=u2.id and c1.father_id=${fatherId}
+            `
         );
         comment.reverse();
 

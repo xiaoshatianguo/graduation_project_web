@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS `comments_info` (
   `id` INT(64) NOT NULL AUTO_INCREMENT,
   `user_id` INT(64) DEFAULT '' comment '评论或留言者',
-  `reply_id` INT(64) DEFAULT '' comment '评论的父评论的id',
+  `father_id` INT(64) DEFAULT '' comment '评论的父评论的id',
   `to_id` INT(64) DEFAULT '' comment '被评论者id',
   `production_id` INT(64) DEFAULT '' comment '评论的作品id',
   `activity_id` INT(64) DEFAULT '' comment '评论的活动id',
