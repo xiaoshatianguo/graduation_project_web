@@ -66,5 +66,7 @@ module.exports = app => {
   router.get('sort', '/operation/sort', controller.operation.sort);
   // 评论处理
   router.post('comment', '/operation/comment', controller.operation.comment);
+  // 查询子评论
+  router.get('childComment', '/operation/child_comment', controller.operation.childComment);
   
 };

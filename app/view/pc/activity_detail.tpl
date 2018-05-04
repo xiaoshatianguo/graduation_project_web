@@ -113,7 +113,11 @@
                                             <span class="date-dz-left fl comment-time">{{ item.create_time }}</span>
                                             <div class="date-dz-right fr comment-pl-block">
                                                 <a href="javascript:;" class="removeBlock">删除</a>
-                                                <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复(<i class="z-num">{{ item.star }}</i>)</a>
+                                                {% if item.number>0 %}
+                                                    <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">查看<i class="z-num">{{ item.number }}</i>条回复</a>
+                                                {% else %}
+                                                    <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复(<i class="z-num">{{ item.number }}</i>)</a>
+                                                {% endif %}
                                                 <span class="fl date-dz-line">|</span>
                                                 <a href="javascript:;" class="date-dz-z fl">
                                                     <i class="date-dz-z-click-red"></i>赞(<i class="z-num">{{ item.star }}</i>)

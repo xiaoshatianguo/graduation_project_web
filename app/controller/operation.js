@@ -92,10 +92,17 @@ class OperationController extends Controller {
         const ctx = this.ctx;
         const commentData = ctx.request.body;
 
+        if(commentData.reply_id != 0) {
+            const changeNumber = await this.app.mysql.query(
+                `update comments_info set number = number+1 WHERE id = ${commentData.reply_id};`
+            );
+        }
+
         // 插入评论表
         const result = await this.app.mysql.insert('comments_info', {
             user_id: commentData.user_id,
             reply_id: commentData.reply_id || 0,
+            to_id: commentData.to_id || 0,
             production_id: commentData.production_id || 0,
             activity_id: commentData.activity_id || 0,
             personal_id: commentData.personal_id || 0,
@@ -116,6 +123,22 @@ class OperationController extends Controller {
                 msg: '评论失败',
             };
         }
+    }
+
+    async childComment() {
+        const ctx = this.ctx;
+        const replyId = ctx.query.reply_id;
+
+        const comment = await this.app.mysql.query(
+            `SELECT c.*,u.nickname FROM comments_info c inner join user_info u on c.user_id = u.id where reply_id=${replyId};`
+        );
+        comment.reverse();
+
+        var commentData = JSON.parse(JSON.stringify(comment));
+        tools.formatTime(commentData);
+
+        ctx.status = 200;
+        ctx.body = commentData;
     }
 }
 
