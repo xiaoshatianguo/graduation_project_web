@@ -14,4 +14,5 @@ import production_detail from './styles/production_detail.scss';
 import login from './styles/login.scss';
 import register from './styles/register.scss';
 import tip from './macro/tip.scss'
+import publish_production from './styles/publish_production.scss'
 

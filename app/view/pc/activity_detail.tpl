@@ -128,8 +128,6 @@
                                     </div>
                                 </div>
                             {% endfor %}
-                        {% else %}
-                        
                         {% endif %}
                     </div>
                     <!--回复区域 end-->

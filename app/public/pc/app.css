@@ -1743,7 +1743,9 @@ div.dis-ib {
           margin-top: 0.3663vw;
           width: 3.51648vw;
           height: 3.51648vw;
-          overflow: hidden; }
+          overflow: hidden;
+          background-position: 100% 100%;
+          background-size: cover; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
           margin-left: 3%;
           width: 85%; }
@@ -1804,17 +1806,15 @@ div.dis-ib {
           margin-right: 0.3663vw;
           width: 1.24542vw;
           height: 1.24542vw;
-          display: block;
+          display: none;
           float: left;
-          background-image: url("/public/images/cover/1.jpg");
           background-repeat: no-repeat;
-          background-position: -0.43956vw -14.50549vw; }
+          background-position: 100% 100%;
+          background-size: cover; }
         .author-info .tag-div .layui-tab-content .personal-message .z-num {
           font-style: normal; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
           color: #b83b44; }
-        .author-info .tag-div .layui-tab-content .personal-message .red {
-          background-position: -0.43956vw -8.71795vw !important; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-pl {
           display: block;
           float: right;
@@ -3188,5 +3188,94 @@ div.dis-ib {
 
 .loading div:nth-child(3) span {
   -webkit-animation-delay: 2s; }
+.publish-production-div {
+  padding-top: 1.4652vw;
+  background-color: #ebe6e6; }
+  .publish-production-div .container {
+    min-height: 36.63004vw; }
+    .publish-production-div .container .layui-tab {
+      margin: 0; }
+      .publish-production-div .container .layui-tab .layui-tab-title {
+        width: 18.31502vw;
+        height: auto;
+        border-bottom: none;
+        border-radius: 0.3663vw;
+        background-color: #fff;
+        overflow: hidden; }
+        .publish-production-div .container .layui-tab .layui-tab-title .tab-item {
+          text-align: left; }
+        .publish-production-div .container .layui-tab .layui-tab-title .layui-this {
+          border-radius: 0.3663vw;
+          background-color: #f39549; }
+        .publish-production-div .container .layui-tab .layui-tab-title .layui-this:after {
+          border-top-color: #fff;
+          border-right-color: #fff; }
+      .publish-production-div .container .layui-tab .layui-tab-content {
+        margin-left: 0.7326vw;
+        padding: 0;
+        width: 65.93407vw; }
+        .publish-production-div .container .layui-tab .layui-tab-content .layui-tab-item .tab-title {
+          padding-left: 2.9304vw;
+          width: 100%;
+          height: 5.12821vw;
+          font-size: 1.4652vw;
+          line-height: 5.12821vw;
+          border-radius: 0.14652vw;
+          background-color: #fff; }
+        .publish-production-div .container .layui-tab .layui-tab-content .activity-rule .rule-info {
+          margin-top: 0.3663vw;
+          padding: 1.4652vw;
+          background-color: #fff; }
+        .publish-production-div .container .layui-tab .layui-tab-content .original-statement .statement-info {
+          margin-top: 0.3663vw;
+          padding: 1.4652vw;
+          background-color: #fff; }
+        .publish-production-div .container .layui-tab .layui-tab-content .upload-production .layui-form .upload-form {
+          padding: 1.4652vw 0 0 0.7326vw; }
+        .publish-production-div .container .layui-tab .layui-tab-content .upload-production .layui-form .layui-form-item .layui-form-label {
+          width: 7.32601vw; }
+        .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info {
+          margin-top: 0.3663vw;
+          padding-bottom: 0.7326vw;
+          background-color: #fff; }
+          .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .info-title {
+            padding-left: 2.9304vw;
+            width: 100%;
+            height: 3.663vw;
+            font-size: 1.0989vw;
+            line-height: 3.663vw;
+            border-bottom: 1px solid #c9cdcf; }
+          .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-upload-drag {
+            top: 50%;
+            margin: 3.663vw 0 2.1978vw 3.663vw;
+            height: 14.65201vw; }
+            .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-upload-drag .icon {
+              font-size: 7.32601vw; }
+          .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-upload-list {
+            display: none;
+            margin: 3.663vw 0 2.1978vw 3.663vw; }
+            .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-upload-list .layui-upload-img {
+              margin-left: 0.7326vw;
+              height: 14.65201vw;
+              width: auto;
+              border: 1px dotted #ee534e; }
+          .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .production-error {
+            margin: 0.3663vw 0 0 2.1978vw;
+            width: 10.98901vw; }
+          .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-form {
+            margin-top: 1.4652vw;
+            padding-left: 1.4652vw;
+            width: 58.60806vw; }
+            .publish-production-div .container .layui-tab .layui-tab-content .upload-production .upload-info .layui-form .layui-form-item .layui-form-label {
+              width: 7.32601vw; }
+        .publish-production-div .container .layui-tab .layui-tab-content .upload-production .publich-btn {
+          margin: 1.4652vw 0 0 1.4652vw;
+          background-color: #f39549; }
+
+.layui-input-block {
+  width: 36.63004vw; }
+
+.describe-detail {
+  width: 51.28205vw !important; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

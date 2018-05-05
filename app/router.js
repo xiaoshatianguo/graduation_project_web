@@ -26,6 +26,7 @@ module.exports = app => {
   router.get('/apply_certified_architect', controller.pcRouter.applyCertifiedArchitect);
   router.get('/sort', controller.pcRouter.sort);
   router.get('/production_detail', controller.pcRouter.productionDetail);
+  router.get('/publish_production', controller.pcRouter.publishProduction);
 
   /**
    * 管理后台api路由

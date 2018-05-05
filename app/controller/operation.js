@@ -13,6 +13,7 @@ class OperationController extends Controller {
             name: productionData.name,
             author_id: productionData.author_id,
             activity_id: productionData.activity_id,
+            sort: productionData.sort,
             production: productionData.production,
             cover: productionData.cover,
             banner: productionData.banner,

@@ -90,7 +90,7 @@ class RouterController extends Controller {
 
         // 我的作品
         const productionData = await this.app.mysql.query(
-            `SELECT * FROM production_info WHERE authorId = ${id} ORDER BY create_time desc;`
+            `SELECT * FROM production_info WHERE author_id = ${id} ORDER BY create_time desc;`
         );
 
         for (let i = 0; i < productionData.length; i++) {
@@ -126,18 +126,31 @@ class RouterController extends Controller {
 
         // 我的作品
         const productionData = await this.app.mysql.query(
-            `SELECT * FROM production_info WHERE authorId = ${id} ORDER BY create_time desc;`
+            `SELECT * FROM production_info WHERE author_id = ${id} ORDER BY create_time desc;`
         );
+
+        // 我的留言
+        const comments = await this.app.mysql.query(
+            `SELECT c.*,u.nickname,u.portrait FROM comments_info c inner join user_info u on c.user_id = u.id where c.personal_id=${id} and c.father_id = 0;`
+        );
+        comments.reverse();
+        var commentsData = JSON.parse(JSON.stringify(comments));
+        tools.formatTime(commentsData);
 
         for (let i = 0; i < productionData.length; i++) {
             tools.formatTime([productionData[i]]);
         }
 
-        await this.ctx.render('pc/personal_space.tpl', {
+        await this.ctx.render('pc/my_space.tpl', {
             personalData,
             productionData: JSON.parse(JSON.stringify(productionData)),
             collectionData: collectionDataArr,
+            commentsData,
         });
+    }
+
+    async publishProduction() {
+        await this.ctx.render('pc/publish_production.tpl');
     }
 
     async activityDetail () {
