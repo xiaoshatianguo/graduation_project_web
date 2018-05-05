@@ -14,6 +14,7 @@ module.exports = app => {
   router.get('/activity', controller.pcRouter.activity);
   router.get('/certified_architect', controller.pcRouter.certifiedArchitect);
   router.get('/personal_space', controller.pcRouter.personalSpace);
+  router.get('/my_space', controller.pcRouter.mySpace);
   router.get('/login', controller.pcRouter.login);
   router.get('/register', controller.pcRouter.register);
 

@@ -71,7 +71,7 @@ function logoutStatus(userLoginInfo) {
     
     $('.header-login').html(
         `
-        <a href="/personal_space?userId=${id}" class="nav-li">${email}</a>
+        <a href="/my_space?userId=${id}" class="nav-li">${email}</a>
         <a href="javascript:;" class="nav-li logout">登出</a>
         `
     );

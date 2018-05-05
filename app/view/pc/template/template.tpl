@@ -29,10 +29,8 @@
                     <img class="img" src="/public/images/photo1.png" alt="">
                 </a>
                 <ul class="header-nav-right flex-b-sc fl">
-                    <!-- <a href="/" class="nav-li">首页</a> -->
                     <a href="/activity" class="nav-li">活动</a>
                     <a href="/certified_architect" class="nav-li">认证师</a>
-                    <!-- <a href="/personal_space" class="nav-li">个人中心</a> -->
                 </ul>
                 <ul class="header-login flex-b-sc fr">
                 </ul>

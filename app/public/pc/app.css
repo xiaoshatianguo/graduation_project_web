@@ -1502,6 +1502,417 @@ div.dis-ib {
       .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-content .timeline-img {
         width: 100%; }
 @charset "UTF-8";
+.personal-banner .banner-img {
+  position: relative;
+  height: 38.09524vw;
+  background-position: center;
+  background-size: cover; }
+  .personal-banner .banner-img .author-portraits {
+    display: block;
+    position: absolute;
+    bottom: -7.32601vw;
+    left: 50%;
+    margin-left: -7.32601vw;
+    width: 14.65201vw;
+    height: 14.65201vw;
+    border-radius: 7.32601vw;
+    border: 0.14652vw solid #ecb3b3;
+    overflow: hidden; }
+    .personal-banner .banner-img .author-portraits .img {
+      width: 100%;
+      height: 100%; }
+  .personal-banner .banner-img .attention-btn {
+    position: absolute;
+    right: 0.7326vw;
+    bottom: -4.3956vw;
+    width: 7.32601vw;
+    height: 2.1978vw;
+    line-height: 2.1978vw;
+    text-align: center;
+    background-color: #d81414;
+    color: #fff; }
+
+.author-info {
+  margin-top: 9.52381vw;
+  font-size: 1.8315vw; }
+  .author-info .author-name {
+    margin-bottom: 2.1978vw;
+    text-align: center; }
+    .author-info .author-name .grade {
+      color: #e07575; }
+  .author-info .author-motto {
+    margin-bottom: 2.1978vw;
+    text-align: center; }
+  .author-info .author-data-statistics {
+    color: #999393; }
+    .author-info .author-data-statistics .data-list {
+      padding: 0 5.86081vw; }
+      .author-info .author-data-statistics .data-list .item-name {
+        margin-bottom: 0.7326vw;
+        text-align: center; }
+  .author-info .tag-div {
+    margin-top: 3.663vw;
+    width: 100%; }
+    .author-info .tag-div .layui-tab-title {
+      margin: 0 auto;
+      width: 24.90842vw; }
+    .author-info .tag-div .layui-tab-content {
+      padding: 2.1978vw 7.32601vw;
+      background-color: #d6d2d2; }
+      .author-info .tag-div .layui-tab-content .personal-product .product-show {
+        margin: 0 auto;
+        width: 76.48352vw; }
+        .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item {
+          position: relative;
+          display: block;
+          margin: 0 0.7326vw 2.1978vw 0;
+          width: 18.31502vw;
+          border-radius: 0.3663vw;
+          overflow: hidden; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div {
+            position: relative;
+            width: 18.31502vw;
+            height: 15.38462vw;
+            overflow: hidden;
+            cursor: pointer; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-img {
+              width: 18.31502vw;
+              height: 15.38462vw;
+              border-radius: 0.3663vw 0.3663vw 0 0;
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-cover {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 0.3663vw;
+              background-color: rgba(102, 102, 102, 0.44);
+              opacity: 0; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-img {
+            -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                    transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            transition: All 8s ease; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-cover {
+            opacity: 1;
+            transition: All 1s ease; }
+          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text {
+            padding: 0.7326vw;
+            background-color: #fff;
+            font-size: 0.95238vw; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title {
+              color: #101213;
+              line-height: 2.1978vw; }
+              .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title .icon {
+                font-size: 1.4652vw; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title:hover {
+              color: #ee534e; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-describe {
+              color: #5e6468; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production {
+              margin-top: 0.7326vw;
+              width: 14.65201vw;
+              color: #5e6468;
+              font-size: 0.95238vw; }
+              .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production .icon {
+                font-size: 1.31868vw; }
+            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .product-create-time {
+              margin-right: 0.7326vw;
+              line-height: 2.1978vw;
+              color: #5e6468; }
+        .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item:hover {
+          box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+          -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+                  transform: translate3d(0px, -0.14652vw, 0px);
+          transition: all 0.3s ease; }
+      .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form {
+        width: 100%;
+        font-size: 1.0989vw; }
+        .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-form-label {
+          margin-right: 1.0989vw;
+          width: 10.98901vw; }
+        .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block {
+          color: #5e6468;
+          line-height: 2.9304vw; }
+      .author-info .tag-div .layui-tab-content .personal-collection .product-show {
+        margin: 0 auto;
+        width: 76.48352vw; }
+        .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item {
+          position: relative;
+          display: block;
+          margin: 0 0.7326vw 2.1978vw 0;
+          width: 18.31502vw;
+          border-radius: 0.3663vw;
+          overflow: hidden; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div {
+            position: relative;
+            width: 18.31502vw;
+            height: 15.38462vw;
+            overflow: hidden;
+            cursor: pointer; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-img {
+              width: 18.31502vw;
+              height: 15.38462vw;
+              border-radius: 0.3663vw 0.3663vw 0 0;
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-cover {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 0.3663vw;
+              background-color: rgba(102, 102, 102, 0.44);
+              opacity: 0; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-img {
+            -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                    transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            transition: All 8s ease; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-cover {
+            opacity: 1;
+            transition: All 1s ease; }
+          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text {
+            padding: 0.7326vw;
+            background-color: #fff;
+            font-size: 0.95238vw; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title {
+              color: #101213;
+              line-height: 2.1978vw; }
+              .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title .icon {
+                font-size: 1.4652vw; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title:hover {
+              color: #ee534e; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-describe {
+              color: #5e6468; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production {
+              margin-top: 0.7326vw;
+              width: 14.65201vw;
+              color: #5e6468;
+              font-size: 0.95238vw; }
+              .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production .icon {
+                font-size: 1.31868vw; }
+            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .product-create-time {
+              margin-right: 0.7326vw;
+              line-height: 2.1978vw;
+              color: #5e6468; }
+        .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item:hover {
+          box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+          -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+                  transform: translate3d(0px, -0.14652vw, 0px);
+          transition: all 0.3s ease; }
+      .author-info .tag-div .layui-tab-content .personal-message {
+        background-color: #fff;
+        /*----------评论区域 begin----------*/
+        /*----------评论区域 end----------*/ }
+        .author-info .tag-div .layui-tab-content .personal-message .content {
+          float: left; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
+        .author-info .tag-div .layui-tab-content .personal-message pre {
+          margin: 0 !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .commentAll {
+          padding: 2.1978vw 2.9304vw;
+          margin: 1.4652vw auto; }
+        .author-info .tag-div .layui-tab-content .personal-message .plBtn {
+          display: block;
+          float: right;
+          margin-right: 0.14652vw;
+          margin-top: 1.4652vw;
+          width: 5.49451vw;
+          height: 2.63736vw;
+          font-size: 0.87912vw;
+          line-height: 2.63736vw;
+          text-align: center;
+          border-radius: 0.43956vw;
+          background-color: #f068a9;
+          color: #FFFFFF; }
+        .author-info .tag-div .layui-tab-content .personal-message .plBtn:hover {
+          background-color: #2f904d; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show {
+          margin-top: 1.4652vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con {
+          padding: 0.7326vw 0;
+          width: 100%;
+          border-top: 1px solid #EDEDED; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-img {
+          margin-top: 0.3663vw;
+          width: 3.51648vw;
+          height: 3.51648vw;
+          overflow: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
+          margin-left: 3%;
+          width: 85%; }
+        .author-info .tag-div .layui-tab-content .personal-message .pl-text {
+          margin-top: 0.51282vw;
+          width: 100%;
+          word-wrap: break-word;
+          overflow: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz {
+          width: 100%;
+          float: left; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con {
+          float: left;
+          margin-top: 0.51282vw;
+          width: 100%;
+          background-color: #eaeaec; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-size-name {
+          font-size: 0.87912vw;
+          color: #339b53; }
+        .author-info .tag-div .layui-tab-content .personal-message .my-pl-con {
+          width: 100%;
+          font-size: 0.87912vw;
+          color: #8b8b8b; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-left {
+          display: block;
+          padding-top: 1.31868vw;
+          font-size: 0.87912vw;
+          color: #8b8b8b; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-time,
+        .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+          padding-top: 0.51282vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+          margin-top: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-right {
+          position: relative;
+          display: block;
+          padding-top: 0.43956vw;
+          padding-right: 1.31868vw;
+          overflow: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .removeBlock {
+          display: block;
+          float: left;
+          margin-right: 1.75824vw;
+          font-size: 0.87912vw;
+          color: #8b8b8b;
+          opacity: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-con-block {
+          display: block; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-pl,
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-line,
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z {
+          font-size: 0.87912vw;
+          color: #8b8b8b; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-line {
+          display: block;
+          padding: 0 1.4652vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click-red {
+          margin-right: 0.3663vw;
+          width: 1.24542vw;
+          height: 1.24542vw;
+          display: block;
+          float: left;
+          background-image: url("/public/images/cover/1.jpg");
+          background-repeat: no-repeat;
+          background-position: -0.43956vw -14.50549vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .z-num {
+          font-style: normal; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
+          color: #b83b44; }
+        .author-info .tag-div .layui-tab-content .personal-message .red {
+          background-position: -0.43956vw -8.71795vw !important; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-pl {
+          display: block;
+          float: right;
+          margin-right: 0.14652vw;
+          margin-top: 1.4652vw;
+          width: 5.12821vw;
+          height: 2.1978vw;
+          line-height: 2.1978vw;
+          text-align: center;
+          font-size: 0.87912vw;
+          border-radius: 0.43956vw;
+          background-color: #339b53;
+          color: #FFFFFF; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-con {
+          margin-top: 1.75824vw;
+          width: 100%; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-input {
+          font-size: 0.87912vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .all-pl-con {
+          margin: 0 2%;
+          padding: 2% 0;
+          width: 96%;
+          float: left; }
+        .author-info .tag-div .layui-tab-content .personal-message .atName {
+          font-size: 0.87912vw;
+          color: #339b53; }
+        .author-info .tag-div .layui-tab-content .personal-message .hfpl-text {
+          margin-top: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .date-dz:hover .removeBlock {
+          opacity: 1; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con {
+          border-top: 1px solid #d9d9d9;
+          padding-bottom: 0.87912vw; }
+        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con:first-child {
+          border-top: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message pre {
+          white-space: pre;
+          white-space: pre-wrap;
+          word-wrap: break-word; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
+          position: relative;
+          width: 100%;
+          *zoom: 1; }
+        .author-info .tag-div .layui-tab-content .personal-message textarea,
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
+          margin: 0;
+          padding: 0;
+          border: none;
+          *padding-bottom: 0 !important;
+          outline: 0; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea,
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          width: 100%;
+          *white-space: pre;
+          *word-wrap: break-word;
+          white-space: pre-wrap;
+          box-sizing: border-box; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea {
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          resize: none; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          display: block;
+          visibility: hidden; }
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
+        .author-info .tag-div .layui-tab-content .personal-message textarea {
+          margin-bottom: 1.8315vw; }
+        .author-info .tag-div .layui-tab-content .personal-message textarea,
+        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+          padding: 0.7326vw 1.0989vw;
+          width: 100%;
+          line-height: 1;
+          font-size: 1.0989vw;
+          border: 1px solid #beb9b9;
+          -webkit-appearance: none;
+          border-radius: 0.21978vw;
+          box-shadow: 0 0 0.58608vw rgba(182, 195, 214, 0.6) inset, 0 1px 1px #fff;
+          transition-duration: 300ms;
+          transition-property: border-color, box-shadow;
+          background-clip: padding-box;
+          background: #eceaea; }
+        .author-info .tag-div .layui-tab-content .personal-message .fork-link {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 10.25641vw; }
+      .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-img {
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center; }
+      .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-content .timeline-img {
+        width: 100%; }
+@charset "UTF-8";
 .activity-detail-describe {
   margin-top: 1.4652vw; }
   .activity-detail-describe .container .describe-img {

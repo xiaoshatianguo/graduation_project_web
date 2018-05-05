@@ -3,6 +3,7 @@ import index from './styles/index.scss';
 import activity from './styles/activity.scss';
 import certified_architect from './styles/certified_architect.scss';
 import personal_space from './styles/personal_space.scss';
+import my_space from './styles/my_space.scss';
 import activity_detail from './styles/activity_detail.scss';
 import join_activity from './styles/join_activity.scss';
 import apply_activity from './styles/apply_activity.scss';
