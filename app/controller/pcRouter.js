@@ -108,6 +108,7 @@ class RouterController extends Controller {
         const id = this.ctx.query.userId;
         const personal = await this.app.mysql.get('user_info', { id });
         let personalData = JSON.parse(JSON.stringify(personal));
+        tools.formatTime([personalData]);
 
         // 我的收藏
         let myCollection = personalData.collectionIds;

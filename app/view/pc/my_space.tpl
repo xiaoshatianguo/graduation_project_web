@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block top %}
-    <div class="author-info flex-box jc-s jc-ce fd-col">
+    <div class="my-info flex-box jc-s jc-ce fd-col">
         <div class="container">
             <p class="author-name">{{ personalData.nickname }}<small class="grade">【顶级设计师】</small></p>
             <p class="author-motto">{{ personalData.personal_statement }}</p>
@@ -103,30 +103,38 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">昵称</label>
                                     <div class="layui-input-block">
+                                        <input type="text" name="nickname" placeholder="请输入昵称" class="layui-input personal-data-input" value="{{ personalData.nickname }}">
                                         <p>{{ personalData.nickname }}</p>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">邮箱</label>
                                     <div class="layui-input-block">
+                                        <input type="text" name="email" placeholder="请输入邮箱" class="layui-input personal-data-input" value="{{ personalData.email }}">
                                         <p>{{ personalData.email }}</p>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">电话</label>
                                     <div class="layui-input-block">
+                                        <input type="text" name="phone" placeholder="请输入电话" class="layui-input personal-data-input" value="{{ personalData.phone }}">
                                         <p>{{ personalData.phone }}</p>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">真实名字</label>
                                     <div class="layui-input-block">
+                                        <input type="text" name="name" placeholder="请输入真实名字" class="layui-input personal-data-input" value="{{ personalData.name }}">
                                         <p>{{ personalData.name }}</p>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">性别</label>
                                     <div class="layui-input-block">
+                                        <select name="sex" class="personal-data-input">
+                                            <option value="0">男</option>
+                                            <option value="1">女</option>
+                                        </select>
                                         <p>
                                             {% if personalData.sex == 0 %}
                                                 男
@@ -139,12 +147,14 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">年龄</label>
                                     <div class="layui-input-block">
+                                        <input type="number" name="age" placeholder="请输入年龄" class="layui-input personal-data-input" value="{{ personalData.age }}">
                                         <p>{{ personalData.age }}</p>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">地址</label>
                                     <div class="layui-input-block">
+                                        <input type="text" name="address" placeholder="请输入地址" class="layui-input personal-data-input" value="{{ personalData.address }}">
                                         <p>{{ personalData.address }}</p>
                                     </div>
                                 </div>

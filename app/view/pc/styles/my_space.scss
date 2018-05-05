@@ -52,7 +52,7 @@ $t-hover-color: #ee534e;
     }
 }
 
-.author-info {
+.my-info {
     margin-top: 130px;
 
     font-size: 25px;
@@ -236,13 +236,19 @@ $t-hover-color: #ee534e;
                         .layui-form-label {
                             margin-right: 15px;
 
-                            width: 150px;
+                            width: 120px;
                         }
                         
                         .layui-input-block {
+                            margin-left: 150px;
+
                             color: $gray-color;
 
                             line-height: 40px;
+
+                            .personal-data-input {
+                                display: none;
+                            }
                         }
                     }
                 }

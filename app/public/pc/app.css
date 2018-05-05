@@ -1532,57 +1532,57 @@ div.dis-ib {
     background-color: #d81414;
     color: #fff; }
 
-.author-info {
+.my-info {
   margin-top: 9.52381vw;
   font-size: 1.8315vw; }
-  .author-info .author-name {
+  .my-info .author-name {
     margin-bottom: 2.1978vw;
     text-align: center; }
-    .author-info .author-name .grade {
+    .my-info .author-name .grade {
       color: #e07575; }
-  .author-info .author-motto {
+  .my-info .author-motto {
     margin-bottom: 2.1978vw;
     text-align: center; }
-  .author-info .author-data-statistics {
+  .my-info .author-data-statistics {
     color: #999393; }
-    .author-info .author-data-statistics .data-list {
+    .my-info .author-data-statistics .data-list {
       padding: 0 5.86081vw; }
-      .author-info .author-data-statistics .data-list .item-name {
+      .my-info .author-data-statistics .data-list .item-name {
         margin-bottom: 0.7326vw;
         text-align: center; }
-  .author-info .tag-div {
+  .my-info .tag-div {
     margin-top: 3.663vw;
     width: 100%; }
-    .author-info .tag-div .layui-tab-title {
+    .my-info .tag-div .layui-tab-title {
       margin: 0 auto;
       width: 24.90842vw; }
-    .author-info .tag-div .layui-tab-content {
+    .my-info .tag-div .layui-tab-content {
       padding: 2.1978vw 7.32601vw;
       background-color: #d6d2d2; }
-      .author-info .tag-div .layui-tab-content .personal-product .product-show {
+      .my-info .tag-div .layui-tab-content .personal-product .product-show {
         margin: 0 auto;
         width: 76.48352vw; }
-        .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item {
+        .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item {
           position: relative;
           display: block;
           margin: 0 0.7326vw 2.1978vw 0;
           width: 18.31502vw;
           border-radius: 0.3663vw;
           overflow: hidden; }
-          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div {
+          .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div {
             position: relative;
             width: 18.31502vw;
             height: 15.38462vw;
             overflow: hidden;
             cursor: pointer; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-img {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-img {
               width: 18.31502vw;
               height: 15.38462vw;
               border-radius: 0.3663vw 0.3663vw 0 0;
               background-position: center center;
               background-repeat: no-repeat;
               background-size: cover; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-cover {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div .item-cover {
               position: absolute;
               top: 0;
               left: 0;
@@ -1591,76 +1591,79 @@ div.dis-ib {
               border-radius: 0.3663vw;
               background-color: rgba(102, 102, 102, 0.44);
               opacity: 0; }
-          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-img {
+          .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-img {
             -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
                 -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
                     transform: rotate(0deg) scale(1.2) translate(0%, 0%);
             transition: All 8s ease; }
-          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-cover {
+          .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div:hover .item-cover {
             opacity: 1;
             transition: All 1s ease; }
-          .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text {
+          .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text {
             padding: 0.7326vw;
             background-color: #fff;
             font-size: 0.95238vw; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title {
               color: #101213;
               line-height: 2.1978vw; }
-              .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title .icon {
+              .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title .icon {
                 font-size: 1.4652vw; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title:hover {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-title:hover {
               color: #ee534e; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-describe {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .t-describe {
               color: #5e6468; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production {
               margin-top: 0.7326vw;
               width: 14.65201vw;
               color: #5e6468;
               font-size: 0.95238vw; }
-              .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production .icon {
+              .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .about-production .icon {
                 font-size: 1.31868vw; }
-            .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .product-create-time {
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .item-text .product-create-time {
               margin-right: 0.7326vw;
               line-height: 2.1978vw;
               color: #5e6468; }
-        .author-info .tag-div .layui-tab-content .personal-product .product-show .list-item:hover {
+        .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item:hover {
           box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
           -webkit-transform: translate3d(0px, -0.14652vw, 0px);
                   transform: translate3d(0px, -0.14652vw, 0px);
           transition: all 0.3s ease; }
-      .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form {
+      .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form {
         width: 100%;
         font-size: 1.0989vw; }
-        .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-form-label {
+        .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-form-label {
           margin-right: 1.0989vw;
-          width: 10.98901vw; }
-        .author-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block {
+          width: 8.79121vw; }
+        .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block {
+          margin-left: 10.98901vw;
           color: #5e6468;
           line-height: 2.9304vw; }
-      .author-info .tag-div .layui-tab-content .personal-collection .product-show {
+          .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block .personal-data-input {
+            display: none; }
+      .my-info .tag-div .layui-tab-content .personal-collection .product-show {
         margin: 0 auto;
         width: 76.48352vw; }
-        .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item {
+        .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item {
           position: relative;
           display: block;
           margin: 0 0.7326vw 2.1978vw 0;
           width: 18.31502vw;
           border-radius: 0.3663vw;
           overflow: hidden; }
-          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div {
+          .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div {
             position: relative;
             width: 18.31502vw;
             height: 15.38462vw;
             overflow: hidden;
             cursor: pointer; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-img {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-img {
               width: 18.31502vw;
               height: 15.38462vw;
               border-radius: 0.3663vw 0.3663vw 0 0;
               background-position: center center;
               background-repeat: no-repeat;
               background-size: cover; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-cover {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div .item-cover {
               position: absolute;
               top: 0;
               left: 0;
@@ -1669,56 +1672,56 @@ div.dis-ib {
               border-radius: 0.3663vw;
               background-color: rgba(102, 102, 102, 0.44);
               opacity: 0; }
-          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-img {
+          .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-img {
             -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
                 -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
                     transform: rotate(0deg) scale(1.2) translate(0%, 0%);
             transition: All 8s ease; }
-          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-cover {
+          .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .list-img-div:hover .item-cover {
             opacity: 1;
             transition: All 1s ease; }
-          .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text {
+          .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text {
             padding: 0.7326vw;
             background-color: #fff;
             font-size: 0.95238vw; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title {
               color: #101213;
               line-height: 2.1978vw; }
-              .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title .icon {
+              .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title .icon {
                 font-size: 1.4652vw; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title:hover {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-title:hover {
               color: #ee534e; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-describe {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .t-describe {
               color: #5e6468; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production {
               margin-top: 0.7326vw;
               width: 14.65201vw;
               color: #5e6468;
               font-size: 0.95238vw; }
-              .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production .icon {
+              .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .about-production .icon {
                 font-size: 1.31868vw; }
-            .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .product-create-time {
+            .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item .item-text .product-create-time {
               margin-right: 0.7326vw;
               line-height: 2.1978vw;
               color: #5e6468; }
-        .author-info .tag-div .layui-tab-content .personal-collection .product-show .list-item:hover {
+        .my-info .tag-div .layui-tab-content .personal-collection .product-show .list-item:hover {
           box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
           -webkit-transform: translate3d(0px, -0.14652vw, 0px);
                   transform: translate3d(0px, -0.14652vw, 0px);
           transition: all 0.3s ease; }
-      .author-info .tag-div .layui-tab-content .personal-message {
+      .my-info .tag-div .layui-tab-content .personal-message {
         background-color: #fff;
         /*----------评论区域 begin----------*/
         /*----------评论区域 end----------*/ }
-        .author-info .tag-div .layui-tab-content .personal-message .content {
+        .my-info .tag-div .layui-tab-content .personal-message .content {
           float: left; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
-        .author-info .tag-div .layui-tab-content .personal-message pre {
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
+        .my-info .tag-div .layui-tab-content .personal-message pre {
           margin: 0 !important; }
-        .author-info .tag-div .layui-tab-content .personal-message .commentAll {
+        .my-info .tag-div .layui-tab-content .personal-message .commentAll {
           padding: 2.1978vw 2.9304vw;
           margin: 1.4652vw auto; }
-        .author-info .tag-div .layui-tab-content .personal-message .plBtn {
+        .my-info .tag-div .layui-tab-content .personal-message .plBtn {
           display: block;
           float: right;
           margin-right: 0.14652vw;
@@ -1731,78 +1734,78 @@ div.dis-ib {
           border-radius: 0.43956vw;
           background-color: #f068a9;
           color: #FFFFFF; }
-        .author-info .tag-div .layui-tab-content .personal-message .plBtn:hover {
+        .my-info .tag-div .layui-tab-content .personal-message .plBtn:hover {
           background-color: #2f904d; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-show {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-show {
           margin-top: 1.4652vw; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-show-con {
           padding: 0.7326vw 0;
           width: 100%;
           border-top: 1px solid #EDEDED; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-img {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-show-con-img {
           margin-top: 0.3663vw;
           width: 3.51648vw;
           height: 3.51648vw;
           overflow: hidden;
           background-position: 100% 100%;
           background-size: cover; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
           margin-left: 3%;
           width: 85%; }
-        .author-info .tag-div .layui-tab-content .personal-message .pl-text {
+        .my-info .tag-div .layui-tab-content .personal-message .pl-text {
           margin-top: 0.51282vw;
           width: 100%;
           word-wrap: break-word;
           overflow: hidden; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz {
           width: 100%;
           float: left; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-list-con {
           float: left;
           margin-top: 0.51282vw;
           width: 100%;
           background-color: #eaeaec; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-size-name {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-size-name {
           font-size: 0.87912vw;
           color: #339b53; }
-        .author-info .tag-div .layui-tab-content .personal-message .my-pl-con {
+        .my-info .tag-div .layui-tab-content .personal-message .my-pl-con {
           width: 100%;
           font-size: 0.87912vw;
           color: #8b8b8b; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-left {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-left {
           display: block;
           padding-top: 1.31868vw;
           font-size: 0.87912vw;
           color: #8b8b8b; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-time,
-        .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-time,
+        .my-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
           padding-top: 0.51282vw; }
-        .author-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
+        .my-info .tag-div .layui-tab-content .personal-message .comment-pl-block {
           margin-top: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-right {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-right {
           position: relative;
           display: block;
           padding-top: 0.43956vw;
           padding-right: 1.31868vw;
           overflow: hidden; }
-        .author-info .tag-div .layui-tab-content .personal-message .removeBlock {
+        .my-info .tag-div .layui-tab-content .personal-message .removeBlock {
           display: block;
           float: left;
           margin-right: 1.75824vw;
           font-size: 0.87912vw;
           color: #8b8b8b;
           opacity: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-con-block {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-con-block {
           display: block; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-pl,
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-line,
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-pl,
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-line,
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-z {
           font-size: 0.87912vw;
           color: #8b8b8b; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-line {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-line {
           display: block;
           padding: 0 1.4652vw; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click-red {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-z-click-red {
           margin-right: 0.3663vw;
           width: 1.24542vw;
           height: 1.24542vw;
@@ -1811,11 +1814,11 @@ div.dis-ib {
           background-repeat: no-repeat;
           background-position: 100% 100%;
           background-size: cover; }
-        .author-info .tag-div .layui-tab-content .personal-message .z-num {
+        .my-info .tag-div .layui-tab-content .personal-message .z-num {
           font-style: normal; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
           color: #b83b44; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-pl {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-pl {
           display: block;
           float: right;
           margin-right: 0.14652vw;
@@ -1828,51 +1831,51 @@ div.dis-ib {
           border-radius: 0.43956vw;
           background-color: #339b53;
           color: #FFFFFF; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-con {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-con {
           margin-top: 1.75824vw;
           width: 100%; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-input {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-input {
           font-size: 0.87912vw; }
-        .author-info .tag-div .layui-tab-content .personal-message .all-pl-con {
+        .my-info .tag-div .layui-tab-content .personal-message .all-pl-con {
           margin: 0 2%;
           padding: 2% 0;
           width: 96%;
           float: left; }
-        .author-info .tag-div .layui-tab-content .personal-message .atName {
+        .my-info .tag-div .layui-tab-content .personal-message .atName {
           font-size: 0.87912vw;
           color: #339b53; }
-        .author-info .tag-div .layui-tab-content .personal-message .hfpl-text {
+        .my-info .tag-div .layui-tab-content .personal-message .hfpl-text {
           margin-top: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message .date-dz:hover .removeBlock {
+        .my-info .tag-div .layui-tab-content .personal-message .date-dz:hover .removeBlock {
           opacity: 1; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con {
           border-top: 1px solid #d9d9d9;
           padding-bottom: 0.87912vw; }
-        .author-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con:first-child {
+        .my-info .tag-div .layui-tab-content .personal-message .hf-list-con .all-pl-con:first-child {
           border-top: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message pre {
+        .my-info .tag-div .layui-tab-content .personal-message pre {
           white-space: pre;
           white-space: pre-wrap;
           word-wrap: break-word; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
           position: relative;
           width: 100%;
           *zoom: 1; }
-        .author-info .tag-div .layui-tab-content .personal-message textarea,
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
+        .my-info .tag-div .layui-tab-content .personal-message textarea,
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap {
           margin: 0;
           padding: 0;
           border: none;
           *padding-bottom: 0 !important;
           outline: 0; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea,
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea,
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
           width: 100%;
           *white-space: pre;
           *word-wrap: break-word;
           white-space: pre-wrap;
           box-sizing: border-box; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea {
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap textarea {
           overflow: hidden;
           position: absolute;
           top: 0;
@@ -1880,14 +1883,14 @@ div.dis-ib {
           height: 100%;
           width: 100%;
           resize: none; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
           display: block;
           visibility: hidden; }
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
-        .author-info .tag-div .layui-tab-content .personal-message textarea {
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap,
+        .my-info .tag-div .layui-tab-content .personal-message textarea {
           margin-bottom: 1.8315vw; }
-        .author-info .tag-div .layui-tab-content .personal-message textarea,
-        .author-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
+        .my-info .tag-div .layui-tab-content .personal-message textarea,
+        .my-info .tag-div .layui-tab-content .personal-message .flex-text-wrap pre {
           padding: 0.7326vw 1.0989vw;
           width: 100%;
           line-height: 1;
@@ -1900,17 +1903,17 @@ div.dis-ib {
           transition-property: border-color, box-shadow;
           background-clip: padding-box;
           background: #eceaea; }
-        .author-info .tag-div .layui-tab-content .personal-message .fork-link {
+        .my-info .tag-div .layui-tab-content .personal-message .fork-link {
           display: block;
           position: absolute;
           top: 0;
           right: 0;
           width: 10.25641vw; }
-      .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-img {
+      .my-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-img {
         overflow: hidden;
         background-size: cover;
         background-position: center center; }
-      .author-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-content .timeline-img {
+      .my-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-content .timeline-img {
         width: 100%; }
 @charset "UTF-8";
 .activity-detail-describe {
