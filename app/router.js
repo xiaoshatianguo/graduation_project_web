@@ -68,5 +68,8 @@ module.exports = app => {
   router.post('comment', '/operation/comment', controller.operation.comment);
   // 查询子评论
   router.get('childComment', '/operation/child_comment', controller.operation.childComment);
-  
+  // 评论点赞处理
+  router.post('commentLike', '/operation/comment_like', controller.operation.commentLike);
+  // 评论删除处理
+  router.post('commentDelete', '/operation/comment_delete', controller.operation.commentDelete);
 };

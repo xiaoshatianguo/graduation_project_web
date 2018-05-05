@@ -153,6 +153,78 @@ class OperationController extends Controller {
         ctx.status = 200;
         ctx.body = commentData;
     }
+
+    // 评论点赞处理
+    async commentLike() {
+        const ctx = this.ctx;
+        const likeData = ctx.request.body;
+
+        if(!!likeData.comment_id && !!likeData.user_id) {
+            // 查询点赞表，是否重复点赞
+            const likeGet = await this.app.mysql.get('like_info', {
+                user_id: likeData.user_id,
+                comment_id: likeData.comment_id,
+            });
+    
+            let like;
+            if(!!likeGet) {
+                like = await this.app.mysql.query(
+                    `update like_info set status = !status where id = ${likeGet.id};`
+                );
+
+                ctx.status = 200;
+                ctx.body = {
+                    msg: '点赞成功或取消点赞',
+                }
+            } else {
+                // 插入点赞表
+                like = await this.app.mysql.insert('like_info', {
+                    user_id: likeData.user_id,
+                    comment_id: likeData.comment_id,
+                    create_time: new Date().valueOf(),
+                })
+    
+                // 评论点赞数+1
+                const changeStarNumber = await this.app.mysql.query(
+                    `update comments_info set star = star+1 where id = ${likeData.comment_id};`
+                );
+
+                if(!!like.insertId) {
+                    ctx.status = 200;
+                    ctx.body = {
+                        msg: '点赞成功',
+                    }
+                }
+            }
+        } else {
+            ctx.status = 403;
+            ctx.body = {
+                msg: '点赞失败',
+            }
+        }
+    }
+
+    // 评论删除处理
+    async commentDelete() {
+        const ctx = this.ctx;
+        const DeleteData = ctx.request.body;
+
+        if(!!DeleteData.delete_id) {
+            const deleteComment = await this.app.mysql.update(
+                'comments_info',
+                {
+                    id: DeleteData.delete_id,
+                    is_delete: 1,
+                }
+            );
+            console.log(deleteComment);
+        }
+
+        ctx.status = 200;
+        ctx.body = {
+            msg: '删除评论成功',
+        }
+    }
 }
 
 module.exports = OperationController;

@@ -51,7 +51,7 @@ $('.commentAll').on('click','.plBtn',function(){
  * @param father_id 被评论的评论id
  * @param to_id 被评论者的id
  */
-function saveComment(sort, _this, content, user_id, father_id, to_id, child_father_id) {
+function saveComment(sort, _this, content, user_id, father_id, to_id, child_father_id, father_nickname, father_content) {
     var activityId = getQueryString('activityId');
     var userId = getQueryString('userId');
     var productionId = getQueryString('productionId');
@@ -75,7 +75,7 @@ function saveComment(sort, _this, content, user_id, father_id, to_id, child_fath
                 if(sort == 0 ) {
                     addComments(_this, content, result.comment_id);
                 } else {
-                    addApplyComment(_this, content, result.comment_id);
+                    addApplyComment(_this, content, result.comment_id, father_nickname, father_content);
                 }
             }
         },
@@ -195,7 +195,7 @@ function showChildComments(oThis, result) {
     for (let i = 0; i < result.length; i++) {
         var content;
         if(!!result[i].u2_nickname) {
-            content = result[i].content + ' //@' + result[i].c2_content;
+            content = result[i].content + '&nbsp;&nbsp;&nbsp;//@' + result[i].u2_nickname + '：' + result[i].c2_content;
         } else {
             content = result[i].content;
         }
@@ -212,7 +212,7 @@ function showChildComments(oThis, result) {
                         <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复(<i class="z-num">${result[i].number}</i>)</a>
                         <span class="fl date-dz-line">|</span>
                         <a href="javascript:;" class="date-dz-z fl">
-                            <i class="date-dz-z-click-red"></i>赞(<i class="z-num">0</i>)
+                            <i class="date-dz-z-click-red"></i>赞(<i class="z-num">${result[i].star}</i>)
                         </a>
                     </div>
                 </div>
@@ -243,12 +243,17 @@ $('.comment-show').on('click','.hf-pl',function(){
 
         var to_id;
         var child_father_id;
+        var father_nickname;
+        var father_content;
         if($(this).parents('.hf-list-con').length > 0) {
             // 子评论中被评论的id
             child_father_id = $(this).parents('.all-pl-con').attr('commentsId');
-            // 评论中被评论者的id
-            // to_id = $(this).parents('.date-dz').siblings('.pl-text').find('.comment-size-name').attr('userId');
+            // 评论中被评论的评论id
             to_id = $(this).parents('.all-pl-con').attr('commentsId');
+            // 被评论者昵称
+            father_nickname = $(this).parents('.date-dz').siblings('.hfpl-text').find('.comment-size-name').html();
+            // 被评论的内容
+            father_content = $(this).parents('.date-dz').siblings('.hfpl-text').find('.my-pl-con').html();
         }
         
         //获取回复人的名字
@@ -257,7 +262,7 @@ $('.comment-show').on('click','.hf-pl',function(){
         if(oHfVal.replace(/(^\s*)|(\s*$)/g, "") != ''){
             // 后台数据入库
             var sort = 1;
-            saveComment(sort, $(this), oHfVal, userLoginInfo.id, father_id, to_id, child_father_id);
+            saveComment(sort, $(this), oHfVal, userLoginInfo.id, father_id, to_id, child_father_id, father_nickname, father_content);
         } else {
             alert('评论不能为空！');
         }
@@ -269,16 +274,42 @@ $('.comment-show').on('click','.hf-pl',function(){
  * @param _this 传${this}
  * @param oHfVal 回复内容
  */
-function addApplyComment(_this, oHfVal, commentId) {
+function addApplyComment(_this, oHfVal, commentId, father_nickname, father_content) {
     // 获取当前时间
     var now = getTime();
     var oHtml = '';
+
+    // 主评论数量+1
+    var curTotalCommentNumber = _this.parents('.comment-show-con-list').children('.date-dz').find('.pl-hf .z-num').html();
+    curTotalCommentNumber++;
+    _this.parents('.comment-show-con-list ').children('.date-dz').find('.pl-hf .z-num').html(curTotalCommentNumber);
+    // 子评论数量+1
+    if(_this.parents('.hf-list-con').length > 0) {
+        var curChildCommentNumber = _this.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf .z-num').html();
+        curChildCommentNumber++;
+        _this.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf .z-num').html(curChildCommentNumber);
+    }
+
+    var content;
+    if(!!father_content) {
+        // 统计//@的个数，处理回复显示的内容
+        var n=(father_content.split('//@')).length-1;
+        var fa_content;
+        if(n>0) {
+            fa_content = father_content.substring(0, father_content.lastIndexOf('//@'));
+        } else {
+            fa_content = father_content;
+        }
+        content = oHfVal + '&nbsp;&nbsp;&nbsp;//@' + father_nickname + fa_content;
+    } else {
+        content = oHfVal;
+    }
 
     oHtml = `
         <div class="all-pl-con" commentsId=${commentId}>
             <div class="pl-text hfpl-text clear-f">
                 <a href="#" class="comment-size-name" userId=${userLoginInfo.id}>${userLoginInfo.nickname}：</a>
-                <span class="my-pl-con">${oHfVal}</span>
+                <span class="my-pl-con">${content}</span>
             </div>
             <div class="date-dz">
                 <span class="date-dz-left fl comment-time">${now}</span>
@@ -294,16 +325,6 @@ function addApplyComment(_this, oHfVal, commentId) {
         </div>
         `;
 
-    // 主评论数量+1
-    var curTotalCommentNumber = _this.parents('.comment-show-con-list').children('.date-dz').find('.pl-hf .z-num').html();
-    curTotalCommentNumber++;
-    _this.parents('.comment-show-con-list ').children('.date-dz').find('.pl-hf .z-num').html(curTotalCommentNumber);
-    // 子评论数量+1
-    if(_this.parents('.hf-list-con').length > 0) {
-        var curChildCommentNumber = _this.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf .z-num').html();
-        curChildCommentNumber++;
-        _this.parents('.hf-con').siblings('.date-dz-right').find('.pl-hf .z-num').html(curChildCommentNumber);
-    }
     // 前端插入评论
     _this.parents('.hf-con').parents('.comment-show-con-list').find('.hf-list-con').css('display','block').prepend(oHtml);
     // 清空回复框
@@ -314,6 +335,28 @@ function addApplyComment(_this, oHfVal, commentId) {
  * 删除评论块
  */
 $('.commentAll').on('click','.removeBlock',function(){
+    var deleteId;
+    if($(this).parents('.hf-list-con').length > 0) {
+        deleteId = $(this).parents('.all-pl-con').attr('commentsId')
+    } else {
+        deleteId = $(this).parents('.comment-show-con').attr('commentId');
+    }
+
+    $.ajax({
+        url: '/operation/comment_delete',
+        type: 'post',
+        data: {
+            delete_id: deleteId,
+        },
+        success: function(result){
+            console.log(result);
+        },
+        error: function(err) {
+            console.log(err);
+            alert('点赞失败');
+        }
+    });
+
     var oT = $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con');
     if(oT.siblings('.all-pl-con').length >= 1){
         oT.remove();
@@ -328,15 +371,46 @@ $('.commentAll').on('click','.removeBlock',function(){
  * 点赞
  */
 $('.comment-show').on('click','.date-dz-z',function(){
-    var zNum = $(this).find('.z-num').html();
-    if($(this).is('.date-dz-z-click')){
-        zNum--;
-        $(this).removeClass('date-dz-z-click');
-        $(this).find('.z-num').html(zNum);
+    // 判断登录
+    if(!cacheGet('userLoginInfo')) {
+        alert('请登录后再点赞！');
+        $(this).siblings('.flex-text-wrap').find('.comment-input').val('');
+        location.href = '/login';
+    } else {
+        userLoginInfo = cacheGet('userLoginInfo');
 
-    }else {
-        zNum++;
-        $(this).addClass('date-dz-z-click');
-        $(this).find('.z-num').html(zNum);
+        var commentId;
+        if($(this).parents('.hf-list-con').length > 0) {
+            commentId = $(this).parents('.all-pl-con').attr('commentsId')
+        } else {
+            commentId = $(this).parents('.comment-show-con').attr('commentId');
+        }
+
+        $.ajax({
+            url: '/operation/comment_like',
+            type: 'post',
+            data: {
+                user_id: userLoginInfo.id,
+                comment_id: commentId,
+            },
+            success: function(result){
+                console.log(result);
+            },
+            error: function(err) {
+                console.log(err);
+                alert('点赞失败');
+            }
+        });
+
+        var zNum = $(this).find('.z-num').html();
+        if($(this).is('.date-dz-z-click')){
+            zNum--;
+            $(this).removeClass('date-dz-z-click');
+            $(this).find('.z-num').html(zNum);
+        }else {
+            zNum++;
+            $(this).addClass('date-dz-z-click');
+            $(this).find('.z-num').html(zNum);
+        }
     }
 })
