@@ -9,21 +9,21 @@
    <div class="production-detail-div">
        <div class="container clear-f">
            <div class="production-left fl">
-                <p class="production-title">{{ productionData.name }}</p>
-                <p class="production-text">{{ productionData.create_time }}发布</p>
+                <p class="production-title">{{ productionData.data.name }}</p>
+                <p class="production-text">{{ productionData.data.create_time }}发布</p>
                 <p class="production-text">原创作品/插画/其他插画</p>
                 <div class="about-production flex-b-sbc">
                     <div class="about-item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-yanjing"></use>
                         </svg>
-                        <span class="about-num">4.6万</span>
+                        <span class="about-num">{{ productionData.data.view_number }}</span>
                     </div>
                     <div class="about-item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-comment1"></use>
                         </svg>
-                        <span class="about-num">196</span>
+                        <span class="about-num">{{ productionData.data.comment_number }}</span>
                     </div>
                     <div class="about-item">
                         <svg class="icon" aria-hidden="true">
@@ -36,7 +36,7 @@
            <div class="about-author fl">
                <div class="portrait-img fl" style="background-image:url('/public/images/banner/pc (3).jpg')"></div>
                <div class="author-right fl">
-                   <p class="author-name">{{ productionData.author }}</p>
+                   <p class="author-name">{{ productionData.data.nickname }}</p>
                    <span class="author-sort">上海/插画师</span>
                    <div class="btn-list flex-b-sbc">
                         <button class="attention-btn">关注</button>
@@ -52,12 +52,12 @@
    <div class="production-img-list">
        <div class="container">
            <div class="list-describe">
-               <p class="describe">{{ productionData.describe }}
+               <p class="describe">{{ productionData.data.describe }}
                     <!-- {{ productionData.content }} -->
                 </p>
            </div>
            <div class="img-list">
-               <img class="img" src="{{ productionData.cover }}" alt="">
+               <img class="img" src="{{ productionData.production }}" alt="">
            </div>
        </div>
    </div>

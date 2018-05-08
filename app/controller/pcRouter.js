@@ -217,9 +217,17 @@ class RouterController extends Controller {
 
     async productionDetail () {
         const id = this.ctx.query.productionId;
-        const result = await this.app.mysql.get('production_info', { id });
-        tools.formatTime([result]);
-        let data = JSON.parse(JSON.stringify(result));
+
+        // 浏览量+1
+        const updateViewNumber = await this.app.mysql.query(
+            `update production_info set view_number = view_number+1 where id = ${id};`
+        );
+
+        const result = await this.app.mysql.query(
+            `SELECT p.*,u.nickname,u.portrait FROM production_info p inner join user_info u on p.author_id = u.id where p.id=${id};`
+        );
+        tools.formatTime([result[0]]);
+        let data = JSON.parse(JSON.stringify(result[0]));
 
         // 作品留言
         const comments = await this.app.mysql.query(
@@ -229,9 +237,13 @@ class RouterController extends Controller {
         var commentsData = JSON.parse(JSON.stringify(comments));
         tools.formatTime(commentsData);
 
-        await this.ctx.render('pc/production_detail.tpl', {
-            productionData: data,
+        let productionData = {
+            data,
             commentsData,
+        }
+
+        await this.ctx.render('pc/production_detail.tpl', {
+            productionData,
         });
     }
 

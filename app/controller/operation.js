@@ -118,6 +118,13 @@ class OperationController extends Controller {
             create_time: new Date().valueOf(),
         });
 
+        // 作品留言量+1
+        if(commentData.production_id != 0) {
+            const updateCommentNumber = await this.app.mysql.query(
+                `update production_info set comment_number = comment_number+1 where id = ${commentData.production_id};`
+            );
+        }
+
         if(result.insertId) {
             ctx.status = 200;
             ctx.body = {
@@ -133,6 +140,7 @@ class OperationController extends Controller {
         }
     }
 
+    // 展示子评论
     async childComment() {
         const ctx = this.ctx;
         const fatherId = ctx.query.father_id;
@@ -312,8 +320,8 @@ class OperationController extends Controller {
             sex: personData.sex,
             age: personData.age,
             address: personData.address,
-            bgcover: personData.coverSrc,
-            portrait: personData.portraitSrc,
+            bgcover: personData.bgcover,
+            portrait: personData.portrait,
             update_time: new Date().valueOf(),
         });
 

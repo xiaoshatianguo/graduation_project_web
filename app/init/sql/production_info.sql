@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `photography_site` VARCHAR(255) DEFAULT '' comment '摄影地点',
   `content` VARCHAR(255) DEFAULT '' comment '作品描述详情',
   `content_markdown` VARCHAR(255) DEFAULT '' comment '作品描述详情markdown格式',
+  `comment_number` INT(20) DEFAULT '' comment '评论数量',
+  `view_number` INT(20) DEFAULT '' comment '浏览量',
   `create_time` bigint comment '作品发布时间',
   `update_time` bigint comment '作品信息编辑时间',
   `disabled` INT(2) DEFAULT 0 comment '是否屏蔽作品 - 0 正常 - 1 屏蔽',
