@@ -68,7 +68,7 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">作品简介</label>
                                         <div class="layui-input-block">
-                                            <textarea class="layui-textarea" name="describe" lay-verify="describe" placeholder="请输入作品简介"></textarea>
+                                            <textarea class="layui-textarea" name="describe" lay-verify="describe" placeholder="请输入作品简介" onkeyup="keyUP(this)"></textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
@@ -146,6 +146,19 @@
         $('.cancle-btn').on('click', function() {
             pageJumpsHandle();
         })
+
+        /**
+         * textarea限制字数
+         * @param {textarea限制字数} t
+         */
+         function keyUP(t){
+            if(t.name == 'describe') {
+                var len = $(t).val().length;
+                if(len > 150){
+                    $(t).val($(t).val().substring(0,150));
+                }
+            }
+        }
 
         // 分类选择填充数据
         var sortData = cacheGet('sortData');

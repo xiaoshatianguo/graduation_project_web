@@ -38,19 +38,6 @@
                                             <input type="text" name="name" required lay-verify="name" placeholder="请输入您的真实名字" class="layui-input">
                                         </div>
                                     </div>
-                                    <!-- <div class="layui-form-item">
-                                        <label class="layui-form-label">所在城市</label>
-                                        <div class="layui-input-block">
-                                            <select name="interest" lay-filter="aihao">
-                                            <option value=""></option>
-                                            <option value="0">写作</option>
-                                            <option value="1" selected="">阅读</option>
-                                            <option value="2">游戏</option>
-                                            <option value="3">音乐</option>
-                                            <option value="4">旅行</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
                                     <div class="layui-form-item production-sort">
                                         <label class="layui-form-label">擅长领域</label>
                                         <div class="layui-input-block">
@@ -74,7 +61,7 @@
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">个人介绍</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea name="personal_describe" placeholder="请输入个人介绍" required lay-verify="personal_describe" class="layui-textarea" id="activityContent"></textarea>
+                                            <textarea name="personal_describe" placeholder="请输入个人介绍" required lay-verify="personal_describe" class="layui-textarea" id="activityContent" onkeyup="keyUP(this)"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -103,25 +90,6 @@
                                 <div class="layui-upload-list fl certificate-show" id="certificateShow">
                                 </div>
                             </div>
-                            <!-- <div class="upload-info">
-                                <div class="info-title">上传认证师申请凭证</div>
-                                <input type="text" name="bannerSrc" required lay-verify="bannerSrc" placeholder="上传banner" hidden id="bannerSrc" value="">
-                                <div class="layui-upload">
-                                    <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button> 
-                                    <div class="layui-upload-list">
-                                        <table class="layui-table">
-                                        <thead>
-                                            <tr><th>文件名</th>
-                                            <th>大小</th>
-                                            <th>状态</th>
-                                            <th>操作</th>
-                                        </tr></thead>
-                                        <tbody id="demoList"></tbody>
-                                        </table>
-                                    </div>
-                                    <button type="button" class="layui-btn" id="testListAction">开始上传</button>
-                                </div> 
-                            </div> -->
                             <div class="upload-form">
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
@@ -151,6 +119,19 @@
         $('.cancle-btn').on('click', function() {
             pageJumpsHandle();
         })
+
+        /**
+         * textarea限制字数
+         * @param {textarea限制字数} t
+         */
+         function keyUP(t){
+            if(t.name == 'personal_describe') {
+                var len = $(t).val().length;
+                if(len > 150){
+                    $(t).val($(t).val().substring(0,150));
+                }
+            }
+        }
 
         // 分类选择填充数据
         var sortData = cacheGet('sortData');

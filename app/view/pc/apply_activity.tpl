@@ -35,22 +35,9 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动标题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入活动标题" class="layui-input">
+                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入活动标题" class="layui-input" onkeyup="keyUP(this)">
                                         </div>
                                     </div>
-                                    <!-- <div class="layui-form-item">
-                                        <label class="layui-form-label">活动类别</label>
-                                        <div class="layui-input-block">
-                                            <select name="interest" lay-filter="aihao">
-                                            <option value=""></option>
-                                            <option value="0">写作</option>
-                                            <option value="1" selected="">阅读</option>
-                                            <option value="2">游戏</option>
-                                            <option value="3">音乐</option>
-                                            <option value="4">旅行</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动时间</label>
                                         <div class="layui-input-block">
@@ -60,13 +47,13 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动主题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="topic" required lay-verify="topic" placeholder="请输入活动主题" class="layui-input">
+                                            <input type="text" name="topic" required lay-verify="topic" placeholder="请输入活动主题" class="layui-input" onkeyup="keyUP(this)">
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">活动简介</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea name="describe" required lay-verify="describe" placeholder="请输入活动简介" class="layui-textarea"></textarea>
+                                            <textarea name="describe" required lay-verify="describe" placeholder="请输入活动简介" class="layui-textarea activity-decsibe" onkeyup="keyUP(this)"></textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
@@ -138,6 +125,31 @@
         $('.cancle-btn').on('click', function() {
             pageJumpsHandle();
         })
+
+        /**
+         * textarea限制字数
+         * @param {textarea限制字数} t
+         */
+        function keyUP(t){
+            if(t.name == 'name') {
+                var len = $(t).val().length;
+                if(len > 20){
+                    $(t).val($(t).val().substring(0,20));
+                }
+            }
+            if(t.name == 'topic') {
+                var len = $(t).val().length;
+                if(len > 30){
+                    $(t).val($(t).val().substring(0,30));
+                }
+            }
+            if(t.name == 'describe') {
+                var len = $(t).val().length;
+                if(len > 139){
+                    $(t).val($(t).val().substring(0,140));
+                }
+            }
+        }
     </script>
     <script>
         //注意：选项卡 依赖 element 模块，否则无法进行功能性操作

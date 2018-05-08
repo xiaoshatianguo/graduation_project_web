@@ -7,7 +7,7 @@ class RouterController extends Controller {
     async index() {
         // 最新活动
         const activity = await this.app.mysql.query(
-            'SELECT * FROM activity_info ORDER BY create_time desc limit 0,3;'
+            'SELECT * FROM activity_info ORDER BY create_time desc limit 0,6;'
         );
 
         // 热门分类
