@@ -99,72 +99,124 @@
                     </div>
                     <div class="layui-tab-item personal-data">
                         <div class="data-show">
-                            <form class="layui-form">
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">昵称</label>
-                                    <div class="layui-input-block">
-                                        <input type="text" name="nickname" placeholder="请输入昵称" class="layui-input personal-data-input" value="{{ personalData.nickname }}">
-                                        <p>{{ personalData.nickname }}</p>
+                            <div class="layui-form clear-f">
+                                <div class="form-left fl">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">昵称</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="nickname" placeholder="请输入昵称" class="layui-input personal-data-input" value="{{ personalData.nickname }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.nickname }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">邮箱</label>
-                                    <div class="layui-input-block">
-                                        <input type="text" name="email" placeholder="请输入邮箱" class="layui-input personal-data-input" value="{{ personalData.email }}">
-                                        <p>{{ personalData.email }}</p>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">邮箱</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="email" placeholder="请输入邮箱" class="layui-input personal-data-input" value="{{ personalData.email }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.email }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">电话</label>
-                                    <div class="layui-input-block">
-                                        <input type="text" name="phone" placeholder="请输入电话" class="layui-input personal-data-input" value="{{ personalData.phone }}">
-                                        <p>{{ personalData.phone }}</p>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">电话</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="phone" placeholder="请输入电话" class="layui-input personal-data-input" value="{{ personalData.phone }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.phone }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">真实名字</label>
-                                    <div class="layui-input-block">
-                                        <input type="text" name="name" placeholder="请输入真实名字" class="layui-input personal-data-input" value="{{ personalData.name }}">
-                                        <p>{{ personalData.name }}</p>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">真实名字</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="name" placeholder="请输入真实名字" class="layui-input personal-data-input" value="{{ personalData.name }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.name }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">性别</label>
-                                    <div class="layui-input-block">
-                                        <select name="sex" class="personal-data-input">
-                                            <option value="0">男</option>
-                                            <option value="1">女</option>
-                                        </select>
-                                        <p>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">性别</label>
+                                        <div class="layui-input-block sex-input">
                                             {% if personalData.sex == 0 %}
-                                                男
+                                                <input type="radio" name="sex" value="0" title="男" checked>
+                                                <input type="radio" name="sex" value="1" title="女">
                                             {% else %}
-                                                女
+                                                <input type="radio" name="sex" value="0" title="男">
+                                                <input type="radio" name="sex" value="1" title="女" checked>
                                             {% endif %}
-                                        </p>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">年龄</label>
+                                        <div class="layui-input-block">
+                                            <input type="number" name="age" placeholder="请输入年龄" class="layui-input personal-data-input" value="{{ personalData.age }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.age }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">地址</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="address" placeholder="请输入地址" class="layui-input personal-data-input" value="{{ personalData.address }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.address }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">注册时间</label>
+                                        <div class="layui-input-block">
+                                            <p>{{ personalData.create_time }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">年龄</label>
-                                    <div class="layui-input-block">
-                                        <input type="number" name="age" placeholder="请输入年龄" class="layui-input personal-data-input" value="{{ personalData.age }}">
-                                        <p>{{ personalData.age }}</p>
+                                <div class="form-right fl">
+                                    <div class="upload-info clear-f">
+                                        <div class="info-title">头像</div>
+                                        <input type="text" name="portraitSrc" required lay-verify="portraitSrc" placeholder="上传作品" hidden id="portraitSrc" value={{ personalData.portrait }}>
+                                        <div class="layui-upload-drag layui-upload-list fl portrait-show" id="uploadPortrait">
+                                            <img class="layui-upload-img" src={{ personalData.portrait }} id="portraitShow">
+                                        </div>
+                                    </div>
+                                    <div class="upload-info clear-f">
+                                        <div class="info-title">封面</div>
+                                        <input type="text" name="coverSrc" required lay-verify="coverSrc" placeholder="上传作品" hidden id="coverSrc" value={{ personalData.bgcover }}>
+                                        <div class="layui-upload-drag layui-upload-list fl cover-show" id="uploadCover">
+                                            <img class="layui-upload-img" src={{ personalData.bgcover }} id="coverShow">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">地址</label>
-                                    <div class="layui-input-block">
-                                        <input type="text" name="address" placeholder="请输入地址" class="layui-input personal-data-input" value="{{ personalData.address }}">
-                                        <p>{{ personalData.address }}</p>
+                                <div class="upload-form fl">
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="formSubmit">确定修改</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">注册时间</label>
-                                    <div class="layui-input-block">
-                                        <p>{{ personalData.create_time }}</p>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="layui-tab-item personal-collection">
@@ -294,8 +346,115 @@
 
 {% block script %}
     <script>
-        layui.use('element', function(){
-            
+        $('.edit-element').on('click', function() {
+            var pText = $(this).siblings('.p-text').hide().text();
+            $(this).hide();
+            $(this).parents('.layui-input-block').find('.personal-data-input').show().focus().val(pText);
+        })
+
+        $('.personal-data-input').blur(function() {
+            var uText = $(this).val();
+            if(!!uText) {
+                $(this).hide();
+                $(this).siblings('.person-data-text').find('.p-text').show().text(uText);
+                $(this).siblings('.person-data-text').find('.edit-element').show();
+            } else {
+                $(this).focus();
+            }
+        })
+    </script>
+    <script>
+        layui.use(['element', 'form', 'upload'], function(){
+            var form = layui.form,
+                layer = layui.layer,
+                element = layui.element;
+
+            //监听提交修改个人资料
+            form.on('submit(formSubmit)', function(data){
+                var personData = JSON.parse(JSON.stringify(data.field));
+
+                $.ajax({
+                    type: 'post',
+                    url: '/operation/update_personal_data',
+                    data: {
+                        id: cacheGet('userLoginInfo').id,
+                        nickname: personData.nickname,
+                        email: personData.email,
+                        phone: personData.phone,
+                        name: personData.name,
+                        sex: personData.sex,
+                        age: personData.age,
+                        address: personData.address,
+                        bgcover: personData.coverSrc,
+                        portrait: personData.portraitSrc,
+                    },
+                    success: function(result){
+                        alert('个人资料修改成功');
+                    },
+                    error: function(err) {
+                        alert('个人资料修改失败，请稍候重试');
+                    }
+                })
+            });
+
+            var $ = layui.jquery,
+                upload = layui.upload;
+
+            // 上传头像处理
+            var uploadPortrait = upload.render({
+                elem: '#uploadPortrait',
+                url: '/qiniu',
+                accept: 'images',
+                acceptMime: 'image/*',
+                exts: 'png|jpg|bmp|jpeg|gif',
+                size: 1024,
+                before: function(obj){
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result){
+                        $('#portraitShow').attr('src', result); //图片链接（base64）
+                    });
+                },
+                done: function(res){
+                    $('#portraitSrc').val(res.src);
+                    return layer.msg('上传成功');
+                },
+                error: function(){
+                    // 演示失败状态，并实现重传
+                    var portraitShow = $('#portraitShow');
+                    portraitShow.after('<span style="color: #f39549;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    portraitShow.next('.demo-reload').on('click', function(){
+                        uploadPortrait.upload();
+                    });
+                }
+            });
+
+            // 上传封面处理
+            var uploadCover = upload.render({
+                elem: '#uploadCover',
+                url: '/qiniu',
+                accept: 'images',
+                acceptMime: 'image/*',
+                exts: 'png|jpg|bmp|jpeg|gif',
+                size: 1024,
+                before: function(obj){
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result){
+                        $('#coverShow').attr('src', result); //图片链接（base64）
+                    });
+                },
+                done: function(res){
+                    $('#coverSrc').val(res.src);
+                    return layer.msg('上传成功');
+                },
+                error: function(){
+                    // 演示失败状态，并实现重传
+                    var coverShow = $('#coverShow');
+                    coverShow.after('<span style="color: #f39549;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    coverShow.next('.demo-reload').on('click', function(){
+                        uploadCover.upload();
+                    });
+                }
+            });
         });
     </script>
 {% endblock %}

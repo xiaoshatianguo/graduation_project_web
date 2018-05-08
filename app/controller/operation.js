@@ -298,6 +298,30 @@ class OperationController extends Controller {
             }
         }
     }
+
+    async updatePersonalData() {
+        const ctx = this.ctx;
+        const personData = ctx.request.body;
+
+        const updatePersonalData = this.app.mysql.update('user_info',{
+            id: personData.id,
+            nickname: personData.nickname,
+            email: personData.email,
+            phone: personData.phone,
+            name: personData.name,
+            sex: personData.sex,
+            age: personData.age,
+            address: personData.address,
+            bgcover: personData.coverSrc,
+            portrait: personData.portraitSrc,
+            update_time: new Date().valueOf(),
+        });
+
+        ctx.status = 200;
+            ctx.body = {
+                msg: '修改成功',
+            }
+    }
 }
 
 module.exports = OperationController;

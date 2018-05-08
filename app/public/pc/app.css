@@ -1631,11 +1631,48 @@ div.dis-ib {
       .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form {
         width: 100%;
         font-size: 1.0989vw; }
+        .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .form-left {
+          width: 50%; }
+        .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .form-right {
+          width: 50%; }
+        .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-form {
+          margin: 1.4652vw 0 0 21.97802vw; }
+        .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info {
+          margin-top: 0.3663vw;
+          padding-bottom: 0.7326vw;
+          background-color: #fff; }
+          .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .info-title {
+            padding-left: 2.9304vw;
+            width: 100%;
+            height: 3.663vw;
+            font-size: 1.0989vw;
+            line-height: 3.663vw;
+            border-bottom: 1px solid #c9cdcf; }
+          .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .layui-upload-drag {
+            top: 50%;
+            margin: 3.663vw 0 2.1978vw 3.663vw; }
+            .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .layui-upload-drag .icon {
+              font-size: 7.32601vw; }
+          .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .layui-upload-list {
+            margin: 3.663vw 0 2.1978vw 3.663vw; }
+            .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .layui-upload-list .layui-upload-img {
+              height: 14.65201vw;
+              width: auto; }
+          .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .production-error {
+            margin: 0.3663vw 0 0 2.1978vw;
+            width: 10.98901vw; }
+          .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .layui-form {
+            margin-top: 1.4652vw;
+            padding-left: 1.4652vw;
+            width: 58.60806vw; }
+            .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .upload-info .layui-form .layui-form-item .layui-form-label {
+              width: 7.32601vw; }
         .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-form-label {
           margin-right: 1.0989vw;
           width: 8.79121vw; }
         .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block {
           margin-left: 10.98901vw;
+          width: 21.97802vw;
           color: #5e6468;
           line-height: 2.9304vw; }
           .my-info .tag-div .layui-tab-content .personal-data .data-show .layui-form .layui-input-block .personal-data-input {

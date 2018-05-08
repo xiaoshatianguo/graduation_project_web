@@ -3,7 +3,6 @@ CREATE TABLE IF NOT EXISTS `activity_info` (
   `number` VARCHAR(255) DEFAULT '' comment '活动编号',
   `name` VARCHAR(255) DEFAULT '' comment '活动标题',
   `initiator` VARCHAR(255) DEFAULT '' comment '活动发起者',
-  `sort` VARCHAR(255) DEFAULT '' comment '活动所属类别',
   `topic` VARCHAR(255) DEFAULT '' comment '活动主题',
   `describe` LONGTEXT comment '活动简介',
   `content` LONGTEXT comment '活动内容',

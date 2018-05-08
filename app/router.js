@@ -78,4 +78,6 @@ module.exports = app => {
   router.post('attention', '/operation/attention', controller.operation.attention);
   // 获取关注信息处理
   router.post('attention', '/operation/attentionGet', controller.operation.attentionGet);
+  // 修改个人资料
+  router.post('updatePersonalData', '/operation/update_personal_data', controller.operation.updatePersonalData);
 };
