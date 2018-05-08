@@ -61,13 +61,13 @@
                                         <svg class="icon" aria-hidden="true">
                                             <use xlink:href="#icon-yanjing"></use>
                                         </svg>
-                                        <span class="about-num">4.6万</span>
+                                        <span class="about-num">{{ item.view_number }}</span>
                                     </div>
                                     <div class="about-item">
                                         <svg class="icon" aria-hidden="true">
                                             <use xlink:href="#icon-comment1"></use>
                                         </svg>
-                                        <span class="about-num">196</span>
+                                        <span class="about-num">{{ item.comment_number }}</span>
                                     </div>
                                     <div class="about-item">
                                         <svg class="icon" aria-hidden="true">
