@@ -161,10 +161,6 @@ class RouterController extends Controller {
         tools.formatTime([result]);
         let data = JSON.parse(JSON.stringify(result));
 
-        // 活动所属种类
-        const sort = await this.app.mysql.get('production_type_info', { number: data.sort });
-        let sortData = JSON.parse(JSON.stringify(sort));
-
         // 参加该活动的作品及信息
         const production = await this.app.mysql.query(
             `SELECT p.*,u.nickname FROM production_info p inner join user_info u on p.author_id = u.id where activity_id=${id};`
@@ -180,7 +176,6 @@ class RouterController extends Controller {
         var commentsData = JSON.parse(JSON.stringify(comments));
         tools.formatTime(commentsData);
 
-        data.sort = sortData.name;
         data.productionData = productionData;
         data.commentsData = commentsData;
 
