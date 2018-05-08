@@ -125,8 +125,8 @@
                             <div class="upload-form">
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <button class="layui-btn publich-btn" lay-submit lay-filter="formCancle">取消</button>
-                                        <button class="layui-btn publich-btn" lay-submit lay-filter="formSubmit">立即提交</button>
+                                        <button class="layui-btn layui-btn-primary cancle-btn">取消</button>
+                                        <button class="layui-btn" lay-submit lay-filter="formSubmit">立即提交</button>
                                     </div>
                                 </div>
                             </div>
@@ -147,6 +147,11 @@
 {% endblock %}
 
 {% block script %}
+    <script>
+        $('.cancle-btn').on('click', function() {
+            pageJumpsHandle();
+        })
+    </script>
     <script>
         //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
         layui.use(['element', 'form', 'layedit', 'laydate', 'upload'], function(){
