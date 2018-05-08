@@ -220,7 +220,6 @@
                     data: {
                         name: uploadData.name,
                         initiator: cacheGet('userLoginInfo').id,
-                        // sort: uploadData.sort,
                         topic: uploadData.topic,
                         describe: uploadData.describe,
                         content: uploadData.content,
@@ -231,7 +230,7 @@
                         end_time: time_range[1],
                     },
                     success: function(result){
-                        alert('申请作品信息提交成功');
+                        alert('申请活动信息提交成功');
                         pageJumpsHandle();
                     },
                     error: function(err) {

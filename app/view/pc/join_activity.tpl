@@ -45,19 +45,14 @@
                                             <input type="text" name="name" required lay-verify="name" placeholder="请输入作品标题" class="layui-input">
                                         </div>
                                     </div>
-                                    <!-- <div class="layui-form-item production-sort">
+                                    <div class="layui-form-item production-sort">
                                         <label class="layui-form-label">作品类别</label>
                                         <div class="layui-input-block">
-                                            <select name="interest" lay-filter="aihao">
-                                                <option value=""></option>
-                                                <option value="0">写作</option>
-                                                <option value="1" selected="">阅读</option>
-                                                <option value="2">游戏</option>
-                                                <option value="3">音乐</option>
-                                                <option value="4">旅行</option>
+                                            <select class="sort-select" name="sort" lay-filter="sort" lay-verify="sort">
+                                                <option value="">请选择作品发布的类别</option>
                                             </select>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">摄影道具</label>
                                         <div class="layui-input-block">
@@ -151,6 +146,18 @@
         $('.cancle-btn').on('click', function() {
             pageJumpsHandle();
         })
+
+        // 分类选择填充数据
+        var sortData = cacheGet('sortData');
+        var sortHtml = '';
+        if(sortData.length > 0) {
+            for (let i = 0; i < sortData.length; i++) {
+                sortHtml += `
+                    <option value="${sortData[i].id}">${sortData[i].name}</option>
+                `
+            }
+        }
+        $('.sort-select').append(sortHtml);
     </script>
     <script>
         //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
@@ -170,6 +177,12 @@
                     if(!!value) {
                     } else {
                         return '标题不能为空';
+                    }
+                },
+                sort: function(value){
+                    if(!!value) {
+                    } else {
+                        return '作品类别不能为空';
                     }
                 },
                 photography_props: function(value){

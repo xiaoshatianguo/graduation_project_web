@@ -51,19 +51,14 @@
                                             </select>
                                         </div>
                                     </div> -->
-                                    <!-- <div class="layui-form-item">
-                                        <label class="layui-form-label">设计领域</label>
+                                    <div class="layui-form-item production-sort">
+                                        <label class="layui-form-label">擅长领域</label>
                                         <div class="layui-input-block">
-                                            <select name="interest" lay-filter="aihao">
-                                            <option value=""></option>
-                                            <option value="0">写作</option>
-                                            <option value="1" selected="">阅读</option>
-                                            <option value="2">游戏</option>
-                                            <option value="3">音乐</option>
-                                            <option value="4">旅行</option>
+                                            <select class="sort-select" name="sort" lay-filter="sort" lay-verify="sort">
+                                                <option value="">请选择擅长领域</option>
                                             </select>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">QQ</label>
                                         <div class="layui-input-block">
@@ -156,6 +151,18 @@
         $('.cancle-btn').on('click', function() {
             pageJumpsHandle();
         })
+
+        // 分类选择填充数据
+        var sortData = cacheGet('sortData');
+        var sortHtml = '';
+        if(sortData.length > 0) {
+            for (let i = 0; i < sortData.length; i++) {
+                sortHtml += `
+                    <option value="${sortData[i].id}">${sortData[i].name}</option>
+                `
+            }
+        }
+        $('.sort-select').append(sortHtml);
     </script>
     <script>
         //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
@@ -172,6 +179,12 @@
                     if(!!value) {
                     } else {
                         return '活动标题不能为空';
+                    }
+                },
+                sort: function(value){
+                    if(!!value) {
+                    } else {
+                        return '擅长领域不能为空';
                     }
                 },
                 personal_describe: function(value){

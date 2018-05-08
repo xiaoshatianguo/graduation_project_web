@@ -37,7 +37,6 @@ class OperationController extends Controller {
         const result = await this.app.mysql.insert('activity_info', {
             name: productionData.name,
             initiator: productionData.initiator,
-            // sort: uploadData.sort,
             topic: productionData.topic,
             describe: productionData.describe,
             content: productionData.content,
