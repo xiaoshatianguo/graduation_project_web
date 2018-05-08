@@ -50,6 +50,7 @@
                     <li>收藏</li>
                     <li>留言</li>
                     <li>创作</li>
+                    <li>消息</li>
                 </ul>
                 <div class="layui-tab-content">
                     <div class="layui-tab-item layui-show personal-product">
@@ -324,6 +325,13 @@
                                     </div>
                                 {% endfor %}
                             </section>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item news">
+                        <div class="news-list">
+                            <div class="list-item">
+                                暂无消息
+                            </div>
                         </div>
                     </div>
                 </div>
