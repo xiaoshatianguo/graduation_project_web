@@ -74,4 +74,8 @@ module.exports = app => {
   router.post('commentLike', '/operation/comment_like', controller.operation.commentLike);
   // 评论删除处理
   router.post('commentDelete', '/operation/comment_delete', controller.operation.commentDelete);
+  // 关注会员处理
+  router.post('attention', '/operation/attention', controller.operation.attention);
+  // 获取关注信息处理
+  router.post('attention', '/operation/attentionGet', controller.operation.attentionGet);
 };

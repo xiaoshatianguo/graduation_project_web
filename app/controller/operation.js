@@ -208,13 +208,13 @@ class OperationController extends Controller {
     // 评论删除处理
     async commentDelete() {
         const ctx = this.ctx;
-        const DeleteData = ctx.request.body;
+        const deleteData = ctx.request.body;
 
-        if(!!DeleteData.delete_id) {
+        if(!!deleteData.delete_id) {
             const deleteComment = await this.app.mysql.update(
                 'comments_info',
                 {
-                    id: DeleteData.delete_id,
+                    id: deleteData.delete_id,
                     is_delete: 1,
                 }
             );
@@ -224,6 +224,79 @@ class OperationController extends Controller {
         ctx.status = 200;
         ctx.body = {
             msg: '删除评论成功',
+        }
+    }
+
+    // 关注处理
+    async attention() {
+        const ctx = this.ctx;
+        const attentionData = ctx.request.body;
+
+        // 查询关注表，是否重复关注
+        const attentionGet = await this.app.mysql.get('attention_info', {
+            user_id: attentionData.user_id,
+            object_id: attentionData.object_id,
+            activity_id: attentionData.activity_id,
+        });
+
+        let attention;
+        if(!!attentionGet) {
+            attention = await this.app.mysql.query(
+                `update attention_info set status = !status where id = ${attentionGet.id};`
+            );
+
+            ctx.status = 200;
+            ctx.body = {
+                attentionGet,
+                msg: '关注成功或取消关注',
+            }
+        } else {
+            // 插入关注表
+            attention = this.app.mysql.insert('attention_info', {
+                user_id: attentionData.user_id,
+                object_id: attentionData.object_id || 0,
+                activity_id: attentionData.activity_id || 0,
+            })
+
+            if(!!attention.insertId) {
+                ctx.status = 200;
+                ctx.body = {
+                    msg: '关注成功',
+                }
+            }
+        }
+    }
+
+    // 获取关注信息处理
+    async attentionGet() {
+        const ctx = this.ctx;
+        const attentionData = ctx.request.body;
+
+        // 查询关注表
+        const attentionGet = await this.app.mysql.get('attention_info', {
+            user_id: attentionData.user_id,
+            object_id: attentionData.object_id,
+            activity_id: attentionData.activity_id,
+        });
+
+        if(!!attentionGet) {
+            if(attentionGet.status == 0) {
+                ctx.status = 200;
+                ctx.body = {
+                    msg: '已关注',
+                }
+            } else {
+                ctx.status = 200;
+                ctx.body = {
+                    msg: '未关注',
+                }
+            }
+            
+        } else {
+            ctx.status = 200;
+            ctx.body = {
+                msg: '未关注',
+            }
         }
     }
 }
