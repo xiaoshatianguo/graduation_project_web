@@ -80,4 +80,6 @@ module.exports = app => {
   router.post('attention', '/operation/attentionGet', controller.operation.attentionGet);
   // 修改个人资料
   router.post('updatePersonalData', '/operation/update_personal_data', controller.operation.updatePersonalData);
+  // 分类页面流加载
+  router.get('flowLoad', '/operation/flow_load', controller.operation.flowLoad);
 };

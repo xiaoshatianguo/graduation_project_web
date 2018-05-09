@@ -11,7 +11,7 @@
     <div class="personal-banner">
         <div class="banner-img" style="background-image: url({{ personalData.bgcover }})">
             <div class="author-portraits">
-                <img class="img" src="{{ personalData.portrait }}" alt="">
+                <img class="img portraitsImg" src="{{ personalData.portrait }}" alt="">
             </div>
             <a class="attention-btn" href="/publish_production">发布作品</a>
         </div>
@@ -21,7 +21,13 @@
 {% block top %}
     <div class="my-info flex-box jc-s jc-ce fd-col">
         <div class="container">
-            <p class="author-name">{{ personalData.nickname }}<small class="grade">【顶级设计师】</small></p>
+            <p class="author-name">{{ personalData.nickname }}<small class="grade">
+                {% if personalData.sort == 0 %}
+                    【普通会员】
+                {% else %}
+                    【认证师】
+                {% endif %}
+            </small></p>
             <p class="author-motto">{{ personalData.personal_statement }}</p>
             <div class="author-data-statistics flex-b-sbc">
                 <div class="data-list">
@@ -398,6 +404,8 @@
                     },
                     success: function(result){
                         alert('个人资料修改成功');
+                        $('.portraitsImg').attr('src', personData.portrait);
+                        $('.banner-img').attr('style', 'background-image: url('+personData.coverSrc+')');
                     },
                     error: function(err) {
                         alert('个人资料修改失败，请稍候重试');
