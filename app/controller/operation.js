@@ -125,6 +125,13 @@ class OperationController extends Controller {
             );
         }
 
+        // 活动留言量+1
+        if(commentData.activity_id != 0) {
+            const updateCommentNumber = await this.app.mysql.query(
+                `update activity_info set comment_number = comment_number+1 where id = ${commentData.activity_id};`
+            );
+        }
+
         if(result.insertId) {
             ctx.status = 200;
             ctx.body = {
@@ -307,6 +314,7 @@ class OperationController extends Controller {
         }
     }
 
+    // 个人中心修改资料
     async updatePersonalData() {
         const ctx = this.ctx;
         const personData = ctx.request.body;
@@ -331,6 +339,7 @@ class OperationController extends Controller {
             }
     }
 
+    // 处理作品分类页面流加载数据
     async flowLoad() {
         const productionData = await this.handlePagination('production_info');
 
@@ -338,7 +347,6 @@ class OperationController extends Controller {
         this.ctx.body = productionData;
     }
 
-    
     /**
      * 根据前端请求分页返回数据
      * @param  {string} tableName     需要进行分页处理的表名

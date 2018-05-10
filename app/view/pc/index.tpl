@@ -28,7 +28,7 @@
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-zuixinlianzai"></use>
                                 </svg>
-                                {{ item.initiator }}
+                                {{ item.nickname }}
                             </div>
                         </div>
                     </a>

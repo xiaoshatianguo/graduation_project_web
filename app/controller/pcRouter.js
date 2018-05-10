@@ -7,22 +7,44 @@ class RouterController extends Controller {
     async index() {
         // 最新活动
         const activity = await this.app.mysql.query(
-            'SELECT * FROM activity_info ORDER BY create_time desc limit 0,6;'
+            `
+            SELECT a.*, u.nickname
+            FROM activity_info a INNER JOIN user_info u on a.initiator = u.id
+            ORDER BY create_time desc
+            limit 0,6;
+            `
         );
 
         // 热门分类
         const sort = await this.app.mysql.query(
-            'SELECT * FROM production_type_info ORDER BY create_time desc limit 0,3;'
+            `
+            SELECT p.id, count(*) pcount, pt.*
+            FROM production_info p INNER JOIN production_type_info pt on p.sort = pt.id
+            group by sort
+            ORDER BY pcount DESC
+            LIMIT 0,6;
+            `
         );
 
         // 优秀认证师
         const certifiedArchitect = await this.app.mysql.query(
-            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc limit 0,3;'
+            `
+            SELECT id, nickname, portrait, personal_statement, integral
+            FROM user_info
+            where sort = 2
+            ORDER BY integral DESC
+            limit 0,3;
+            `
         );
 
         // 会员优秀作品
         const production = await this.app.mysql.query(
-            'SELECT * FROM production_info ORDER BY create_time desc limit 0,3;'
+            `
+            SELECT p.id, p.cover, p.comment_number, p.view_number, p.create_time
+            FROM production_info p
+            ORDER BY (p.comment_number+p.view_number) DESC,p.create_time DESC
+            LIMIT 0,6;
+            `
         );
 
         await this.ctx.render('pc/index.tpl', {
@@ -34,16 +56,37 @@ class RouterController extends Controller {
     }
 
     async activity() {
+        // 热门进行中活动
         const activity = await this.app.mysql.query(
-            'SELECT * FROM activity_info ORDER BY create_time desc limit 0,3;'
+            `
+            SELECT a.id, a.banner, a.comment_number, a.view_number, a.create_time
+            FROM activity_info a
+            WHERE from_unixtime(a.end_time/1000) > CURRENT_TIMESTAMP
+            ORDER BY (a.comment_number+a.view_number) DESC,a.create_time DESC
+            LIMIT 0,3;
+            `
         );
 
+        // 全部进行中活动
         const activityAll = await this.app.mysql.query(
-            'SELECT * FROM activity_info ORDER BY create_time desc;'
+            `
+            SELECT a.*
+            FROM activity_info a
+            WHERE from_unixtime(a.end_time/1000) > CURRENT_TIMESTAMP
+            ORDER BY (a.comment_number+a.view_number) DESC,a.create_time DESC
+            LIMIT 3,1000;
+            `
         );
 
+        // 已结束活动
         const activityEnd = await this.app.mysql.query(
-            'SELECT * FROM activity_info ORDER BY create_time desc;'
+            `
+            SELECT a.*
+            FROM activity_info a
+            WHERE  from_unixtime(a.end_time/1000) < CURRENT_TIMESTAMP
+            ORDER BY (a.comment_number+a.view_number) DESC,a.create_time DESC
+            LIMIT 0,3;
+            `
         );
 
         await this.ctx.render('pc/activity.tpl', {
@@ -55,7 +98,13 @@ class RouterController extends Controller {
 
     async certifiedArchitect() {
         const user = await this.app.mysql.query(
-            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc limit 0,3;'
+            `
+            SELECT id, nickname, portrait, personal_statement, integral
+            FROM user_info
+            where sort = 2
+            ORDER BY integral DESC
+            limit 0,6;
+            `
         );
 
         const userAll = await this.app.mysql.query(
@@ -157,6 +206,12 @@ class RouterController extends Controller {
     async activityDetail () {
         // 活动详情
         const id = this.ctx.query.activityId;
+
+        // 浏览量+1
+        const updateViewNumber = await this.app.mysql.query(
+            `update activity_info set view_number = view_number+1 where id = ${id};`
+        );
+
         const result = await this.app.mysql.get('activity_info', { id });
         tools.formatTime([result]);
         let data = JSON.parse(JSON.stringify(result));

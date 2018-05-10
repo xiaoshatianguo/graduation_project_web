@@ -19,7 +19,7 @@
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
                 {% for item in userData %}
-                    <div class="list-item" href="personal_space?userId={{ item.id }}">
+                    <a class="list-item" href="personal_space?userId={{ item.id }}">
                         <div class="list-img-div">
                             <div class="item-img" style="background-image:url({{ item.portrait }})"></div>
                             <div class="item-cover"></div>
@@ -28,7 +28,7 @@
                             <h3 class="t-title">{{ item.nickname }}</h3>
                             <p class="t-describe">{{ item.personal_statement }}</p>
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
                 {% for item in userAllData %}
-                    <div class="list-item clear-f">
+                    <a class="list-item clear-f">
                         <div class="content">
                             <div class="describe fl flex-b-sc">
                                 <div class="portrait" style="background-image:url({{ item.portrait }})"></div>
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
