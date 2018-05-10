@@ -240,7 +240,14 @@ class RouterController extends Controller {
     }
 
     async joinActivity () {
-        await this.ctx.render('pc/join_activity.tpl');
+        const id = this.ctx.query.activityId;
+        const activity = await this.app.mysql.get('activity_info', { id });
+        let activityData = JSON.parse(JSON.stringify(activity));
+        tools.formatTime([activityData]);
+
+        await this.ctx.render('pc/join_activity.tpl', {
+            activityData,
+        });
     }
 
     async applyActivity () {
