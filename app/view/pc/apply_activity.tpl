@@ -185,86 +185,95 @@
                 type: 'datetime',
                 range: true,
             });
+
+            //建立编辑器
+            layedit.build('activityContent', {
+                uploadImage: {url: '/qiniu', type: 'post'}
+            });
+            layedit.build('activityRule', {
+                uploadImage: {url: '/qiniu', type: 'post'}
+            });
             
             //自定义验证规则
             form.verify({
-                name: function(value){
-                    if(!!value) {
-                    } else {
-                        return '活动标题不能为空';
-                    }
-                },
-                time_range: function(value){
-                    if(!!value) {
-                    } else {
-                        return '活动时间范围不能为空';
-                    }
-                },
-                topic: function(value){
-                    if(!!value) {
-                    } else {
-                        return '活动主题不能为空';
-                    }
-                },
-                describe: function(value){
-                    if(!!value) {
-                    } else {
-                        return '活动简介不能为空';
-                    }
-                },
-                content: function(value){
-                    if(!!value) {
-                    } else {
-                        return '活动内容不能为空';
-                    }
-                },
-                rule: function(value){
-                    if(!!value) {
-                    } else {
-                        return '活动规则不能为空';
-                    }
-                },
-                coverSrc: function(value){
-                    if(!!value) {
-                    } else {
-                        return '必须上传活动封面';
-                    }
-                },
-                bannerSrc: function(value){
-                    if(!!value) {
-                    } else {
-                        return '必须上传活动banner';
-                    }
-                },
+                // name: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '活动标题不能为空';
+                //     }
+                // },
+                // time_range: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '活动时间范围不能为空';
+                //     }
+                // },
+                // topic: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '活动主题不能为空';
+                //     }
+                // },
+                // describe: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '活动简介不能为空';
+                //     }
+                // },
+                // content: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '活动内容不能为空';
+                //     }
+                // },
+                // rule: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '活动规则不能为空';
+                //     }
+                // },
+                // coverSrc: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '必须上传活动封面';
+                //     }
+                // },
+                // bannerSrc: function(value){
+                //     if(!!value) {
+                //     } else {
+                //         return '必须上传活动banner';
+                //     }
+                // },
             });
             
             //监听提交
             form.on('submit(formSubmit)', function(data){
                 var uploadData = JSON.parse(JSON.stringify(data.field));
                 var time_range = uploadData.time_range.split(' - ');
-                $.ajax({
-                    type: 'post',
-                    url: '/operation/apply_activity',
-                    data: {
-                        name: uploadData.name,
-                        initiator: cacheGet('userLoginInfo').id,
-                        topic: uploadData.topic,
-                        describe: uploadData.describe,
-                        content: uploadData.content,
-                        rule: uploadData.rule,
-                        cover: uploadData.coverSrc,
-                        banner: uploadData.bannerSrc,
-                        start_time: time_range[0],
-                        end_time: time_range[1],
-                    },
-                    success: function(result){
-                        alert('申请活动信息提交成功');
-                        pageJumpsHandle();
-                    },
-                    error: function(err) {
-                        alert('申请活动信息提交失败，请稍候重试');
-                    }
-                })
+                console.log(uploadData);
+                // $.ajax({
+                //     type: 'post',
+                //     url: '/operation/apply_activity',
+                //     data: {
+                //         name: uploadData.name,
+                //         initiator: cacheGet('userLoginInfo').id,
+                //         topic: uploadData.topic,
+                //         describe: uploadData.describe,
+                //         content: uploadData.content,
+                //         rule: uploadData.rule,
+                //         cover: uploadData.coverSrc,
+                //         banner: uploadData.bannerSrc,
+                //         start_time: time_range[0],
+                //         end_time: time_range[1],
+                //     },
+                //     success: function(result){
+                //         alert('申请活动信息提交成功');
+                //         pageJumpsHandle();
+                //     },
+                //     error: function(err) {
+                //         alert('申请活动信息提交失败，请稍候重试');
+                //     }
+                // })
             });
 
             /*
@@ -289,7 +298,7 @@
                     });
                 },
                 done: function(res){
-                    $('#coverSrc').val(res.src);
+                    $('#coverSrc').val(res.data.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){
@@ -318,7 +327,7 @@
                     });
                 },
                 done: function(res){
-                    $('#bannerSrc').val(res.src);
+                    $('#bannerSrc').val(res.data.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){

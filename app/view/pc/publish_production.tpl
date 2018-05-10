@@ -280,7 +280,7 @@
                     });
                 },
                 done: function(res){
-                    productionSrc.push(res.src);
+                    productionSrc.push(res.data.src);
                     $('#productionSrc').val(productionSrc);
                     return layer.msg('上传成功');
                 },
@@ -310,7 +310,7 @@
                     });
                 },
                 done: function(res){
-                    $('#coverSrc').val(res.src);
+                    $('#coverSrc').val(res.data.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){
@@ -339,7 +339,7 @@
                     });
                 },
                 done: function(res){
-                    $('#bannerSrc').val(res.src);
+                    $('#bannerSrc').val(res.data.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){

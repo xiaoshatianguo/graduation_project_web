@@ -6,6 +6,7 @@ const qiniu = require('qiniu');
 
 class QiuniuController extends Controller {
     async qiuniuUpload() {
+        const ctx = this.ctx;
         // 获取文件流
         const stream = await this.ctx.getFileStream();
 
@@ -35,23 +36,25 @@ class QiuniuController extends Controller {
         let putExtra = new qiniu.form_up.PutExtra();
         let readableStream = stream; // 可读的流
 
-        formUploader.putStream(uploadToken, key, readableStream, putExtra, function (respErr,
-            respBody, respInfo) {
+        formUploader.putStream(uploadToken, key, readableStream, putExtra, function (respErr, respBody, respInfo) {
             if (respErr) {
                 throw respErr;
             }
             if (respInfo.statusCode == 200) {
-                console.log(respBody);
-                
+                console.log('respBody:'+ respBody);
             } else {
-                console.log(respInfo.statusCode);
-                console.log(respBody);
+                console.log('respInfo.statusCode:'+respInfo.statusCode);
+                console.log('respBody:'+respBody);
             }
         });
 
-        this.ctx.body = {
-            msg: '上传成功',
-            src: 'http://p1s12lchv.bkt.clouddn.com/' + key
+        ctx.status = 200;
+        ctx.body = {
+            "code": 0, //0表示成功，其它失败
+            "msg": "",
+            "data": {
+                "src": 'http://p1s12lchv.bkt.clouddn.com/' + key,
+            }
         };
     }
 }

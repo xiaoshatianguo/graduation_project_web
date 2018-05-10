@@ -334,9 +334,9 @@ class OperationController extends Controller {
         });
 
         ctx.status = 200;
-            ctx.body = {
-                msg: '修改成功',
-            }
+        ctx.body = {
+            msg: '修改成功',
+        }
     }
 
     // 处理作品分类页面流加载数据

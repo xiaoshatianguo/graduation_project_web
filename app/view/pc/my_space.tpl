@@ -431,7 +431,7 @@
                     });
                 },
                 done: function(res){
-                    $('#portraitSrc').val(res.src);
+                    $('#portraitSrc').val(res.data.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){
@@ -459,7 +459,7 @@
                     });
                 },
                 done: function(res){
-                    $('#coverSrc').val(res.src);
+                    $('#coverSrc').val(res.data.src);
                     return layer.msg('上传成功');
                 },
                 error: function(){
