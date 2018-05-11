@@ -2276,6 +2276,15 @@ div.dis-ib {
   display: block;
   width: 100%;
   height: 36.63004vw; }
+
+.content-div {
+  padding: 7.32601vw 7.32601vw; }
+
+.activity-detail-content {
+  padding: 1.4652vw 0; }
+
+.activity-detail-rule {
+  padding: 1.4652vw 0; }
 .join-activity-div {
   padding-top: 1.4652vw;
   background-color: #ebe6e6; }

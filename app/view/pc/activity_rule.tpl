@@ -20,8 +20,13 @@
 {% endblock %}
 
 {% block middle %}
-    <div class="activity-detail-rule">
-        
+    <div class="container content-div">
+        <div class="activity-detail-content">
+            {{ activityDetailData.content | safe }}
+        </div>
+        <div class="activity-detail-rule">
+            {{ activityDetailData.rule | safe }}
+        </div>
     </div>
 {% endblock %}
 
