@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `production` VARCHAR(255) DEFAULT '' comment '作品上传',
   `banner` VARCHAR(255) DEFAULT '' comment 'banner上传',
   `cover` VARCHAR(255) DEFAULT '' comment '封面上传',
-  `describe` VARCHAR(255) DEFAULT '' comment '作品简述',
+  `describe` LONGTEXT comment '作品简述',
   `photography_props` VARCHAR(255) DEFAULT '' comment '摄影道具',
   `photography_site` VARCHAR(255) DEFAULT '' comment '摄影地点',
   `content` VARCHAR(255) DEFAULT '' comment '作品描述详情',

@@ -94,7 +94,7 @@
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">描述详情</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea class="layui-textarea" name="content" lay-verify="content" placeholder="请输入描述详情"></textarea>
+                                            <textarea class="layui-textarea" name="content" lay-verify="content" placeholder="请输入描述详情" id="productionDescribe"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -203,6 +203,11 @@
 
             var productionSrc = [];
             var activityId = getQueryString('activityId');
+
+            //建立编辑器
+            var productionDescribe = layedit.build('productionDescribe', {
+                uploadImage: {url: '/qiniu', type: 'post'}
+            });
             
             //自定义验证规则
             form.verify({
@@ -236,12 +241,6 @@
                         return '作品简介不能为空';
                     }
                 },
-                content: function(value) {
-                    if(!!value) {
-                    } else {
-                        return '作品描述详情不能为空';
-                    }
-                },
                 productionSrc: function(value) {
                     if(!!value) {
                     } else {
@@ -265,7 +264,12 @@
             //监听提交
             form.on('submit(formSubmit)', function(data){
                 var uploadData = JSON.parse(JSON.stringify(data.field));
-
+                var describeData = layedit.getContent(productionDescribe);
+                // 单独验证活动内容和规则不能为空
+                if (!!describeData) {
+                } else {
+                    alert('描述详情不能为空');
+                }
                 $.ajax({
                     type: 'post',
                     url: '/operation/upload_production',
@@ -276,7 +280,7 @@
                         production: uploadData.productionSrc,
                         cover: uploadData.coverSrc,
                         banner: uploadData.bannerSrc,
-                        describe: uploadData.describe,
+                        describe: describeData,
                         photography_props: uploadData.photography_props,
                         photography_site: uploadData.photography_site,
                         content: uploadData.content,
