@@ -272,11 +272,9 @@ class OperationController extends Controller {
                 activity_id: attentionData.activity_id || 0,
             })
 
-            if(!!attention.insertId) {
-                ctx.status = 200;
-                ctx.body = {
-                    msg: '关注成功',
-                }
+            ctx.status = 200;
+            ctx.body = {
+                msg: '关注成功',
             }
         }
     }
@@ -289,8 +287,8 @@ class OperationController extends Controller {
         // 查询关注表
         const attentionGet = await this.app.mysql.get('attention_info', {
             user_id: attentionData.user_id,
-            object_id: attentionData.object_id,
-            activity_id: attentionData.activity_id,
+            object_id: attentionData.object_id || 0,
+            activity_id: attentionData.activity_id || 0,
         });
 
         if(!!attentionGet) {

@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `author_id` INT(64) DEFAULT '' comment '冗余作者id',
   `sort` VARCHAR(255) DEFAULT '' comment '作品所属类别',
   `activity_id` INT(64) DEFAULT '' comment '该作品参加的活动id',
-  `production` VARCHAR(255) DEFAULT '' comment '作品上传',
+  `production` LONGTEXT comment '作品上传',
   `banner` VARCHAR(255) DEFAULT '' comment 'banner上传',
   `cover` VARCHAR(255) DEFAULT '' comment '封面上传',
   `describe` LONGTEXT comment '作品简述',

@@ -39,8 +39,8 @@
                    <p class="author-name">{{ productionData.data.nickname }}</p>
                    <span class="author-sort">上海/插画师</span>
                    <div class="btn-list flex-b-sbc">
-                        <button class="attention-btn">关注</button>
-                        <button class="detail-btn">主页</button>
+                        <a href="javascript:;" class="attention-btn" userId="{{ productionData.data.id }}">关注</a>
+                        <a href="/personal_space?userId={{ productionData.data.id }}" class="detail-btn">主页</a>
                    </div>
                </div>
            </div>
@@ -51,13 +51,14 @@
 {% block middle %}
    <div class="production-img-list">
        <div class="container">
-           <div class="list-describe">
-               <p class="describe">{{ productionData.data.describe }}
-                    <!-- {{ productionData.content }} -->
+           <div class="list-describe clear-f">
+               <p class="describe">{{ productionData.data.describe | safe }}
                 </p>
            </div>
            <div class="img-list">
-               <img class="img" src="{{ productionData.production }}" alt="">
+               {% for item in productionData.data.production %}
+                    <img class="img" src="{{ item }}" alt="">
+               {% endfor %}
            </div>
        </div>
    </div>
@@ -111,4 +112,73 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        var object_id = $('.attention-btn').attr('userId');
+        var activity_id = getQueryString('activityId');
+        var attentionBtn = $('.attention-btn');
+
+        var userLoginInfo = cacheGet('userLoginInfo');
+
+        if(!!userLoginInfo) {
+            // 显示关注或取消关注处理
+            $.ajax({
+                url: '/operation/attentionGet',
+                type: 'post',
+                data: {
+                    user_id: cacheGet('userLoginInfo').id,
+                    object_id: object_id || 0,
+                    activity_id: activity_id || 0,
+                },
+                success: function(result) {
+                    var attentionHtml = attentionBtn.text();
+                    if(result.msg == '已关注') {
+                        attentionBtn.text('取消关注');
+                    } else if(result.msg == '未关注') {
+                        attentionBtn.text('关注');
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+        }
+
+        // 关注操作
+        $('.attention-btn').on('click', function() {
+            if(!!userLoginInfo) {
+                $.ajax({
+                    url: '/operation/attention',
+                    type: 'post',
+                    data: {
+                        user_id: cacheGet('userLoginInfo').id,
+                        object_id: object_id || 0,
+                        activity_id: activity_id || 0,
+                    },
+                    success: function(result) {
+                        if(!!result.attentionGet) {
+                            if(result.attentionGet.status == 0) {
+                                attentionBtn.text('关注');
+                                alert('已取消关注');
+                            } else {
+                                attentionBtn.text('取消关注');
+                                alert('关注成功');
+                            }
+                        } else {
+                            alert('关注成功');
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err);
+                        console.log('关注失败');
+                    }
+                })
+            } else {
+                alert('请先登录后再关注');
+                location.href = '/login';
+            }
+        })
+    </script>
 {% endblock %}

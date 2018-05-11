@@ -309,6 +309,8 @@ class RouterController extends Controller {
             commentsData,
         }
 
+        productionData.data.production = productionData.data.production.split(',');
+
         await this.ctx.render('pc/production_detail.tpl', {
             productionData,
         });

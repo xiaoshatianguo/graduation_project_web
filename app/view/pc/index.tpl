@@ -79,7 +79,7 @@
             </div>
             <div class="certified-architect-list flex-b-sbc fw-wr">
                 {% for item in certifiedArchitectData %}
-                    <a class="list-item" href="personal_space?userId={{ item.id }}">
+                    <a class="list-item" href="/personal_space?userId={{ item.id }}">
                         <div class="list-img-div">
                             <div class="item-img" style="background-image:url({{ item.portrait }})"></div>
                         </div>

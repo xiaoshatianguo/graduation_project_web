@@ -87,6 +87,9 @@ $t-hover-color: #ee534e;
                         width: 80px;
                         height: 35px;
 
+                        text-align: center;
+                        line-height: 35px;
+
                         border-radius: 5px;
 
                         background-color: $main-color;
@@ -96,6 +99,9 @@ $t-hover-color: #ee534e;
                         margin-left: 10px;
                         width: 80px;
                         height: 35px;
+
+                        text-align: center;
+                        line-height: 35px;
 
                         border-radius: 5px;
                         border: 1px solid $gray-color;
@@ -119,10 +125,18 @@ $t-hover-color: #ee534e;
 
                 color: $gray-color;
             }
+
+            img {
+                max-width: 100%;
+            }
         }
 
         .img-list {
-            padding: 30px;
+            padding: 100px;
+
+            .img {
+                margin: 10px 0;
+            }
         }
     }
 }

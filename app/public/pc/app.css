@@ -2657,12 +2657,16 @@ div.dis-ib {
         .production-detail-div .container .about-author .author-right .btn-list .attention-btn {
           width: 5.86081vw;
           height: 2.5641vw;
+          text-align: center;
+          line-height: 2.5641vw;
           border-radius: 0.3663vw;
           background-color: #f068a9; }
         .production-detail-div .container .about-author .author-right .btn-list .detail-btn {
           margin-left: 0.7326vw;
           width: 5.86081vw;
           height: 2.5641vw;
+          text-align: center;
+          line-height: 2.5641vw;
           border-radius: 0.3663vw;
           border: 1px solid #5e6468;
           background-color: #fff; }
@@ -2673,9 +2677,13 @@ div.dis-ib {
     font-size: 1.4652vw;
     line-height: 3.663vw;
     color: #5e6468; }
+  .production-img-list .container .list-describe img {
+    max-width: 100%; }
 
 .production-img-list .container .img-list {
-  padding: 2.1978vw; }
+  padding: 7.32601vw; }
+  .production-img-list .container .img-list .img {
+    margin: 0.7326vw 0; }
 
 .production-detail-comment {
   background-color: #fff;
