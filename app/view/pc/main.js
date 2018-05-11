@@ -5,6 +5,7 @@ import certified_architect from './styles/certified_architect.scss';
 import personal_space from './styles/personal_space.scss';
 import my_space from './styles/my_space.scss';
 import activity_detail from './styles/activity_detail.scss';
+import activity_rule from './styles/activity_rule.scss';
 import join_activity from './styles/join_activity.scss';
 import apply_activity from './styles/apply_activity.scss';
 import activity_manage from './styles/activity_manage.scss';

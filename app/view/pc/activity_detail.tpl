@@ -29,7 +29,7 @@
                     <a href="javascript:;" class="t-btn upload-btn">
                         上传活动作品
                     </a>
-                    <a class="t-btn detail-btn">查看活动详情</a>
+                    <a class="t-btn detail-btn" href="/activity_rule?activityId={{ activityDetailData.id }}">查看活动详情</a>
                 </div>
             </div>
         </div>

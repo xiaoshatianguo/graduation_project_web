@@ -239,6 +239,18 @@ class RouterController extends Controller {
         });
     }
 
+    async activityRule() {
+        const id = this.ctx.query.activityId;
+
+        const result = await this.app.mysql.get('activity_info', { id });
+        tools.formatTime([result]);
+        let data = JSON.parse(JSON.stringify(result));
+
+        await this.ctx.render('pc/activity_rule.tpl', {
+            activityDetailData: data,
+        });
+    }
+
     async joinActivity () {
         const id = this.ctx.query.activityId;
         const activity = await this.app.mysql.get('activity_info', { id });

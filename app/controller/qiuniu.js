@@ -36,26 +36,34 @@ class QiuniuController extends Controller {
         let putExtra = new qiniu.form_up.PutExtra();
         let readableStream = stream; // 可读的流
 
-        formUploader.putStream(uploadToken, key, readableStream, putExtra, function (respErr, respBody, respInfo) {
-            if (respErr) {
-                throw respErr;
+        return new Promise(function(resovle, reject) {
+            formUploader.putStream(uploadToken, key, readableStream, putExtra, function(respErr, respBody, respInfo) {
+                if (respErr) {
+                    // throw respErr
+                    reject(respErr)
+                }
+                if (respInfo.statusCode == 200) {
+                    console.log('respBody:' + respBody)
+                    resovle(respBody)
+                } else {
+                    console.log('respInfo.statusCode:' + respInfo.statusCode)
+                    console.log('respBody:' + respBody)
+                    resovle(respInfo)
+                }
+            })
+        }).then(function() {
+            ctx.status = 200
+            ctx.body = {
+                code: 0, //0表示成功，其它失败
+                msg: '',
+                data: {
+                    src: 'http://p1s12lchv.bkt.clouddn.com/' + key
+                }
             }
-            if (respInfo.statusCode == 200) {
-                console.log('respBody:'+ respBody);
-            } else {
-                console.log('respInfo.statusCode:'+respInfo.statusCode);
-                console.log('respBody:'+respBody);
-            }
-        });
-
-        ctx.status = 200;
-        ctx.body = {
-            "code": 0, //0表示成功，其它失败
-            "msg": "",
-            "data": {
-                "src": 'http://p1s12lchv.bkt.clouddn.com/' + key,
-            }
-        };
+        })
+        .catch(function(err) {
+            console.log(err)
+        })
     }
 }
 

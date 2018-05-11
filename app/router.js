@@ -27,6 +27,7 @@ module.exports = app => {
   router.get('/sort', controller.pcRouter.sort);
   router.get('/production_detail', controller.pcRouter.productionDetail);
   router.get('/publish_production', controller.pcRouter.publishProduction);
+  router.get('/activity_rule', controller.pcRouter.activityRule);
 
   /**
    * 管理后台api路由
@@ -47,6 +48,7 @@ module.exports = app => {
   // 七牛云
   router.get('/api/qiuniuyun', controller.api.qiuniuUpload.qiuniuUpload);
   router.post('/qiniu', controller.qiuniu.qiuniuUpload);
+  router.post('/tencent', controller.tencent.tencentUpload);
 
   // 发送验证码
   router.post('send_code', '/api/send_email', controller.api.sendEmail.sendEmail);
