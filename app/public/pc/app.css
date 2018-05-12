@@ -1330,7 +1330,9 @@ div.dis-ib {
           margin-top: 0.3663vw;
           width: 3.51648vw;
           height: 3.51648vw;
-          overflow: hidden; }
+          overflow: hidden;
+          background-position: 100% 100%;
+          background-size: cover; }
         .author-info .tag-div .layui-tab-content .personal-message .comment-show-con-list {
           margin-left: 3%;
           width: 85%; }
@@ -1391,17 +1393,15 @@ div.dis-ib {
           margin-right: 0.3663vw;
           width: 1.24542vw;
           height: 1.24542vw;
-          display: block;
+          display: none;
           float: left;
-          background-image: url("/public/images/cover/1.jpg");
           background-repeat: no-repeat;
-          background-position: -0.43956vw -14.50549vw; }
+          background-position: 100% 100%;
+          background-size: cover; }
         .author-info .tag-div .layui-tab-content .personal-message .z-num {
           font-style: normal; }
         .author-info .tag-div .layui-tab-content .personal-message .date-dz-z-click {
           color: #b83b44; }
-        .author-info .tag-div .layui-tab-content .personal-message .red {
-          background-position: -0.43956vw -8.71795vw !important; }
         .author-info .tag-div .layui-tab-content .personal-message .hf-pl {
           display: block;
           float: right;

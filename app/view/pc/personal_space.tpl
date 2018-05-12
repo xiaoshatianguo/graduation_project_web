@@ -212,29 +212,35 @@
                             <!--评论区域 end-->
                             <!--回复区域 begin-->
                             <div class="comment-show">
-                                <div class="comment-show-con clear-f">
-                                    <div class="comment-show-con-img fl">
-                                        <img src="/public/images/cover/1.jpg" alt="">
-                                    </div>
-                                    <div class="comment-show-con-list fl clear-f">
-                                        <div class="pl-text clear-f">
-                                            <a href="#" class="comment-size-name">张三 : </a>
-                                            <span class="my-pl-con">&nbsp;来啊 造作啊!</span>
-                                        </div>
-                                        <div class="date-dz clear-f">
-                                            <span class="date-dz-left fl comment-time">2017-5-2 11:11:39</span>
-                                            <div class="date-dz-right fr comment-pl-block clear-f">
-                                                <a href="javascript:;" class="removeBlock">删除</a>
-                                                <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复</a>
-                                                <span class="fl date-dz-line">|</span>
-                                                <a href="javascript:;" class="date-dz-z fl">
-                                                    <i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)
-                                                </a>
+                                {% if commentsData.length > 0 %}
+                                    {% for item in commentsData %}
+                                        <div class="comment-show-con clear-f" commentId={{ item.id }}>
+                                            <div class="comment-show-con-img fl" style="background-image:url({{ item.portrait }})"></div>
+                                            <div class="comment-show-con-list fl clear-f">
+                                                <div class="pl-text clear-f">
+                                                    <a href="#" class="comment-size-name" userId="{{ item.user_id }}">{{ item.nickname }}：</a>
+                                                    <span class="my-pl-con">&nbsp;{{ item.content }}</span>
+                                                </div>
+                                                <div class="date-dz">
+                                                    <span class="date-dz-left fl comment-time">{{ item.create_time }}</span>
+                                                    <div class="date-dz-right fr comment-pl-block">
+                                                        <a href="javascript:;" class="removeBlock">删除</a>
+                                                        {% if item.number>0 %}
+                                                            <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">查看<i class="z-num">{{ item.number }}</i>条回复</a>
+                                                        {% else %}
+                                                            <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block fl">回复(<i class="z-num">{{ item.number }}</i>)</a>
+                                                        {% endif %}
+                                                        <span class="fl date-dz-line">|</span>
+                                                        <a href="javascript:;" class="date-dz-z fl">
+                                                            <i class="date-dz-z-click-red" style="background-image: url({{ item.starImg }})"></i>赞(<i class="z-num">{{ item.star }}</i>)
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="hf-list-con"></div>
                                             </div>
                                         </div>
-                                        <div class="hf-list-con"></div>
-                                    </div>
-                                </div>
+                                    {% endfor %}
+                                {% endif %}
                             </div>
                             <!--回复区域 end-->
                         </div>
