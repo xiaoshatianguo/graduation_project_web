@@ -1,19 +1,14 @@
-$main-color: #f39549;
+$main-color: #fff;
 $main-padding: 0 50px 30px;
 $black-color: #101213;
 $gray-color: #5e6468;
 $t-hover-color: #ee534e;
 
 .header {
-    // position: fixed;
-    // top: 0;
-
     width: 100%;
-    height: 60px;
+    height: 100px;
 
     font-size: 20px;
-
-    color: rgb(22, 21, 21);
 
     background-color: $main-color;
 
@@ -25,7 +20,7 @@ $t-hover-color: #ee534e;
             
             margin-left: 100px;
             width: 160px;
-            line-height: 55px;
+            line-height: 95px;
 
             .img {
                 width: 155px;
@@ -39,10 +34,10 @@ $t-hover-color: #ee534e;
             .nav-li {
                 margin-right: 50px;
 
-                line-height: 60px;
+                line-height: 100px;
                 font-size: 15px;
 
-                color: rgb(22, 21, 21);
+                color: $black-color;
             }
         }
 
@@ -52,36 +47,12 @@ $t-hover-color: #ee534e;
             .nav-li {
                 margin-right: 50px;
 
-                line-height: 60px;
+                line-height: 100px;
                 font-size: 15px;
 
-                color: rgb(22, 21, 21);
+                color: $black-color;
             }
         }
-
-        // .logo {
-        //     position: absolute;
-        //     left: 50%;
-
-        //     margin-left: -150px;
-        //     width: 300px;
-
-        //     .logo-top {
-        //         margin-bottom: 20px;
-        //         width: 100px;
-        //         height: 5px;
-
-        //         background-color: $main-color;
-        //     }
-
-        //     .logo-en {
-        //         margin-bottom: 20px;
-        //     }
-
-        //     .logo-zh {
-        //         font-size: 25px;
-        //     }
-        // }
     }
 }
 
@@ -94,25 +65,25 @@ $t-hover-color: #ee534e;
             background-position: center;
             background-size: cover;
 
-            height: 500px;
+            height: 550px;
         }
     }
 }
 
 .title {
-    padding: 30px 0 30px;
+    padding: 30px 0 60px;
 
     font-size: 30px;
     text-align: center;
 
-    color: $main-color;
+    color: $t-hover-color;
 
     .title-sm {
         padding-left: 30px;
 
         font-size: 25px;
 
-        color: #8e7e7e;
+        color: $gray-color;
     }
 
     .title-bg {
@@ -120,7 +91,7 @@ $t-hover-color: #ee534e;
 
         font-size: 30px;
 
-        color: #dd2222;
+        color: $t-hover-color;
     }
 }
 
@@ -542,14 +513,14 @@ $t-hover-color: #ee534e;
 }
 
 .footer {
-    padding: 30px 0 100px;
+    padding: 30px 0 50px;
 
     .footer-top {
         background-position: center;
         background-size: cover;
 
         width: 100%;
-        height: 350px;
+        height: 500px;
 
         .title {
             padding-top: 50px;

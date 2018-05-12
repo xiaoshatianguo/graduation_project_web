@@ -29,6 +29,7 @@
                     <img class="img" src="/public/images/photo1.png" alt="">
                 </a>
                 <ul class="header-nav-right flex-b-sc fl">
+                    <a href="/" class="nav-li">首页</a>
                     <a href="/activity" class="nav-li">活动</a>
                     <a href="/certified_architect" class="nav-li">认证师</a>
                 </ul>
@@ -42,9 +43,15 @@
         <div class="banner">
             <div class="container swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc (7).jpg');">
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/3.png');">
                     </div>
-                    <div class="swiper-slide" style="background-image: url('/public/images/banner/pc (3).jpg');">
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/7.png');">
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/6.jpg');">
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/5.jpg');">
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('/public/images/banner/4.png');">
                     </div>
                 </div>
                 <div class ="swiper-pagination"></div>
@@ -66,8 +73,7 @@
 
     {% block footer %}
         <footer class="footer">
-            <div class="footer-top" style="background-image:url('/public/images/banner/timg (1).jpg')">
-                <p class="title">YY摄影</p>
+            <div class="footer-top" style="background-image:url('/public/images/banner/13.png')">
             </div>
             <div class="footer-bottom">
                 <p class="text">2018 YI&YI Photo Web</p>

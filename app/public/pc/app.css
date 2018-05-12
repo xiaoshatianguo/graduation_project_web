@@ -371,17 +371,16 @@ div.dis-ib {
 @charset "UTF-8";
 .header {
   width: 100%;
-  height: 4.3956vw;
+  height: 7.32601vw;
   font-size: 1.4652vw;
-  color: #161515;
-  background-color: #f39549; }
+  background-color: #fff; }
   .header .container {
     position: relative; }
     .header .container .logo-img {
       display: block;
       margin-left: 7.32601vw;
       width: 11.72161vw;
-      line-height: 4.0293vw; }
+      line-height: 6.95971vw; }
       .header .container .logo-img .img {
         width: 11.35531vw;
         height: 3.663vw; }
@@ -389,16 +388,16 @@ div.dis-ib {
       margin-left: 9.52381vw; }
       .header .container .header-nav-right .nav-li {
         margin-right: 3.663vw;
-        line-height: 4.3956vw;
+        line-height: 7.32601vw;
         font-size: 1.0989vw;
-        color: #161515; }
+        color: #101213; }
     .header .container .header-login {
       margin-right: 3.663vw; }
       .header .container .header-login .nav-li {
         margin-right: 3.663vw;
-        line-height: 4.3956vw;
+        line-height: 7.32601vw;
         font-size: 1.0989vw;
-        color: #161515; }
+        color: #101213; }
 
 .banner .swiper-container {
   width: 100%;
@@ -406,21 +405,21 @@ div.dis-ib {
   .banner .swiper-container .swiper-slide {
     background-position: center;
     background-size: cover;
-    height: 36.63004vw; }
+    height: 40.29304vw; }
 
 .title {
-  padding: 2.1978vw 0 2.1978vw;
+  padding: 2.1978vw 0 4.3956vw;
   font-size: 2.1978vw;
   text-align: center;
-  color: #f39549; }
+  color: #ee534e; }
   .title .title-sm {
     padding-left: 2.1978vw;
     font-size: 1.8315vw;
-    color: #8e7e7e; }
+    color: #5e6468; }
   .title .title-bg {
     padding-right: 2.1978vw;
     font-size: 2.1978vw;
-    color: #dd2222; }
+    color: #ee534e; }
 
 .new-activity {
   margin-top: 2.1978vw; }
@@ -667,12 +666,12 @@ div.dis-ib {
       background-size: cover; }
 
 .footer {
-  padding: 2.1978vw 0 7.32601vw; }
+  padding: 2.1978vw 0 3.663vw; }
   .footer .footer-top {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 25.64103vw; }
+    height: 36.63004vw; }
     .footer .footer-top .title {
       padding-top: 3.663vw;
       font-size: 3.663vw;
@@ -692,7 +691,7 @@ div.dis-ib {
   width: 73.26007vw;
   height: 40.29304vw;
   background-color: #fff;
-  border: 0.21978vw solid #f39549;
+  border: 0.21978vw solid #fff;
   border-radius: 0.7326vw; }
   .slider-sort-div .trangle {
     position: absolute;
@@ -700,7 +699,7 @@ div.dis-ib {
     right: -1.4652vw;
     width: 0;
     height: 0;
-    border-left: 1.4652vw solid #f39549;
+    border-left: 1.4652vw solid #fff;
     border-top: 1.4652vw solid transparent;
     border-bottom: 1.4652vw solid transparent; }
   .slider-sort-div .sort-show-list {
@@ -772,7 +771,7 @@ div.dis-ib {
 
 /* 滚动条的滑轨背景颜色 */
 .body::-webkit-scrollbar-thumb {
-  background-color: #f39549; }
+  background-color: #fff; }
 
 /* 滑块颜色 */
 .body::-webkit-scrollbar-button {
@@ -792,7 +791,7 @@ div.dis-ib {
 
 /* 滚动条的滑轨背景颜色 */
 .sort-show-list::-webkit-scrollbar-thumb {
-  background-color: #f39549; }
+  background-color: #fff; }
 
 /* 滑块颜色 */
 .sort-show-list::-webkit-scrollbar-button {
@@ -817,7 +816,7 @@ div.dis-ib {
   height: 4.3956vw;
   line-height: 4.3956vw;
   border-radius: 2.1978vw;
-  background-color: #f39549 !important;
+  background-color: #fff !important;
   background-position: center center;
   background-size: cover; }
 .activity-ing-hot {

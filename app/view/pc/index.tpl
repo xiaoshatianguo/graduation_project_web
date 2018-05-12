@@ -101,7 +101,7 @@
         <div class="container">
             <div class="title">
                 /<span class="title-sm">YY摄影</span>
-                <span class="title-bg">会员优秀作品</span>/
+                <span class="title-bg">优秀作品</span>/
             </div>
             <div class="production-list flex-b-sbc fw-wr">
                 {% for item in productionData %}
