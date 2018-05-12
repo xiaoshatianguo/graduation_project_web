@@ -95,7 +95,7 @@
                                     </div>
                                 </a>
                             {% endfor %}
-                        </a>
+                        </div>
                     </div>
                     <div class="layui-tab-item personal-data">
                         <div class="data-show">
