@@ -84,4 +84,8 @@ module.exports = app => {
   router.post('updatePersonalData', '/operation/update_personal_data', controller.operation.updatePersonalData);
   // 分类页面流加载
   router.get('flowLoad', '/operation/flow_load', controller.operation.flowLoad);
+  // 收藏作品
+  router.post('collectionProduction', '/operation/collection_production', controller.operation.collectionProduction);
+  // 获取收藏作品信息处理
+  router.post('collectionGet', '/operation/collectionGet', controller.operation.collectionGet);
 };

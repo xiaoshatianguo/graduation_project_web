@@ -345,6 +345,74 @@ class OperationController extends Controller {
         this.ctx.body = productionData;
     }
 
+    // 收藏作品
+    async collectionProduction() {
+        const ctx = this.ctx;
+        const collectionData = ctx.request.body;
+
+        // 查询收藏表，是否重复收藏
+        const collectionGet = await this.app.mysql.get('collection_info', {
+            user_id: collectionData.user_id,
+            object_id: collectionData.object_id,
+        });
+
+        let collection;
+        if(!!collectionGet) {
+            collection = await this.app.mysql.query(
+                `update collection_info set status = !status where id = ${collectionGet.id};`
+            );
+
+            ctx.status = 200;
+            ctx.body = {
+                collectionGet,
+                msg: '收藏成功或取消收藏',
+            }
+        } else {
+            // 插入收藏表
+            collection = this.app.mysql.insert('collection_info', {
+                user_id: collectionData.user_id,
+                object_id: collectionData.object_id || 0,
+            })
+
+            ctx.status = 200;
+            ctx.body = {
+                msg: '收藏成功',
+            }
+        }
+    }
+
+    // 获取收藏信息处理
+    async collectionGet() {
+        const ctx = this.ctx;
+        const collectionData = ctx.request.body;
+
+        // 查询关注表
+        const collectionGet = await this.app.mysql.get('collection_info', {
+            user_id: collectionData.user_id,
+            object_id: collectionData.object_id || 0,
+        });
+
+        if(!!collectionGet) {
+            if(collectionGet.status == 0) {
+                ctx.status = 200;
+                ctx.body = {
+                    msg: '已收藏',
+                }
+            } else {
+                ctx.status = 200;
+                ctx.body = {
+                    msg: '未收藏',
+                }
+            }
+            
+        } else {
+            ctx.status = 200;
+            ctx.body = {
+                msg: '未收藏',
+            }
+        }
+    }
+
     /**
      * 根据前端请求分页返回数据
      * @param  {string} tableName     需要进行分页处理的表名

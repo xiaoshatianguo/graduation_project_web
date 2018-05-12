@@ -2655,6 +2655,7 @@ div.dis-ib {
     .production-detail-div .container .about-author .author-right {
       margin-left: 2.1978vw; }
       .production-detail-div .container .about-author .author-right .author-name {
+        display: block;
         font-size: 1.8315vw;
         line-height: 2.9304vw; }
       .production-detail-div .container .about-author .author-right .author-sort {
@@ -2669,7 +2670,7 @@ div.dis-ib {
           line-height: 2.5641vw;
           border-radius: 0.3663vw;
           background-color: #f068a9; }
-        .production-detail-div .container .about-author .author-right .btn-list .detail-btn {
+        .production-detail-div .container .about-author .author-right .btn-list .collection-btn {
           margin-left: 0.7326vw;
           width: 5.86081vw;
           height: 2.5641vw;

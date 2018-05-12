@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block top %}
-    <div class="register-page flex-b-cc" style="background-image: url('/public/images/banner/timg.jpg')">
+    <div class="register-page flex-b-cc" style="background-image: url('/public/images/banner/10.jpg')">
         <div class="register-div">
             <div class="fl leader-left">
                 <svg class="icon" aria-hidden="true">

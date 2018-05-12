@@ -36,11 +36,11 @@
            <div class="about-author fl">
                <div class="portrait-img fl" style="background-image:url({{ productionData.data.portrait }})"></div>
                <div class="author-right fl">
-                   <p class="author-name">{{ productionData.data.nickname }}</p>
+                   <a class="author-name" href="/personal_space?userId={{ productionData.data.uid }}">{{ productionData.data.nickname }}</a>
                    <span class="author-sort">上海/插画师</span>
                    <div class="btn-list flex-b-sbc">
                         <a href="javascript:;" class="attention-btn" userId="{{ productionData.data.id }}">关注</a>
-                        <a href="/personal_space?userId={{ productionData.data.uid }}" class="detail-btn">主页</a>
+                        <a href="javascript:;" class="collection-btn">收藏作品</a>
                    </div>
                </div>
            </div>
@@ -116,6 +116,7 @@
 
 {% block script %}
     <script>
+        // 关注用户
         var object_id = $('.attention-btn').attr('userId');
         var activity_id = getQueryString('activityId');
         var attentionBtn = $('.attention-btn');
@@ -128,7 +129,7 @@
                 url: '/operation/attentionGet',
                 type: 'post',
                 data: {
-                    user_id: cacheGet('userLoginInfo').id,
+                    user_id: userLoginInfo.id,
                     object_id: object_id || 0,
                     activity_id: activity_id || 0,
                 },
@@ -167,6 +168,7 @@
                                 alert('关注成功');
                             }
                         } else {
+                            attentionBtn.text('取消关注');
                             alert('关注成功');
                         }
                     },
@@ -177,6 +179,69 @@
                 })
             } else {
                 alert('请先登录后再关注');
+                location.href = '/login';
+            }
+        })
+
+        // 收藏作品
+        var collectionBtn = $('.collection-btn');
+        var productionId = getQueryString('productionId');
+        var userLoginInfo = cacheGet('userLoginInfo');
+
+        if(!!userLoginInfo) {
+            // 显示收藏或取消收藏处理
+            $.ajax({
+                url: '/operation/collectionGet',
+                type: 'post',
+                data: {
+                    user_id: userLoginInfo.id,
+                    object_id: productionId || 0,
+                },
+                success: function(result) {
+                    var collectionHtml = collectionBtn.text();
+                    if(result.msg == '已收藏') {
+                        collectionBtn.text('取消收藏');
+                    } else if(result.msg == '未收藏') {
+                        collectionBtn.text('收藏');
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+        }
+
+        // 收藏操作
+        $('.collection-btn').on('click', function() {
+            if(!!userLoginInfo) {
+                $.ajax({
+                    url: '/operation/collection_production',
+                    type: 'post',
+                    data: {
+                        user_id: userLoginInfo.id,
+                        object_id: productionId || 0,
+                    },
+                    success: function(result) {
+                        if(!!result.collectionGet) {
+                            if(result.collectionGet.status == 0) {
+                                collectionBtn.text('收藏作品');
+                                alert('已取消收藏');
+                            } else {
+                                collectionBtn.text('取消收藏');
+                                alert('收藏成功');
+                            }
+                        } else {
+                            collectionBtn.text('取消收藏');
+                            alert('收藏成功');
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err);
+                        console.log('关注失败');
+                    }
+                })
+            } else {
+                alert('请先登录后再收藏');
                 location.href = '/login';
             }
         })
