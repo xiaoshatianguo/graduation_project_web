@@ -55,7 +55,7 @@
                     <div class="layui-tab-item layui-show personal-product">
                         <div class="product-show flex-b-sc fw-wr">
                             {% for item in productionData %}
-                                <div class="list-item" href="production_detail?productionId={{ item.id }}">
+                                <a class="list-item" href="production_detail?productionId={{ item.id }}">
                                     <div class="list-img-div">
                                         <div class="item-img" style="background-image:url({{ item.cover }})"></div>
                                         <div class="item-cover"></div>
@@ -93,9 +93,9 @@
                                             <span class="fr product-create-time">{{ item.create_time }}</span>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             {% endfor %}
-                        </div>
+                        </a>
                     </div>
                     <div class="layui-tab-item personal-data">
                         <div class="data-show">

@@ -123,19 +123,19 @@ class RouterController extends Controller {
         let personalData = JSON.parse(JSON.stringify(personal));
 
         // 我的收藏
-        let myCollection = personalData.collectionIds;
-        let collectionIds = [];
+        // let myCollection = personalData.collectionIds;
+        // let collectionIds = [];
         let collectionDataArr = [];
 
-        if(!!personalData.collectionIds) {
-            collectionIds = personalData.collectionIds.split(',');
+        // if(!!personalData.collectionIds) {
+        //     collectionIds = personalData.collectionIds.split(',');
     
-            for (let i = 0; i < collectionIds.length; i++) {
-                let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
-                tools.formatTime([productionData]);
-                collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
-            }
-        }
+        //     for (let i = 0; i < collectionIds.length; i++) {
+        //         let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
+        //         tools.formatTime([productionData]);
+        //         collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
+        //     }
+        // }
 
         // 我的作品
         const productionData = await this.app.mysql.query(
@@ -169,19 +169,19 @@ class RouterController extends Controller {
         tools.formatTime([personalData]);
 
         // 我的收藏
-        let myCollection = personalData.collectionIds;
-        let collectionIds = [];
+        // let myCollection = personalData.collectionIds;
+        // let collectionIds = [];
         let collectionDataArr = [];
 
-        if(!!personalData.collectionIds) {
-            collectionIds = personalData.collectionIds.split(',');
+        // if(!!personalData.collectionIds) {
+        //     collectionIds = personalData.collectionIds.split(',');
     
-            for (let i = 0; i < collectionIds.length; i++) {
-                let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
-                tools.formatTime([productionData]);
-                collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
-            }
-        }
+        //     for (let i = 0; i < collectionIds.length; i++) {
+        //         let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
+        //         tools.formatTime([productionData]);
+        //         collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
+        //     }
+        // }
 
         // 我的作品
         const productionData = await this.app.mysql.query(
@@ -300,7 +300,7 @@ class RouterController extends Controller {
         );
 
         const result = await this.app.mysql.query(
-            `SELECT p.*,u.nickname,u.portrait FROM production_info p inner join user_info u on p.author_id = u.id where p.id=${id};`
+            `SELECT p.*,u.id as uid,u.nickname,u.portrait FROM production_info p inner join user_info u on p.author_id = u.id where p.id=${id};`
         );
         tools.formatTime([result[0]]);
         let data = JSON.parse(JSON.stringify(result[0]));

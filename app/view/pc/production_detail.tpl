@@ -34,13 +34,13 @@
                 </div>
             </div>
            <div class="about-author fl">
-               <div class="portrait-img fl" style="background-image:url('/public/images/banner/pc (3).jpg')"></div>
+               <div class="portrait-img fl" style="background-image:url({{ productionData.data.portrait }})"></div>
                <div class="author-right fl">
                    <p class="author-name">{{ productionData.data.nickname }}</p>
                    <span class="author-sort">上海/插画师</span>
                    <div class="btn-list flex-b-sbc">
                         <a href="javascript:;" class="attention-btn" userId="{{ productionData.data.id }}">关注</a>
-                        <a href="/personal_space?userId={{ productionData.data.id }}" class="detail-btn">主页</a>
+                        <a href="/personal_space?userId={{ productionData.data.uid }}" class="detail-btn">主页</a>
                    </div>
                </div>
            </div>
