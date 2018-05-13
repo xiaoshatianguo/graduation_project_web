@@ -159,47 +159,53 @@
                     </div>
                     <div class="layui-tab-item personal-collection">
                         <div class="product-show flex-b-sc fw-wr">
+                            {% if collectionData.length > 0 %}
                                 {% for item in collectionData %}
-                                <div class="list-item" href="production_detail?productionId={{ item.id }}">
-                                    <div class="list-img-div">
-                                        <div class="item-img" style="background-image:url({{ item.cover }})"></div>
-                                        <div class="item-cover"></div>
-                                    </div>
-                                    <div class="item-text">
-                                        <h3 class="t-title">
-                                            {{ item.name }}
-                                            <svg class="icon fr" aria-hidden="true">
-                                                <use xlink:href="#icon-zuixinlianzai"></use>
-                                            </svg>
-                                        </h3>
-                                        <p class="t-describe">插画-商业插画</p>
-                                        <div class="about-production flex-b-sbc">
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-yanjing"></use>
+                                    <div class="list-item" href="production_detail?productionId={{ item.id }}">
+                                        <div class="list-img-div">
+                                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                                            <div class="item-cover"></div>
+                                        </div>
+                                        <div class="item-text">
+                                            <h3 class="t-title">
+                                                {{ item.name }}
+                                                <svg class="icon fr" aria-hidden="true">
+                                                    <use xlink:href="#icon-zuixinlianzai"></use>
                                                 </svg>
-                                                <span class="about-num">4.6万</span>
+                                            </h3>
+                                            <p class="t-describe">插画-商业插画</p>
+                                            <div class="about-production flex-b-sbc">
+                                                <div class="about-item">
+                                                    <svg class="icon" aria-hidden="true">
+                                                        <use xlink:href="#icon-yanjing"></use>
+                                                    </svg>
+                                                    <span class="about-num">4.6万</span>
+                                                </div>
+                                                <div class="about-item">
+                                                    <svg class="icon" aria-hidden="true">
+                                                        <use xlink:href="#icon-comment1"></use>
+                                                    </svg>
+                                                    <span class="about-num">196</span>
+                                                </div>
+                                                <div class="about-item">
+                                                    <svg class="icon" aria-hidden="true">
+                                                        <use xlink:href="#icon-chakandianzan"></use>
+                                                    </svg>
+                                                    <span class="about-num">4299</span>
+                                                </div>
                                             </div>
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-comment1"></use>
-                                                </svg>
-                                                <span class="about-num">196</span>
-                                            </div>
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-chakandianzan"></use>
-                                                </svg>
-                                                <span class="about-num">4299</span>
+                                            <hr>
+                                            <div class="clear-f">
+                                                <span class="fr product-create-time">{{ item.create_time }}</span>
                                             </div>
                                         </div>
-                                        <hr>
-                                        <div class="clear-f">
-                                            <span class="fr product-create-time">{{ item.create_time }}</span>
-                                        </div>
                                     </div>
+                                {% endfor %}
+                            {% else %}
+                                <div>
+                                    没有任何收藏哦，赶紧去收藏吧！
                                 </div>
-                            {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="layui-tab-item personal-message">

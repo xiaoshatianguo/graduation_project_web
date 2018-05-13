@@ -123,19 +123,9 @@ class RouterController extends Controller {
         let personalData = JSON.parse(JSON.stringify(personal));
 
         // 我的收藏
-        // let myCollection = personalData.collectionIds;
-        // let collectionIds = [];
-        let collectionDataArr = [];
-
-        // if(!!personalData.collectionIds) {
-        //     collectionIds = personalData.collectionIds.split(',');
-    
-        //     for (let i = 0; i < collectionIds.length; i++) {
-        //         let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
-        //         tools.formatTime([productionData]);
-        //         collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
-        //     }
-        // }
+        const collectionData = await this.app.mysql.query(
+            `SELECT c.user_id,c.status as c_status,p.* FROM collection_info c INNER JOIN production_info p ON c.object_id = p.id WHERE c.user_id = ${id} ORDER BY create_time desc;`
+        );
 
         // 我的作品
         const productionData = await this.app.mysql.query(
@@ -157,7 +147,7 @@ class RouterController extends Controller {
         await this.ctx.render('pc/personal_space.tpl', {
             personalData,
             productionData: JSON.parse(JSON.stringify(productionData)),
-            collectionData: collectionDataArr,
+            collectionData,
             commentsData,
         });
     }
@@ -169,19 +159,9 @@ class RouterController extends Controller {
         tools.formatTime([personalData]);
 
         // 我的收藏
-        // let myCollection = personalData.collectionIds;
-        // let collectionIds = [];
-        let collectionDataArr = [];
-
-        // if(!!personalData.collectionIds) {
-        //     collectionIds = personalData.collectionIds.split(',');
-    
-        //     for (let i = 0; i < collectionIds.length; i++) {
-        //         let productionData = await this.app.mysql.get('production_info', { id: collectionIds[i] });
-        //         tools.formatTime([productionData]);
-        //         collectionDataArr.push(JSON.parse(JSON.stringify(productionData)));
-        //     }
-        // }
+        const collectionData = await this.app.mysql.query(
+            `SELECT c.user_id,c.status as c_status,p.* FROM collection_info c INNER JOIN production_info p ON c.object_id = p.id WHERE c.user_id = ${id} ORDER BY create_time desc;`
+        );
 
         // 我的作品
         const productionData = await this.app.mysql.query(
@@ -203,7 +183,7 @@ class RouterController extends Controller {
         await this.ctx.render('pc/my_space.tpl', {
             personalData,
             productionData: JSON.parse(JSON.stringify(productionData)),
-            collectionData: collectionDataArr,
+            collectionData,
             commentsData,
         });
     }

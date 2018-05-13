@@ -39,9 +39,9 @@
                                 <input type="password" placeholder="请输入密码" class="layui-input psd-input">
                             </div>
                             <div class="layui-inline">
-                                <input type="checkbox" name="" lay-skin="primary" title="记住密码(7天)">
+                                <!-- <input type="checkbox" name="" lay-skin="primary" title="记住密码(7天)"> -->
                             </div>
-                            <div class="layui-inline forget-psd">
+                            <div class="layui-inline forget-psd fr">
                                 <a href="" class="forget-psd-link">忘记密码？</a>
                             </div>
                         </div>
