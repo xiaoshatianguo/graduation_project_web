@@ -30,6 +30,7 @@
                         上传活动作品
                     </a>
                     <a class="t-btn detail-btn" href="/activity_rule?activityId={{ activityDetailData.id }}">查看活动详情</a>
+                    <a class="t-btn attention-btn" href="javascript:;">关注活动</a>
                 </div>
             </div>
         </div>
@@ -149,6 +150,77 @@
                 location.href = 'join_activity?activityId=' + activityId;
             } else {
                 $('.no-login .cover').fadeIn();
+            }
+        })
+
+        $('.attention-btn').on('click', function() {
+
+        })
+
+        // 关注活动
+        var object_id = $('.attention-btn').attr('userId');
+        var activity_id = getQueryString('activityId');
+        var attentionBtn = $('.attention-btn');
+
+        var userLoginInfo = cacheGet('userLoginInfo');
+
+        if(!!userLoginInfo) {
+            // 显示关注或取消关注处理
+            $.ajax({
+                url: '/operation/attentionGet',
+                type: 'post',
+                data: {
+                    user_id: userLoginInfo.id,
+                    object_id: object_id || 0,
+                    activity_id: activity_id || 0,
+                },
+                success: function(result) {
+                    var attentionHtml = attentionBtn.text();
+                    if(result.msg == '已关注') {
+                        attentionBtn.text('取消关注');
+                    } else if(result.msg == '未关注') {
+                        attentionBtn.text('关注');
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+        }
+
+        // 关注操作
+        $('.attention-btn').on('click', function() {
+            if(!!userLoginInfo) {
+                $.ajax({
+                    url: '/operation/attention',
+                    type: 'post',
+                    data: {
+                        user_id: cacheGet('userLoginInfo').id,
+                        object_id: object_id || 0,
+                        activity_id: activity_id || 0,
+                    },
+                    success: function(result) {
+                        if(!!result.attentionGet) {
+                            if(result.attentionGet.status == 0) {
+                                attentionBtn.text('关注');
+                                alert('已取消关注');
+                            } else {
+                                attentionBtn.text('取消关注');
+                                alert('关注成功');
+                            }
+                        } else {
+                            attentionBtn.text('取消关注');
+                            alert('关注成功');
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err);
+                        console.log('关注失败');
+                    }
+                })
+            } else {
+                alert('请先登录后再关注');
+                location.href = '/login';
             }
         })
     </script>
