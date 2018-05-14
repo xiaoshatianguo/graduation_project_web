@@ -29,6 +29,7 @@ module.exports = app => {
   router.get('/publish_production', controller.pcRouter.publishProduction);
   router.get('/activity_rule', controller.pcRouter.activityRule);
   router.get('/edit_production', controller.pcRouter.editProduction);
+  router.get('/edit_activity', controller.pcRouter.editActivity);
 
   /**
    * 管理后台api路由
@@ -99,4 +100,8 @@ module.exports = app => {
   router.post('editProduction', '/operation/edit_production', controller.operation.editProduction);
   // 删除作品
   router.post('deleteProduction', '/operation/delete_production', controller.operation.deleteProduction);
+  // 编辑活动
+  router.post('editActivity', '/operation/edit_activity', controller.operation.editActivity);
+  // 删除活动
+  router.post('deleteActivity', '/operation/delete_activity', controller.operation.deleteActivity);
 };

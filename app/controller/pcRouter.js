@@ -209,7 +209,6 @@ class RouterController extends Controller {
         const news = await this.app.mysql.get('news_info', {
             user_id: id
         });
-
         let news_result;
         if(news) {
             if(news.activity_id != 0) {
@@ -231,11 +230,18 @@ class RouterController extends Controller {
         } else {
             news_result = null;
         }
-
         let newsData
         if(news_result !== null) {
             newsData = JSON.parse(JSON.stringify(news_result));
         }
+
+        // 我发布的活动
+        const activity = await this.app.mysql.query(
+            `SELECT a.* FROM activity_info a inner join user_info u on a.initiator = u.id where a.initiator=${id} and is_delete != 1;`
+        );
+        activity.reverse();
+        let activityData = JSON.parse(JSON.stringify(activity));
+        tools.formatTime(activityData);
 
         await this.ctx.render('pc/my_space.tpl', {
             personalData,
@@ -243,6 +249,7 @@ class RouterController extends Controller {
             collectionData,
             commentsData,
             newsData,
+            activityData,
             myAttentionData,
             myFansData,
         });
@@ -267,6 +274,22 @@ class RouterController extends Controller {
 
         await this.ctx.render('pc/edit_production.tpl', {
             productionData,
+        });
+    }
+
+    async editActivity() {
+        const ctx = this.ctx;
+        const activityId = ctx.query.activityId;
+
+        const result = await this.app.mysql.get('activity_info', {
+            id: activityId,
+        })
+
+        let activityData = JSON.parse(JSON.stringify(result));
+        tools.formatTime([activityData]);
+
+        await this.ctx.render('pc/edit_activity.tpl', {
+            activityData,
         });
     }
 

@@ -1553,7 +1553,7 @@ div.dis-ib {
     width: 100%; }
     .my-info .tag-div .layui-tab-title {
       margin: 0 auto;
-      width: 32.96703vw; }
+      width: 40.29304vw; }
     .my-info .tag-div .layui-tab-content {
       padding: 2.1978vw 7.32601vw;
       background-color: #d6d2d2; }
@@ -1985,6 +1985,96 @@ div.dis-ib {
           bottom: 0.3663vw;
           right: 0.3663vw;
           font-size: 7.32601vw; }
+      .my-info .tag-div .layui-tab-content .my-publish .publish-show {
+        margin: 0 auto;
+        width: 76.48352vw; }
+        .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item {
+          position: relative;
+          display: block;
+          margin: 0 0.7326vw 2.1978vw 0;
+          width: 18.31502vw;
+          border-radius: 0.3663vw;
+          overflow: hidden; }
+          .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .opration-list {
+            position: absolute;
+            top: 0.7326vw;
+            width: 100%;
+            pointer-events: auto; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .opration-list .delete-activity {
+              margin-left: 0.3663vw;
+              width: 4.3956vw;
+              height: 2.1978vw;
+              line-height: 2.1978vw;
+              font-size: 1.31868vw;
+              cursor: pointer;
+              background-color: #e03131; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .opration-list .edit-activity {
+              margin-right: 0.3663vw;
+              width: 4.3956vw;
+              height: 2.1978vw;
+              line-height: 2.1978vw;
+              font-size: 1.31868vw;
+              cursor: pointer;
+              background-color: #20ad20; }
+          .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .list-img-div {
+            position: relative;
+            width: 18.31502vw;
+            height: 15.38462vw;
+            overflow: hidden;
+            cursor: pointer; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .list-img-div .item-img {
+              width: 18.31502vw;
+              height: 15.38462vw;
+              border-radius: 0.3663vw 0.3663vw 0 0;
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .list-img-div .item-cover {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              border-radius: 0.3663vw;
+              background-color: rgba(102, 102, 102, 0.44);
+              opacity: 0; }
+          .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .list-img-div:hover .item-img {
+            -webkit-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                -ms-transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+                    transform: rotate(0deg) scale(1.2) translate(0%, 0%);
+            transition: All 8s ease; }
+          .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .list-img-div:hover .item-cover {
+            opacity: 1;
+            transition: All 1s ease; }
+          .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text {
+            padding: 0.7326vw;
+            background-color: #fff;
+            font-size: 0.95238vw; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .t-title {
+              color: #101213;
+              line-height: 2.1978vw; }
+              .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .t-title .icon {
+                font-size: 1.4652vw; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .t-title:hover {
+              color: #ee534e; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .t-describe {
+              color: #5e6468; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .about-production {
+              margin-top: 0.7326vw;
+              width: 14.65201vw;
+              color: #5e6468;
+              font-size: 0.95238vw; }
+              .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .about-production .icon {
+                font-size: 1.31868vw; }
+            .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item .item-text .product-create-time {
+              margin-right: 0.7326vw;
+              line-height: 2.1978vw;
+              color: #5e6468; }
+        .my-info .tag-div .layui-tab-content .my-publish .publish-show .list-item:hover {
+          box-shadow: 0px 1.24542vw 3.663vw 0px rgba(0, 0, 0, 0.188235);
+          -webkit-transform: translate3d(0px, -0.14652vw, 0px);
+                  transform: translate3d(0px, -0.14652vw, 0px);
+          transition: all 0.3s ease; }
 @charset "UTF-8";
 .activity-detail-describe {
   margin-top: 1.4652vw; }

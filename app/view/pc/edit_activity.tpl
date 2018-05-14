@@ -51,44 +51,44 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动标题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入活动标题" class="layui-input" onkeyup="keyUP(this)">
+                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入活动标题" class="layui-input" onkeyup="keyUP(this)" value="{{ activityData.name }}">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动时间</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="time_range" required lay-verify="time_range" class="layui-input" id="photoTime" placeholder="请选择活动时间范围">
+                                            <input type="text" name="time_range" required lay-verify="time_range" class="layui-input" id="photoTime" placeholder="请选择活动时间范围" value="{{ activityData.start_time }} - {{ activityData.end_time }}">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">活动主题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="topic" required lay-verify="topic" placeholder="请输入活动主题" class="layui-input" onkeyup="keyUP(this)">
+                                            <input type="text" name="topic" required lay-verify="topic" placeholder="请输入活动主题" class="layui-input" onkeyup="keyUP(this)" value="{{ activityData.topic }}">
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">活动简介</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea name="describe" required lay-verify="describe" placeholder="请输入活动简介" class="layui-textarea activity-decsibe" onkeyup="keyUP(this)"></textarea>
+                                            <textarea name="describe" required lay-verify="describe" placeholder="请输入活动简介" class="layui-textarea activity-decsibe" onkeyup="keyUP(this)">{{ activityData.describe }}</textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">活动内容</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea name="content" required lay-verify="content" placeholder="请输入活动内容" class="layui-textarea" id="activityContent"></textarea>
+                                            <textarea name="content" required lay-verify="content" placeholder="请输入活动内容" class="layui-textarea" id="activityContent">{{ activityData.content }}</textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">活动规则</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea name="rule" required lay-verify="rule" placeholder="请输入活动规则" class="layui-textarea" id="activityRule"></textarea>
+                                            <textarea name="rule" required lay-verify="rule" placeholder="请输入活动规则" class="layui-textarea" id="activityRule">{{ activityData.rule }}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传活动封面</div>
-                                <input type="text" name="coverSrc" required lay-verify="coverSrc" placeholder="上传封面" hidden id="coverSrc" value="">
+                                <input type="text" name="coverSrc" required lay-verify="coverSrc" placeholder="上传封面" hidden id="coverSrc" value="{{ activityData.cover }}">
                                 <div class="layui-upload-drag fl" id="uploadCover">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -96,12 +96,12 @@
                                     <p>点击上传，或将文件拖拽到此处</p>
                                 </div>
                                 <div class="layui-upload-list fl cover-show">
-                                    <img class="layui-upload-img" id="coverShow">
+                                    <img src="{{ activityData.cover }}" class="layui-upload-img" id="coverShow">
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传活动banner</div>
-                                <input type="text" name="bannerSrc" required lay-verify="bannerSrc" placeholder="上传banner" hidden id="bannerSrc" value="">
+                                <input type="text" name="bannerSrc" required lay-verify="bannerSrc" placeholder="上传banner" hidden id="bannerSrc" value="{{ activityData.banner }}">
                                 <div class="layui-upload-drag fl" id="uploadBanner">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -109,14 +109,14 @@
                                     <p>点击上传，或将文件拖拽到此处</p>
                                 </div>
                                 <div class="layui-upload-list fl banner-show">
-                                    <img class="layui-upload-img" id="bannerShow">
+                                    <img src="{{ activityData.banner }}" class="layui-upload-img" id="bannerShow">
                                 </div>
                             </div>
                             <div class="upload-form">
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button class="layui-btn layui-btn-primary cancle-btn">取消</button>
-                                        <button class="layui-btn" lay-submit lay-filter="formSubmit">提交审核</button>
+                                        <button class="layui-btn" lay-submit lay-filter="formSubmit">提交修改重新审核</button>
                                     </div>
                                 </div>
                             </div>
@@ -166,6 +166,10 @@
                 }
             }
         }
+
+        // 数据回显
+        $('.cover-show').show();
+        $('.banner-show').show();
     </script>
     <script>
         //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
@@ -184,6 +188,7 @@
                 elem: '#photoTime',
                 type: 'datetime',
                 range: true,
+                isInitValue: true,
                 min: 0,
                 max: 7,
             });
@@ -246,20 +251,24 @@
                 if (!!contentData) {
                 } else {
                     alert('活动内容不能为空');
+                    return false;
                 }
                 if (!!ruleData) {
                 } else {
                     alert('活动规则不能为空');
+                    return false;
                 }
                 if(!cacheGet('userLoginInfo').id) {
                     alert('登录超时，请重新登录！');
                     location.href = '/login';
-                    return;
+                    return false;
                 }
+
                 $.ajax({
                     type: 'post',
-                    url: '/operation/apply_activity',
+                    url: '/operation/edit_activity',
                     data: {
+                        id: getQueryString('activityId'),
                         name: uploadData.name,
                         initiator: cacheGet('userLoginInfo').id,
                         topic: uploadData.topic,
@@ -272,11 +281,11 @@
                         end_time: time_range[1],
                     },
                     success: function(result){
-                        alert('申请活动信息提交成功');
+                        alert('申请活动信息修改成功');
                         pageJumpsHandle();
                     },
                     error: function(err) {
-                        alert('申请活动信息提交失败，请稍候重试');
+                        alert('申请活动信息修改失败，请稍候重试');
                     }
                 })
             });

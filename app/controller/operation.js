@@ -436,8 +436,6 @@ class OperationController extends Controller {
         const ctx = this.ctx;
         const productionData = ctx.request.body;
 
-        console.log(productionData);
-
         const result = await this.app.mysql.update('production_info',{
             id: productionData.id,
             name: productionData.name,
@@ -454,8 +452,6 @@ class OperationController extends Controller {
             update_time: new Date().valueOf(),
             }
         )
-
-        console.log(result);
 
         ctx.status = 200;
         ctx.body = {
@@ -476,6 +472,50 @@ class OperationController extends Controller {
             ctx.status = 201;
             ctx.body = {
                 msg: '删除作品成功',
+            }
+        }
+    }
+
+    // 编辑活动
+    async editActivity() {
+        const ctx = this.ctx;
+        const activityData = ctx.request.body;
+
+        const result = await this.app.mysql.update('activity_info',{
+            id: activityData.id,
+            name: activityData.name,
+            initiator: activityData.initiator,
+            topic: activityData.topic,
+            describe: activityData.describe,
+            content: activityData.content,
+            rule: activityData.rule,
+            cover: activityData.cover,
+            banner: activityData.banner,
+            start_time: new Date(activityData.start_time).valueOf(),
+            end_time: new Date(activityData.end_time).valueOf(),
+            update_time: new Date().valueOf(),
+            }
+        )
+
+        ctx.status = 200;
+        ctx.body = {
+            msg: '修改成功',
+        }
+    }
+
+    // 删除活动
+    async deleteActivity() {
+        const ctx = this.ctx;
+        const activityId = ctx.request.body.activityId;
+
+        const result = await this.app.mysql.query(
+            `UPDATE activity_info set is_delete = 1 WHERE id = ${activityId};`
+        )
+
+        if(result.affectedRows == 1) {
+            ctx.status = 201;
+            ctx.body = {
+                msg: '删除活动成功',
             }
         }
     }

@@ -57,6 +57,7 @@
                     <li>留言</li>
                     <li>创作</li>
                     <li>消息</li>
+                    <li>我发布的</li>
                 </ul>
                 <div class="layui-tab-content">
                     <div class="layui-tab-item layui-show personal-product">
@@ -378,6 +379,58 @@
                             {% endif %}
                         </div>
                     </div>
+                    <div class="layui-tab-item my-publish">
+                        <div class="publish-show flex-b-sc fw-wr">
+                            {% for item in activityData %}
+                                <a class="list-item" href="activity_detail?activityDataId={{ item.id }}">
+                                    <div class="list-img-div">
+                                        <div class="item-img" style="background-image:url({{ item.cover }})">
+                                        </div>
+                                        <div class="item-cover">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="item-text">
+                                        <h3 class="t-title">
+                                            {{ item.name }}
+                                            <svg class="icon fr" aria-hidden="true">
+                                                <use xlink:href="#icon-zuixinlianzai"></use>
+                                            </svg>
+                                        </h3>
+                                        <p class="t-describe">插画-商业插画</p>
+                                        <div class="about-production flex-b-sbc">
+                                            <div class="about-item">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-yanjing"></use>
+                                                </svg>
+                                                <span class="about-num">{{ item.view_number }}</span>
+                                            </div>
+                                            <div class="about-item">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-comment1"></use>
+                                                </svg>
+                                                <span class="about-num">{{ item.comment_number }}</span>
+                                            </div>
+                                            <div class="about-item">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-chakandianzan"></use>
+                                                </svg>
+                                                <span class="about-num">4299</span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="clear-f">
+                                            <span class="fr product-create-time">{{ item.create_time }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="opration-list clear-f" activityId={{ item.id }}>
+                                        <button class="delete-activity fl">删除</button>
+                                        <button class="edit-activity fr">编辑</button>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -442,6 +495,35 @@
             var productionId = $(this).parents('.opration-list').attr('productionId');
             e.preventDefault();
             location.href = '/edit_production?productionId='+productionId;
+        })
+
+        // 删除活动
+        $('.delete-activity').on('click', function(e) {
+            var activityId = $(this).parents('.opration-list').attr('activityId');
+            var OThis = $(this);
+            e.preventDefault();
+            $.ajax({
+                url: '/operation/delete_activity',
+                type: 'post',
+                data: {
+                    activityId,
+                },
+                success: function(result) {
+                    if(result.msg == '删除活动成功') {
+                        OThis.parents('.list-item').hide();
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+        })
+
+        // 编辑活动
+        $('.edit-activity').on('click', function(e) {
+            var activityId = $(this).parents('.opration-list').attr('activityId');
+            e.preventDefault();
+            location.href = '/edit_activity?activityId='+activityId;
         })
     </script>
     <script>

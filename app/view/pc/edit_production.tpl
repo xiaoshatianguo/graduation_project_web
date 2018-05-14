@@ -247,6 +247,12 @@
             form.on('submit(formSubmit)', function(data){
                 var uploadData = JSON.parse(JSON.stringify(data.field));
                 var describeData = layedit.getContent(describeDetail);
+                // 单独验证描述详情不能为空
+                if (!!describeData) {
+                } else {
+                    alert('描述详情不能为空');
+                    return false;
+                }
 
                 $.ajax({
                     type: 'post',
