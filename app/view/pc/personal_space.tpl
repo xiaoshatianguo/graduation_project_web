@@ -26,7 +26,7 @@
             <div class="author-data-statistics flex-b-sbc">
                 <div class="data-list">
                     <p class="item-name">热度</p>
-                    <span class="item-number">3777777</span>
+                    <span class="item-number">{{ personalData.hot }}</span>
                 </div>|
                 <div class="data-list">
                     <p class="item-name">积分</p>
@@ -34,11 +34,11 @@
                 </div>|
                 <div class="data-list">
                     <p class="item-name">粉丝</p>
-                    <span class="item-number">5556623</span>
+                    <span class="item-number">{{ myFansData.length }}</span>
                 </div>|
                 <div class="data-list">
                     <p class="item-name">关注</p>
-                    <span class="item-number">111</span>
+                    <span class="item-number">{{ myAttentionData.length }}</span>
                 </div>
             </div>
         </div>
@@ -73,13 +73,13 @@
                                                 <svg class="icon" aria-hidden="true">
                                                     <use xlink:href="#icon-yanjing"></use>
                                                 </svg>
-                                                <span class="about-num">4.6万</span>
+                                                <span class="about-num">{{ item.view_number }}</span>
                                             </div>
                                             <div class="about-item">
                                                 <svg class="icon" aria-hidden="true">
                                                     <use xlink:href="#icon-comment1"></use>
                                                 </svg>
-                                                <span class="about-num">196</span>
+                                                <span class="about-num">{{ item.comment_number }}</span>
                                             </div>
                                             <div class="about-item">
                                                 <svg class="icon" aria-hidden="true">

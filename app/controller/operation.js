@@ -67,7 +67,13 @@ class OperationController extends Controller {
             prize: productionData.prizeSrc,
             certificate: productionData.certificateSrc,
             update_time: new Date().valueOf(),
-            is_apply_certificate: 1,
+        });
+
+        // 插入消息表
+        const insertHandle = await this.app.mysql.insert('news_info', {
+            user_id: productionData.id,
+            apply_certificate: 0,
+            create_time: new Date().valueOf(),
         });
 
         this.ctx.body = {
@@ -326,6 +332,7 @@ class OperationController extends Controller {
             sex: personData.sex,
             age: personData.age,
             address: personData.address,
+            personal_statement: personData.personal_statement,
             bgcover: personData.bgcover,
             portrait: personData.portrait,
             update_time: new Date().valueOf(),
@@ -335,6 +342,17 @@ class OperationController extends Controller {
         ctx.body = {
             msg: '修改成功',
         }
+    }
+
+    // 获取个人信息
+    async getPersonalData() {
+        const ctx = this.ctx;
+        const id = ctx.query.id;
+
+        const result = await this.app.mysql.get('user_info', {id});
+
+        ctx.status = 200;
+        ctx.body = JSON.parse(JSON.stringify(result));
     }
 
     // 处理作品分类页面流加载数据

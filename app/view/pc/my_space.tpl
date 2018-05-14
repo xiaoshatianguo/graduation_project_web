@@ -32,7 +32,7 @@
             <div class="author-data-statistics flex-b-sbc">
                 <div class="data-list">
                     <p class="item-name">热度</p>
-                    <span class="item-number">3777777</span>
+                    <span class="item-number">{{ personalData.hot }}</span>
                 </div>|
                 <div class="data-list">
                     <p class="item-name">积分</p>
@@ -40,11 +40,11 @@
                 </div>|
                 <div class="data-list">
                     <p class="item-name">粉丝</p>
-                    <span class="item-number">5556623</span>
+                    <span class="item-number">{{ myFansData.length }}</span>
                 </div>|
                 <div class="data-list">
                     <p class="item-name">关注</p>
-                    <span class="item-number">111</span>
+                    <span class="item-number">{{ myAttentionData.length }}</span>
                 </div>
             </div>
         </div>
@@ -80,13 +80,13 @@
                                                 <svg class="icon" aria-hidden="true">
                                                     <use xlink:href="#icon-yanjing"></use>
                                                 </svg>
-                                                <span class="about-num">4.6万</span>
+                                                <span class="about-num">{{ item.view_number }}</span>
                                             </div>
                                             <div class="about-item">
                                                 <svg class="icon" aria-hidden="true">
                                                     <use xlink:href="#icon-comment1"></use>
                                                 </svg>
-                                                <span class="about-num">196</span>
+                                                <span class="about-num">{{ item.comment_number }}</span>
                                             </div>
                                             <div class="about-item">
                                                 <svg class="icon" aria-hidden="true">
@@ -187,6 +187,18 @@
                                             <input type="text" name="address" placeholder="请输入地址" class="layui-input personal-data-input" value="{{ personalData.address }}">
                                             <p class="person-data-text">
                                                 <i class="p-text">{{ personalData.address }}</i>
+                                                <svg class="icon edit-element" aria-hidden="true">
+                                                    <use xlink:href="#icon-bianji"></use>
+                                                </svg>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">个人宣言</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="personal_statement" placeholder="请输入个人宣言" class="layui-input personal-data-input" value="{{ personalData.personal_statement }}">
+                                            <p class="person-data-text">
+                                                <i class="p-text">{{ personalData.personal_statement }}</i>
                                                 <svg class="icon edit-element" aria-hidden="true">
                                                     <use xlink:href="#icon-bianji"></use>
                                                 </svg>
@@ -340,10 +352,23 @@
                         </div>
                     </div>
                     <div class="layui-tab-item news">
-                        <div class="news-list">
-                            <div class="list-item">
-                                暂无消息
-                            </div>
+                        <div class="news-list flex-b-sc fw-wr">
+                            {% if newsData != null %}
+                                <div class="list-item">
+                                    {% if newsData.portrait %}
+                                        <div class="item-img" style="background-image: url({{ newsData.portrait }})"></div>
+                                    {% else %}
+                                        <div class="item-img" style="background-image: url({{ newsData.cover }})"></div>
+                                    {% endif %}
+                                    <svg class="icon status-icon" aria-hidden="true">
+                                        <use xlink:href="#icon-shenhezhong"></use>
+                                    </svg>
+                                </div>
+                            {% else %}
+                                <div class="list-item">
+                                    暂无消息
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -405,11 +430,13 @@
                         sex: personData.sex,
                         age: personData.age,
                         address: personData.address,
+                        personal_statement:personData.personal_statement,
                         bgcover: personData.coverSrc,
                         portrait: personData.portraitSrc,
                     },
                     success: function(result){
                         alert('个人资料修改成功');
+                        // 动态修改头像和背景
                         $('.portraitsImg').attr('src', personData.portrait);
                         $('.banner-img').attr('style', 'background-image: url('+personData.coverSrc+')');
                     },

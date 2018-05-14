@@ -66,8 +66,12 @@ module.exports = app => {
   router.post('applyActivity', '/operation/apply_activity', controller.operation.applyActivity);
   // 申请成为认证师
   router.post('applyCertifiedArchitect', '/operation/apply_certified_architect', controller.operation.applyCertifiedArchitect);
+
   // 获取所有分类
   router.get('sort', '/operation/sort', controller.operation.sort);
+  // 分类页面流加载
+  router.get('flowLoad', '/operation/flow_load', controller.operation.flowLoad);
+
   // 评论处理
   router.post('comment', '/operation/comment', controller.operation.comment);
   // 查询子评论
@@ -76,16 +80,18 @@ module.exports = app => {
   router.post('commentLike', '/operation/comment_like', controller.operation.commentLike);
   // 评论删除处理
   router.post('commentDelete', '/operation/comment_delete', controller.operation.commentDelete);
+
   // 关注会员处理
   router.post('attention', '/operation/attention', controller.operation.attention);
   // 获取关注信息处理
   router.post('attention', '/operation/attentionGet', controller.operation.attentionGet);
-  // 修改个人资料
-  router.post('updatePersonalData', '/operation/update_personal_data', controller.operation.updatePersonalData);
-  // 分类页面流加载
-  router.get('flowLoad', '/operation/flow_load', controller.operation.flowLoad);
   // 收藏作品
   router.post('collectionProduction', '/operation/collection_production', controller.operation.collectionProduction);
   // 获取收藏作品信息处理
   router.post('collectionGet', '/operation/collectionGet', controller.operation.collectionGet);
+
+  // 获取个人信息
+  router.get('getPersonalData', '/operation/get_personal_data', controller.operation.getPersonalData);
+  // 修改个人资料
+  router.post('updatePersonalData', '/operation/update_personal_data', controller.operation.updatePersonalData);
 };

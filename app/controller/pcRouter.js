@@ -122,6 +122,21 @@ class RouterController extends Controller {
         const personal = await this.app.mysql.get('user_info', { id });
         let personalData = JSON.parse(JSON.stringify(personal));
 
+        // 热度+1
+        const updateHotNumber = await this.app.mysql.query(
+            `update user_info set hot = hot+1 where id = ${id};`
+        );
+
+        // 我的关注
+        const myAttentionData = await this.app.mysql.query(
+            `SELECT a.user_id,a.object_id,u.portrait,u.nickname acount FROM attention_info a INNER JOIN user_info u ON a.object_id = u.id WHERE a.user_id = ${id} and a.object_id != 0 ORDER BY a.create_time desc;`
+        );
+
+        // 我的粉丝
+        const myFansData = await this.app.mysql.query(
+            `SELECT a.user_id,a.object_id,u.portrait,u.nickname acount FROM attention_info a INNER JOIN user_info u ON a.user_id = u.id WHERE a.object_id = ${id} ORDER BY a.create_time desc;`
+        );
+
         // 我的收藏
         const collectionData = await this.app.mysql.query(
             `SELECT c.user_id,c.status as c_status,p.* FROM collection_info c INNER JOIN production_info p ON c.object_id = p.id WHERE c.user_id = ${id} ORDER BY create_time desc;`
@@ -131,7 +146,6 @@ class RouterController extends Controller {
         const productionData = await this.app.mysql.query(
             `SELECT * FROM production_info WHERE author_id = ${id} ORDER BY create_time desc;`
         );
-
         for (let i = 0; i < productionData.length; i++) {
             tools.formatTime([productionData[i]]);
         }
@@ -141,7 +155,7 @@ class RouterController extends Controller {
             `SELECT c.*,u.nickname,u.portrait FROM comments_info c inner join user_info u on c.user_id = u.id where c.personal_id=${id} and c.father_id = 0;`
         );
         comments.reverse();
-        var commentsData = JSON.parse(JSON.stringify(comments));
+        let commentsData = JSON.parse(JSON.stringify(comments));
         tools.formatTime(commentsData);
 
         await this.ctx.render('pc/personal_space.tpl', {
@@ -149,6 +163,8 @@ class RouterController extends Controller {
             productionData: JSON.parse(JSON.stringify(productionData)),
             collectionData,
             commentsData,
+            myAttentionData,
+            myFansData,
         });
     }
 
@@ -158,6 +174,16 @@ class RouterController extends Controller {
         let personalData = JSON.parse(JSON.stringify(personal));
         tools.formatTime([personalData]);
 
+        // 我的关注
+        const myAttentionData = await this.app.mysql.query(
+            `SELECT a.user_id,a.object_id,u.portrait,u.nickname acount FROM attention_info a INNER JOIN user_info u ON a.object_id = u.id WHERE a.user_id = ${id} and a.object_id != 0 ORDER BY a.create_time desc;`
+        );
+
+        // 我的粉丝
+        const myFansData = await this.app.mysql.query(
+            `SELECT a.user_id,a.object_id,u.portrait,u.nickname acount FROM attention_info a INNER JOIN user_info u ON a.user_id = u.id WHERE a.object_id = ${id} ORDER BY a.create_time desc;`
+        );
+
         // 我的收藏
         const collectionData = await this.app.mysql.query(
             `SELECT c.user_id,c.status as c_status,p.* FROM collection_info c INNER JOIN production_info p ON c.object_id = p.id WHERE c.user_id = ${id} ORDER BY create_time desc;`
@@ -167,7 +193,6 @@ class RouterController extends Controller {
         const productionData = await this.app.mysql.query(
             `SELECT * FROM production_info WHERE author_id = ${id} ORDER BY create_time desc;`
         );
-        
         for (let i = 0; i < productionData.length; i++) {
             tools.formatTime([productionData[i]]);
         }
@@ -177,14 +202,49 @@ class RouterController extends Controller {
             `SELECT c.*,u.nickname,u.portrait FROM comments_info c inner join user_info u on c.user_id = u.id where c.personal_id=${id} and c.father_id = 0;`
         );
         comments.reverse();
-        var commentsData = JSON.parse(JSON.stringify(comments));
+        let commentsData = JSON.parse(JSON.stringify(comments));
         tools.formatTime(commentsData);
+
+        // 我的消息通知
+        const news = await this.app.mysql.get('news_info', {
+            user_id: id
+        });
+
+        let news_result;
+        if(news) {
+            if(news.activity_id != 0) {
+                // 如果操作是活动审核
+                news_result = await this.app.mysql.get('activity_info', {
+                    id: news.activity_id
+                });
+            } else if(news.production_id != 0) {
+                // 如果操作是作品审核
+                news_result = await this.app.mysql.get('production_info', {
+                    id: news.production_id
+                });
+            } else {
+                // 如果是认证师
+                news_result = await this.app.mysql.get('user_info', {
+                    id
+                });
+            }
+        } else {
+            news_result = null;
+        }
+
+        let newsData
+        if(news_result !== null) {
+            newsData = JSON.parse(JSON.stringify(news_result));
+        }
 
         await this.ctx.render('pc/my_space.tpl', {
             personalData,
             productionData: JSON.parse(JSON.stringify(productionData)),
             collectionData,
             commentsData,
+            newsData,
+            myAttentionData,
+            myFansData,
         });
     }
 

@@ -82,8 +82,24 @@
 
 {% block script %}
     <script>
+        // 是否显示认证师按钮
+        var userLoginInfo = cacheGet('userLoginInfo');
+        var caBtn = $('.become-certified-architect');
+        if(userLoginInfo) {
+            $.ajax({
+                url: '/operation/get_personal_data?id='+cacheGet('userLoginInfo').id,
+                type: 'get',
+                success: function(result) {
+                    if(result.sort == 2) {
+                        caBtn.hide();
+                    }
+                }
+            })
+        }
+
+        // 成为认证师按钮处理
         $('.become-certified-architect').on('click', function() {
-            if(cacheGet('userLoginInfo')) {
+            if(userLoginInfo) {
                 location.href = '/apply_certified_architect';
             } else {
                 $('.no-login .cover').fadeIn();

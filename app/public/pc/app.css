@@ -1950,6 +1950,20 @@ div.dis-ib {
         background-position: center center; }
       .my-info .tag-div .layui-tab-content .personal-product-line .line-contetn .cd-timeline-block .cd-timeline-content .timeline-img {
         width: 100%; }
+      .my-info .tag-div .layui-tab-content .news .news-list .list-item {
+        position: relative;
+        width: 21.97802vw;
+        height: 25.64103vw; }
+        .my-info .tag-div .layui-tab-content .news .news-list .list-item .item-img {
+          width: 21.97802vw;
+          height: 25.64103vw;
+          background-size: cover;
+          background-position: center center; }
+        .my-info .tag-div .layui-tab-content .news .news-list .list-item .status-icon {
+          position: absolute;
+          bottom: 0.3663vw;
+          right: 0.3663vw;
+          font-size: 7.32601vw; }
 @charset "UTF-8";
 .activity-detail-describe {
   margin-top: 1.4652vw; }
