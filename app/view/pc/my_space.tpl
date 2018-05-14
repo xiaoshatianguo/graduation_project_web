@@ -64,8 +64,11 @@
                             {% for item in productionData %}
                                 <a class="list-item" href="production_detail?productionId={{ item.id }}">
                                     <div class="list-img-div">
-                                        <div class="item-img" style="background-image:url({{ item.cover }})"></div>
-                                        <div class="item-cover"></div>
+                                        <div class="item-img" style="background-image:url({{ item.cover }})">
+                                        </div>
+                                        <div class="item-cover">
+                                        </div>
+                                        
                                     </div>
                                     <div class="item-text">
                                         <h3 class="t-title">
@@ -99,6 +102,10 @@
                                         <div class="clear-f">
                                             <span class="fr product-create-time">{{ item.create_time }}</span>
                                         </div>
+                                    </div>
+                                    <div class="opration-list clear-f" productionId={{ item.id }}>
+                                        <button class="delete-production fl">删除</button>
+                                        <button class="edit-production fr">编辑</button>
                                     </div>
                                 </a>
                             {% endfor %}
@@ -406,6 +413,33 @@
             } else {
                 $(this).focus();
             }
+        })
+
+        // 删除作品
+        $('.delete-production').on('click', function(e) {
+            var productionId = $(this).parents('.opration-list').attr('productionId');
+            var OThis = $(this);
+            e.preventDefault();
+            $.ajax({
+                url: '/operation/delete_production',
+                type: 'post',
+                data: {
+                    productionId,
+                },
+                success: function(result) {
+                    if(result.msg == '删除作品成功') {
+                        OThis.parents('.list-item').hide();
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+        })
+
+        // 编辑作品
+        $('.edit-production').on('click', function() {
+            location.href = '/edit_production';
         })
     </script>
     <script>

@@ -144,7 +144,7 @@ class RouterController extends Controller {
 
         // 我的作品
         const productionData = await this.app.mysql.query(
-            `SELECT * FROM production_info WHERE author_id = ${id} ORDER BY create_time desc;`
+            `SELECT * FROM production_info WHERE author_id = ${id} and is_delete != 1 ORDER BY create_time desc;`
         );
         for (let i = 0; i < productionData.length; i++) {
             tools.formatTime([productionData[i]]);
@@ -191,7 +191,7 @@ class RouterController extends Controller {
 
         // 我的作品
         const productionData = await this.app.mysql.query(
-            `SELECT * FROM production_info WHERE author_id = ${id} ORDER BY create_time desc;`
+            `SELECT * FROM production_info WHERE author_id = ${id} and is_delete != 1 ORDER BY create_time desc;`
         );
         for (let i = 0; i < productionData.length; i++) {
             tools.formatTime([productionData[i]]);

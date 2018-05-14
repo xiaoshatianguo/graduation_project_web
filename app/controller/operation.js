@@ -431,6 +431,29 @@ class OperationController extends Controller {
         }
     }
 
+    // 编辑作品
+    async editProduction() {
+
+    }
+
+    // 删除作品
+    async deleteProduction() {
+        const ctx = this.ctx;
+        const productionId = ctx.request.body.productionId;
+
+        const result = await this.app.mysql.query(
+            `UPDATE production_info set is_delete = 1 WHERE id = ${productionId};
+            `
+        )
+
+        if(result.affectedRows == 1) {
+            ctx.status = 201;
+            ctx.body = {
+                msg: '删除作品成功',
+            }
+        }
+    }
+
     /**
      * 根据前端请求分页返回数据
      * @param  {string} tableName     需要进行分页处理的表名

@@ -94,4 +94,8 @@ module.exports = app => {
   router.get('getPersonalData', '/operation/get_personal_data', controller.operation.getPersonalData);
   // 修改个人资料
   router.post('updatePersonalData', '/operation/update_personal_data', controller.operation.updatePersonalData);
+  // 编辑作品
+  router.post('editProduction', '/operation/edit_production', controller.operation.editProduction);
+  // 删除作品
+  router.post('deleteProduction', '/operation/delete_production', controller.operation.deleteProduction);
 };

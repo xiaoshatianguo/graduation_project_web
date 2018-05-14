@@ -1567,6 +1567,27 @@ div.dis-ib {
           width: 18.31502vw;
           border-radius: 0.3663vw;
           overflow: hidden; }
+          .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .opration-list {
+            position: absolute;
+            top: 0.7326vw;
+            width: 100%;
+            pointer-events: auto; }
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .opration-list .delete-production {
+              margin-left: 0.3663vw;
+              width: 4.3956vw;
+              height: 2.1978vw;
+              line-height: 2.1978vw;
+              font-size: 1.31868vw;
+              cursor: pointer;
+              background-color: #e03131; }
+            .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .opration-list .edit-production {
+              margin-right: 0.3663vw;
+              width: 4.3956vw;
+              height: 2.1978vw;
+              line-height: 2.1978vw;
+              font-size: 1.31868vw;
+              cursor: pointer;
+              background-color: #20ad20; }
           .my-info .tag-div .layui-tab-content .personal-product .product-show .list-item .list-img-div {
             position: relative;
             width: 18.31502vw;
