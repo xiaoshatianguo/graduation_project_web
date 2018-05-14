@@ -42,10 +42,10 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">作品标题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入作品标题" class="layui-input">
+                                            <input type="text" name="name" required lay-verify="name" placeholder="请输入作品标题" class="layui-input" value="{{ productionData.name }}">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item production-sort">
+                                    <div class="layui-form-item production-sort" productionSort="{{ productionData.sort }}">
                                         <label class="layui-form-label">作品类别</label>
                                         <div class="layui-input-block">
                                             <select class="sort-select" name="sort" lay-filter="sort" lay-verify="sort">
@@ -56,32 +56,32 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">摄影道具</label>
                                         <div class="layui-input-block">
-                                            <input class="layui-input" type="text" name="photography_props" required lay-verify="photography_props" placeholder="请输入摄影道具">
+                                            <input class="layui-input" type="text" name="photography_props" required lay-verify="photography_props" placeholder="请输入摄影道具" value="{{ productionData.photography_props }}">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">摄影地点</label>
                                         <div class="layui-input-block">
-                                            <input class="layui-input" type="text" name="photography_site" required lay-verify="photography_site" placeholder="请输入摄影地点">
+                                            <input class="layui-input" type="text" name="photography_site" required lay-verify="photography_site" placeholder="请输入摄影地点" value="{{ productionData.photography_site }}">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">作品简介</label>
                                         <div class="layui-input-block">
-                                            <textarea class="layui-textarea" name="describe" lay-verify="describe" placeholder="请输入作品简介"></textarea>
+                                            <textarea class="layui-textarea" name="describe" lay-verify="describe" placeholder="请输入作品简介">{{ productionData.describe }}</textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">描述详情</label>
                                         <div class="layui-input-block describe-detail">
-                                            <textarea class="layui-textarea" name="content" lay-verify="content" placeholder="请输入描述详情" id="describeDetail"></textarea>
+                                            <textarea class="layui-textarea" name="content" lay-verify="content" placeholder="请输入描述详情" id="describeDetail">{{ productionData.content }}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传作品</div>
-                                <input type="text" name="productionSrc" required lay-verify="productionSrc" placeholder="上传作品" hidden id="productionSrc" value="">
+                                <input type="text" name="productionSrc" required lay-verify="productionSrc" placeholder="上传作品" hidden id="productionSrc" value="{{ productionData.production }}">
                                 <div class="layui-upload-drag fl" id="uploadProduction">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -89,11 +89,14 @@
                                     <p>点击上传，或将文件拖拽到此处</p>
                                 </div>
                                 <div class="layui-upload-list fl production-show" id="productionShow">
+                                    {% for item in productionData.production %}
+                                        <img src="{{ item }}" alt="" class="layui-upload-img">
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传封面</div>
-                                <input type="text" name="coverSrc" required lay-verify="coverSrc" placeholder="上传作品" hidden id="coverSrc" value="">
+                                <input type="text" name="coverSrc" required lay-verify="coverSrc" placeholder="上传作品" hidden id="coverSrc" value="{{ productionData.cover }}">
                                 <div class="layui-upload-drag fl" id="uploadCover">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -101,12 +104,12 @@
                                     <p>点击上传，或将文件拖拽到此处</p>
                                 </div>
                                 <div class="layui-upload-list fl cover-show">
-                                    <img class="layui-upload-img" id="coverShow">
+                                    <img src="{{ productionData.cover }}" class="layui-upload-img" id="coverShow">
                                 </div>
                             </div>
                             <div class="upload-info clear-f">
                                 <div class="info-title">上传banner</div>
-                                <input type="text" name="bannerSrc" required lay-verify="bannerSrc" placeholder="上传作品" hidden id="bannerSrc" value="">
+                                <input type="text" name="bannerSrc" required lay-verify="bannerSrc" placeholder="上传作品" hidden id="bannerSrc" value="{{ productionData.banner }}">
                                 <div class="layui-upload-drag fl" id="uploadBanner">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-shangchuan"></use>
@@ -114,7 +117,7 @@
                                     <p>点击上传，或将文件拖拽到此处</p>
                                 </div>
                                 <div class="layui-upload-list fl banner-show">
-                                    <img class="layui-upload-img" id="bannerShow">
+                                    <img src="{{ productionData.banner }}" class="layui-upload-img" id="bannerShow">
                                 </div>
                             </div>
                             <div class="upload-form">
@@ -147,17 +150,30 @@
             pageJumpsHandle();
         })
 
+        var productionSort = $('.production-sort').attr('productionSort');
+
         // 分类选择填充数据
         var sortData = cacheGet('sortData');
         var sortHtml = '';
         if(sortData.length > 0) {
             for (let i = 0; i < sortData.length; i++) {
-                sortHtml += `
-                    <option value="${sortData[i].id}">${sortData[i].name}</option>
-                `
+                if(productionSort == sortData[i].id) {
+                    sortHtml += `
+                        <option value="${sortData[i].id}" selected="selected">${sortData[i].name}</option>
+                        `
+                } else {
+                    sortHtml += `
+                        <option value="${sortData[i].id}">${sortData[i].name}</option>
+                        `
+                }
             }
         }
         $('.sort-select').append(sortHtml);
+
+        // 数据回显
+        $('#productionShow').show();
+        $('.cover-show').show();
+        $('.banner-show').show();
     </script>
     <script>
         //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
@@ -207,12 +223,6 @@
                         return '作品简介不能为空';
                     }
                 },
-                content: function(value) {
-                    if(!!value) {
-                    } else {
-                        return '作品描述详情不能为空';
-                    }
-                },
                 productionSrc: function(value) {
                     if(!!value) {
                     } else {
@@ -236,12 +246,13 @@
             //监听提交
             form.on('submit(formSubmit)', function(data){
                 var uploadData = JSON.parse(JSON.stringify(data.field));
-                var describeDetail = layedit.getContent(describeDetail);
+                var describeData = layedit.getContent(describeDetail);
 
                 $.ajax({
                     type: 'post',
-                    url: '/operation/upload_production',
+                    url: '/operation/edit_production',
                     data: {
+                        id: getQueryString('productionId'),
                         name: uploadData.name,
                         author_id: cacheGet('userLoginInfo').id,
                         activity_id: 0,
@@ -252,14 +263,14 @@
                         describe: uploadData.describe,
                         photography_props: uploadData.photography_props,
                         photography_site: uploadData.photography_site,
-                        content: describeDetail,
+                        content: describeData,
                     },
                     success: function(result){
-                        alert('作品信息提交成功');
+                        alert('作品信息修改成功');
                         pageJumpsHandle();
                     },
                     error: function(err) {
-                        alert('作品信息提交失败，请稍候重试');
+                        alert('作品信息修改失败，请稍候重试');
                     }
                 })
             });

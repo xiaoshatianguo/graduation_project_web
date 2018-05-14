@@ -433,7 +433,34 @@ class OperationController extends Controller {
 
     // 编辑作品
     async editProduction() {
+        const ctx = this.ctx;
+        const productionData = ctx.request.body;
 
+        console.log(productionData);
+
+        const result = await this.app.mysql.update('production_info',{
+            id: productionData.id,
+            name: productionData.name,
+            author_id: productionData.author_id,
+            activity_id: productionData.activity_id,
+            sort: productionData.sort,
+            production: productionData.production,
+            cover: productionData.cover,
+            banner: productionData.banner,
+            describe: productionData.describe,
+            photography_props: productionData.photography_props,
+            photography_site: productionData.photography_site,
+            content: productionData.content,
+            update_time: new Date().valueOf(),
+            }
+        )
+
+        console.log(result);
+
+        ctx.status = 200;
+        ctx.body = {
+            msg: '修改成功',
+        }
     }
 
     // 删除作品
@@ -442,8 +469,7 @@ class OperationController extends Controller {
         const productionId = ctx.request.body.productionId;
 
         const result = await this.app.mysql.query(
-            `UPDATE production_info set is_delete = 1 WHERE id = ${productionId};
-            `
+            `UPDATE production_info set is_delete = 1 WHERE id = ${productionId};`
         )
 
         if(result.affectedRows == 1) {

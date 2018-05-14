@@ -52,7 +52,7 @@
    <div class="production-img-list">
        <div class="container">
            <div class="list-describe clear-f">
-               <p class="describe">{{ productionData.data.describe | safe }}
+               <p class="describe">{{ productionData.data.content | safe }}
                 </p>
            </div>
            <div class="img-list">

@@ -438,8 +438,10 @@
         })
 
         // 编辑作品
-        $('.edit-production').on('click', function() {
-            location.href = '/edit_production';
+        $('.edit-production').on('click', function(e) {
+            var productionId = $(this).parents('.opration-list').attr('productionId');
+            e.preventDefault();
+            location.href = '/edit_production?productionId='+productionId;
         })
     </script>
     <script>

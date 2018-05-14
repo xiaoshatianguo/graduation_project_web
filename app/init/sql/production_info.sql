@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `production_info` (
   `describe` LONGTEXT comment '作品简述',
   `photography_props` VARCHAR(255) DEFAULT '' comment '摄影道具',
   `photography_site` VARCHAR(255) DEFAULT '' comment '摄影地点',
-  `content` VARCHAR(255) DEFAULT '' comment '作品描述详情',
+  `content` LONGTEXT comment '作品描述详情',
   `content_markdown` VARCHAR(255) DEFAULT '' comment '作品描述详情markdown格式',
   `comment_number` INT(20) DEFAULT '' comment '评论数量',
   `view_number` INT(20) DEFAULT '' comment '浏览量',

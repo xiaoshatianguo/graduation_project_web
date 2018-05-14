@@ -28,6 +28,7 @@ module.exports = app => {
   router.get('/production_detail', controller.pcRouter.productionDetail);
   router.get('/publish_production', controller.pcRouter.publishProduction);
   router.get('/activity_rule', controller.pcRouter.activityRule);
+  router.get('/edit_production', controller.pcRouter.editProduction);
 
   /**
    * 管理后台api路由

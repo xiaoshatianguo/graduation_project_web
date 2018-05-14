@@ -252,6 +252,24 @@ class RouterController extends Controller {
         await this.ctx.render('pc/publish_production.tpl');
     }
 
+    async editProduction() {
+        const ctx = this.ctx;
+        const productionId = ctx.query.productionId;
+
+        const result = await this.app.mysql.get('production_info', {
+            id: productionId,
+        })
+
+        let productionData = JSON.parse(JSON.stringify(result));
+        tools.formatTime([productionData]);
+
+        productionData.production = productionData.production.split(',');
+
+        await this.ctx.render('pc/edit_production.tpl', {
+            productionData,
+        });
+    }
+
     async activityDetail () {
         // 活动详情
         const id = this.ctx.query.activityId;
