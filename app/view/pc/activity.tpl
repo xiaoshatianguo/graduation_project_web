@@ -23,6 +23,7 @@
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
                 {% for item in activityData %}
+                    <p>No: {{ loop.index }}</p>
                     <a href="activity_detail?activityId={{ item.id }}" class="list-item" style="background-image:url({{ item.banner }})">
                     </a>
                 {% endfor %}
@@ -89,9 +90,14 @@
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
                 {% for item in activityEndData %}
-                    <a class="list-item" href="activity_detail?activityId={{ item.id }}">
-                        <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
+                    <a class="work" href="/activity_detail?activityId={{ item.id }}">
+                        <div class="work-grid" style="background-image:url({{ item.cover }});">
+                            <div class="inner">
+                                <div class="desc">
+                                <h3>{{ item.name }}</h3>
+                                <span class="cat">{{ item.describe | truncate(30) }}</span>
+                            </div>
+                            </div>
                         </div>
                     </a>
                 {% endfor %}
