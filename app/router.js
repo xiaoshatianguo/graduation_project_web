@@ -104,4 +104,7 @@ module.exports = app => {
   router.post('editActivity', '/operation/edit_activity', controller.operation.editActivity);
   // 删除活动
   router.post('deleteActivity', '/operation/delete_activity', controller.operation.deleteActivity);
+
+  // 获取所有点赞信息
+  // router.get('like', '/operation/like', controller.operation.like);
 };

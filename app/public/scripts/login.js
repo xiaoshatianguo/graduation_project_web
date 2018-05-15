@@ -8,9 +8,24 @@ var userLoginInfo = cacheGet('userLoginInfo');
 // 登录态显示
 if(userLoginInfo) {
     logoutStatus(userLoginInfo);
+    // likeHandle();
 } else {
     loginStatus();
 }
+
+// 点赞表存储
+// function likeHandle() {
+//     $.ajax({
+//         url: '/operation/like?id='+userLoginInfo.id,
+//         type: 'get',
+//         success: function(result) {
+//             cacheSet('likeData', result.likeData);
+//         },
+//         error: function(err) {
+//             console.log(err);
+//         }
+//     })
+// }
 
 // 登出操作
 $(document).on('click', ".logout",function(){
@@ -113,6 +128,7 @@ function pageJumpsHandle() {
         location.href = prevLink;
     }
 }
+
 
 /**
  * qq登录处理

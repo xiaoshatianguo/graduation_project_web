@@ -36,24 +36,45 @@
                 /<span class="title-sm">YY摄影</span>
                 <span class="title-bg">全部进行中活动</span>/
             </div>
-            <div class="activity-list flex-b-sbc fw-wr">
-                {% for item in activityAllData %}
-                    <a class="list-item" href="activity_detail?activityId={{ item.id }}">
-                        <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.cover }})"></div>
-                        </div>
-                        <div class="item-text">
-                            <h3 class="t-title">{{ item.name }}</h3>
-                            <p class="t-describe">{{ item.describe }}</p>
-                            <div class="t-type">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-zuixinlianzai"></use>
-                                </svg>
-                                {{ item.author }}
+            <div class="activity-list">
+                <ul class="join_d clear-f flex-b-sac fw-wr">
+                    {% for item in activityAllData %}
+                        <li class="fl">
+                            <div class="tu" style="background-image: url({{ item.cover }})"></div>
+                            <div class="wen">
+                                <div class="item-title">
+                                    <a href="activity_detail?activityId={{ item.id }}" class="title">{{ item.name }}</a>
+                                    <div class="about-activity flex-b-sac fr">
+                                            <div class="about-item">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-yanjing"></use>
+                                                </svg>
+                                                <span class="about-num">{{ item.view_number }}</span>
+                                            </div>
+                                            <div class="about-item">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-comment1"></use>
+                                                </svg>
+                                                <span class="about-num">{{ item.comment_number }}</span>
+                                            </div>
+                                            <div class="about-item">
+                                                <svg class="icon" aria-hidden="true">
+                                                    <use xlink:href="#icon-chakandianzan"></use>
+                                                </svg>
+                                                <span class="about-num">4299</span>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="des">
+                                    <p>活动发起者：{{ item.u_nickname }}</p>
+                                    <p>活动主题：{{ item.topic }}</p>
+                                    <p>活动简介：{{ item.describe }}</p>
+                                    
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                {% endfor %}
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

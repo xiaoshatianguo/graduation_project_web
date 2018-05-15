@@ -70,8 +70,10 @@ class RouterController extends Controller {
         // 全部进行中活动
         const activityAll = await this.app.mysql.query(
             `
-            SELECT a.*
+            SELECT a.*,u.id as u_id,u.nickname as u_nickname,u.portrait as u_portrait
             FROM activity_info a
+            INNER JOIN user_info u
+            ON a.initiator = u.id
             WHERE from_unixtime(a.end_time/1000) > CURRENT_TIMESTAMP
             ORDER BY (a.comment_number+a.view_number) DESC,a.create_time DESC
             LIMIT 3,1000;

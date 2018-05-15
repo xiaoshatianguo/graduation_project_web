@@ -520,6 +520,22 @@ class OperationController extends Controller {
         }
     }
 
+    // 点赞信息处理
+    async like() {
+        const ctx = this.ctx;
+        const id = ctx.query.id;
+
+        const result = await this.app.mysql.query(
+            `SELECT * FROM like_info WHERE user_id=${id} and status!=1;`
+        )
+        var likeData = JSON.parse(JSON.stringify(result));
+
+        ctx.status = 200;
+        ctx.body = {
+            likeData,
+        }
+    }
+
     /**
      * 根据前端请求分页返回数据
      * @param  {string} tableName     需要进行分页处理的表名
