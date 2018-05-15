@@ -45,31 +45,31 @@
                                 <div class="item-title">
                                     <a href="activity_detail?activityId={{ item.id }}" class="title">{{ item.name }}</a>
                                     <div class="about-activity flex-b-sac fr">
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-yanjing"></use>
-                                                </svg>
-                                                <span class="about-num">{{ item.view_number }}</span>
-                                            </div>
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-comment1"></use>
-                                                </svg>
-                                                <span class="about-num">{{ item.comment_number }}</span>
-                                            </div>
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
-                                                    <use xlink:href="#icon-chakandianzan"></use>
-                                                </svg>
-                                                <span class="about-num">4299</span>
-                                            </div>
+                                        <div class="about-item">
+                                            <svg class="icon" aria-hidden="true">
+                                                <use xlink:href="#icon-yanjing"></use>
+                                            </svg>
+                                            <span class="about-num">{{ item.view_number }}</span>
                                         </div>
+                                        <div class="about-item">
+                                            <svg class="icon" aria-hidden="true">
+                                                <use xlink:href="#icon-comment1"></use>
+                                            </svg>
+                                            <span class="about-num">{{ item.comment_number }}</span>
+                                        </div>
+                                        <div class="about-item">
+                                            <svg class="icon" aria-hidden="true">
+                                                <use xlink:href="#icon-chakandianzan"></use>
+                                            </svg>
+                                            <span class="about-num">4299</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="des">
                                     <p>活动发起者：{{ item.u_nickname }}</p>
                                     <p>活动主题：{{ item.topic }}</p>
                                     <p>活动简介：{{ item.describe }}</p>
-                                    
+                                    <p>活动时间：{{ item.start_time }} - {{ item.end_time }}</p>
                                 </div>
                             </div>
                         </li>
@@ -103,6 +103,14 @@
 
 {% block script %}
     <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay : 3000,
+            speed: 1000,
+            loop : true,
+        })
+
         $('.publish-activity-btn').on('click', function() {
             if(cacheGet('userLoginInfo')) {
                 location.href = '/apply_activity';

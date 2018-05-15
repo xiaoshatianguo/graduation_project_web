@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="//at.alicdn.com/t/font_631371_0i9eyjf81oamj9k9.js"></script>
+    <script src="//at.alicdn.com/t/font_631371_r19lvcrx9hf72e29.js"></script>
     <script src="/public/jquery-3.2.1.min.js"></script>
     <script src="/public/scripts/jquery.flexText.js"></script>
     <script src="/public/tool.js"></script>
@@ -97,12 +97,7 @@
     <script src="/public/verify.js"></script>
 
     {% block script %}
-        <script>
-            var mySwiper = new Swiper('.swiper-container', {
-                pagination: '.swiper-pagination',
-                paginationClickable: true,
-            })
-        </script>
+        
     {% endblock %}
 
     <script>
@@ -173,6 +168,7 @@
                 }
             });
         });
+
     </script>
 </body>
 </html>

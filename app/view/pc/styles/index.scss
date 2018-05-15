@@ -10,7 +10,7 @@ $t-hover-color: #ee534e;
 
     font-size: 20px;
 
-    background-color: $main-color;
+    background-color: transparent;
 
     .container {
         position: relative;
@@ -108,16 +108,20 @@ $t-hover-color: #ee534e;
                 display: block;
 
                 margin-bottom: 50px;
-                height: 520px;
+                height: 420px;
                 width: 330px;
 
                 border-radius: 5px;
+
+                background-color: #fff;
+
+                overflow: hidden;
 
                 .list-img-div {
                     position: relative;
 
                     width: 330px;
-                    height: 330px;
+                    height: 250px;
 
                     overflow: hidden;
 
@@ -143,9 +147,23 @@ $t-hover-color: #ee534e;
 
                         border-radius: 5px;
 
-                        background-color: rgba(102, 102, 102, 0.44);;
+                        background-color: rgba(102, 102, 102, 0.44);
                     
                         opacity: 0;
+
+                        .look-detail {
+                            width: 150px;
+                            height: 150px;
+
+                            font-size: 25px;
+                            text-align: center;
+                            line-height: 150px;
+
+                            border-radius: 75px;
+                            border: 3px solid #fff;
+
+                            color: #fff;
+                        }
                     }
                 }
 
@@ -160,6 +178,12 @@ $t-hover-color: #ee534e;
                         opacity: 1;
 
                         transition: All 1s ease;
+
+                        .look-detail {
+                            transform: rotate(360deg);
+
+                            transition: all .5s ease-in-out;
+                        }
                     }
                 }
 
@@ -187,15 +211,38 @@ $t-hover-color: #ee534e;
 
                         color: $black-color;
 
-                        .icon {
-                            font-size: 30px;
+                        .t-portrait {
+                            margin-right: 15px;
+                            width: 30px;
+                            height: 30px;
+
+                            border-radius: 15px;
+                            border: 1px solid #ccc;
+
+                            background-size: cover;
+                            background-position: center center;
+                        }
+
+                        span {
+                            line-height: 30px;
+                        }
+
+                        .about-activity {
+                            margin-left: 40px;
+                            width: 200px;
+    
+                            font-size: 15px;
+    
+                            .icon {
+                                font-size: 18px;
+                            }
                         }
                     }
                 }
             }
 
             .list-item:hover {
-                box-shadow:  0px 17px 50px 0px rgba(0,0,0,0.188235);
+                box-shadow:  0 0 18px 4px #e9b7bf, 0 0 18px 4px #e9b7bf;
                 
                 transform: translate3d(0px,-2px,0px);
                 transition: all 0.3s ease;
@@ -231,7 +278,7 @@ $t-hover-color: #ee534e;
 .hot-classify {
     padding: $main-padding;
 
-    background-color: #8cc3f0;
+    background-color: #fff;
 
     .classify-list {
         margin: $main-padding;
@@ -243,7 +290,9 @@ $t-hover-color: #ee534e;
 
             margin-bottom: 50px;
 
+            border: 1px solid #dddfe0;
             border-radius: 5px;
+            overflow: hidden;
 
             .item-text {
                 position: absolute;
@@ -263,23 +312,23 @@ $t-hover-color: #ee534e;
                     line-height: 50px;
                     font-size: 20px;
 
-                    color: $gray-color;
+                    color: #101213;
                 }
             }
 
             .list-img-div {
                 position: relative;
 
-                width: 330px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
 
                 overflow: hidden;
 
                 cursor: pointer;
 
                 .item-img {
-                    width: 330px;
-                    height: 200px;
+                    width: 250px;
+                    height: 250px;
 
                     border-radius: 5px 5px 0 0;
 
@@ -319,7 +368,7 @@ $t-hover-color: #ee534e;
         }
 
         .list-item:hover {
-            box-shadow:  0px 17px 50px 0px rgba(0,0,0,0.188235);
+            box-shadow: 0 0 18px 4px #e9b7bf, 0 0 18px 4px #e9b7bf;
             
             transform: translate3d(0px,-2px,0px);
             transition: all 0.3s ease;
@@ -343,83 +392,111 @@ $t-hover-color: #ee534e;
     .certified-architect-list {
         margin: $main-padding;
 
-        .list-item {
-            position: relative;
+        .grid_3 {
+            width: 270px;
 
-            display: block;
-
-            margin-bottom: 50px;
-            width: 330px;
-
-            border-radius: 5px;
-
-            .list-img-div {
-                position: relative;
-
-                width: 330px;
-                height: 350px;
-
-                overflow: hidden;
-
-                cursor: pointer;
-
-                .item-img {
-                    margin: 10px;
-                    width: 310px;
-                    height: 350px;
-
-                    border-radius: 5px 5px 0 0;
-
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
+            .grade{
+                padding-bottom: 20px;
+                text-align: center;
             }
 
-            .item-text {
-                margin-top: 10px;
-                padding: 10px;
-                
-                .t-title {
-                    color: $black-color;
-                }
+            .circle {
+                position: relative;
 
-                .t-title:hover {
-                    color: $t-hover-color;
-                }
+                margin-top: 13px;
 
-                .t-describe {
-                    margin-top: 15px;
+                transition: all 0.35s ease-in-out;
 
-                    color: $gray-color;
-                }
-
-                .t-type {
+                .img:before {
                     position: absolute;
-                    bottom: 10px;
+                    display: block;
 
-                    color: $black-color;
+                    width: 100%;
+                    height: 100%;
 
-                    .icon {
-                        font-size: 30px;
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6);
+                    
+                    transition: all 0.35s ease-in-out;
+
+                    content: '';
+                }
+
+                .img {
+                    position: relative;
+                    width: 269px;
+                    height: 269px;
+                    border-radius: 50%;
+
+                    transform: scale(1);
+                    transition: all 0.35s ease-in-out;
+
+                    opacity: 1;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+
+                        border-radius: 50%;
+                    }
+                }
+
+                .info {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    text-align: center;
+                    backface-visibility: hidden;
+                    
+                    background: rgba(0, 0, 0, 0.6);
+                    color: #fff;
+                    opacity: 0;
+                    border-radius: 50%;
+                    
+                    transition: all 0.35s ease-in-out;
+                    transform: translateX(-100%);
+    
+                    h3 {
+                        font-size: 22px;
+                        margin: 0 45px;
+                        border-bottom: 1px solid #fff;
+                        padding: 93px 0 11px 0;
+                    }
+    
+                    p {
+                        padding: 10px 5px;
+                        margin: 0 40px;
+                        
+                        font-size: 12px;
                     }
                 }
             }
-        }
 
-        .list-item:hover {
-            box-shadow:  0px 17px 50px 0px rgba(0,0,0,0.188235);
-            
-            transform: translate3d(0px,-2px,0px);
-            transition: all 0.3s ease;
-        }
+            .circle a:hover .img {
+              transform: rotate(15deg);
 
-        .item-img-big {
-            width: 100%;
-            height: 300px;
+              transition: all .5 ease-in-out;
+            }
 
-            background-position: center;
-            background-size: cover;
+            .circle a:hover .info {
+                transform: translateX(0);
+    
+                opacity: 1;
+            }
+
+            .certified-info {
+                margin-top: 40px;
+                width: 100%;
+
+                font-size: 15px;
+
+                .icon {
+                    font-size: 18px;
+                }
+            }
         }
     }
 }
@@ -436,7 +513,6 @@ $t-hover-color: #ee534e;
             display: block;
 
             margin-bottom: 50px;
-            height: 330px;
             width: 330px;
 
             border-radius: 5px;
@@ -445,7 +521,6 @@ $t-hover-color: #ee534e;
                 position: relative;
 
                 width: 330px;
-                height: 320px;
 
                 overflow: hidden;
 
@@ -454,13 +529,24 @@ $t-hover-color: #ee534e;
                 .item-img {
                     margin: 10px;
                     width: 310px;
-                    height: 350px;
+                    height: 310px;
 
                     border-radius: 5px 5px 0 0;
 
                     background-position: center center;
                     background-repeat: no-repeat;
                     background-size: cover;
+                }
+            }
+
+            .production-info {
+                margin-bottom: 10px;
+                width: 100%;
+
+                font-size: 15px;
+
+                .icon {
+                    font-size: 18px;
                 }
             }
 

@@ -8,7 +8,7 @@ class RouterController extends Controller {
         // 最新活动
         const activity = await this.app.mysql.query(
             `
-            SELECT a.*, u.nickname
+            SELECT a.*, u.nickname, u.portrait
             FROM activity_info a INNER JOIN user_info u on a.initiator = u.id
             ORDER BY create_time desc
             limit 0,6;
@@ -22,14 +22,14 @@ class RouterController extends Controller {
             FROM production_info p INNER JOIN production_type_info pt on p.sort = pt.id
             group by sort
             ORDER BY pcount DESC
-            LIMIT 0,6;
+            LIMIT 0,8;
             `
         );
 
         // 优秀认证师
         const certifiedArchitect = await this.app.mysql.query(
             `
-            SELECT id, nickname, portrait, personal_statement, integral
+            SELECT id, nickname, portrait, personal_statement, integral, hot
             FROM user_info
             where sort = 2
             ORDER BY integral DESC
@@ -66,6 +66,8 @@ class RouterController extends Controller {
             LIMIT 0,3;
             `
         );
+        let activityData = JSON.parse(JSON.stringify(activity));
+        tools.formatTime(activityData);
 
         // 全部进行中活动
         const activityAll = await this.app.mysql.query(
@@ -79,6 +81,8 @@ class RouterController extends Controller {
             LIMIT 3,1000;
             `
         );
+        let activityAllData = JSON.parse(JSON.stringify(activityAll));
+        tools.formatTime(activityAllData);
 
         // 已结束活动
         const activityEnd = await this.app.mysql.query(
@@ -90,11 +94,13 @@ class RouterController extends Controller {
             LIMIT 0,3;
             `
         );
+        let activityEndData = JSON.parse(JSON.stringify(activityEnd));
+        tools.formatTime(activityEndData);
 
         await this.ctx.render('pc/activity.tpl', {
-            activityData: JSON.parse(JSON.stringify(activity)),
-            activityAllData: JSON.parse(JSON.stringify(activityAll)),
-            activityEndData: JSON.parse(JSON.stringify(activityEnd)),
+            activityData,
+            activityAllData,
+            activityEndData,
         });
     }
 
