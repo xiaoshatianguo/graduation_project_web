@@ -50,7 +50,7 @@
                                 <div class="detail">
                                     <p class="nick-name">{{ item.nickname }}</p>
                                     <p class="post">北京 | 设计师</p>
-                                    <p class="grade">创作 <i class="number">{{ item.hot }}</i> | 粉丝 <i class="number">66713</i></p>
+                                    <p class="grade">创作 <i class="number">{{ item.hot }}</i> | 粉丝 <i class="number fans-number">{{ item.fans }}</i></p>
                                     <div class="btn-div">
                                         <button class="attent-btn" userId={{ item.id }}>
                                             {% if item.is_attention != null %}
@@ -122,7 +122,9 @@
         // 关注操作
         $('.attent-btn').on('click', function() {
             var object_id = $(this).attr('userId');
+            var currentFans = $(this).parents('.btn-div').siblings('.grade').find('.fans-number').html();
             var OThis = $(this);
+
             if(!!userLoginInfo) {
                 $.ajax({
                     url: '/operation/attention',
@@ -135,13 +137,16 @@
                         if(!!result.attentionGet) {
                             if(result.attentionGet.status == 0) {
                                 OThis.text('关注');
+                                OThis.parents('.btn-div').siblings('.grade').find('.fans-number').text(Number(currentFans)-1);
                                 alert('已取消关注');
                             } else {
                                 OThis.text('取消关注');
+                                OThis.parents('.btn-div').siblings('.grade').find('.fans-number').text(Number(currentFans)+1);
                                 alert('关注成功');
                             }
                         } else {
                             OThis.text('取消关注');
+                            OThis.parents('.btn-div').siblings('.grade').find('.fans-number').text(Number(currentFans)+1);
                             alert('关注成功');
                         }
                     },
