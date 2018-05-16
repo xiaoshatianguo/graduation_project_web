@@ -23,9 +23,12 @@ var userLoginInfo;
 $('.commentAll').on('click','.plBtn',function(){
     // 判断是否登录
     if(!cacheGet('userLoginInfo')) {
-        alert('请登录后再评论！');
+        $('.comment-tip .cover').find('.main-body').text('请登录后再评论！');
+        tipController('.comment-tip .cover');
         $(this).siblings('.flex-text-wrap').find('.comment-input').val('');
-        location.href = '/login';
+        setTimeout(function() {
+            location.href = '/login';
+        },1000)
     } else {
         userLoginInfo = cacheGet('userLoginInfo');
 
@@ -38,7 +41,8 @@ $('.commentAll').on('click','.plBtn',function(){
             var sort = 0;
             saveComment(sort, $(this), oSize, userLoginInfo.id);
         } else {
-            alert('评论不能为空！');
+            $('.comment-tip .cover').find('.main-body').text('评论不能为空！');
+            tipController('.comment-tip .cover');
         }
     }
 });
@@ -81,7 +85,8 @@ function saveComment(sort, _this, content, user_id, father_id, to_id, child_fath
         },
         error: function(err){
             console.log(err);
-            console.log('评论失败');
+            $('.comment-tip .cover').find('.main-body').text('评论失败');
+            tipController('.comment-tip .cover');
             return false;
         }
     })
@@ -149,7 +154,8 @@ $('.comment-show').on('click','.pl-hf',function(){
         },
         error: function(err) {
             console.log(err);
-            alert('网络有问题，请稍候再试！');
+            $('.comment-tip .cover').find('.main-body').text('网络有问题，请稍候再试！');
+            tipController('.comment-tip .cover');
         }
     })
 });
@@ -229,9 +235,12 @@ function showChildComments(oThis, result) {
 $('.comment-show').on('click','.hf-pl',function(){
     // 判断是否登录
     if(!cacheGet('userLoginInfo')) {
-        alert('请登录后再评论！');
+        $('.comment-tip .cover').find('.main-body').text('请登录后再评论！');
+        tipController('.comment-tip .cover');
         $(this).siblings('.flex-text-wrap').find('.comment-input').val('');
-        location.href = '/login';
+        setTimeout(function() {
+            location.href = '/login';
+        },1000)
     } else {
         userLoginInfo = cacheGet('userLoginInfo');
 
@@ -264,7 +273,8 @@ $('.comment-show').on('click','.hf-pl',function(){
             var sort = 1;
             saveComment(sort, $(this), oHfVal, userLoginInfo.id, father_id, to_id, child_father_id, father_nickname, father_content);
         } else {
-            alert('评论不能为空！');
+            $('.comment-tip .cover').find('.main-body').text('评论不能为空！');
+            tipController('.comment-tip .cover');
         }
     }
 });
@@ -353,7 +363,8 @@ $('.commentAll').on('click','.removeBlock',function(){
         },
         error: function(err) {
             console.log(err);
-            alert('点赞失败');
+            $('.comment-tip .cover').find('.main-body').text('点赞失败');
+            tipController('.comment-tip .cover');
         }
     });
 
@@ -373,9 +384,12 @@ $('.commentAll').on('click','.removeBlock',function(){
 $('.comment-show').on('click','.date-dz-z',function(){
     // 判断登录
     if(!cacheGet('userLoginInfo')) {
-        alert('请登录后再点赞！');
+        $('.comment-tip .cover').find('.main-body').text('请登录后再点赞！');
+        tipController('.comment-tip .cover');
         $(this).siblings('.flex-text-wrap').find('.comment-input').val('');
-        location.href = '/login';
+        setTimeout(function() {
+            location.href = '/login';
+        },1000)
     } else {
         userLoginInfo = cacheGet('userLoginInfo');
 
@@ -398,7 +412,8 @@ $('.comment-show').on('click','.date-dz-z',function(){
             },
             error: function(err) {
                 console.log(err);
-                alert('点赞失败');
+                $('.comment-tip .cover').find('.main-body').text('点赞失败');
+                tipController('.comment-tip .cover');
             }
         });
 

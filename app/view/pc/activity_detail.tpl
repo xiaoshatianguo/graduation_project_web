@@ -9,6 +9,21 @@
 <div class="no-login">
     {{ tipCover.tip(type="noLogin", msg = '', time="", style="", opration="") }}
 </div>
+<div class="cancel-attention">
+    {{ tipCover.tip(type="confirm", msg = '已取消关注', time="", style="", opration="") }}
+</div>
+<div class="success-attention">
+    {{ tipCover.tip(type="confirm", msg = '关注成功', time="", style="", opration="") }}
+</div>
+<div class="error-attention">
+    {{ tipCover.tip(type="confirm", msg = '关注失败', time="", style="", opration="") }}
+</div>
+<div class="please-login">
+    {{ tipCover.tip(type="confirm", msg = '请先登录后再关注', time="", style="", opration="") }}
+</div>
+<div class="comment-tip">
+    {{ tipCover.tip(type="confirm", msg = '', time="", style="", opration="") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -203,24 +218,26 @@
                         if(!!result.attentionGet) {
                             if(result.attentionGet.status == 0) {
                                 attentionBtn.text('关注');
-                                alert('已取消关注');
+                                tipController('.cancel-attention .cover');
                             } else {
                                 attentionBtn.text('取消关注');
-                                alert('关注成功');
+                                tipController('.success-attention .cover');
                             }
                         } else {
                             attentionBtn.text('取消关注');
-                            alert('关注成功');
+                            tipController('.success-attention .cover');
                         }
                     },
                     error: function(err) {
                         console.log(err);
-                        console.log('关注失败');
+                        tipController('.error-attention .cover');
                     }
                 })
             } else {
-                alert('请先登录后再关注');
-                location.href = '/login';
+                tipController('.please-login .cover');
+                setTimeout(function() {
+                    location.href = '/login';
+                },1000)
             }
         })
     </script>

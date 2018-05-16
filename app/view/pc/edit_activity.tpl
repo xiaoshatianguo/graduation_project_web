@@ -5,6 +5,15 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="form-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
+<div class="success-form">
+    {{ tipCover.tip(type="confirm", msg ='申请活动信息修改成功', time="", style="", opration="logout()") }}
+</div>
+<div class="fail-form">
+    {{ tipCover.tip(type="confirm", msg ='申请活动信息修改失败，请稍候重试', time="", style="", opration="logout()") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -250,17 +259,22 @@
                 // 单独验证活动内容和规则不能为空
                 if (!!contentData) {
                 } else {
-                    alert('活动内容不能为空');
+                    $('.form-tip .cover').find('.main-body').text('活动内容不能为空');
+                    tipController('.form-tip .cover');
                     return false;
                 }
                 if (!!ruleData) {
                 } else {
-                    alert('活动规则不能为空');
+                    $('.form-tip .cover').find('.main-body').text('活动规则不能为空');
+                    tipController('.form-tip .cover');
                     return false;
                 }
                 if(!cacheGet('userLoginInfo').id) {
-                    alert('登录超时，请重新登录！');
-                    location.href = '/login';
+                    $('.form-tip .cover').find('.main-body').text('登录超时，请重新登录！');
+                    tipController('.form-tip .cover');
+                    setTimeout(function() {
+                        location.href = '/login';
+                    },1000)
                     return false;
                 }
 
@@ -281,11 +295,13 @@
                         end_time: time_range[1],
                     },
                     success: function(result){
-                        alert('申请活动信息修改成功');
-                        pageJumpsHandle();
+                        tipController('.success-form .cover');
+                        setInterval(function() {
+                            pageJumpsHandle();
+                        },1000)
                     },
                     error: function(err) {
-                        alert('申请活动信息修改失败，请稍候重试');
+                        tipController('.fail-form .cover');
                     }
                 })
             });
@@ -313,7 +329,8 @@
                 },
                 done: function(res){
                     $('#coverSrc').val(res.data.src);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     // 演示失败状态，并实现重传
@@ -342,7 +359,8 @@
                 },
                 done: function(res){
                     $('#bannerSrc').val(res.data.src);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     //演示失败状态，并实现重传

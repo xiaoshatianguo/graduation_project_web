@@ -5,6 +5,21 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="email-error">
+    {{ tipCover.tip(type="confirm", msg ='请输入合法的邮箱！', time="", style="", opration="") }}
+</div>
+<div class="login-success">
+    {{ tipCover.tip(type="confirm", msg ='登录成功', time="", style="", opration="") }}
+</div>
+<div class="psd-error">
+    {{ tipCover.tip(type="confirm", msg ='密码错误', time="", style="", opration="") }}
+</div>
+<div class="no-user">
+    {{ tipCover.tip(type="confirm", msg ='该用户不存在', time="", style="", opration="") }}
+</div>
+<div class="user-psd-input">
+    {{ tipCover.tip(type="confirm", msg ='请输入账号或密码！', time="", style="", opration="") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -81,7 +96,7 @@
         $('.login-btn').on('click', function() {
             if(!!email.val()&&!!psd.val()) {
                 if(!reg.test(email.val())) {
-                    alert('请输入合法的邮箱！');
+                    tipController('.email-error .cover');
                 } else {
                     $.ajax({
                         type: 'post',
@@ -91,21 +106,23 @@
                             password: psd.val(),
                         },
                         success: function(result){
-                            alert('登录成功');
+                            tipController('.login-success .cover');
                             cacheSet('userLoginInfo', result);
-                            pageJumpsHandle();
+                            setTimeout(function() {
+                                pageJumpsHandle();
+                            },1000)
                         },
                         error: function(err) {
                             if(err.status == 403){
-                                alert('密码错误');
+                                tipController('.psd-error .cover');
                             } else if(err.status == 404) {
-                                alert('该用户不存在');
+                                tipController('.no-user .cover');
                             }
                         }
                     })
                 }
             } else {
-                alert('请输入账号或密码！');
+                tipController('.user-psd-input .cover');
             }
         })
     </script>

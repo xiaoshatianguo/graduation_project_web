@@ -3251,11 +3251,12 @@ div.dis-ib {
     height: 100%;
     font-size: 2.1978vw;
     text-align: center;
-    background-color: transparent;
-    color: #fff; }
+    color: black; }
     .cover .tip-cover-content .main-body {
       padding: 3.663vw;
-      background-color: #f068a9; }
+      background-color: #fff;
+      border-radius: 0.7326vw;
+      opacity: .8; }
     .cover .tip-cover-content .tip-input-div {
       position: relative;
       width: 36.63004vw;
@@ -3318,7 +3319,7 @@ div.dis-ib {
     .cover .tip-cover-content .tip-content {
       margin-left: 2.1978vw;
       font-size: 2.1978vw;
-      color: #fff; }
+      color: #0c0c0c; }
     .cover .tip-cover-content .alert-div {
       width: 21.97802vw; }
       .cover .tip-cover-content .alert-div .tip-content {

@@ -5,6 +5,15 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="update-personal-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
+<div class="form-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
+<div class="comment-tip">
+    {{ tipCover.tip(type="confirm", msg = '', time="", style="", opration="") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -553,13 +562,15 @@
                         portrait: personData.portraitSrc,
                     },
                     success: function(result){
-                        alert('个人资料修改成功');
+                        $('.update-personal-tip .cover').find('.main-body').text('个人资料修改成功');
+                        tipController('.update-personal-tip .cover');
                         // 动态修改头像和背景
                         $('.portraitsImg').attr('src', personData.portrait);
                         $('.banner-img').attr('style', 'background-image: url('+personData.coverSrc+')');
                     },
                     error: function(err) {
-                        alert('个人资料修改失败，请稍候重试');
+                        $('.update-personal-tip .cover').find('.main-body').text('个人资料修改失败，请稍候重试');
+                        tipController('.update-personal-tip .cover');
                     }
                 })
             });
@@ -583,7 +594,8 @@
                 },
                 done: function(res){
                     $('#portraitSrc').val(res.data.src);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     // 演示失败状态，并实现重传
@@ -611,7 +623,8 @@
                 },
                 done: function(res){
                     $('#coverSrc').val(res.data.src);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     // 演示失败状态，并实现重传

@@ -26,13 +26,14 @@ $t-hover-color: #ee534e;
         font-size: 30px;
         text-align: center;
         
-        background-color: transparent;
-        color: #fff;
+        color: rgb(0, 0, 0);
 
         .main-body {
             padding: 50px;
 
-            background-color: $main-color;
+            background-color: #fff;
+            border-radius: 10px;
+            opacity: .8;
         }
         
         .tip-input-div {
@@ -144,7 +145,7 @@ $t-hover-color: #ee534e;
             
             font-size: 30px;
             
-            color: #fff;
+            color: rgb(12, 12, 12);
         }
 
         .alert-div {

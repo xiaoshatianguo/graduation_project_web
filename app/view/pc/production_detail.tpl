@@ -1,6 +1,30 @@
 {% extends "./template/template.tpl" %}
 {% import "pc/macro/tip_cover.tpl" as tipCover %}
 
+{% block tip %}
+<div class="login-out-tip">
+    {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
+</div>
+<div class="no-login">
+    {{ tipCover.tip(type="noLogin", msg = '', time="", style="", opration="") }}
+</div>
+<div class="collection-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
+<div class="attention-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
+<div class="please-login">
+    {{ tipCover.tip(type="confirm", msg = '请先登录后再收藏', time="", style="", opration="") }}
+</div>
+<div class="comment-tip">
+    {{ tipCover.tip(type="confirm", msg = '', time="", style="", opration="") }}
+</div>
+<div class="comment-tip">
+    {{ tipCover.tip(type="confirm", msg = '', time="", style="", opration="") }}
+</div>
+{% endblock %}
+
 {% block banner %}
     
 {% endblock %}
@@ -162,24 +186,30 @@
                         if(!!result.attentionGet) {
                             if(result.attentionGet.status == 0) {
                                 attentionBtn.text('关注');
-                                alert('已取消关注');
+                                $('.attention-tip .cover').find('.main-body').text('已取消关注');
+                                tipController('.attention-tip .cover');
                             } else {
                                 attentionBtn.text('取消关注');
-                                alert('关注成功');
+                                $('.attention-tip .cover').find('.main-body').text('关注成功');
+                                tipController('.attention-tip .cover');
                             }
                         } else {
                             attentionBtn.text('取消关注');
-                            alert('关注成功');
+                            $('.attention-tip .cover').find('.main-body').text('关注成功');
+                            tipController('.attention-tip .cover');
                         }
                     },
                     error: function(err) {
                         console.log(err);
-                        console.log('关注失败');
+                        $('.attention-tip .cover').find('.main-body').text('关注失败');
+                        tipController('.attention-tip .cover');
                     }
                 })
             } else {
-                alert('请先登录后再关注');
-                location.href = '/login';
+                tipController('.please-login .cover');
+                setTimeout(function() {
+                    location.href = '/login';
+                },1000)
             }
         })
 
@@ -225,24 +255,31 @@
                         if(!!result.collectionGet) {
                             if(result.collectionGet.status == 0) {
                                 collectionBtn.text('收藏作品');
-                                alert('已取消收藏');
+                                collection-tip
+                                $('.attention-tip .cover').find('.main-body').text('已取消收藏');
+                                tipController('.attention-tip .cover');
                             } else {
                                 collectionBtn.text('取消收藏');
-                                alert('收藏成功');
+                                $('.attention-tip .cover').find('.main-body').text('收藏成功');
+                                tipController('.attention-tip .cover');
                             }
                         } else {
                             collectionBtn.text('取消收藏');
-                            alert('收藏成功');
+                            $('.attention-tip .cover').find('.main-body').text('收藏成功');
+                            tipController('.attention-tip .cover');
                         }
                     },
                     error: function(err) {
                         console.log(err);
-                        console.log('关注失败');
+                        $('.attention-tip .cover').find('.main-body').text('收藏失败');
+                        tipController('.attention-tip .cover');
                     }
                 })
             } else {
-                alert('请先登录后再收藏');
-                location.href = '/login';
+                tipController('.please-login .cover');
+                setTimeout(function() {
+                    location.href = '/login';
+                },1000)
             }
         })
     </script>

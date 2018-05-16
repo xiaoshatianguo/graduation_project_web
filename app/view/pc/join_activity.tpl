@@ -5,6 +5,15 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="form-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
+<div class="success-form">
+    {{ tipCover.tip(type="confirm", msg ='作品信息提交成功', time="", style="", opration="logout()") }}
+</div>
+<div class="fail-form">
+    {{ tipCover.tip(type="confirm", msg ='作品信息提交失败，请稍候重试', time="", style="", opration="logout()") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -268,7 +277,9 @@
                 // 单独验证活动内容和规则不能为空
                 if (!!describeData) {
                 } else {
-                    alert('描述详情不能为空');
+                    $('.form-tip .cover').find('.main-body').text('描述详情不能为空');
+                    tipController('.form-tip .cover');
+                    return false;
                 }
                 $.ajax({
                     type: 'post',
@@ -286,11 +297,13 @@
                         content: uploadData.content,
                     },
                     success: function(result){
-                        alert('作品信息提交成功');
-                        pageJumpsHandle();
+                        tipController('.success-form .cover');
+                        setInterval(function() {
+                            pageJumpsHandle();
+                        },1000)
                     },
                     error: function(err) {
-                        alert('作品信息提交失败，请稍候重试');
+                        tipController('.fail-form .cover');
                     }
                 })
             });
@@ -319,7 +332,8 @@
                 done: function(res){
                     productionSrc.push(res.data.src);
                     $('#productionSrc').val(productionSrc);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     //演示失败状态，并实现重传
@@ -348,7 +362,8 @@
                 },
                 done: function(res){
                     $('#coverSrc').val(res.data.src);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     // 演示失败状态，并实现重传
@@ -377,7 +392,8 @@
                 },
                 done: function(res){
                     $('#bannerSrc').val(res.data.src);
-                    return layer.msg('上传成功');
+                    $('.form-tip .cover').find('.main-body').text('上传成功');
+                    tipController('.form-tip .cover');
                 },
                 error: function(){
                     //演示失败状态，并实现重传
