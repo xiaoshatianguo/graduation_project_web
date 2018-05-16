@@ -255,8 +255,8 @@ class OperationController extends Controller {
         // 查询关注表，是否重复关注
         const attentionGet = await this.app.mysql.get('attention_info', {
             user_id: attentionData.user_id,
-            object_id: attentionData.object_id,
-            activity_id: attentionData.activity_id,
+            object_id: attentionData.object_id || 0,
+            activity_id: attentionData.activity_id || 0,
         });
 
         let attention;
@@ -276,6 +276,7 @@ class OperationController extends Controller {
                 user_id: attentionData.user_id,
                 object_id: attentionData.object_id || 0,
                 activity_id: attentionData.activity_id || 0,
+                create_time: new Date().valueOf(),
             })
 
             ctx.status = 200;

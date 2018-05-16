@@ -95,7 +95,7 @@
                             <div class="inner">
                                 <div class="desc">
                                 <h3>{{ item.name }}</h3>
-                                <span class="cat">{{ item.describe | truncate(30) }}</span>
+                                <p class="cat">{{ item.describe | truncate(30) }}</p>
                             </div>
                             </div>
                         </div>

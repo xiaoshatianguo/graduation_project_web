@@ -19,15 +19,14 @@
             </div>
             <div class="activity-list flex-b-sbc fw-wr">
                 {% for item in userData %}
-                    <a class="list-item" href="personal_space?userId={{ item.id }}">
-                        <div class="list-img-div">
-                            <div class="item-img" style="background-image:url({{ item.portrait }})"></div>
-                            <div class="item-cover"></div>
+                    <a class="product-type-container" href="personal_space?userId={{ item.id }}">
+                        <div class="product-type-overlay">
+                            <div class="product-type-info">
+                                <h3 class="gold-text text-uppercase">{{ item.nickname }}</h3>
+                                <p class="text-uppercase white-text">{{ item.personal_statement }}</p>
+                            </div>
                         </div>
-                        <div class="item-text">
-                            <h3 class="t-title">{{ item.nickname }}</h3>
-                            <p class="t-describe">{{ item.personal_statement }}</p>
-                        </div>
+                        <div class="product-type-img" style="background-image: url({{ item.portrait }})"></div>
                     </a>
                 {% endfor %}
             </div>
@@ -51,10 +50,10 @@
                                 <div class="detail">
                                     <p class="nick-name">{{ item.nickname }}</p>
                                     <p class="post">北京 | 设计师</p>
-                                    <p class="grade">创作 <i class="number">225</i> | 粉丝 <i class="number">66713</i></p>
+                                    <p class="grade">创作 <i class="number">{{ item.hot }}</i> | 粉丝 <i class="number">66713</i></p>
                                     <div class="btn-div">
-                                        <button class="attent-btn">关注</button>
-                                        <button class="home-btn">主页</button>
+                                        <button class="attent-btn" userId={{ item.id }}>关注</button>
+                                        <button class="home-btn" userId={{ item.id }}>主页</button>
                                     </div>
                                 </div>
                             </div>
@@ -103,6 +102,45 @@
                 location.href = '/apply_certified_architect';
             } else {
                 $('.no-login .cover').fadeIn();
+            }
+        })
+
+        // 关注认证师
+        var attentionBtn = $('.attent-btn');
+        var userLoginInfo = cacheGet('userLoginInfo');
+
+        // 关注操作
+        $('.attent-btn').on('click', function() {
+            var object_id = $(this).attr('userId');
+            if(!!userLoginInfo) {
+                $.ajax({
+                    url: '/operation/attention',
+                    type: 'post',
+                    data: {
+                        user_id: cacheGet('userLoginInfo').id,
+                        object_id: object_id || 0,
+                    },
+                    success: function(result) {
+                        if(!!result.attentionGet) {
+                            if(result.attentionGet.status == 0) {
+                                attentionBtn.text('关注');
+                                alert('已取消关注');
+                            } else {
+                                attentionBtn.text('取消关注');
+                                alert('关注成功');
+                            }
+                        } else {
+                            alert('关注成功');
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err);
+                        console.log('关注失败');
+                    }
+                })
+            } else {
+                alert('请先登录后再关注');
+                location.href = '/login';
             }
         })
     </script>

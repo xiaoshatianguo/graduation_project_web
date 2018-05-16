@@ -152,7 +152,7 @@ $t-hover-color: #ee534e;
                     display: table;
 
                     height: 300px;
-                    width: 300px;
+                    width: 350px;
                     
                     background: rgba(237, 235, 232, 0.9);
 
@@ -172,6 +172,7 @@ $t-hover-color: #ee534e;
                             text-transform: uppercase;
                             font-weight: bold;
                             line-height: 24px;
+                            text-align: center;
 
                             a {
                                 color: #000;
@@ -180,6 +181,7 @@ $t-hover-color: #ee534e;
 
                         .cat {
                             font-size: 11px;
+                            text-align: center;
                             letter-spacing: 2px;
                             text-transform: uppercase;
                         }

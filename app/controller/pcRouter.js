@@ -116,8 +116,12 @@ class RouterController extends Controller {
         );
 
         const userAll = await this.app.mysql.query(
-            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc'
+            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc;'
         );
+
+        // 创作
+        // 粉丝
+        // 热度
 
         await this.ctx.render('pc/certified_architect.tpl', {
             userData: JSON.parse(JSON.stringify(user)),
