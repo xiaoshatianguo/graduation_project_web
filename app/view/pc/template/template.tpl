@@ -31,7 +31,7 @@
                 <ul class="header-nav-right flex-b-sc fl">
                     <a href="/" class="nav-li">首页</a>
                     <a href="/activity" class="nav-li">活动</a>
-                    <a href="/certified_architect" class="nav-li">认证师</a>
+                    <a href="javascript:;" class="nav-li certified-architect-link">认证师</a>
                 </ul>
                 <ul class="header-login flex-b-sc fr">
                 </ul>
@@ -101,6 +101,14 @@
     {% endblock %}
 
     <script>
+        // 处理pcRouter用户id
+        $('.certified-architect-link').on('click', function() {
+            var userId = cacheGet('userLoginInfo').id || 0;
+            location.href = '/certified_architect?userId='+userId;
+        })
+
+
+
         // 缓存所有分类及显示
         var sortData = cacheGet('sortData');
         if(!!sortData) {
@@ -168,7 +176,6 @@
                 }
             });
         });
-
     </script>
 </body>
 </html>

@@ -105,6 +105,31 @@ class RouterController extends Controller {
     }
 
     async certifiedArchitect() {
+        const ctx = this.ctx;
+        const userId = ctx.query.userId;
+
+        let userAll;
+        if(userId != '0') {
+            userAll = await this.app.mysql.query(
+                `
+                SELECT * FROM (
+                    SELECT u.* FROM user_info u where u.sort = 2 ORDER BY u.create_time desc
+                ) a
+                LEFT JOIN
+                (
+                    SELECT object_id as is_attention FROM attention_info WHERE user_id = ${userId} and status = 0
+                ) b
+                ON a.id=b.is_attention
+                `
+            );
+        } else {
+            userAll = await this.app.mysql.query(
+                `
+                SELECT * FROM user_info u where u.sort = 2 ORDER BY u.create_time desc
+                `
+            );
+        }
+
         const user = await this.app.mysql.query(
             `
             SELECT id, nickname, portrait, personal_statement, integral
@@ -113,10 +138,6 @@ class RouterController extends Controller {
             ORDER BY integral DESC
             limit 0,6;
             `
-        );
-
-        const userAll = await this.app.mysql.query(
-            'SELECT * FROM user_info where sort = 2 ORDER BY create_time desc;'
         );
 
         // 创作

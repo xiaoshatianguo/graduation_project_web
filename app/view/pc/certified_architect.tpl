@@ -52,7 +52,13 @@
                                     <p class="post">北京 | 设计师</p>
                                     <p class="grade">创作 <i class="number">{{ item.hot }}</i> | 粉丝 <i class="number">66713</i></p>
                                     <div class="btn-div">
-                                        <button class="attent-btn" userId={{ item.id }}>关注</button>
+                                        <button class="attent-btn" userId={{ item.id }}>
+                                            {% if item.is_attention != null %}
+                                                取消关注
+                                            {% else %}
+                                                关注
+                                            {% endif %}
+                                        </button>
                                         <button class="home-btn" userId={{ item.id }}>主页</button>
                                     </div>
                                 </div>
@@ -105,13 +111,18 @@
             }
         })
 
+        // 主页跳转
+        $('.home-btn').on('click', function() {
+            location.href = '/personal_space?userId='+$(this).attr('userId');
+        })
+
         // 关注认证师
-        var attentionBtn = $('.attent-btn');
         var userLoginInfo = cacheGet('userLoginInfo');
 
         // 关注操作
         $('.attent-btn').on('click', function() {
             var object_id = $(this).attr('userId');
+            var OThis = $(this);
             if(!!userLoginInfo) {
                 $.ajax({
                     url: '/operation/attention',
@@ -123,13 +134,14 @@
                     success: function(result) {
                         if(!!result.attentionGet) {
                             if(result.attentionGet.status == 0) {
-                                attentionBtn.text('关注');
+                                OThis.text('关注');
                                 alert('已取消关注');
                             } else {
-                                attentionBtn.text('取消关注');
+                                OThis.text('取消关注');
                                 alert('关注成功');
                             }
                         } else {
+                            OThis.text('取消关注');
                             alert('关注成功');
                         }
                     },

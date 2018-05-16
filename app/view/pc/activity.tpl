@@ -117,6 +117,21 @@
             loop : true,
         })
 
+        // 是否显示发布活动按钮
+        var userLoginInfo = cacheGet('userLoginInfo');
+        var caBtn = $('.publish-activity-btn');
+        if(userLoginInfo) {
+            $.ajax({
+                url: '/operation/get_personal_data?id='+cacheGet('userLoginInfo').id,
+                type: 'get',
+                success: function(result) {
+                    if(result.sort == 0) {
+                        caBtn.hide();
+                    }
+                }
+            })
+        }
+
         $('.publish-activity-btn').on('click', function() {
             if(cacheGet('userLoginInfo')) {
                 location.href = '/apply_activity';

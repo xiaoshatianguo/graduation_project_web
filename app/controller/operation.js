@@ -265,6 +265,36 @@ class OperationController extends Controller {
                 `update attention_info set status = !status where id = ${attentionGet.id};`
             );
 
+            if(attentionGet.status == 0) {
+                // 用户粉丝-1
+                if(attentionData.object_id != undefined && attentionData.object_id != 0) {
+                    const changeNumber = await this.app.mysql.query(
+                        `update user_info set fans = fans-1 WHERE id = ${attentionData.object_id};`
+                    );
+                }
+
+                // 活动关注量-1
+                if(attentionData.activity_id != undefined && attentionData.activity_id != 0) {
+                    const changeNumber = await this.app.mysql.query(
+                        `update activity_info set attention_number = attention_number-1 WHERE id = ${attentionData.activity_id};`
+                    );
+                }
+            } else {
+                // 用户粉丝+1
+                if(attentionData.object_id != undefined && attentionData.object_id != 0) {
+                    const changeNumber = await this.app.mysql.query(
+                        `update user_info set fans = fans+1 WHERE id = ${attentionData.object_id};`
+                    );
+                }
+
+                // 活动关注量+1
+                if(attentionData.activity_id != undefined && attentionData.activity_id != 0) {
+                    const changeNumber = await this.app.mysql.query(
+                        `update activity_info set attention_number = attention_number+1 WHERE id = ${attentionData.activity_id};`
+                    );
+                }
+            }
+
             ctx.status = 200;
             ctx.body = {
                 attentionGet,
@@ -278,6 +308,20 @@ class OperationController extends Controller {
                 activity_id: attentionData.activity_id || 0,
                 create_time: new Date().valueOf(),
             })
+
+            // 用户粉丝+1
+            if(attentionData.object_id != undefined && attentionData.object_id != 0) {
+                const changeNumber = await this.app.mysql.query(
+                    `update user_info set fans = fans+1 WHERE id = ${attentionData.object_id};`
+                );
+            }
+
+            // 活动关注量+1
+            if(attentionData.activity_id != undefined && attentionData.activity_id != 0) {
+                const changeNumber = await this.app.mysql.query(
+                    `update activity_info set attention_number = attention_number+1 WHERE id = ${attentionData.activity_id};`
+                );
+            }
 
             ctx.status = 200;
             ctx.body = {
