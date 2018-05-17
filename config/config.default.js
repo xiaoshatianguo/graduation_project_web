@@ -20,6 +20,7 @@ module.exports = appInfo => {
         'http://localhost:8000',
         'http://localhost:7100',
         'http://localhost:7200',
+        'http://sy.hndjfs.com/',
         'http://p1s12lchv.bkt.clouddn.com',
       ],
     },

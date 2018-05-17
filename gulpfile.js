@@ -21,6 +21,6 @@ gulp.task('watch',function() {
 
         browser: ["chrome"],
 
-        proxy: "localhost:7001"
+        proxy: "localhost:9999"
     });
 });

@@ -22,7 +22,7 @@ class CommentsController extends Controller {
         const ctx = this.ctx;
 
         const result = await ctx.service[`${serviceHandle}`].index(ctx.request.query);
-
+        console.log(result);
         ctx.body = result;
         ctx.status = 200;
     }
@@ -31,16 +31,16 @@ class CommentsController extends Controller {
      * 添加评论留言
      */
     async create() {
-        const ctx = this.ctx;
+        // const ctx = this.ctx;
 
-        const reqBody = ctx.request.body;
+        // const reqBody = ctx.request.body;
 
-        // ctx.validate(createRule);
+        // // ctx.validate(createRule);
 
-        const result = await ctx.service[`${serviceHandle}`].create(reqBody);
+        // const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
-        ctx.body = result;
-        ctx.status = 200;
+        // ctx.body = result;
+        // ctx.status = 200;
     }
 
     /**
