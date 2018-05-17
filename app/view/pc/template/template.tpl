@@ -29,7 +29,7 @@
                     <img class="img" src="/public/images/photo1.png" alt="">
                 </a>
                 <ul class="header-nav-right flex-b-sc fl">
-                    <a href="/public/dist/index.html" class="nav-li">首页</a>
+                    <a href="/" class="nav-li">首页</a>
                     <a href="/activity" class="nav-li">活动</a>
                     <a href="javascript:;" class="nav-li certified-architect-link">认证师</a>
                 </ul>
@@ -78,6 +78,7 @@
             <div class="footer-bottom">
                 <p class="text">2018 YI&YI Photo Web</p>
                 <p class="text">YY摄影网，大型摄影交流网站</p>
+                <a href="/public/dist/index.html">管理后台</a>
             </div>
         </footer>
     {% endblock %}

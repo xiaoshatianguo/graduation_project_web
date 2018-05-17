@@ -22,7 +22,6 @@ class CommentsController extends Controller {
         const ctx = this.ctx;
 
         const result = await ctx.service[`${serviceHandle}`].index(ctx.request.query);
-        console.log(result);
         ctx.body = result;
         ctx.status = 200;
     }
