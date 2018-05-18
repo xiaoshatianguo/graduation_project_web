@@ -5,6 +5,9 @@
 <div class="login-out-tip">
     {{ tipCover.tip(type="alert", msg ='确定退出当前账号？', time="", style="", opration="logout()") }}
 </div>
+<div class="reg-tip">
+    {{ tipCover.tip(type="confirm", msg ='', time="", style="", opration="logout()") }}
+</div>
 {% endblock %}
 
 {% block banner %}
@@ -12,7 +15,7 @@
 {% endblock %}
 
 {% block top %}
-    <div class="register-page flex-b-cc" style="background-image: url('/public/images/banner/timg.jpg')">
+    <div class="register-page flex-b-cc" style="background-image: url('/public/images/banner/10.jpg')">
         <div class="register-div">
             <div class="fl leader-left">
                 <svg class="icon" aria-hidden="true">
@@ -116,11 +119,13 @@
             ready: function () {
             },
             success: function () {
-                alert('验证通过');
+                $('.reg-tip .cover').find('.main-body').text('验证通过');
+                tipController('.reg-tip .cover');
                 verify = true;
             },
             error: function () {
-                alert('请先右滑验证！');
+                $('.reg-tip .cover').find('.main-body').text('请先右滑验证！');
+                tipController('.reg-tip .cover');
             }
         });
 
@@ -130,12 +135,14 @@
 
             if(!!emailValue) {
                 if(!verify) {
-                    alert('请先右滑验证！');
-                    return ;
+                    $('.reg-tip .cover').find('.main-body').text('请先右滑验证！');
+                    tipController('.reg-tip .cover');
+                    return false;
                 }
 
                 if(!reg.test(emailValue)) {
-                    alert('请输入合法的邮箱！');
+                    $('.reg-tip .cover').find('.main-body').text('请输入合法的邮箱！');
+                    tipController('.reg-tip .cover');
                 } else {
                     $.ajax({
                         type: 'post',
@@ -151,18 +158,35 @@
                          },
                          error: function(err) {
                              if(err.status == 403) {
-                                 alert('该用户已存在！');
+                                $('.reg-tip .cover').find('.main-body').text('该用户已存在！');
+                                tipController('.reg-tip .cover');
                              }
                          }
                     })
                 }
             } else {
-                alert('请输入邮箱！');
+                $('.reg-tip .cover').find('.main-body').text('请输入邮箱！');
+                tipController('.reg-tip .cover');
             }
         })
 
         // 点击验证
         $('.code-verify-btn').on('click', function() {
+            emailValue = email.val();
+
+            if(!!emailValue) {
+                if(!reg.test(emailValue)) {
+                    $('.reg-tip .cover').find('.main-body').text('请输入合法的邮箱！');
+                    tipController('.reg-tip .cover');
+                    return false;
+                }
+            } else {
+                $('.reg-tip .cover').find('.main-body').text('请输入邮箱！');
+                tipController('.reg-tip .cover');
+
+                return false;
+            }
+
             if(!!code.val()) {
                 $.ajax({
                     type: 'post',
@@ -172,18 +196,22 @@
                         code: code.val(),
                     },
                     success: function(result){
-                        alert('验证通过');
+                        $('.reg-tip .cover').find('.main-body').text('验证通过');
+                        tipController('.reg-tip .cover');
                         $('.register-step1').hide();
                         $('.register-step2').show();
                     }
                 })
             } else {
-                alert('请输入验证码！');
+                $('.reg-tip .cover').find('.main-body').text('请输入验证码！');
+                tipController('.reg-tip .cover');
             }
         })
 
         // 点击注册
         $('.register-btn').on('click', function() {
+            emailValue = email.val();
+
             if(!!psd.val()&&!!repsd.val()) {
                 $.ajax({
                     type: 'post',
@@ -193,12 +221,16 @@
                         password: psd.val(),
                     },
                     success: function(result){
-                        alert('注册成功，请前往登录');
-                        location.href = '/login';
+                        $('.reg-tip .cover').find('.main-body').text('注册成功，请前往登录');
+                        tipController('.reg-tip .cover');
+                        setTimeout(function() {
+                            location.href = '/login';
+                        },1000)
                     }
                 })
             } else {
-                alert('请输入密码！');
+                $('.reg-tip .cover').find('.main-body').text('请输入密码！');
+                tipController('.reg-tip .cover');
             }
         })
     

@@ -344,39 +344,39 @@ function addApplyComment(_this, oHfVal, commentId, father_nickname, father_conte
 /**
  * 删除评论块
  */
-$('.commentAll').on('click','.removeBlock',function(){
-    var deleteId;
-    if($(this).parents('.hf-list-con').length > 0) {
-        deleteId = $(this).parents('.all-pl-con').attr('commentsId')
-    } else {
-        deleteId = $(this).parents('.comment-show-con').attr('commentId');
-    }
+// $('.commentAll').on('click','.removeBlock',function(){
+//     var deleteId;
+//     if($(this).parents('.hf-list-con').length > 0) {
+//         deleteId = $(this).parents('.all-pl-con').attr('commentsId')
+//     } else {
+//         deleteId = $(this).parents('.comment-show-con').attr('commentId');
+//     }
 
-    $.ajax({
-        url: '/operation/comment_delete',
-        type: 'post',
-        data: {
-            delete_id: deleteId,
-        },
-        success: function(result){
-            console.log(result);
-        },
-        error: function(err) {
-            console.log(err);
-            $('.comment-tip .cover').find('.main-body').text('点赞失败');
-            tipController('.comment-tip .cover');
-        }
-    });
+//     $.ajax({
+//         url: '/operation/comment_delete',
+//         type: 'post',
+//         data: {
+//             delete_id: deleteId,
+//         },
+//         success: function(result){
+//             console.log(result);
+//         },
+//         error: function(err) {
+//             console.log(err);
+//             $('.comment-tip .cover').find('.main-body').text('点赞失败');
+//             tipController('.comment-tip .cover');
+//         }
+//     });
 
-    var oT = $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con');
-    if(oT.siblings('.all-pl-con').length >= 1){
-        oT.remove();
-    }else {
-        $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con').parents('.hf-list-con').css('display','none')
-        oT.remove();
-    }
-    $(this).parents('.date-dz-right').parents('.date-dz').parents('.comment-show-con-list').parents('.comment-show-con').remove();
-})
+//     var oT = $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con');
+//     if(oT.siblings('.all-pl-con').length >= 1){
+//         oT.remove();
+//     }else {
+//         $(this).parents('.date-dz-right').parents('.date-dz').parents('.all-pl-con').parents('.hf-list-con').css('display','none')
+//         oT.remove();
+//     }
+//     $(this).parents('.date-dz-right').parents('.date-dz').parents('.comment-show-con-list').parents('.comment-show-con').remove();
+// })
 
 /**
  * 点赞

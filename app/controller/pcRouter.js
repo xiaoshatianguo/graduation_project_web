@@ -524,9 +524,9 @@ class RouterController extends Controller {
         let d = tools.getMD5Password(psd);
 
         const result = await this.app.mysql.insert('user_info', {
-            email: userData.eamil,
-            nickname: '普通会员' + newDate().valueOf(),
-            number: newDate().valueOf(),
+            email: userData.eamil || 0,
+            nickname: '普通会员' + new Date().valueOf(),
+            number: new Date().valueOf(),
             password: d,
             create_time: new Date().valueOf(),
         });
