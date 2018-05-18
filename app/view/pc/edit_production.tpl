@@ -283,7 +283,7 @@
                     },
                     success: function(result){
                         tipController('.success-form .cover');
-                        setInterval(function() {
+                        setTimeout(function() {
                             pageJumpsHandle();
                         },1000)
                     },

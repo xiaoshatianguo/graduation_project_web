@@ -341,7 +341,7 @@ class RouterController extends Controller {
 
         // 参加该活动的作品及信息
         const production = await this.app.mysql.query(
-            `SELECT p.*,u.nickname FROM production_info p inner join user_info u on p.author_id = u.id where activity_id=${id};`
+            `SELECT p.*,u.nickname FROM production_info p inner join user_info u on p.author_id = u.id where activity_id=${id} and p.status = 0;`
         );
         var productionData = JSON.parse(JSON.stringify(production));
         tools.formatTime(productionData);

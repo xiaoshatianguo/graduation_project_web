@@ -38,7 +38,7 @@
             <div class="fl describe-text">
                 <p class="t-title">{{ activityDetailData.name }}</p>
                 <p class="t-text">活动时间：{{ activityDetailData.start_time }} 至 {{ activityDetailData.end_time }}</p>
-                <p class="t-text">活动发起者：{{ activityDetailData.initiator }}</p>
+                <!-- <p class="t-text">活动发起者：{{ activityDetailData.initiator }}</p> -->
                 <p class="t-describe">{{ activityDetailData.describe }}</p>
                 <div class="btn-list flex-b-sc">
                     <a href="javascript:;" class="t-btn upload-btn">

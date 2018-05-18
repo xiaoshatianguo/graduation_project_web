@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/public/timeline.css">
     <link rel="stylesheet" href="/public/verify.css">
 
-    <title>大型摄影社区</title>
+    <title>yy摄影平台，成就你的美</title>
 </head>
 <body class="body">
     {% block tip %}
