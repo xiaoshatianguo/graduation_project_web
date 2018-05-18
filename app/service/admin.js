@@ -5,7 +5,6 @@ const currentEditTable = 'admin_info'; // 当前操作的表名
 
 // 查询过滤字段
 const filter = [
-    'number',
     'nick_name',
     'integral',
     'manage_categories',
@@ -34,7 +33,6 @@ class AdminService extends Service {
      */
     async create(params) {
         const result = await this.app.mysql.insert(currentEditTable, {
-            number: params.number,
             password: params.password,
             nick_name: params.nick_name,
             sex: params.sex,
@@ -47,8 +45,6 @@ class AdminService extends Service {
             currentEditTable,
             {id: result.insertId}
         );
-
-        // this.app.checkSuccess(newRecord);
 
         return JSON.parse(JSON.stringify(newRecord));
     }

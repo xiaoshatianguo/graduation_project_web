@@ -35,8 +35,6 @@ class ActivityController extends Controller {
 
         const reqBody = ctx.request.body;
 
-        // ctx.validate(createRule);
-
         const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
         ctx.body = result;

@@ -5,11 +5,11 @@ const serviceHandle = 'admin';  // 处理该controller的service
 
 // 定义创建接口的请求参数规则
 const createRule = {
-    number: 'string',
-    password: 'string',
-    nick_name: 'string',
-    integral: { type: 'enum', values: [ '0', '1' ], required: true },
-    manage_categories: 'string',
+    // number: 'string',
+    // password: 'string',
+    // nick_name: 'string',
+    // integral: { type: 'enum', values: [ '0', '1' ], required: true },
+    // manage_categories: 'string',
 };
 
 class AdminController extends Controller {
@@ -34,8 +34,6 @@ class AdminController extends Controller {
 
         const reqBody = ctx.request.body;
         
-        ctx.validate(createRule);
-
         const result = await ctx.service[`${serviceHandle}`].create(reqBody);
 
         ctx.body = result;

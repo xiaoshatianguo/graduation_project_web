@@ -58,6 +58,7 @@ class CommentsService extends Service {
      * 修改评论留言信息
      */
     async update(params) {
+        console.log(params);
         await this.app.mysql.update(currentEditTable, params);
         
         const result = await this.app.mysql.get(currentEditTable, {
