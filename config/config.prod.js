@@ -6,18 +6,18 @@ exports.mysql = {
     // host
     // host: '47.88.170.88',
     host: '119.23.61.80',
-    
+
     // 端口号
     port: '3306',
     // 用户名
     user: 'root',
     // 密码
-    password: 'KeYpZrZx',
+    password: '123456',
     // 数据库名
-    database: 'photo_website',
+    database: 'photo_website'
   },
   // 是否加载到 app 上，默认开启
   app: true,
   // 是否加载到 agent 上，默认关闭
-  agent: false,
+  agent: false
 };
