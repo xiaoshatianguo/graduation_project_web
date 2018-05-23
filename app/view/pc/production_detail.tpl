@@ -49,12 +49,12 @@
                         </svg>
                         <span class="about-num">{{ productionData.data.comment_number }}</span>
                     </div>
-                    <div class="about-item">
+                    <!-- <div class="about-item">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-chakandianzan"></use>
                         </svg>
                         <span class="about-num">4299</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
            <div class="about-author fl">
@@ -63,7 +63,7 @@
                    <a class="author-name" href="/personal_space?userId={{ productionData.data.uid }}">{{ productionData.data.nickname }}</a>
                    <span class="author-sort">上海/插画师</span>
                    <div class="btn-list flex-b-sbc">
-                        <a href="javascript:;" class="attention-btn" userId="{{ productionData.data.id }}">关注</a>
+                        <!-- <a href="javascript:;" class="attention-btn" userId="{{ productionData.data.id }}">关注</a> -->
                         <a href="javascript:;" class="collection-btn">收藏作品</a>
                    </div>
                </div>

@@ -31,19 +31,20 @@
     <div class="my-info flex-box jc-s jc-ce fd-col">
         <div class="container">
             <p class="author-name">{{ personalData.nickname }}<small class="grade">
-                {% if personalData.sort == 0 %}
+                【 浏览热度：{{ personalData.hot }}】
+                <!-- {% if personalData.sort == 0 %}
                     【普通会员】
                 {% else %}
                     【认证师】
-                {% endif %}
+                {% endif %} -->
             </small></p>
             <p class="author-motto">{{ personalData.personal_statement }}</p>
             <div class="author-data-statistics flex-b-sbc">
-                <div class="data-list">
+                <!-- <div class="data-list">
                     <p class="item-name">热度</p>
-                    <span class="item-number">{{ personalData.hot }}</span>
-                </div>|
-                <div class="data-list">
+                    <span class="item-number"></span>
+                </div> -->
+                <!-- <div class="data-list">
                     <p class="item-name">积分</p>
                     <span class="item-number">{{ personalData.integral }}</span>
                 </div>|
@@ -54,7 +55,7 @@
                 <div class="data-list">
                     <p class="item-name">关注</p>
                     <span class="item-number">{{ myAttentionData.length }}</span>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="tag-div">

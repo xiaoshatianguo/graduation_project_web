@@ -45,12 +45,12 @@
                                         </svg>
                                         <span class="about-num">{{ item.comment_number }}</span>
                                     </div>
-                                    <div class="about-item">
+                                    <!-- <div class="about-item">
                                         <svg class="icon" aria-hidden="true">
                                             <use xlink:href="#icon-chakandianzan"></use>
                                         </svg>
                                         <span class="about-num">4299</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -128,12 +128,12 @@
                                 </svg>
                                 <span class="about-num">{{ item.hot }}</span>
                             </div>
-                            <div class="about-item">
+                            <!-- <div class="about-item">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-fensipa"></use>
                                 </svg>
                                 <span class="about-num">4299</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 {% endfor %}
@@ -169,12 +169,12 @@
                                     </svg>
                                     <span class="about-num">{{ item.comment_number }}</span>
                                 </div>
-                                <div class="about-item">
+                                <!-- <div class="about-item">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-chakandianzan"></use>
                                     </svg>
                                     <span class="about-num">4299</span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </a>

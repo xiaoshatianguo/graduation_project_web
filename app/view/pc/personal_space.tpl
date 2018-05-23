@@ -19,7 +19,7 @@
             <div class="author-portraits">
                 <img class="img" src="{{ personalData.portrait }}" alt="">
             </div>
-            <a class="attention-btn" href="javascript:;">关注</a>
+            <!-- <a class="attention-btn" href="javascript:;">关注</a> -->
         </div>
     </div>
 {% endblock %}
@@ -27,14 +27,14 @@
 {% block top %}
     <div class="author-info flex-box jc-s jc-ce fd-col">
         <div class="container">
-            <p class="author-name">{{ personalData.nickname }}<small class="grade">【顶级设计师】</small></p>
+            <p class="author-name">{{ personalData.nickname }}<small class="grade">【 浏览热度：{{ personalData.hot }}】</small></p>
             <p class="author-motto">{{ personalData.personal_statement }}</p>
             <div class="author-data-statistics flex-b-sbc">
-                <div class="data-list">
+                <!-- <div class="data-list">
                     <p class="item-name">热度</p>
                     <span class="item-number">{{ personalData.hot }}</span>
-                </div>|
-                <div class="data-list">
+                </div> -->
+                <!-- <div class="data-list">
                     <p class="item-name">积分</p>
                     <span class="item-number">{{ personalData.integral }}</span>
                 </div>|
@@ -45,7 +45,7 @@
                 <div class="data-list">
                     <p class="item-name">关注</p>
                     <span class="item-number">{{ myAttentionData.length }}</span>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="tag-div">
@@ -87,12 +87,12 @@
                                                 </svg>
                                                 <span class="about-num">{{ item.comment_number }}</span>
                                             </div>
-                                            <div class="about-item">
-                                                <svg class="icon" aria-hidden="true">
+                                            <!-- <div class="about-item"> -->
+                                                <!-- <svg class="icon" aria-hidden="true">
                                                     <use xlink:href="#icon-chakandianzan"></use>
-                                                </svg>
-                                                <span class="about-num">4299</span>
-                                            </div>
+                                                </svg> -->
+                                                <!-- <span class="about-num">0</span> -->
+                                            <!-- </div> -->
                                         </div>
                                         <hr>
                                         <div class="clear-f">

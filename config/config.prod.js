@@ -5,14 +5,15 @@ exports.mysql = {
   client: {
     // host
     // host: '47.88.170.88',
-    host: '119.23.61.80',
+    // host: '119.23.61.80',
+    host: '127.0.0.1',
     
     // 端口号
     port: '3306',
     // 用户名
     user: 'root',
     // 密码
-    password: 'KeYpZrZx',
+    password: 'root',
     // 数据库名
     database: 'photo_website',
   },

@@ -45,7 +45,7 @@
                         上传活动作品
                     </a>
                     <a class="t-btn detail-btn" href="/activity_rule?activityId={{ activityDetailData.id }}">查看活动详情</a>
-                    <a class="t-btn attention-btn" href="javascript:;">关注活动</a>
+                    <!-- <a class="t-btn attention-btn" href="javascript:;">关注活动</a> -->
                 </div>
             </div>
         </div>
