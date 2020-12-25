@@ -9,9 +9,9 @@ const config = {
   database: {
     DATABASE: 'photo_website',
     USERNAME: 'root',
-    PASSWORD: 'kkayy3533.',
+    PASSWORD: 'root',
     PORT: '3306',
-    HOST: '120.77.148.115',
+    HOST: 'localhost',
   },
 };
 
